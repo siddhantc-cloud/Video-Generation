@@ -1,0 +1,46 @@
+# === SECRETS — never commit ===
+.env
+*.env
+**/.env
+.mcp.json
+**/.mcp.json
+*.key
+*.pem
+secrets*
+
+# === heavy / generated media ===
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.wav
+*.mp3
+*.aac
+*.flac
+# keep ONLY the final deliverable
+!ads/clear-gut/edit/final/ClearGut_IngredientArmy_FINAL_v5.mp4
+
+# === generated intermediates / logs ===
+*.err
+*.log
+ads/clear-gut/clips/
+ads/clear-gut/keyframes/
+ads/clear-gut/audio/
+ads/clear-gut/edit/review_frames/
+ads/clear-gut/edit/fcheck/
+ads/clear-gut/edit/s2frames/
+ads/clear-gut/edit/verify/
+
+# === tooling / OS junk ===
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+node_modules/
+tools/ffmpeg-libass/
+tools/*.zip
+
+# === third-party/vendor skills (their own git repos — not this project's source) ===
+.claude/skills/cut-video/
+.claude/skills/higgsfield-cinematic/
+.claude/skills/video-use/

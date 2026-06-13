@@ -1,0 +1,156 @@
+{
+  "title": "BLUMELIFE Clear Gut - Ingredient Army - VIDEO REVIEW",
+  "video": "edit/final/ClearGut_IngredientArmy_FINAL.mp4",
+  "probe": "1080x1920, 24fps, 63.456s, audio present (verified)",
+  "method": "rubric expectations.json 83 criteria + LLM-as-judge over 1fps frame timeline s001-s063, targeted ffmpeg sub-crops, full-reel Whisper transcript content only.",
+  "overall": "FAIL",
+  "blockers_failed": [
+    {
+      "scene": "S8",
+      "id": "S8-stomach-profile-offlens",
+      "time": [54.0, 56.0, 58.0, 60.0],
+      "defect": "Happy stomach FACE and MOUTH turned TOWARD the lens (eyes to camera, front grin), not turned AWAY in three-quarter profile. Body angles toward bottle but face is lens-facing across s055-s061. Front-facing mouth on a NARRATED no-character-speaks shot.",
+      "evidence": "s055 s057 s059 face to lens; tight crops _crops/s055_face.png to s060_face.png."
+    },
+    {
+      "scene": "S9",
+      "id": "S9-tagline-correct",
+      "time": [61.0, 62.0, 63.0],
+      "defect": "Secondary gray brand sub-line aayurvedik (Devanagari) rendered with BROKEN shaping: matras detached, floating as dotted-circle placeholder glyphs. MAIN gold tagline is correct and legible. Defect is the aayurvedik sub-line only. Same defect satisfies BRAND-S9-tagline.",
+      "evidence": "_crops/s062_tagline.png and s063_tagline.png: gold line correct; gray sub-line shows detached vowel-sign glyphs around aayurvedik. BLUMELIFE Latin is fine."
+    }
+  ],
+  "also_flagged_major": [
+    {
+      "scene": "S7",
+      "id": "BRAND-bottle-colorway",
+      "severity": "major",
+      "time": [46.0, 53.0],
+      "note": "S7 reveal bottle has a GOLD brass dropper cap (s047-s053), not the real product WHITE cap. Bottle otherwise unmistakably Clear Gut, so not a wrong-product fail. S8 bottle s054-s061 correctly has the WHITE cap."
+    }
+  ],
+  "scenes": [
+    {"scene": "S1", "verdict": "PASS", "results": [
+      {"id": "S1-dominant-king", "verdict": "PASS", "time": [1,3,5], "evidence": "s002 s004 s006: brown boulder body, gold crown, red glowing eyes, jagged grin, arms crossed, large upper-center, comedic-gross not horror-grade. Matches bible king."},
+      {"id": "S1-stomach-faceless", "verdict": "PASS", "time": [0,1], "evidence": "s001 s002: small dim turned-away stomach silhouette at lower edge, NO face/mouth; push-in passes it after s004."},
+      {"id": "S1-single-mouth", "verdict": "NEEDS-HUMAN", "evidence": "Only King has a visible mouth (stomach faceless). King-only mouth-motion needs playback."},
+      {"id": "S1-king-faces-lens", "verdict": "PASS", "time": [1,4], "evidence": "s002 s005: faces camera, low-angle medium framing; slow push-in s005-s008."},
+      {"id": "S1-dark-grade", "verdict": "PASS", "time": [2,5], "evidence": "s003 s006: dark gut-cave, sickly-green gas, hard top-light, villain grade."},
+      {"id": "S1-no-burned-text", "verdict": "PASS", "time": [0,2,4,6], "evidence": "s001 s003 s005 s007 + top-crop: only intentional gold caption; no burned gibberish."},
+      {"id": "S1-king-consistent", "verdict": "PASS", "time": [0,7], "evidence": "s001 vs s008: identity stable through push-in."},
+      {"id": "S1-line-audio", "verdict": "NEEDS-HUMAN", "evidence": "CONTENT confirmed: transcript 0-6.5s = scripted villain line, starts ~1.5s after a pause. Deep gravelly comic-villain VOICE QUALITY needs ear."},
+      {"id": "S1-lipsync", "verdict": "NEEDS-HUMAN", "evidence": "Needs playback."}
+    ]},
+    {"scene": "S2", "verdict": "PASS", "results": [
+      {"id": "S2-amla-solo", "verdict": "PASS", "time": [9,11,13], "evidence": "s010 s012 s014: Amla ALONE, centered, pale-green gooseberry + leaf, medium CU facing camera, heroic pose. Matches bible."},
+      {"id": "S2-warm-hero", "verdict": "PASS", "time": [10,12], "evidence": "s011 s013: warm golden rim-glow, warm smile, kind eyes, friendly GOOD guy."},
+      {"id": "S2-single-mouth", "verdict": "NEEDS-HUMAN", "evidence": "Only Amla present; mouth animates s010-s015. Confirm on playback."},
+      {"id": "S2-no-burned-text", "verdict": "PASS", "time": [8,10,12,14], "evidence": "s009 s011 s013 s015: only gold caption."},
+      {"id": "S2-consistent", "verdict": "PASS", "time": [8,14], "evidence": "s009 vs s015: identity stable."},
+      {"id": "S2-line-audio", "verdict": "NEEDS-HUMAN", "evidence": "CONTENT confirmed 7.7-12.9s = scripted line. Warm heroic male VOICE QUALITY needs ear."},
+      {"id": "S2-lipsync", "verdict": "NEEDS-HUMAN", "evidence": "Needs playback."}
+    ]},
+    {"scene": "S3", "verdict": "PASS", "results": [
+      {"id": "S3-ajwain-solo", "verdict": "PASS", "time": [16,18,20], "evidence": "s017 s019 s021: Ajwain ALONE, centered, tan/green ribbed carom-seed, energetic grin. Matches bible."},
+      {"id": "S3-warm-hero", "verdict": "PASS", "time": [17,19], "evidence": "s018 s020: bright warm punchy grade, upbeat friendly GOOD guy."},
+      {"id": "S3-single-mouth", "verdict": "NEEDS-HUMAN", "evidence": "Only Ajwain present; mouth animates s017-s023. Confirm on playback."},
+      {"id": "S3-no-burned-text", "verdict": "PASS", "time": [15,17,19,21], "evidence": "s016 s018 s020 s022: only gold caption."},
+      {"id": "S3-consistent", "verdict": "PASS", "time": [15,22], "evidence": "s016 vs s023: identity stable."},
+      {"id": "S3-line-audio", "verdict": "NEEDS-HUMAN", "evidence": "CONTENT confirmed 15.4-21.3s = scripted line (bhaaripan gas mera kaam). Bright fast energetic VOICE QUALITY needs ear."},
+      {"id": "S3-lipsync", "verdict": "NEEDS-HUMAN", "evidence": "Needs playback."}
+    ]},
+    {"scene": "S4", "verdict": "PASS", "results": [
+      {"id": "S4-saunf-solo", "verdict": "PASS", "time": [23,25,27], "evidence": "s024 s026 s028: Saunf ALONE, centered, pale-green fennel bulb + fronds, calm graceful. Matches bible."},
+      {"id": "S4-warm-hero", "verdict": "PASS", "time": [24,26], "evidence": "s025 s027: soft gentle warm grade, calm friendly GOOD guy."},
+      {"id": "S4-single-mouth", "verdict": "NEEDS-HUMAN", "evidence": "Only Saunf present; mouth animates s024-s030. Confirm on playback."},
+      {"id": "S4-female-voice", "verdict": "NEEDS-HUMAN", "evidence": "Visual female-coded (eyelashes, soft features). VOICE GENDER is audio; Whisper translated, needs ear to confirm clearly FEMALE."},
+      {"id": "S4-no-burned-text", "verdict": "PASS", "time": [22,24,26,28], "evidence": "s023 s025 s027 s029: only gold caption."},
+      {"id": "S4-consistent", "verdict": "PASS", "time": [22,29], "evidence": "s023 vs s030: identity stable."},
+      {"id": "S4-line-audio", "verdict": "NEEDS-HUMAN", "evidence": "CONTENT confirmed 23.6-29.3s = scripted line (bloating shaant). Female pronunciation needs ear."},
+      {"id": "S4-lipsync", "verdict": "NEEDS-HUMAN", "evidence": "Needs playback."}
+    ]},
+    {"scene": "S5", "verdict": "PASS", "results": [
+      {"id": "S5-haritaki-solo", "verdict": "PASS", "time": [31,33,35], "evidence": "s032 s034 s036: Haritaki ALONE, centered, amber/brown myrobalan elder, medium CU facing camera."},
+      {"id": "S5-benevolent-not-villain", "verdict": "PASS", "time": [32,34,36], "evidence": "PRIMARY VILLAIN-LEAKAGE GATE CLEARED. s033 s035 s037: warm-amber TWINKLING eyes (not glowing-white angry), kind warm SMILE, gentle sparkle, no scowl/threat. Reads benevolent grandfather, transformed away from the fierce lightning bible ref."},
+      {"id": "S5-warm-grade", "verdict": "PASS", "time": [32,35], "evidence": "s033 s036: warm gold light, gentle non-threatening shimmer; not a dark electric-storm grade."},
+      {"id": "S5-single-mouth", "verdict": "NEEDS-HUMAN", "evidence": "Only Haritaki present; mouth animates s032-s038. Confirm on playback."},
+      {"id": "S5-no-burned-text", "verdict": "PASS", "time": [30,32,34,36], "evidence": "s031 s033 s035 s037 + top-crop: only gold caption."},
+      {"id": "S5-consistent", "verdict": "PASS", "time": [30,37], "evidence": "s031 vs s038: identity stable AND expression stays benevolent the whole clip (s034 warm laugh, s037 peaceful eyes-closed smile). No mid-clip turn to menacing."},
+      {"id": "S5-line-audio", "verdict": "NEEDS-HUMAN", "evidence": "CONTENT confirmed 30.4-38.4s = scripted line (most-trusted of Ayurveda). Deep wise kindly elder VOICE QUALITY needs ear."},
+      {"id": "S5-lipsync", "verdict": "NEEDS-HUMAN", "evidence": "Needs playback."}
+    ]},
+    {"scene": "S6", "verdict": "PASS", "results": [
+      {"id": "S6-four-heroes-shield", "verdict": "PASS", "time": [39,41,43], "evidence": "s040 s042 s044: all FOUR heroes present and identifiable (Amla TL, Ajwain front-L ribbed, Saunf center fennel, Haritaki R glowing), turned INWARD around small happy stomach in protective battle stance; King tiny dark cowering center-back."},
+      {"id": "S6-no-lens-mouths", "verdict": "PASS", "time": [39,41,43], "evidence": "Heroes three-quarter inward; none dead-square front-to-lens with an obvious talking mouth. Borderline but framing intent met."},
+      {"id": "S6-no-talking-mouths", "verdict": "NEEDS-HUMAN", "evidence": "Narrated shot; whether any mouth MOVES under VO needs playback."},
+      {"id": "S6-heroes-good", "verdict": "PASS", "time": [40,43], "evidence": "s041 s044: heroes glow bright/warm; King dark/tiny. Contrast intact in-frame. Note Amla fierce-cocky + Haritaki lightning = heroic-battle energy, on-brief."},
+      {"id": "S6-no-burned-text", "verdict": "PASS", "time": [38,40,42,44], "evidence": "s039 s041 s043 s045 + top-crop: only gold caption."},
+      {"id": "S6-no-limb-glitch", "verdict": "PASS", "time": [39,42,45], "evidence": "Crops _crops/s042_saunffist s044_saunffist s044_amlafist: fists/biceps are clean 4-finger cartoon hands; no fused/extra limbs, no warped faces."},
+      {"id": "S6-identity-vs-bible", "verdict": "PASS", "time": [38,45], "evidence": "s039 vs s046: all four recognizable, no merge/swap."},
+      {"id": "S6-narration-audio", "verdict": "NEEDS-HUMAN", "evidence": "CONTENT confirmed 38.0-43.2s = scripted line (not just four, full army of Ayurvedic herbs). Warm trustworthy male VOICE QUALITY needs ear."}
+    ]},
+    {"scene": "S7", "verdict": "PASS", "results": [
+      {"id": "S7-bottle-forming", "verdict": "PASS", "time": [47,49,51], "evidence": "s048 s050 s052: golden-light streaks coalesce around ONE amber dropper bottle, focal center subject."},
+      {"id": "S7-bottle-stable", "verdict": "NEEDS-HUMAN", "evidence": "s050 vs s053 show bottle present/centered; s053 transition lifts the dropper. Wobble/melt over motion needs playback."},
+      {"id": "S7-label-soft-ok", "verdict": "PASS", "time": [49,51], "evidence": "Label actually LEGIBLE (Clear Gut on yellow), exceeding the soft-OK minimum. Not a defect."},
+      {"id": "S7-colorway", "verdict": "PASS", "time": [49,51], "evidence": "Amber/brown glass, yellow/white Clear Gut label zone, dropper, recognizably the product. NOTE: dropper cap renders GOLD brass here, not white (flagged BRAND-bottle-colorway major)."},
+      {"id": "S7-no-characters", "verdict": "PASS", "time": [47,49,51], "evidence": "s048 s050 s052: floating REAL-herb botanicals only (no faces); no herb-heroes, no King."},
+      {"id": "S7-no-burned-text", "verdict": "PASS", "time": [46,48,50,52], "evidence": "s047 s049 s051 s053 + top-crop: only gold caption + legitimate on-bottle Clear Gut label; no floating gibberish."},
+      {"id": "S7-narration-audio", "verdict": "NEEDS-HUMAN", "evidence": "CONTENT confirmed 45.6-50.8s = scripted line (all now one, Clear Gut drops). Voice quality needs ear."}
+    ]},
+    {"scene": "S8", "verdict": "FAIL", "results": [
+      {"id": "S8-happy-stomach", "verdict": "PASS", "time": [54,56,58], "evidence": "s055 s057 s059: bright healthy pink HAPPY stomach smiling, clear positive transformation vs sad/sick S1 stomach."},
+      {"id": "S8-stomach-profile-offlens", "verdict": "FAIL", "time": [54,56,58,60], "evidence": "BLOCKER. Crops _crops/s055_face to s060_face: body angles toward bottle but FACE+MOUTH turned TOWARD the lens (eyes to camera, front grin). NOT turned away in profile. Front-facing mouth on a narrated shot."},
+      {"id": "S8-stomach-mouth-closed", "verdict": "NEEDS-HUMAN", "evidence": "ELEVATED RISK. Mouth state varies: open grin s055 s057 s060, near-closed s058. With a lens-facing mouth on a narrated shot, risk it animates as talking is high. Confirm on playback (related to the off-lens FAIL)."},
+      {"id": "S8-bottle-locked", "verdict": "NEEDS-HUMAN", "evidence": "s054 vs s061 show bottle steady/centered; full lock (no micro-wobble) needs playback."},
+      {"id": "S8-bottle-sharp-colorway", "verdict": "PASS", "time": [55,57,59], "evidence": "s056 s058 s060: bottle SHARP, amber glass, WHITE dropper cap, BLUMELIFE Clear Gut 30 Servings 30ml legible, matches colorway (correct white cap)."},
+      {"id": "S8-no-burned-text", "verdict": "PASS", "time": [53,55,57,59], "evidence": "s054 s056 s058 s060 + top-crop: only gold caption + legitimate on-bottle label; no burned gibberish."},
+      {"id": "S8-warm-grade", "verdict": "PASS", "time": [55,58], "evidence": "s056 s059: bright clean healthy warm amber grade, victory tone, not dark."},
+      {"id": "S8-narration-audio", "verdict": "NEEDS-HUMAN", "evidence": "CONTENT confirmed 53.4-57.1s = scripted CTA line. Voice quality needs ear."}
+    ]},
+    {"scene": "S9", "verdict": "FAIL", "results": [
+      {"id": "S9-real-bottle", "verdict": "PASS", "time": [61,62], "evidence": "s062 s063 + crop s063_label: REAL product image, centered, undistorted, amber bottle, WHITE cap, legible BLUMELIFE + Clear Gut. Pixel-perfect. NOTE: real asset Clear Gut is BLACK text not blue as rubric claims (rubric descriptor error; video faithful)."},
+      {"id": "S9-tagline-correct", "verdict": "FAIL", "time": [61,62,63], "evidence": "BLOCKER. Main gold line correct/legible. Secondary gray line aayurvedik is BROKEN Devanagari: matras detached, floating as dotted-circle placeholder glyphs (font-shaping failure). Crops _crops/s062_tagline.png s063_tagline.png."},
+      {"id": "S9-clean-studio", "verdict": "PASS", "time": [61,62], "evidence": "s062 vs s063: clean white studio card, gentle Ken-Burns zoom, text below bottle (clear of label)."},
+      {"id": "S9-no-veo-artifacts", "verdict": "FAIL", "time": [61,62,63], "evidence": "Clean still card (no morph/Veo gen), BUT the broken-Devanagari aayurvedik sub-line is extra burned garbled text, fails the no-extra-burned-gibberish clause. Same root cause as S9-tagline-correct."}
+    ]}
+  ],
+  "global_and_layer": [
+    {"id": "G-no-burned-text", "verdict": "PASS", "time": "s001-s061", "evidence": "Scanned every Veo scene + top-edge crops. Only legitimate text = intentional gold captions + on-bottle Clear Gut label. No Veo-burned subtitles/watermarks/gibberish S1-S8. S9 burned-text defect tracked under S9."},
+    {"id": "G-aspect-res", "verdict": "PASS", "time": [0,29,59], "evidence": "All frames 1080x1920 (probe + per-frame ffprobe s001 s030 s060); no letterbox/pillarbox/squash."},
+    {"id": "G-style-consistent", "verdict": "PASS", "time": "all", "evidence": "Glossy 3D Pixar DreamWorks caricature look + grade consistent S1-S8; intended warm-vs-dark contrast only; S9 clean photo card by design."},
+    {"id": "G-good-evil-read", "verdict": "PASS", "time": [3,10,18,26,34,42,49,56], "evidence": "s004 King dark green; heroes s011 s019 s027 s035 bright warm; s043 contrast in-frame; s050 s057 product warm. No hero scene dark, no King scene warm."},
+    {"id": "G-crossfade-continuity", "verdict": "PASS", "time": [7,14,22,30,37,45,52,60], "evidence": "Boundary frames s008 s015 s023 s031 s038 s046 s053 s061 blend correct neighbors in order S1 to S9; no out-of-order, no hard cut, no black gap."},
+    {"id": "G-audio-bed", "verdict": "NEEDS-HUMAN", "evidence": "Continuity/dropouts at seams + intelligibility above bed need ear."},
+    {"id": "G-lines-in-order", "verdict": "NEEDS-HUMAN", "evidence": "CONTENT verified: full-reel Whisper yields all 8 scripted lines in script order, each in its scene window, none swapped/dropped/duplicated (57.1-57.7s repeat is a Whisper artifact). Pronunciation/cleanliness needs ear."},
+    {"id": "CAP-present", "verdict": "PASS", "time": [2,10,18,26,34,42,49,56], "evidence": "Gold karaoke Devanagari captions present across S1-S8 dialogue/narration."},
+    {"id": "CAP-script-correct", "verdict": "NEEDS-HUMAN", "evidence": "By-eye S1-S8 captions match scripted lines and look well-formed (NOT broken like the S9 aayurvedik sub-line); rubric asks for an .ass-source diff for matra/conjunct certainty. Confirm via .ass diff."},
+    {"id": "CAP-gold", "verdict": "PASS", "time": [2,18,34,49], "evidence": "Gold with dark outline, legible against backgrounds, not clipped at edges."},
+    {"id": "CAP-placement", "verdict": "PASS", "time": [10,34,49,56,61], "evidence": "Lower-third; in S7 s050 S8 s056 S9 s062 sits below the bottle, clear of the Clear Gut label. Minor: on tight S5 face zooms grazes the lower jaw but stays clear of the mouth."},
+    {"id": "CAP-karaoke-timing", "verdict": "NEEDS-HUMAN", "evidence": "Highlight-fill advance vs spoken words needs playback."},
+    {"id": "CAP-not-double", "verdict": "PASS", "time": [2,10,18,26,34,42,49,56], "evidence": "Exactly ONE gold caption strip per scene; not stacked on any Veo-burned subtitle. No doubled strips."},
+    {"id": "BRAND-S9-legible", "verdict": "PASS", "time": [61,62], "evidence": "s062 s063: real bottle, BLUMELIFE + Clear Gut legible, dropper cap, amber bottle, label undistorted."},
+    {"id": "BRAND-S9-tagline", "verdict": "FAIL", "time": [61,62,63], "evidence": "Main gold tagline correct; secondary aayurvedik sub-line broken Devanagari (detached matras, dotted-circle glyphs). Same defect as S9-tagline-correct."},
+    {"id": "BRAND-bottle-colorway", "verdict": "PASS", "time": [49,53,56,59], "evidence": "S7 S8 bottle amber/brown glass + yellow/white label = product colorway. NOTE major drift: S7 cap renders GOLD not WHITE (s047-s053); S8 cap correctly WHITE."},
+    {"id": "BRAND-no-wrong-product", "verdict": "PASS", "time": [49,53,56,59,62], "evidence": "Dropper bottle throughout; no pill/tablet/capsule, no spray/jar, no competing product."}
+  ],
+  "needs_human": [
+    "S1-S5 lip-sync precision (S1 S2 S3 S4 S5-lipsync), motion.",
+    "S1-S5 single-mouth-moving (S1 S2 S3 S4 S5-single-mouth): confirm only the speaker mouth animates.",
+    "S4-female-voice: confirm Saunf voice timbre is clearly FEMALE (Whisper translated, cannot judge timbre).",
+    "Voice QUALITY/tone per line: S1 deep gravelly villain, S2 warm heroic male, S3 bright energetic, S4 gentle female, S5 wise kindly elder, S6 S7 S8 warm trustworthy narrator (content already confirmed).",
+    "S6-no-talking-mouths: confirm NO hero/stomach mouth moves under the narrator VO.",
+    "S7-bottle-stable and S8-bottle-locked: confirm no wobble/morph over motion.",
+    "S8-stomach-mouth-closed: HIGH RISK given the off-lens FAIL: confirm the lens-facing happy-stomach mouth is NOT talking under VO.",
+    "G-audio-bed: continuous bed, no seam dropouts, narration intelligible above bed.",
+    "G-lines-in-order: pronunciation/cleanliness of the 8 lines (content and order already confirmed).",
+    "CAP-script-correct: diff S1-S8 burned caption text against the .ass source for matra/conjunct exactness.",
+    "CAP-karaoke-timing: highlight fill advances with spoken words."
+  ],
+  "coverage_gaps": [
+    "Rubric brand_truth says Clear Gut is in BLUE text but the REAL asset shows BLACK dark text. The video faithfully reproduces the asset; rubric descriptor is wrong. Fix the rubric, not the video.",
+    "No criterion explicitly covers the S7 dropper-cap COLOR (gold vs real white). Most visible S7 brand deviation; only loosely captured by BRAND-bottle-colorway major. Consider an explicit S7 cap-color criterion.",
+    "No criterion targets the S9 SECONDARY brand sub-line (aayurvedik BLUMELIFE) where the failing glyphs live. Covered only via the plus-the-brand correct-Devanagari clause; an explicit sub-line check would be clearer."
+  ],
+  "summary": "FAIL: 2 failed blockers, both in the back half. (1) S8 t54-60: the happy stomach face+mouth are turned TOWARD the lens (front grin) instead of profile/away as required for a narrated shot, presenting a front-facing mouth (likely animating under VO, see needs-human). (2) S9 t61-63: the secondary brand sub-line aayurvedik is broken Devanagari (detached matras, dotted-circle placeholder glyphs); the MAIN gold tagline is correct. Everything else PASSES: S1-S7 identity/grade/framing, the high-risk S5 villain-leakage gate (Haritaki reads benevolent, fully cleared), four-hero team-up with clean hands, no Veo-burned text in S1-S8, correct aspect/res, crossfade order, single gold caption layer, S9 real-bottle legibility. All 8 scripted lines present in order (content verified); voice quality, gender, lip-sync, mouth-motion, audio-bed remain needs-human. One major to triage: S7 reveal-bottle dropper cap is GOLD not WHITE (S8 cap correct)."
+}
