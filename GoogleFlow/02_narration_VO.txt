@@ -1,0 +1,50 @@
+NARRATOR VOICEOVER — "The Squirrel in Ram Setu" (ZebPay SIP)
+============================================================
+This is the SINGLE external narration track. Record/TTS this ONCE (ElevenLabs, Indian-English,
+storytelling tone) and lay it as the spine in your editor. Do NOT let Google Flow / Veo generate any
+of these lines — Veo's voice is model-invented and changes between clips.
+
+Spoken-only text (stage directions removed, punctuation cleaned so TTS pauses instead of voicing it).
+<break time="Xs"/> tags are ElevenLabs syntax; delete them for any other engine and use the comma/pause.
+
+--- SCENE 1: THE PURPOSE ---
+Across this ocean waited a battle for dharma. Sita had to be brought home. Ravana had to fall.
+And to get there, an army would build what had never been built before. A bridge across the sea.
+Stone by stone. Boulder by boulder.
+Each one marked with Ram's name, and his faith.
+
+--- SCENE 2: THE SQUIRREL ARRIVES ---
+And in the middle of all that grandeur, something much smaller had also arrived.
+It couldn't carry boulders.
+So it carried what it could.
+
+--- SCENE 3: THE MOCKERY ---
+Of course, one of the vanaras noticed.
+And <break time="0.4s"/> decided to make a point of it.
+He made sure everyone laughed with him.
+Even the babies were outdoing it without breaking a sweat.
+Naturally, nobody clapped.
+
+--- SCENE 4: LORD RAMA NOTICES ---
+But someone else was watching too.
+And he wasn't looking at the boulders.
+He was looking at the only one who showed up without being asked to.
+Some bridges are built with strength. Some are built with heart. The wise ones know you need both.
+<break time="0.5s"/>
+
+--- SCENE 5: THE BRIDGE GETS COMPLETED ---
+Some days the sea was calm.
+Some days it wasn't.
+The squirrel never waited for the right day.
+It didn't matter if the tide was high or low that day. The pebble went in anyway.
+One pebble, placed once, means nothing. The same pebble, placed again and again, regardless of the day, that's what holds a bridge together.
+
+--- SCENE 6: THE PARALLEL ---
+Most people wait for the right time to invest. The market down, wait. The market up, too late. The squirrel never checked the tide before showing up.
+<break time="0.4s"/>
+It showed up the same way, every time, and let the average take care of the rest.
+
+--- SCENE 7: OUTRO ---
+You don't need to time the market. You need to keep showing up, same amount, every time. That's not a squirrel's trick. That's SIP.
+<break time="0.4s"/>
+This video is brought to you by ZebPay, India's oldest crypto exchange. Like, share, and subscribe.
