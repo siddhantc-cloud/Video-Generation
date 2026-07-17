@@ -47,6 +47,8 @@ Dialogue: 0,0:00:00.10,0:00:02.96,Cap,,0,0,0,,{\kf42}word1 {\kf24}word2 ...
 - **Burn captions LAST** in the filter chain — overlays before captions, else they cover the text (silent failure).
 - **`-c:a copy`** — never re-encode/touch audio when only adding captions.
 - **Half-second-pause offset:** Veo clips start speech ~0.4–0.5s in (the scripted pause), but Whisper reports the first word at t=0.0. Floor the karaoke onset at ~0.4s so the gold fill doesn't run ahead of the voice.
+- **Caption text must MATCH THE ACTUAL AUDIO, not the script (verified 2026-06-13).** The model often speaks FEWER repetitions than the script wrote — e.g. script "हा हा हा" (3×) but Veo said "ha ha" (2×), and the caption over-counted. For repeated onomatopoeia/laughs/sounds, count the repetitions from Whisper's ACTUAL output and display that count. Also strip stray doubled punctuation (`!!`). Display the KNOWN script *words* (Urdu-script gotcha) but the ACTUAL *count/structure*.
+- **Keep caption text in sync with the cleaned spoken line.** Display the SAME dash-free text as the spoken line (no `-`/`—`/`–`, no `जड़ी-बूटियों` hyphen — use a space/comma). After ANY edit to the script/lines, **regenerate the captions** — a previously-burned `.ass` keeps showing the old (e.g. still-dashed) text even after you clean the source.
 - **Verify by frame-grab** at a mid-caption time: text legible, clears product/face, gold sweep advancing (grab two frames in one line — boundary must move).
 - For TTS B-roll audio, get exact word boundaries from the synth (`edge-tts` WordBoundary / ElevenLabs with-timestamps) instead of Whisper.
 

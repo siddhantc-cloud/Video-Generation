@@ -1,0 +1,7 @@
+file 'seg_s1_padded.mp4'
+file 'seg_s2_padded.mp4'
+file 'seg_s3.mp4'
+file 'seg_s4.mp4'
+file 'seg_s5.mp4'
+file 'seg_s6.mp4'
+file 'seg_endcard.mp4'

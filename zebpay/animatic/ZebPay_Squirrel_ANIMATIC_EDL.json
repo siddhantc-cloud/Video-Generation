@@ -1,0 +1,437 @@
+{
+  "fps": 30,
+  "total_frames": 4999,
+  "expected_sec": 166.633,
+  "video_sec": 166.633,
+  "audio_sec": 166.633,
+  "drift_sec": 0.0003,
+  "sync_locked": true,
+  "shots": [
+    {
+      "i": 0,
+      "id": "S1-a",
+      "vo_sec": 9.096,
+      "pause_in": 0.5,
+      "pause_out": 0.4,
+      "frames": 300,
+      "on_screen_sec": 10.0,
+      "images": [
+        {
+          "image": "S1-a.png",
+          "frames": 300,
+          "start": "00:00:00:00",
+          "end": "00:00:10:00"
+        }
+      ]
+    },
+    {
+      "i": 1,
+      "id": "S1-b",
+      "vo_sec": 8.808,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 283,
+      "on_screen_sec": 9.433,
+      "images": [
+        {
+          "image": "S1-b.png",
+          "frames": 283,
+          "start": "00:00:10:00",
+          "end": "00:00:19:13"
+        }
+      ]
+    },
+    {
+      "i": 2,
+      "id": "S1-c",
+      "vo_sec": 4.464,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 152,
+      "on_screen_sec": 5.067,
+      "images": [
+        {
+          "image": "S1-c.png",
+          "frames": 152,
+          "start": "00:00:19:13",
+          "end": "00:00:24:15"
+        }
+      ]
+    },
+    {
+      "i": 3,
+      "id": "S1-d",
+      "vo_sec": 4.464,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 152,
+      "on_screen_sec": 5.067,
+      "images": [
+        {
+          "image": "S1-d_inscription_wide.png",
+          "frames": 152,
+          "start": "00:00:24:15",
+          "end": "00:00:29:17"
+        }
+      ]
+    },
+    {
+      "i": 4,
+      "id": "S2-a",
+      "vo_sec": 6.672,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 219,
+      "on_screen_sec": 7.3,
+      "images": [
+        {
+          "image": "S2-a.png",
+          "frames": 219,
+          "start": "00:00:29:17",
+          "end": "00:00:36:26"
+        }
+      ]
+    },
+    {
+      "i": 5,
+      "id": "S2-b",
+      "vo_sec": 2.616,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 97,
+      "on_screen_sec": 3.233,
+      "images": [
+        {
+          "image": "S2-b.png",
+          "frames": 97,
+          "start": "00:00:36:26",
+          "end": "00:00:40:03"
+        }
+      ]
+    },
+    {
+      "i": 6,
+      "id": "S2-c",
+      "vo_sec": 2.88,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 105,
+      "on_screen_sec": 3.5,
+      "images": [
+        {
+          "image": "S2-c.png",
+          "frames": 105,
+          "start": "00:00:40:03",
+          "end": "00:00:43:18"
+        }
+      ]
+    },
+    {
+      "i": 7,
+      "id": "S3-a",
+      "vo_sec": 3.576,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 126,
+      "on_screen_sec": 4.2,
+      "images": [
+        {
+          "image": "S3-a.png",
+          "frames": 126,
+          "start": "00:00:43:18",
+          "end": "00:00:47:24"
+        }
+      ]
+    },
+    {
+      "i": 8,
+      "id": "S3-b",
+      "vo_sec": 3.408,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 121,
+      "on_screen_sec": 4.033,
+      "images": [
+        {
+          "image": "S3-b.png",
+          "frames": 121,
+          "start": "00:00:47:24",
+          "end": "00:00:51:25"
+        }
+      ]
+    },
+    {
+      "i": 9,
+      "id": "S3-c",
+      "vo_sec": 3.792,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 132,
+      "on_screen_sec": 4.4,
+      "images": [
+        {
+          "image": "S3-c.png",
+          "frames": 53,
+          "start": "00:00:51:25",
+          "end": "00:00:53:18"
+        },
+        {
+          "image": "S3-f_grouplaugh.png",
+          "frames": 79,
+          "start": "00:00:53:18",
+          "end": "00:00:56:07"
+        }
+      ]
+    },
+    {
+      "i": 10,
+      "id": "S3-d",
+      "vo_sec": 4.824,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 163,
+      "on_screen_sec": 5.433,
+      "images": [
+        {
+          "image": "S3-d.png",
+          "frames": 163,
+          "start": "00:00:56:07",
+          "end": "00:01:01:20"
+        }
+      ]
+    },
+    {
+      "i": 11,
+      "id": "S3-e",
+      "vo_sec": 2.88,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 105,
+      "on_screen_sec": 3.5,
+      "images": [
+        {
+          "image": "S3-e.png",
+          "frames": 105,
+          "start": "00:01:01:20",
+          "end": "00:01:05:05"
+        }
+      ]
+    },
+    {
+      "i": 12,
+      "id": "S4-a",
+      "vo_sec": 3.312,
+      "pause_in": 0.4,
+      "pause_out": 0.4,
+      "frames": 124,
+      "on_screen_sec": 4.133,
+      "images": [
+        {
+          "image": "S4-a.png",
+          "frames": 124,
+          "start": "00:01:05:05",
+          "end": "00:01:09:09"
+        }
+      ]
+    },
+    {
+      "i": 13,
+      "id": "S4-b",
+      "vo_sec": 3.48,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 123,
+      "on_screen_sec": 4.1,
+      "images": [
+        {
+          "image": "S4-b.png",
+          "frames": 123,
+          "start": "00:01:09:09",
+          "end": "00:01:13:12"
+        }
+      ]
+    },
+    {
+      "i": 14,
+      "id": "S4-c",
+      "vo_sec": 5.64,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 188,
+      "on_screen_sec": 6.267,
+      "images": [
+        {
+          "image": "S4-c_start.png",
+          "frames": 94,
+          "start": "00:01:13:12",
+          "end": "00:01:16:16"
+        },
+        {
+          "image": "S4-c_end.png",
+          "frames": 94,
+          "start": "00:01:16:16",
+          "end": "00:01:19:20"
+        }
+      ]
+    },
+    {
+      "i": 15,
+      "id": "S4-d",
+      "vo_sec": 9.528,
+      "pause_in": 0.2,
+      "pause_out": 1.0,
+      "frames": 322,
+      "on_screen_sec": 10.733,
+      "images": [
+        {
+          "image": "S4-d.png",
+          "frames": 193,
+          "start": "00:01:19:20",
+          "end": "00:01:26:03"
+        },
+        {
+          "image": "S4-e.png",
+          "frames": 129,
+          "start": "00:01:26:03",
+          "end": "00:01:30:12"
+        }
+      ]
+    },
+    {
+      "i": 16,
+      "id": "S5-a",
+      "vo_sec": 2.904,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 106,
+      "on_screen_sec": 3.533,
+      "images": [
+        {
+          "image": "S5-a.png",
+          "frames": 106,
+          "start": "00:01:30:12",
+          "end": "00:01:33:28"
+        }
+      ]
+    },
+    {
+      "i": 17,
+      "id": "S5-b",
+      "vo_sec": 2.568,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 96,
+      "on_screen_sec": 3.2,
+      "images": [
+        {
+          "image": "S5-b.png",
+          "frames": 96,
+          "start": "00:01:33:28",
+          "end": "00:01:37:04"
+        }
+      ]
+    },
+    {
+      "i": 18,
+      "id": "S5-c",
+      "vo_sec": 3.576,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 126,
+      "on_screen_sec": 4.2,
+      "images": [
+        {
+          "image": "S5-c.png",
+          "frames": 126,
+          "start": "00:01:37:04",
+          "end": "00:01:41:10"
+        }
+      ]
+    },
+    {
+      "i": 19,
+      "id": "S5-d",
+      "vo_sec": 7.56,
+      "pause_in": 0.2,
+      "pause_out": 0.4,
+      "frames": 245,
+      "on_screen_sec": 8.167,
+      "images": [
+        {
+          "image": "S5-d.png",
+          "frames": 245,
+          "start": "00:01:41:10",
+          "end": "00:01:49:15"
+        }
+      ]
+    },
+    {
+      "i": 20,
+      "id": "S5-e",
+      "vo_sec": 12.432,
+      "pause_in": 0.2,
+      "pause_out": 0.7,
+      "frames": 400,
+      "on_screen_sec": 13.333,
+      "images": [
+        {
+          "image": "S5-e.png",
+          "frames": 400,
+          "start": "00:01:49:15",
+          "end": "00:02:02:25"
+        }
+      ]
+    },
+    {
+      "i": 21,
+      "id": "S6",
+      "vo_sec": 19.68,
+      "pause_in": 0.4,
+      "pause_out": 0.4,
+      "frames": 615,
+      "on_screen_sec": 20.5,
+      "images": [
+        {
+          "image": "S6_calm.png",
+          "frames": 615,
+          "start": "00:02:02:25",
+          "end": "00:02:23:10"
+        }
+      ]
+    },
+    {
+      "i": 22,
+      "id": "S7-a",
+      "vo_sec": 12.6,
+      "pause_in": 0.3,
+      "pause_out": 0.4,
+      "frames": 399,
+      "on_screen_sec": 13.3,
+      "images": [
+        {
+          "image": "S7-a.png",
+          "frames": 399,
+          "start": "00:02:23:10",
+          "end": "00:02:36:19"
+        }
+      ]
+    },
+    {
+      "i": 23,
+      "id": "S7-b",
+      "vo_sec": 9.192,
+      "pause_in": 0.2,
+      "pause_out": 0.6,
+      "frames": 300,
+      "on_screen_sec": 10.0,
+      "images": [
+        {
+          "image": "endcard.mp4 (video)",
+          "frames": 300,
+          "start": "00:02:36:19",
+          "end": "00:02:46:19"
+        }
+      ]
+    }
+  ]
+}

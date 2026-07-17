@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; }
+      body { font-family: "Segoe UI", system-ui, -apple-system, sans-serif; }
+      #root { position: relative; width: 1080px; height: 1920px;
+        background: radial-gradient(120% 90% at 50% 34%, #16224e 0%, #0b1230 46%, #060a1c 100%); }
+      /* soft brand-blue glow behind the mark */
+      #glow { position: absolute; left: 50%; top: 560px; width: 900px; height: 900px;
+        transform: translate(-50%, -50%); border-radius: 50%;
+        background: radial-gradient(circle, rgba(46,107,255,0.55) 0%, rgba(46,107,255,0.18) 38%, rgba(46,107,255,0) 66%);
+        filter: blur(6px); }
+      /* faint concentric ring accent */
+      #ring { position: absolute; left: 50%; top: 560px; width: 760px; height: 760px;
+        transform: translate(-50%, -50%); border-radius: 50%;
+        border: 2px solid rgba(120,160,255,0.16); }
+      #logowrap { position: absolute; left: 50%; top: 560px; transform: translate(-50%, -50%);
+        width: 360px; height: 360px; border-radius: 84px; overflow: hidden;
+        box-shadow: 0 40px 90px rgba(0,0,0,0.55), 0 0 0 2px rgba(255,255,255,0.10) inset;
+        outline: 3px solid rgba(255,255,255,0.14); background: #2E6BFF; }
+      #logo { width: 360px; height: 360px; display: block; }
+      /* one-pass gloss sweep across the mark */
+      #shine { position: absolute; top: -40%; left: -60%; width: 55%; height: 180%;
+        transform: rotate(18deg);
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+        mix-blend-mode: screen; }
+      #wordmark { position: absolute; left: 0; right: 0; top: 900px; text-align: center;
+        color: #ffffff; font-size: 132px; font-weight: 800; letter-spacing: -2px; }
+      #wordmark b { color: #6E9BFF; font-weight: 800; }
+      #tag { position: absolute; left: 0; right: 0; top: 1078px; text-align: center;
+        color: #aebfe6; font-size: 42px; font-weight: 500; letter-spacing: 0.5px; }
+      #cta { position: absolute; left: 0; right: 0; bottom: 190px; text-align: center;
+        color: #e7eefc; font-size: 40px; font-weight: 600; letter-spacing: 3px; }
+      #cta span { color: #6E9BFF; margin: 0 18px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="10"
+         data-width="1080" data-height="1920" data-fps="30">
+      <div id="glow"></div>
+      <div id="ring"></div>
+      <div id="logowrap">
+        <img id="logo" src="logo.png" alt="ZebPay" />
+        <div id="shine"></div>
+      </div>
+      <div id="wordmark">Zeb<b>Pay</b></div>
+      <div id="tag">India's oldest crypto exchange</div>
+      <div id="cta">Like<span>&middot;</span>Share<span>&middot;</span>Subscribe</div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from("#glow", { opacity: 0, scale: 0.8, duration: 1.2, ease: "power2.out" }, 0)
+        .from("#ring", { opacity: 0, scale: 0.7, duration: 1.4, ease: "power2.out" }, 0.1)
+        .from("#logowrap", { opacity: 0, scale: 0.5, y: -40, duration: 1.0, ease: "back.out(1.6)" }, 0.4)
+        .fromTo("#shine", { x: -520, opacity: 0 }, { x: 620, opacity: 1, duration: 1.0, ease: "power2.inOut" }, 1.35)
+        .from("#wordmark", { opacity: 0, y: 52, duration: 0.8, ease: "power3.out" }, 1.4)
+        .from("#tag", { opacity: 0, y: 26, duration: 0.7, ease: "power3.out" }, 2.0)
+        .from("#cta", { opacity: 0, y: 22, duration: 0.7, ease: "power3.out" }, 3.0)
+        // ambient life for the rest of the hold
+        .to("#logowrap", { y: "+=14", duration: 2.2, ease: "sine.inOut", repeat: 3, yoyo: true }, 1.7)
+        .to("#glow", { scale: 1.08, opacity: 0.85, duration: 2.0, ease: "sine.inOut", repeat: 3, yoyo: true }, 1.5);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

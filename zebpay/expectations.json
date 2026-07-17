@@ -1,0 +1,358 @@
+{
+  "project": "ZebPay SIP - The Squirrel in Ram Setu",
+  "engine": "seedance_2_0_i2v",
+  "model_note": "Seedance 2.0 image-to-video on Higgsfield, SILENT (generate_audio=false). No dialogue, no lip-sync on any clip. Every Mode C shot = locked START keyframe (+ optional END keyframe) + one prompted camera move + attach ONLY the character(s) in that shot.",
+  "fps": 24,
+  "wxh": "1080x1920",
+  "aspect": "9:16",
+  "silent": true,
+  "vo": "single external ElevenLabs Indian-English narrator track, verbatim from 00_input_script_HUMAN.md, added in the edit (NOT per-clip)",
+  "reel_note": "reel_approx windows are an APPROXIMATE pacing proposal only. The VO is one continuous unedited track; final per-shot durations are set at timeline assembly. Do not fail a shot on reel timing alone.",
+  "definition_of_done": "PASS = zero FAILED blocker criteria across all shots AND the final-timeline blockers. MAJOR fails are triaged by the Director (fix vs accept). MINOR fails are polish. Every needs-human criterion (motion smoothness, identity-drift-through-motion, contact/no-fuse, exact stripe-stability, VO quality) MUST be confirmed by the video-reviewer's AV senses (Higgsfield video-analysis for motion, Whisper/UTMOS for the VO) on playback; stills alone cannot close them. A shot with any unresolved needs-human blocker is NOT done.",
+  "severity_legend": {
+    "blocker": "ship-stopper: wrong/broken hero identity, fused/melted contact, morph where a locked still was specced, garbled legible text, wrong brand logo, wrong/garbled VO. Batch or ad is unshippable.",
+    "major": "visible defect likely in photoreal; should fix; Director may accept with reason.",
+    "minor": "polish / cheap insurance."
+  },
+  "checkable_legend": {
+    "frame": "provable from one or more stills / the bible sheet / the attached reference (reviewer cites the frame).",
+    "needs-human": "requires playback or ear: motion smoothness, jitter/flicker, morph-through-motion, contact-zone fuse, identity drift across the clip, exact stripe stability, VO quality. Stills and transcripts cannot prove it. The video-reviewer confirms via Higgsfield video-analysis / Whisper / UTMOS."
+  },
+  "global_mode_c_criteria": [
+    {"id": "G-aspect", "dim": "spatial", "text": "frame is native 9:16 vertical (1080x1920), full-frame, no letterbox/pillarbox/stretch.", "severity": "major", "method": "frame@any", "checkable": "frame"},
+    {"id": "G-photoreal", "dim": "spatial", "text": "photoreal grounded-mythic texture per the direction bible (weathered stone, hand-forged metal, real fabric weave, dust/ember/spray, skin pores, fine fur, film grain). Does NOT read as smooth/plasticky/over-rendered/uncanny CGI or illustration.", "severity": "major", "method": "frame@mid", "checkable": "frame"},
+    {"id": "G-no-burned-text", "dim": "spatial", "text": "NO model-burned words/letters/captions/subtitles/watermarks/UI anywhere in frame (Seedance in-video text is unreliable; all text is Mode B).", "severity": "major", "method": "frame@start,mid,end", "checkable": "frame"},
+    {"id": "G-warm-grade", "dim": "spatial", "text": "warm golden-hour, high-contrast grade with crushed true blacks and protected warm highlights (Nolan warm register). Not cool/desaturated, not flat/washed.", "severity": "minor", "method": "frame@mid", "checkable": "frame"},
+    {"id": "G-clean-firstframe", "dim": "spatial", "text": "the START/first frame is clean: no pre-existing warped hand, extra/fused digit, asymmetric/melted face, or artifact that motion will amplify (Seedance faithfully amplifies first-frame defects).", "severity": "major", "method": "frame@0", "checkable": "frame"},
+    {"id": "G-one-move", "dim": "temporal", "text": "EXACTLY the one specced camera move for this shot; the model invented NO second move (no added pan/zoom/orbit/tilt beyond the one specced).", "severity": "major", "method": "motion", "checkable": "needs-human"},
+    {"id": "G-smooth", "dim": "temporal", "text": "smooth, constant-speed motion; no jitter, no temporal flicker, no strobing brightness, no speed ramp the spec did not call for.", "severity": "major", "method": "motion", "checkable": "needs-human"},
+    {"id": "G-no-artifact", "dim": "temporal", "text": "no melt/morph/smear of subject or props through the motion; no extra or fused limbs/digits; hands/paws not warped; no object pops in or out of existence.", "severity": "major", "method": "motion", "checkable": "needs-human"}
+  ],
+  "final_timeline_criteria": [
+    {"id": "F-vo-verbatim", "dim": "semantic", "text": "the single VO track speaks the EXACT frozen script (00_input_script_HUMAN.md), in order, verbatim, nothing added/dropped/reworded.", "severity": "blocker", "method": "transcribe/audio", "checkable": "needs-human"},
+    {"id": "F-vo-clean", "dim": "semantic", "text": "no voiced punctuation: the ellipsis in 'And... decided to make a point of it' is a PAUSE, not spoken 'dot dot dot'; no garbled dash/hyphen artifacts; clean Indian-English pronunciation.", "severity": "blocker", "method": "audio", "checkable": "needs-human"},
+    {"id": "F-vo-consistent", "dim": "temporal", "text": "ONE consistent narrator voice across the entire ad (not multiple voices; the reason Seedance native audio was rejected).", "severity": "blocker", "method": "audio", "checkable": "needs-human"},
+    {"id": "F-music-headroom", "dim": "spatial", "text": "music bed present per the scored arc (Zimmer/Rahman mythic orchestral), sits UNDER the VO so narration stays intelligible; no lyrics with words.", "severity": "major", "method": "audio", "checkable": "needs-human"},
+    {"id": "F-captions", "dim": "spatial", "text": "IF karaoke/captions are burned in the final, they render the exact script, correctly spelled, placed clear of the subject/logo; and NO stray Seedance-burned text survives from any clip.", "severity": "major", "method": "final-only", "checkable": "frame"},
+    {"id": "F-vo-shot-sync", "dim": "temporal", "text": "VO sentences land over their intended shots per the pacing proposal (alignment reads natural; no line orphaned over the wrong visual).", "severity": "minor", "method": "audio+timeline", "checkable": "needs-human"}
+  ],
+  "scenes": [
+    {
+      "shot": "S1-a", "scene": "S1", "mode": "C", "reel_approx": [0.0, 6.0],
+      "line": "Across this ocean waited a battle for dharma. Sita had to be brought home. Ravana had to fall.",
+      "intent": "PILOT + establish. A lone divine hero (Rama) before a vast sea; sets the reverent, mythic register. Confirms both the Rama drift ceiling AND that a photoreal deity face clears the Seedance content filter before any other Rama shot is batched.",
+      "refs": ["Rama multi-angle bible sheet"], "risk": "med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S1a-identity-bible", "dim": "spatial", "text": "Rama's face, crown, jewelry, skin tone and attire MATCH the Rama bible sheet (matched to the SHEET, never re-derived from this or any video frame). This shot does NOT define the lock; the sheet does.", "severity": "blocker", "method": "frame@0 vs Rama bible sheet", "checkable": "frame"},
+        {"id": "S1a-drift", "dim": "temporal", "text": "no visible Rama identity drift through the push-in: face structure, crown, jewelry and skin tone stable start-to-end (within the drift ceiling; any morph of facial features = FAIL).", "severity": "blocker", "method": "frames:start-vs-end + motion", "checkable": "needs-human"},
+        {"id": "S1a-filter", "dim": "semantic", "text": "the photoreal deity face rendered intact and was NOT blocked, blurred, or mangled by the Seedance content filter (pilot gate: if the face is filtered/garbled, STOP and re-approach before batching other Rama shots).", "severity": "blocker", "method": "frame@0,mid,end (face intact) + generation-success", "checkable": "frame"},
+        {"id": "S1a-props", "dim": "spatial", "text": "Dhanush (bow) present in Rama's hand, correct single form, not warped/duplicated/floating.", "severity": "major", "method": "frame@0,end", "checkable": "frame"},
+        {"id": "S1a-framing", "dim": "spatial", "text": "heroic wide, low angle, Rama centered at full-height with headroom, at the shore facing the sea/horizon.", "severity": "major", "method": "frame@0", "checkable": "frame"},
+        {"id": "S1a-move", "dim": "temporal", "text": "single slow push-in only; hair and cloth drift in wind; no invented second move.", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S1a-register", "dim": "semantic", "text": "reads reverent / heroic / solemn (god-ray backlight, divine gravitas), NOT menacing, stern or casual. Beat reads (a divine hero before a vast sea) without the VO.", "severity": "major", "method": "frame@mid", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S1-b", "scene": "S1", "mode": "C", "reel_approx": [6.0, 10.0],
+      "line": "And to get there, an army would build what had never been built before. A bridge across the sea.",
+      "intent": "Scale: a massed vanara army gathered behind Rama; the impossible task about to begin.",
+      "refs": ["vanara (crowd, loose, distant)"], "risk": "low",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S1b-subject", "dim": "spatial", "text": "a massed vanara crowd (thousands) gathered on the shore behind Rama; reads as one determined army.", "severity": "major", "method": "frame@0", "checkable": "frame"},
+        {"id": "S1b-crowd-faces", "dim": "spatial", "text": "crowd kept distant and loose; NO individual non-human vanara face brought to macro (photoreal non-human crowd faces warp up close).", "severity": "major", "method": "frame@end", "checkable": "frame"},
+        {"id": "S1b-one-move", "dim": "temporal", "text": "EXACTLY one move = a single slow aerial pull-back. NOT a crane-up-plus-dolly-back two-move (audit finding 6). Any second move = FAIL.", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S1b-scale", "dim": "semantic", "text": "the pull-back reveals scale (army + worksite widening into frame); the beat reads as 'a vast impossible build begins' without the VO.", "severity": "minor", "method": "frames:start-vs-end", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S1-c", "scene": "S1", "mode": "C", "reel_approx": [10.0, 14.0],
+      "line": "Stone by stone. Boulder by boulder. Each one marked with Ram's name, and his faith.",
+      "intent": "Work begins in force: a single boulder hurled, thunderous splash.",
+      "refs": ["none (or vanara arms at frame edge); attach bridge-state ref (empty sea / first boulders)"], "risk": "med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S1c-no-name-text", "dim": "spatial", "text": "NO legible 'Ram's name' or any readable letters/script on any boulder (Seedance garbles text; the VO carries the name). Any marking must be illegible/distant or absent; a legible burned name = FAIL.", "severity": "blocker", "method": "frame@0,mid,end", "checkable": "frame"},
+        {"id": "S1c-subject", "dim": "spatial", "text": "a single large boulder arcing, ending on a large water-splash plume at sea impact.", "severity": "major", "method": "frames:start-vs-end", "checkable": "frame"},
+        {"id": "S1c-object-survival", "dim": "temporal", "text": "the boulder stays large and readable through the arc; it does NOT vanish, tear, or float mid-flight (fast-motion + water-physics failure).", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S1c-splash-physics", "dim": "temporal", "text": "the splash reads as real water physics (rising plume), not a torn/smeared/frozen sheet or a melting artifact.", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S1c-framing", "dim": "temporal", "text": "wide, eye level, static with only a slight tilt following the arc (one move).", "severity": "minor", "method": "motion", "checkable": "needs-human"}
+      ]
+    },
+    {
+      "shot": "S2-a", "scene": "S2", "mode": "C", "reel_approx": [14.0, 18.0],
+      "line": "And in the middle of all that grandeur, something much smaller had also arrived.",
+      "intent": "Establish the squirrel: tiny, humble, watching the giants work. Sets the squirrel identity read.",
+      "refs": ["squirrel bible sheet"], "risk": "med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S2a-identity", "dim": "spatial", "text": "the squirrel MATCHES the squirrel bible sheet: Indian palm squirrel, correct body/face/proportion; three faint stripes present and correctly placed (matched to the sheet, not a video frame).", "severity": "major", "method": "frame@0 vs squirrel bible sheet", "checkable": "frame"},
+        {"id": "S2a-stripes", "dim": "spatial", "text": "three stripes present at the correct positions per bible (this is the baseline for later stripe-stability checks).", "severity": "major", "method": "frame@0", "checkable": "frame"},
+        {"id": "S2a-scale", "dim": "spatial", "text": "squirrel small in frame against the vast construction (scale contrast, small-creature POV).", "severity": "major", "method": "frame@0", "checkable": "frame"},
+        {"id": "S2a-move", "dim": "temporal", "text": "wide-to-medium, low/eye level, single slow push-in; small head turn toward the work; no second move.", "severity": "minor", "method": "motion", "checkable": "needs-human"},
+        {"id": "S2a-register", "dim": "semantic", "text": "reads curious / humble / a small arrival amid grandeur, NOT a cartoon/comic mascot.", "severity": "minor", "method": "frame@mid", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S2-b", "scene": "S2", "mode": "C", "reel_approx": [18.0, 20.5],
+      "line": "It couldn't carry boulders.",
+      "intent": "The squirrel picks up a tiny pebble, straining at the weight: it does what it can.",
+      "refs": ["squirrel bible sheet"], "risk": "low-med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S2b-identity", "dim": "temporal", "text": "squirrel identity and three stripes stable through the motion, matching S2-a / bible; no drift.", "severity": "major", "method": "frames:start-vs-end", "checkable": "needs-human"},
+        {"id": "S2b-pebble", "dim": "temporal", "text": "a single small pebble present, ending held in the squirrel's mouth; the pebble does NOT vanish, float, or duplicate.", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S2b-action", "dim": "semantic", "text": "reads as a pick-up with a slight strain (the weight), not an effortless grab.", "severity": "major", "method": "frames:start-vs-end", "checkable": "frame"},
+        {"id": "S2b-framing", "dim": "spatial", "text": "medium close-up, eye level, gentle push-in, telephoto shallow DoF, squirrel large.", "severity": "minor", "method": "frame@0", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S2-c", "scene": "S2", "mode": "C", "reel_approx": [20.5, 22.0],
+      "line": "So it carried what it could.",
+      "intent": "The squirrel places the pebble carefully into a gap between two boulders.",
+      "refs": ["squirrel bible sheet", "bridge-state ref (first boulders)"], "risk": "low-med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S2c-identity", "dim": "temporal", "text": "squirrel identity and stripes stable vs bible through the motion.", "severity": "major", "method": "frames:start-vs-end", "checkable": "needs-human"},
+        {"id": "S2c-pebble", "dim": "temporal", "text": "the pebble goes from the squirrel's mouth into the gap between two boulders; set into the gap by the end; does not vanish/warp.", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S2c-action", "dim": "semantic", "text": "reads as careful placement, then the squirrel drawing back.", "severity": "major", "method": "frames:start-vs-end", "checkable": "frame"},
+        {"id": "S2c-bridge-state", "dim": "spatial", "text": "the boulder gap matches the attached bridge-state reference (same evolving structure).", "severity": "major", "method": "frame@0 vs bridge-state ref", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S3-a", "scene": "S3", "mode": "C", "reel_approx": [22.0, 25.0],
+      "line": "Of course, one of the vanaras noticed.",
+      "intent": "The squirrel again at the gap with its pebble, focused: sets up the mockery.",
+      "refs": ["squirrel bible sheet"], "risk": "low-med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S3a-identity", "dim": "temporal", "text": "squirrel identity and stripes stable through the motion.", "severity": "major", "method": "frames:start-vs-end", "checkable": "needs-human"},
+        {"id": "S3a-pebble", "dim": "temporal", "text": "pebble in mouth nudged toward the gap; survives (no vanish/warp).", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S3a-framing", "dim": "spatial", "text": "close-up, eye level, gentle push-in, telephoto, squirrel large.", "severity": "minor", "method": "frame@0", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S3-b", "scene": "S3", "mode": "C", "reel_approx": [25.0, 29.0],
+      "line": "And... decided to make a point of it.",
+      "intent": "Establish the boastful lead vanara: hoists a massive boulder, flexes, glares down. Playful-mockery register.",
+      "refs": ["lead vanara bible sheet"], "risk": "low-med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S3b-identity", "dim": "spatial", "text": "the lead vanara MATCHES the vanara bible sheet (this shot establishes the vanara lock; keep it for S3-c continuity).", "severity": "major", "method": "frame@0 vs vanara bible sheet", "checkable": "frame"},
+        {"id": "S3b-action", "dim": "temporal", "text": "hoists a massive boulder onto the shoulder and flexes; the boulder does not warp/float/vanish through the lift.", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S3b-framing", "dim": "spatial", "text": "medium wide, low angle (he looms), slow push-in, harder chiaroscuro.", "severity": "major", "method": "frame@0", "checkable": "frame"},
+        {"id": "S3b-hands", "dim": "spatial", "text": "hands/fingers gripping the boulder are anatomically correct: no warp, no extra/fused digits.", "severity": "major", "method": "frame@mid,end", "checkable": "frame"},
+        {"id": "S3b-register", "dim": "semantic", "text": "reads as boastful show-off / playful mockery (comedic bravado, glaring down), NOT heroic-divine and NOT horror-menace.", "severity": "major", "method": "frame@mid", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S3-c", "scene": "S3", "mode": "C", "reel_approx": [29.0, 32.0],
+      "line": "He made sure everyone laughed with him.",
+      "intent": "The same vanara grins, a boulder in each hand, chest out: the crowd-pleasing boast.",
+      "refs": ["lead vanara bible sheet (SAME as S3-b)"], "risk": "low-med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S3c-identity", "dim": "temporal", "text": "reads as the SAME lead vanara as S3-b (same reference, similar framing): face/build/attire continuous across the two beats.", "severity": "major", "method": "frame@0 vs S3-b", "checkable": "needs-human"},
+        {"id": "S3c-action", "dim": "semantic", "text": "a boulder raised in each hand, broad grin, chest out.", "severity": "major", "method": "frames:start-vs-end", "checkable": "frame"},
+        {"id": "S3c-hands", "dim": "spatial", "text": "both hands grip a boulder each: not warped/fused, no extra digits.", "severity": "major", "method": "frame@end", "checkable": "frame"},
+        {"id": "S3c-register", "dim": "semantic", "text": "playful-mockery grin (comedic), NOT menace/threat.", "severity": "major", "method": "frame@mid", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S3-d", "scene": "S3", "mode": "C", "reel_approx": [32.0, 35.0],
+      "line": "Even the babies were outdoing it without breaking a sweat.",
+      "intent": "Comic contrast: a baby vanara strolls past, casually carrying a decent stone, unbothered.",
+      "refs": ["baby vanara ref"], "risk": "low",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S3d-identity", "dim": "spatial", "text": "a baby vanara (matches the baby vanara ref), carrying a decent-sized stone.", "severity": "major", "method": "frame@0 vs baby vanara ref", "checkable": "frame"},
+        {"id": "S3d-action", "dim": "temporal", "text": "strolls across frame mid-stride, casual/unbothered; the stone is stable (no vanish/warp).", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S3d-framing", "dim": "temporal", "text": "medium wide, eye level, single slow tracking move with the stroll.", "severity": "minor", "method": "motion", "checkable": "needs-human"},
+        {"id": "S3d-register", "dim": "semantic", "text": "reads casual/effortless (comic contrast to the squirrel's strain), not straining.", "severity": "minor", "method": "frame@mid", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S3-e", "scene": "S3", "mode": "C", "reel_approx": [35.0, 38.0],
+      "line": "Naturally, nobody clapped.",
+      "intent": "HIGH-RISK comedy peak: the vanara holds the squirrel's pebble at the squirrel's face and flicks it away, deadpan. Tight two-subject frame. Pilot with a slightly larger stone and a slow short flick; two-shot cutaway is the fallback.",
+      "refs": ["lead vanara bible sheet", "squirrel bible sheet"], "risk": "high",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S3e-two-identity", "dim": "spatial", "text": "BOTH identities intact and UN-BLENDED in the shared tight frame: the lead vanara (fingers/face) matches the vanara bible AND the squirrel matches the squirrel bible; no hybrid/merged creature.", "severity": "blocker", "method": "frame@0,mid,end", "checkable": "frame"},
+        {"id": "S3e-stone-survival", "dim": "temporal", "text": "the pinched stone SURVIVES the flick: present pinched at the squirrel's face in the start, still large and near-frame mid-arc at the end; it does NOT vanish, warp, or smear (fast small-object failure, the #1 risk of this shot).", "severity": "blocker", "method": "motion", "checkable": "needs-human"},
+        {"id": "S3e-no-blend-motion", "dim": "temporal", "text": "no identity blend or morph between the vanara and the squirrel THROUGH the motion (contact-proximity morph).", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S3e-framing", "dim": "spatial", "text": "tight two-shot, macro-telephoto, the vanara's fingers and the squirrel's face share the frame; eye level; static with a slight tilt on the flick (one move).", "severity": "major", "method": "frame@0", "checkable": "frame"},
+        {"id": "S3e-hands", "dim": "spatial", "text": "the vanara's flicking fingers are not warped, no extra/fused digits.", "severity": "major", "method": "frame@mid", "checkable": "frame"},
+        {"id": "S3e-register", "dim": "semantic", "text": "deadpan/flat vanara plus the squirrel's small reaction: comedic dismissal (nobody clapped), NOT cruel or horror.", "severity": "major", "method": "frame@end", "checkable": "frame"},
+        {"id": "S3e-fallback-flag", "dim": "temporal", "text": "PROCESS: if the stone warps/vanishes or the identities blend by attempt 2, this must fall back to the two-shot cutaway (macro insert of fingers flicking a stone, no squirrel + a separate squirrel-reaction cutaway). Flag, do not force-pass a broken tight take.", "severity": "minor", "method": "motion", "checkable": "needs-human"}
+      ]
+    },
+    {
+      "shot": "S4-a", "scene": "S4", "mode": "C", "reel_approx": [38.0, 41.0],
+      "line": "But someone else was watching too.",
+      "intent": "Rama reappears and notices the squirrel; the register turns warm/reverent. Identity MUST match his Scene-1 appearance.",
+      "refs": ["Rama bible sheet (1 to 3 most consistent refs; NEVER re-derive from the S1-a video frame)"], "risk": "med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S4a-identity-bible", "dim": "spatial", "text": "Rama matches the Rama bible sheet (face/crown/jewelry/skin tone/attire), matched to the SHEET, not to any video frame.", "severity": "blocker", "method": "frame@0 vs Rama bible sheet", "checkable": "frame"},
+        {"id": "S4a-identity-match-s1a", "dim": "semantic", "text": "reads as the SAME Rama as S1-a (continuous crown, face, attire, skin tone) so his reappearance is unbroken.", "severity": "blocker", "method": "frame@0 vs S1-a start frame", "checkable": "needs-human"},
+        {"id": "S4a-drift", "dim": "temporal", "text": "no Rama identity drift through the push-in (within ceiling); any facial-feature morph = FAIL.", "severity": "blocker", "method": "frames:start-vs-end + motion", "checkable": "needs-human"},
+        {"id": "S4a-props", "dim": "spatial", "text": "bow in hand present, correct single form, not warped/duplicated.", "severity": "major", "method": "frame@0", "checkable": "frame"},
+        {"id": "S4a-framing", "dim": "spatial", "text": "medium, eye level, slow push-in, telephoto isolating Rama, god-ray backlight; eyeline settles down toward the squirrel.", "severity": "major", "method": "frame@0", "checkable": "frame"},
+        {"id": "S4a-register", "dim": "semantic", "text": "reads reverent / warm / quietly watching (the divine notices the humble), NOT stern or menacing.", "severity": "major", "method": "frame@mid", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S4-b", "scene": "S4", "mode": "C", "reel_approx": [41.0, 44.0],
+      "line": "And he wasn't looking at the boulders.",
+      "intent": "Rama walks toward the squirrel; the laughter fades. Identity must survive the walk.",
+      "refs": ["Rama bible sheet"], "risk": "med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S4b-identity", "dim": "temporal", "text": "Rama identity and attire stable through the walk vs the bible / S1-a; no drift across the tracking move.", "severity": "blocker", "method": "frames:start-vs-end + motion", "checkable": "needs-human"},
+        {"id": "S4b-gait", "dim": "temporal", "text": "natural walking motion; legs/feet not warped; no melt/morph through the tracking move.", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S4b-framing", "dim": "temporal", "text": "medium wide, eye level, single slow tracking move with him, telephoto.", "severity": "minor", "method": "motion", "checkable": "needs-human"},
+        {"id": "S4b-action", "dim": "semantic", "text": "reads as Rama walking toward the squirrel and beginning to lower.", "severity": "major", "method": "frames:start-vs-end", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S4-c", "scene": "S4", "mode": "C", "reel_approx": [44.0, 48.0],
+      "line": "He was looking at the only one who showed up without being asked to.",
+      "intent": "HARDEST shot (pilot first). Rama's flat palm on the ground with the squirrel already at its edge; the palm lifts slightly as the squirrel settles in. Macro on the hands, Rama's FACE OUT of frame. Small settle, NOT a ground-to-palm teleport.",
+      "refs": ["Rama (hands only)", "squirrel bible sheet"], "risk": "high",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S4c-no-fuse", "dim": "temporal", "text": "the squirrel sits IN/at the palm as a SEPARATE body; palm and squirrel do NOT fuse, melt, or merge at the contact zone at any point.", "severity": "blocker", "method": "motion", "checkable": "needs-human"},
+        {"id": "S4c-small-settle", "dim": "temporal", "text": "the motion is a small settle-and-slight-lift (squirrel already at the palm edge in the start frame); NOT a ground-to-palm teleport/jump (large layout delta = the confirmed morph driver).", "severity": "blocker", "method": "frames:start-vs-end + motion", "checkable": "needs-human"},
+        {"id": "S4c-face-oof", "dim": "spatial", "text": "Rama's FACE is OUT of frame the whole clip (macro on the hands only); if a Rama face enters frame = FAIL (there must be no face to drift).", "severity": "blocker", "method": "frame@0,mid,end", "checkable": "frame"},
+        {"id": "S4c-hands", "dim": "spatial", "text": "Rama's hand/palm/fingers anatomically correct: not warped, no extra/fused digits, no floating detached fingers.", "severity": "blocker", "method": "frame@0,mid,end", "checkable": "frame"},
+        {"id": "S4c-squirrel-identity", "dim": "temporal", "text": "the squirrel and its stripes stay intact and un-morphed at the palm.", "severity": "major", "method": "frames:start-vs-end", "checkable": "needs-human"},
+        {"id": "S4c-framing", "dim": "spatial", "text": "macro on the hands, eye level, very slow push-in, telephoto shallow DoF.", "severity": "major", "method": "frame@0", "checkable": "frame"},
+        {"id": "S4c-register", "dim": "semantic", "text": "reads tender / reverent contact (the chosen one held gently), not clinical or awkward.", "severity": "major", "method": "frame@end", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S4-d", "scene": "S4", "mode": "C", "reel_approx": [48.0, 52.0],
+      "line": "Some bridges are built with strength. Some are built with heart. The wise ones know you need both.",
+      "intent": "Rama's two fingers stroke down the squirrel's back. The three stripes stay faint and STABLE in-clip; the brightening reveal is a Mode B post overlay, NOT a generated in-clip morph.",
+      "refs": ["Rama (hand only)", "squirrel bible sheet"], "risk": "med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S4d-stripes-stable", "dim": "temporal", "text": "the three stripes stay STABLE and unchanged in-clip: NO in-clip stripe morph, brighten, grow, or reveal (the reveal is a Mode B post overlay). If the stripes animate/change within the generated clip = FAIL.", "severity": "blocker", "method": "frames:start-vs-end + motion", "checkable": "needs-human"},
+        {"id": "S4d-no-smear", "dim": "temporal", "text": "the fur/back texture along the stroke path does NOT smear (named motion-blur feature-smear artifact).", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S4d-face-oof", "dim": "spatial", "text": "Rama's face is OUT of frame (extreme close-up on the back + fingers only).", "severity": "major", "method": "frame@0,mid,end", "checkable": "frame"},
+        {"id": "S4d-hands", "dim": "spatial", "text": "the two fingers / hand are not warped, no extra digits.", "severity": "major", "method": "frame@mid", "checkable": "frame"},
+        {"id": "S4d-squirrel-identity", "dim": "temporal", "text": "the squirrel's back/coat matches the bible; no identity morph through the stroke.", "severity": "major", "method": "frames:start-vs-end", "checkable": "needs-human"},
+        {"id": "S4d-action", "dim": "semantic", "text": "reads as two fingers stroking gently down the back (single micro push-in).", "severity": "major", "method": "frames:start-vs-end", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S5-a", "scene": "S5", "mode": "C", "reel_approx": [52.0, 54.0],
+      "line": "Some days the sea was calm.",
+      "intent": "Montage beat 1: on a calm sea the squirrel returns and picks up a pebble.",
+      "refs": ["squirrel bible sheet"], "risk": "low-med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S5a-identity", "dim": "temporal", "text": "squirrel identity and stripes stable through the motion.", "severity": "major", "method": "frames:start-vs-end", "checkable": "needs-human"},
+        {"id": "S5a-sea-state", "dim": "spatial", "text": "calm/still water reads (matches 'some days the sea was calm'); clear contrast to S5-b.", "severity": "major", "method": "frame@0", "checkable": "frame"},
+        {"id": "S5a-pebble", "dim": "temporal", "text": "ends with a pebble in the squirrel's mouth; the pebble survives (no vanish/float).", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S5a-framing", "dim": "spatial", "text": "medium, low/eye level, slow tracking, telephoto, squirrel large.", "severity": "minor", "method": "frame@0", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S5-b", "scene": "S5", "mode": "C", "reel_approx": [54.0, 56.0],
+      "line": "Some days it wasn't.",
+      "intent": "Montage beat 2: on a rough sea the squirrel struggles through the waves and still goes. Small-subject-in-water float risk.",
+      "refs": ["squirrel bible sheet"], "risk": "med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S5b-identity", "dim": "temporal", "text": "squirrel identity and stripes stable in the water; no morph through the surf.", "severity": "major", "method": "frames:start-vs-end", "checkable": "needs-human"},
+        {"id": "S5b-no-float", "dim": "temporal", "text": "the squirrel's paws stay visibly in contact with wet sand/rock; it does NOT read as floating or disappearing in the surf (named small-subject-in-water failure).", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S5b-sea-state", "dim": "spatial", "text": "rough surf / waves read (clear contrast to the calm S5-a).", "severity": "major", "method": "frame@0", "checkable": "frame"},
+        {"id": "S5b-action", "dim": "semantic", "text": "struggles forward and reaches firmer ground with spray; reads as effort-but-still-goes.", "severity": "major", "method": "frames:start-vs-end", "checkable": "needs-human"}
+      ]
+    },
+    {
+      "shot": "S5-c", "scene": "S5", "mode": "C", "reel_approx": [56.0, 58.0],
+      "line": "The squirrel never waited for the right day.",
+      "intent": "Montage beat 3: the squirrel wedges a pebble into the lengthening pebble line.",
+      "refs": ["squirrel bible sheet", "bridge-state ref (half-built + pebble line)"], "risk": "low-med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S5c-identity", "dim": "temporal", "text": "squirrel identity and stripes stable through the motion.", "severity": "major", "method": "frames:start-vs-end", "checkable": "needs-human"},
+        {"id": "S5c-pebble-line", "dim": "temporal", "text": "a lengthening line of same-size pebbles; the new pebble is wedged in and survives (no vanish/warp).", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S5c-bridge-state", "dim": "spatial", "text": "matches the attached bridge-state ref (half-built + pebble line).", "severity": "major", "method": "frame@0 vs bridge-state ref", "checkable": "frame"},
+        {"id": "S5c-action", "dim": "semantic", "text": "reads as wedging the pebble in, then drawing back.", "severity": "major", "method": "frames:start-vs-end", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S5-d", "scene": "S5", "mode": "C", "reel_approx": [58.0, 60.0],
+      "line": "It didn't matter if the tide was high or low that day. The pebble went in anyway.",
+      "intent": "The growing bridge: boulders on one side, a lengthening line of same-size pebbles wedged between them. Slow pan reveals the structure.",
+      "refs": ["bridge-state ref (half-built + pebble line), no character"], "risk": "low-med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S5d-bridge-state", "dim": "spatial", "text": "the bridge matches the attached bridge-state ref (boulders one side, lengthening same-size pebble line) and reads as the SAME evolving structure as S2-c/S5-c (continuity).", "severity": "major", "method": "frame@0 vs bridge-state ref", "checkable": "frame"},
+        {"id": "S5d-one-move", "dim": "temporal", "text": "a single slow pan along the pebble line only; no second move.", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S5d-pebble-consistency", "dim": "spatial", "text": "the pebbles are roughly the same size along the line (script requirement, the SIP metaphor).", "severity": "minor", "method": "frame@mid", "checkable": "frame"},
+        {"id": "S5d-no-morph", "dim": "temporal", "text": "the structure does not morph, shift, or grow/melt during the pan (it is a reveal by camera, not a build).", "severity": "major", "method": "motion", "checkable": "needs-human"}
+      ]
+    },
+    {
+      "shot": "S5-e", "scene": "S5", "mode": "B (O2 approved: Ken-Burns on locked still); C fallback", "reel_approx": [60.0, 62.0],
+      "line": "One pebble, placed once, means nothing. The same pebble, placed again and again, regardless of the day, that's what holds a bridge together.",
+      "intent": "Payoff macro: slow push into the gap where the pebbles now sit, load-bearing, indistinguishable from the boulders. Rendered as a Mode B Ken-Burns/parallax push on a LOCKED macro still (O2 approved). NO morph of pebbles into boulders.",
+      "refs": ["locked macro still of the pebble-filled gap (bridge-state completed)"], "risk": "low",
+      "inherits": [],
+      "criteria": [
+        {"id": "S5e-no-morph", "dim": "temporal", "text": "pebbles do NOT morph/melt into boulders; the ONLY change across the clip is the camera push (crop/scale). Content pixels are otherwise a static locked still. Any content transformation = FAIL. (If rendered Mode C instead of Mode B, this is a hard BLOCKER and all Mode C globals also apply.)", "severity": "blocker", "method": "frames:start-vs-end + motion", "checkable": "needs-human"},
+        {"id": "S5e-content", "dim": "spatial", "text": "macro of the pebble-filled gap; the pebbles read as now load-bearing and indistinguishable from the surrounding boulders (the metaphor payoff).", "severity": "major", "method": "frame@0", "checkable": "frame"},
+        {"id": "S5e-smooth", "dim": "temporal", "text": "smooth, constant-speed Ken-Burns push; no jitter, no parallax tearing.", "severity": "major", "method": "motion", "checkable": "needs-human"},
+        {"id": "S5e-no-burned-text", "dim": "spatial", "text": "no burned text on the still.", "severity": "minor", "method": "frame@0", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S7-a", "scene": "S7", "mode": "C", "reel_approx": [70.0, 75.0],
+      "line": "You don't need to time the market. You need to keep showing up, same amount, every time. That's not a squirrel's trick. That's SIP.",
+      "intent": "The payoff hero shot (the money frame). The completed golden bridge, wide; the squirrel perched on one of its own now-fused pebbles. Triumphant register.",
+      "refs": ["squirrel bible sheet", "bridge-state ref (completed golden bridge)"], "risk": "low-med",
+      "inherits": ["G-aspect", "G-photoreal", "G-no-burned-text", "G-warm-grade", "G-clean-firstframe", "G-one-move", "G-smooth", "G-no-artifact"],
+      "criteria": [
+        {"id": "S7a-squirrel-identity", "dim": "spatial", "text": "the squirrel is large enough to hold identity and matches the squirrel bible (body + three stripes); it sits on a pebble fused into the structure.", "severity": "major", "method": "frame@0 vs squirrel bible sheet", "checkable": "frame"},
+        {"id": "S7a-bridge-state", "dim": "spatial", "text": "the completed golden bridge matches the completed bridge-state ref (the same structure, now finished).", "severity": "major", "method": "frame@0 vs completed bridge-state ref", "checkable": "frame"},
+        {"id": "S7a-framing", "dim": "spatial", "text": "extreme wide, low-angle heroic, anamorphic wide; the squirrel readable atop its pebble; golden light.", "severity": "major", "method": "frame@0", "checkable": "frame"},
+        {"id": "S7a-register", "dim": "semantic", "text": "reads triumphant / golden payoff (the humble one atop the finished bridge); the beat lands without the VO.", "severity": "major", "method": "frame@mid", "checkable": "frame"},
+        {"id": "S7a-move", "dim": "temporal", "text": "single slow push-in with golden-light shimmer; near-static (light + breath only); no second move, no morph.", "severity": "major", "method": "motion", "checkable": "needs-human"}
+      ]
+    },
+    {
+      "shot": "S6", "scene": "S6", "mode": "B (render, do NOT generate)", "reel_approx": [62.0, 70.0],
+      "line": "Most people wait for the right time to invest. The market down, wait. The market up, too late. The squirrel never checked the tide before showing up. [Pause.] It showed up the same way, every time, and let the average take care of the rest.",
+      "intent": "The parallel: a clean, calm transition (kinetic type or a calm abstract field) that carries the investing thought with no mythology. Rendered deterministically (Remotion/HyperFrames), zero generation credits.",
+      "refs": [], "risk": "n/a (Mode B)",
+      "inherits": [],
+      "criteria": [
+        {"id": "S6-no-mythology", "dim": "spatial", "text": "a clean transition with NO mythology visuals: calm kinetic type or a calm abstract field for the VO to sit on.", "severity": "major", "method": "frame@any", "checkable": "frame"},
+        {"id": "S6-text-correct", "dim": "spatial", "text": "IF any on-screen text is shown, it renders the exact intended words (from V17/V18), correctly spelled, no typos.", "severity": "blocker", "method": "frame@each-text-card", "checkable": "frame"},
+        {"id": "S6-legible", "dim": "spatial", "text": "text is legible, on-brand type, high contrast, clear of frame edges.", "severity": "major", "method": "frame@any", "checkable": "frame"},
+        {"id": "S6-timed", "dim": "temporal", "text": "card timing holds under the VO with the Pause beat (V17, pause, V18); nothing cuts before its line finishes.", "severity": "major", "method": "timeline+audio", "checkable": "needs-human"},
+        {"id": "S6-deterministic", "dim": "spatial", "text": "rendered Mode B (Remotion/HyperFrames): NO generative artifacts (no morph/warp/melt criteria apply, this is deterministic).", "severity": "major", "method": "frame@any", "checkable": "frame"}
+      ]
+    },
+    {
+      "shot": "S7-b", "scene": "S7", "mode": "B (render, do NOT generate)", "reel_approx": [75.0, 78.0],
+      "line": "This video is brought to you by ZebPay, India's oldest crypto exchange. Like, share, and subscribe.",
+      "intent": "The ZebPay logo card, minimal, bottom corner. Deterministic Mode B (Seedance in-video text/logo is unreliable).",
+      "refs": ["official ZebPay brand logo asset"], "risk": "n/a (Mode B)",
+      "inherits": [],
+      "criteria": [
+        {"id": "S7b-logo-correct", "dim": "spatial", "text": "the ZebPay logo is the correct official brand lockup, accurate colors and proportions, NOT re-drawn/distorted/AI-approximated.", "severity": "blocker", "method": "frame@any vs official logo asset", "checkable": "frame"},
+        {"id": "S7b-text", "dim": "spatial", "text": "any card text ('India's oldest crypto exchange' / CTA if shown) is spelled correctly and on-brand.", "severity": "blocker", "method": "frame@any", "checkable": "frame"},
+        {"id": "S7b-placement", "dim": "spatial", "text": "logo minimal, placed per brief (bottom corner), clear of edges, legible.", "severity": "major", "method": "frame@any", "checkable": "frame"},
+        {"id": "S7b-timed", "dim": "temporal", "text": "card timing matches the outro VO.", "severity": "minor", "method": "timeline+audio", "checkable": "needs-human"},
+        {"id": "S7b-deterministic", "dim": "spatial", "text": "rendered Mode B: no generative artifacts (deterministic render).", "severity": "major", "method": "frame@any", "checkable": "frame"}
+      ]
+    }
+  ]
+}

@@ -31,6 +31,9 @@ ads/clear-gut/edit/fcheck/
 ads/clear-gut/edit/s2frames/
 ads/clear-gut/edit/verify/
 
+# === browser-tool runtime state (session token + audit logs, not project source) ===
+.gstack/
+
 # === tooling / OS junk ===
 __pycache__/
 *.pyc

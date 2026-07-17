@@ -1,0 +1,20 @@
+{
+ "fps": 30,
+ "resolution": [
+  1080,
+  1920
+ ],
+ "kenburns": false,
+ "output": "zebpay/clips/S4-c_NARRATED.mp4",
+ "default_pause_in": 0.2,
+ "default_pause_out": 0.4,
+ "shots": [
+  {
+   "id": "S4-c",
+   "video": "zebpay/clips/graded/S4-c.mp4",
+   "pause_in": 0.2,
+   "pause_out": 2.58,
+   "vo_audio": "zebpay/vo/tts_He_wa_20260714_141733.mp3"
+  }
+ ]
+}

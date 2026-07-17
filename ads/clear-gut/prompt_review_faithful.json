@@ -1,0 +1,192 @@
+{
+  "gate": "BLOCKED",
+  "variant": "FAITHFUL",
+  "reviewed_file": "prompts/v5_faithful.md",
+  "human_reference": "00_input_script_HUMAN.md",
+  "sanctioned_rewrite": "01_script_v5_FAITHFUL.md",
+  "reviewed_at": "2026-06-14",
+  "reviewer": "prompt-reviewer (pre-generation gate)",
+  "verdict_line": "GATE: BLOCKED — awaiting spend approval; 1 regression found+fixed, 2 prompt-safety fixes applied, 0 need human (1 human-accepted risk to acknowledge: S17b lens-facing stomach)",
+  "regressions": [
+    {
+      "id": "R1",
+      "scene": "S17b",
+      "axis": "Dialogue fidelity — punctuation",
+      "human_intent": "Stomach happy resolution line (raw S8 STOMACH: 'Ab lag raha hai pet halka hai!')",
+      "prompt_encoded_before": "spoken line ended with '!' : अब लग रहा है पेट हल्का है!",
+      "sanctioned": false,
+      "change_log_cite": "Rule 6 + S8 change-log row: '!'→'।'; the rewrite mandates no '!' in spoken lines (Veo voices/leaks it). The '!' in the prompt was a regression against the sanctioned rewrite's own punctuation rule.",
+      "is_regression": true,
+      "severity": "minor",
+      "fix_applied": "Edited prompts/v5_faithful.md S17b Veo prompt: 'हल्का है!' → 'हल्का है।'",
+      "residual_risk": "none"
+    },
+    {
+      "id": "R2",
+      "scene": "S1",
+      "axis": "Cast/staging — mouth-guard self-contradiction",
+      "human_intent": "King sits on top of a sad bloated stomach (raw S1 VISUAL). Stomach is present but does not speak in S1.",
+      "prompt_encoded_before": "Body kept the stomach silhouette in frame yet the guard asserted 'no other character is visible' — literally contradicts the visible silhouette and weakens the guard.",
+      "sanctioned": true,
+      "change_log_cite": "S1 change-log row keeps the stomach in-frame as a faceless turned-away shape (no 2nd renderable mouth). The contradiction was a prompt-authoring slip, not a sanctioned change.",
+      "is_regression": false,
+      "severity": "minor",
+      "fix_applied": "Rewrote S1 & S2 Veo mouth-guards to: 'Only the King speaks and only the King's mouth moves; the stomach silhouette is faceless, has no visible mouth and stays silent and still; no other mouth is in frame.' Keeps the human-script staging and removes the self-contradiction.",
+      "residual_risk": "Veo could still try to animate the silhouette; faceless+turned-away+no-mouth minimizes it. Video-reviewer must confirm the silhouette never gains a mouth."
+    },
+    {
+      "id": "R3",
+      "scene": "S2",
+      "axis": "Cast/staging — mouth-guard self-contradiction",
+      "human_intent": "Same S1 staging continues (King + stomach silhouette).",
+      "prompt_encoded_before": "Same 'no other character is visible' contradiction as S1.",
+      "sanctioned": true,
+      "change_log_cite": "Same as R2 (S1 row).",
+      "is_regression": false,
+      "severity": "minor",
+      "fix_applied": "Same guard rewrite applied to S2.",
+      "residual_risk": "Same as R2."
+    }
+  ],
+  "flags_acknowledged_not_regressions": [
+    {
+      "id": "F1",
+      "scene": "S17b",
+      "topic": "Lens-facing speaking stomach (human-chosen for this variant)",
+      "status": "authored correctly — clean SOLO dialogue shot, one mouth to camera, 6-word line, no other mouth in frame, risk documented, narrated fallback noted but NOT silently substituted",
+      "action": "no fix; flag the residual lip-sync re-roll risk to the human and the video-reviewer; never auto-PASS lip-sync"
+    },
+    {
+      "id": "F2",
+      "scene": "S4 / S16 / S17a",
+      "topic": "Over-budget word counts (S4=22, S16=23, S17a=23 words vs ~≤20 budget)",
+      "status": "lines are verbatim-faithful so kept as-is; S16/S17a are VO (more forgiving). S4 is the highest lip-sync risk (22 words, on-camera hero, 8s).",
+      "action": "no fix (trimming would be a fidelity downgrade and a human call); flag S4 as the most re-roll-prone hero shot"
+    }
+  ],
+  "per_scene_pass": [
+    {"scene": "S1", "maps_to": "raw S1 KING lines 1-3", "status": "PASS (after R2 guard fix)"},
+    {"scene": "S2", "maps_to": "raw S1 KING lines 4-6", "status": "PASS (after R3 guard fix)"},
+    {"scene": "S3", "maps_to": "raw S1 STOMACH", "status": "PASS"},
+    {"scene": "S4", "maps_to": "raw S2 AMLA", "status": "PASS (F2 length note)"},
+    {"scene": "S5", "maps_to": "raw S2 KING taunt #1", "status": "PASS"},
+    {"scene": "S6", "maps_to": "raw S3 AJWAIN", "status": "PASS"},
+    {"scene": "S7", "maps_to": "raw S3 KING taunt #2", "status": "PASS"},
+    {"scene": "S8", "maps_to": "raw S4 SAUNF (FEMALE)", "status": "PASS"},
+    {"scene": "S9", "maps_to": "raw S4 KING taunt #3", "status": "PASS"},
+    {"scene": "S10", "maps_to": "raw S5 HARITAKI", "status": "PASS (WARM, not menacing)"},
+    {"scene": "S11", "maps_to": "raw S5 KING taunt #4", "status": "PASS"},
+    {"scene": "S12", "maps_to": "raw S6 AMLA", "status": "PASS"},
+    {"scene": "S13", "maps_to": "raw S6 AJWAIN", "status": "PASS"},
+    {"scene": "S14", "maps_to": "raw S6 SAUNF (FEMALE)", "status": "PASS"},
+    {"scene": "S15", "maps_to": "raw S6 HARITAKI; BOOM!=POST SFX", "status": "PASS"},
+    {"scene": "S16", "maps_to": "raw S7 narrator sent 1-3", "status": "PASS (F2 length note)"},
+    {"scene": "S17a", "maps_to": "raw S7 narrator sent 4-5; King blast=POST", "status": "PASS (F2 length note)"},
+    {"scene": "S17b", "maps_to": "raw S8 STOMACH", "status": "PASS (after R1 fix; F1 risk)"},
+    {"scene": "S18", "maps_to": "raw S8 narrator dose/brand list", "status": "PASS (post card, ffmpeg, no Veo)"}
+  ],
+  "beat_coverage": {
+    "human_scenes": 8,
+    "all_lines_present": true,
+    "dropped_beats": [],
+    "notes": "Every human line is present and in order. S1 6-line speech split to S1+S2; 4 King taunts restored as S5/S7/S9/S11; 4-hero S6 exchange as S12-S15; narrator payoff across S16/S17a; stomach speaks both S3 and S17b. BOOM!/scream moved to POST per sanctioned change-log. Dose/brand list on S18 card."
+  },
+  "model_cost_plan": {
+    "verification": "LIVE via higgsfield CLI on 2026-06-14",
+    "keyframe_model": {
+      "model": "nano_banana_2",
+      "display_name": "Nano Banana Pro",
+      "reason": "Multi-image-ref character-ID lock; supports input_images array + 9:16 + 2k (all verified in schema).",
+      "verified_params": {"aspect_ratio": "9:16", "resolution": "2k"},
+      "verified_unit_cost_credits": 2,
+      "verification_status": "VERIFIED (generate cost nano_banana_2 --aspect_ratio 9:16 --resolution 2k = 2cr)"
+    },
+    "video_model": {
+      "model": "veo3_1",
+      "display_name": "Google Veo 3.1",
+      "reason": "Native audio + same-pass lip-sync for dialogue/VO shots; single start-image per clip (max 1, verified). Same engine as the validated prior production run.",
+      "verified_params": {"aspect_ratio": "9:16", "duration_enum": ["4","6","8"], "quality_enum": ["basic","high","ultra"], "model_variant_enum": ["veo-3-1-preview","veo-3-1-fast"], "start_image_max": 1},
+      "priced_tier": "model=veo-3-1-preview, quality=high (the tier the prior validated run used; tx history shows flat 58cr at 8s)",
+      "verified_unit_cost_credits": {"8s": 58, "6s": 43.5, "4s": 29},
+      "verification_status": "VERIFIED (generate cost veo3_1 --duration {8,6,4} --quality high --model veo-3-1-preview)",
+      "alt_tier_note": "veo-3-1-fast 8s = 22cr (cheaper, lower quality — NOT recommended for dialogue lip-sync); ultra 8s = 87cr."
+    },
+    "line_items": [
+      {"scene": "S1", "model": "veo3_1", "duration": 8, "cost": 58},
+      {"scene": "S2", "model": "veo3_1", "duration": 8, "cost": 58},
+      {"scene": "S3", "model": "veo3_1", "duration": 6, "cost": 43.5},
+      {"scene": "S4", "model": "veo3_1", "duration": 8, "cost": 58},
+      {"scene": "S5", "model": "veo3_1", "duration": 4, "cost": 29},
+      {"scene": "S6", "model": "veo3_1", "duration": 6, "cost": 43.5},
+      {"scene": "S7", "model": "veo3_1", "duration": 4, "cost": 29},
+      {"scene": "S8", "model": "veo3_1", "duration": 8, "cost": 58},
+      {"scene": "S9", "model": "veo3_1", "duration": 4, "cost": 29},
+      {"scene": "S10", "model": "veo3_1", "duration": 8, "cost": 58},
+      {"scene": "S11", "model": "veo3_1", "duration": 4, "cost": 29},
+      {"scene": "S12", "model": "veo3_1", "duration": 4, "cost": 29},
+      {"scene": "S13", "model": "veo3_1", "duration": 4, "cost": 29},
+      {"scene": "S14", "model": "veo3_1", "duration": 4, "cost": 29},
+      {"scene": "S15", "model": "veo3_1", "duration": 4, "cost": 29},
+      {"scene": "S16", "model": "veo3_1", "duration": 8, "cost": 58},
+      {"scene": "S17a", "model": "veo3_1", "duration": 8, "cost": 58},
+      {"scene": "S17b", "model": "veo3_1", "duration": 6, "cost": 43.5},
+      {"scene": "S18", "model": "ffmpeg", "duration": 4, "cost": 0}
+    ],
+    "veo_clip_count": 18,
+    "veo_subtotal_credits": 768.5,
+    "keyframe_count": 18,
+    "keyframe_subtotal_credits": 36,
+    "clean_pass_total_credits": 804.5,
+    "script_quoted_total_credits": 930,
+    "cost_correction_note": "Script quoted ~930cr assuming a flat 58cr/clip and 16 clips. ACTUAL: 18 Veo clips, but Veo price SCALES with duration (4s=29, 6s=43.5, 8s=58). The 8 four-second micro-shots cost 29cr each, so the verified clean-pass total is 804.5cr, ~126cr LESS than the script's estimate, despite 2 more clips.",
+    "reroll_budget_estimate": {
+      "assumption": "FAITHFUL has 18 generate surfaces incl. 4 King taunts + lens-facing S17b + 4 freeze-frame quips. Expect re-rolls on S17b (organ lip-sync), S4 (22-word hero), and 1-2 micro-shots.",
+      "low_estimate_extra_credits": 150,
+      "high_estimate_extra_credits": 350,
+      "note": "At ~29-58cr/re-roll, budget +3 to +6 Veo re-rolls + a few keyframe re-rolls. Plan ~+200cr cushion above the clean pass."
+    },
+    "current_balance_credits": 647.4,
+    "subscription": "ultra",
+    "balance_vs_cost": "BLOCKER: clean-pass 804.5cr EXCEEDS current balance 647.4cr by ~157cr, before ANY re-rolls. A re-roll cushion pushes the realistic need to ~1000-1150cr. The workspace must top up before a full faithful run is even possible.",
+    "spend_gate": "Human must approve the spend AND top up credits before any generate call. No generation, no spend was performed in this review."
+  },
+  "av_review_method": {
+    "eyes": [
+      "Higgsfield video_analysis per clip: motion, composition, camera move, qualitative lip-sync.",
+      "Frame-timeline extraction (ffmpeg) per clip for staging checks.",
+      "Per-scene visual: dialogue shots (S1-S15,S17b) — the named speaker's mouth moves AND no other mouth animates; S1/S2 — stomach silhouette stays faceless/mouthless; King taunts S5/S7/S9/S11 — King SOLO, no hero leaks in, arc reads smug→scoff→bravado→break; heroes never get dark/menace cues; Haritaki (S10/S15) reads WARM not scary; S16/S17a — bottle still/no morph, no model-burned label text; S17b — stomach lens-facing single talker, no bottle/King in frame; S18 — real label pixel-sharp."
+    ],
+    "ears_content": [
+      "Whisper transcription per clip: every scripted Devanagari line present, in order, correct, correct speaker.",
+      "ElevenLabs speech_to_text / isolate_audio to confirm dialogue and isolate voice before MOS.",
+      "Laugh-count from ACTUAL audio (not script): S1 and S5 'हा हा' = exactly 2 beats, no hallucinated laugh-track.",
+      "Confirm NO spoken 'BOOM' (S15) and NO spoken scream (S17a) — both must be silent in the Veo audio (POST only).",
+      "Captions/karaoke text must be cut from the ACTUAL audio, never from the script."
+    ],
+    "ears_quality": [
+      "UTMOS RELATIVE MOS (English-trained → relative ranking + re-roll trend only, isolate voice first). Flag the lowest outliers; do NOT threshold absolutely on Hindi."
+    ],
+    "stays_needs_human": [
+      "Frame-exact lip-sync offset.",
+      "Calibrated-absolute Hindi MOS.",
+      "Final subjective comedic-timing + good/evil-read polish.",
+      "S17b organ lip-sync acceptability (never auto-PASS) and whether to fall back to narrated joy."
+    ],
+    "known_failure_modes_tied": [
+      "laugh-count (S1/S5)",
+      "dash-garble (verified zero dashes in all spoken lines)",
+      "'!' leak (fixed at S17b)",
+      "lens-facing organ S17b",
+      "label drift (deferred to S18 card)",
+      "S8/S14 Saunf female-voice gender",
+      "two-mouth mis-assignment on S1/S2 silhouette"
+    ],
+    "extra_reroll_surface": "The 4 restored King taunts (S5/S7/S9/S11), the 4 freeze-frame quips (S12-S15), and the lens-facing S17b stomach add the most re-roll surface vs the AI-friendly cut. Budget extra review passes + credits accordingly."
+  },
+  "fixes_applied": [
+    "S17b Veo: 'अब लग रहा है पेट हल्का है!' → '...हल्का है।' (removed '!' leak)",
+    "S1 Veo: rewrote mouth-guard to acknowledge the faceless silent silhouette (removed 'no other character is visible' self-contradiction)",
+    "S2 Veo: same mouth-guard rewrite as S1"
+  ],
+  "gate_decision": "APPROVE to proceed to generation (spend ~804.5cr clean pass + re-roll cushion; REQUIRES top-up — balance 647.4cr is insufficient) / or tell me what to revise. Nothing generates until approved."
+}

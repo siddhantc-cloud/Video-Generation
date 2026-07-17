@@ -1,0 +1,663 @@
+{
+  "config": {},
+  "extra": {
+    "VHS_KeepIntermediate": true,
+    "VHS_MetadataImage": true,
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "ds": {
+      "offset": [
+        -30714.144604497,
+        -4145.927825021589
+      ],
+      "scale": 0.46650738020973354
+    },
+    "frontendVersion": "1.41.13",
+    "linearData": {
+      "inputs": [
+        [
+          483,
+          "image"
+        ],
+        [
+          1185,
+          "image"
+        ],
+        [
+          1239,
+          "storyboards.storyboard_1_prompt"
+        ],
+        [
+          1239,
+          "storyboards.storyboard_2_prompt"
+        ],
+        [
+          1239,
+          "storyboards.storyboard_3_prompt"
+        ]
+      ],
+      "outputs": [
+        1237
+      ]
+    },
+    "linearMode": false,
+    "workflowRendererVersion": "Vue"
+  },
+  "groups": [
+    {
+      "bounding": [
+        31970,
+        4610,
+        500,
+        600
+      ],
+      "color": "#3f789e",
+      "flags": {},
+      "font_size": 24,
+      "id": 35,
+      "title": "Load Character"
+    },
+    {
+      "bounding": [
+        31970,
+        5258,
+        500,
+        600
+      ],
+      "color": "#3f789e",
+      "flags": {},
+      "font_size": 24,
+      "id": 43,
+      "title": "Load Product"
+    },
+    {
+      "bounding": [
+        32882,
+        4610,
+        1008,
+        888
+      ],
+      "color": "#3f789e",
+      "flags": {},
+      "font_size": 24,
+      "id": 44,
+      "title": "Semantic Editing"
+    },
+    {
+      "bounding": [
+        34322,
+        4610,
+        640,
+        1210
+      ],
+      "color": "#3f789e",
+      "flags": {},
+      "font_size": 24,
+      "id": 45,
+      "title": "Image to Video"
+    }
+  ],
+  "id": "75ddb84a-68a5-4ecc-ad04-0b7b6f080eeb",
+  "last_link_id": 1369,
+  "last_node_id": 1244,
+  "links": [
+    [
+      1347,
+      1236,
+      0,
+      1235,
+      0,
+      "IMAGE"
+    ],
+    [
+      1354,
+      483,
+      0,
+      1236,
+      0,
+      "IMAGE"
+    ],
+    [
+      1355,
+      1185,
+      0,
+      1236,
+      1,
+      "IMAGE"
+    ],
+    [
+      1358,
+      1239,
+      0,
+      1237,
+      0,
+      "VIDEO"
+    ],
+    [
+      1359,
+      1241,
+      0,
+      1235,
+      2,
+      "COMBO"
+    ],
+    [
+      1360,
+      1241,
+      0,
+      1239,
+      1,
+      "COMBO"
+    ],
+    [
+      1361,
+      1235,
+      0,
+      1242,
+      0,
+      "IMAGE"
+    ],
+    [
+      1367,
+      1185,
+      0,
+      1244,
+      1,
+      "IMAGE"
+    ],
+    [
+      1368,
+      1235,
+      0,
+      1244,
+      0,
+      "IMAGE"
+    ],
+    [
+      1369,
+      1244,
+      0,
+      1239,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "nodes": [
+    {
+      "flags": {},
+      "id": 483,
+      "inputs": [],
+      "mode": 0,
+      "order": 0,
+      "outputs": [
+        {
+          "links": [
+            1354
+          ],
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        32018.001543548497,
+        4717.999942621278
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        400,
+        470
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "close_up_portrait.png",
+        "image"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 1241,
+      "inputs": [],
+      "mode": 0,
+      "order": 1,
+      "outputs": [
+        {
+          "links": [
+            1359,
+            1360
+          ],
+          "name": "COMBO",
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          }
+        }
+      ],
+      "pos": [
+        32930,
+        5280
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        252,
+        142.65625
+      ],
+      "title": "aspect ratio",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "9:16",
+        "fixed",
+        ""
+      ]
+    },
+    {
+      "flags": {},
+      "id": 1242,
+      "inputs": [
+        {
+          "link": 1361,
+          "name": "images",
+          "type": "IMAGE"
+        }
+      ],
+      "mode": 0,
+      "order": 8,
+      "outputs": [],
+      "pos": [
+        33482.001513549236,
+        4717.999942621278
+      ],
+      "properties": {},
+      "size": [
+        360,
+        456
+      ],
+      "type": "SaveImage",
+      "widgets_values": [
+        "gsc_advanced_1"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 1235,
+      "inputs": [
+        {
+          "link": 1347,
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "name": "files",
+          "shape": 7,
+          "type": "GEMINI_INPUT_FILES"
+        },
+        {
+          "link": 1359,
+          "name": "aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 7,
+      "outputs": [
+        {
+          "links": [
+            1361,
+            1368
+          ],
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "name": "STRING",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        32930.00073585209,
+        4717.999942621278
+      ],
+      "properties": {
+        "Node name for S&R": "GeminiNanoBanana2"
+      },
+      "size": [
+        480,
+        470.390625
+      ],
+      "type": "GeminiNanoBanana2",
+      "widgets_values": [
+        "Character with product",
+        "Nano Banana 2 (Gemini 3.1 Flash Image)",
+        580794941702187,
+        "randomize",
+        "9:16",
+        "2K",
+        "IMAGE",
+        "MINIMAL",
+        "You are an expert image-generation engine. You must ALWAYS produce an image.\nInterpret all user input—regardless of format, intent, or abstraction—as literal visual directives for image composition.\nIf a prompt is conversational or lacks specific visual details, you must creatively invent a concrete visual scenario that depicts the concept.\nPrioritize generating the visual representation above any text, formatting, or conversational requests."
+      ]
+    },
+    {
+      "flags": {},
+      "id": 1185,
+      "inputs": [],
+      "mode": 0,
+      "order": 2,
+      "outputs": [
+        {
+          "links": [
+            1355,
+            1367
+          ],
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        32018.001543548497,
+        5366.000182952741
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        400,
+        470
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "product_photo.png",
+        "image"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 1236,
+      "inputs": [
+        {
+          "label": "image0",
+          "link": 1354,
+          "name": "images.image0",
+          "type": "IMAGE"
+        },
+        {
+          "label": "image1",
+          "link": 1355,
+          "name": "images.image1",
+          "type": "IMAGE"
+        },
+        {
+          "label": "image2",
+          "link": null,
+          "name": "images.image2",
+          "shape": 7,
+          "type": "IMAGE"
+        }
+      ],
+      "mode": 0,
+      "order": 6,
+      "outputs": [
+        {
+          "links": [
+            1347
+          ],
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        32572.934783478704,
+        4718.680631392845
+      ],
+      "properties": {
+        "Node name for S&R": "BatchImagesNode"
+      },
+      "size": [
+        225,
+        120
+      ],
+      "type": "BatchImagesNode",
+      "widgets_values": []
+    },
+    {
+      "flags": {},
+      "id": 1244,
+      "inputs": [
+        {
+          "label": "image0",
+          "link": 1368,
+          "name": "images.image0",
+          "type": "IMAGE"
+        },
+        {
+          "label": "image1",
+          "link": 1367,
+          "name": "images.image1",
+          "type": "IMAGE"
+        },
+        {
+          "label": "image2",
+          "link": null,
+          "name": "images.image2",
+          "shape": 7,
+          "type": "IMAGE"
+        }
+      ],
+      "mode": 0,
+      "order": 9,
+      "outputs": [
+        {
+          "links": [
+            1369
+          ],
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        33998.00141843912,
+        4717.999942621278
+      ],
+      "properties": {
+        "Node name for S&R": "BatchImagesNode"
+      },
+      "size": [
+        225,
+        120
+      ],
+      "type": "BatchImagesNode",
+      "widgets_values": []
+    },
+    {
+      "flags": {},
+      "id": 1237,
+      "inputs": [
+        {
+          "link": 1358,
+          "name": "video",
+          "type": "VIDEO"
+        }
+      ],
+      "mode": 0,
+      "order": 11,
+      "outputs": [],
+      "pos": [
+        35030,
+        4720
+      ],
+      "properties": {},
+      "size": [
+        856.796875,
+        1640.796875
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/gsc_advanced_1",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "bgcolor": "#000",
+      "color": "#222",
+      "flags": {
+        "collapsed": false
+      },
+      "id": 1228,
+      "inputs": [],
+      "mode": 0,
+      "order": 3,
+      "outputs": [],
+      "pos": [
+        34380,
+        5530
+      ],
+      "properties": {},
+      "size": [
+        336,
+        232.78125
+      ],
+      "title": "Step 2 - User Generated Content",
+      "type": "MarkdownNote",
+      "widgets_values": [
+        "## Multi Shot Videos\n\n- Select how many shots (storyboards) you want\n- Write a prompt for each\n- Kling 3.0 Omni generates a full User Generated Content Reel"
+      ]
+    },
+    {
+      "bgcolor": "#000",
+      "color": "#222",
+      "flags": {
+        "collapsed": false
+      },
+      "id": 1227,
+      "inputs": [],
+      "mode": 0,
+      "order": 4,
+      "outputs": [],
+      "pos": [
+        33242.00027859689,
+        5258.000142897497
+      ],
+      "properties": {},
+      "size": [
+        336,
+        192
+      ],
+      "title": "Step 1 - Semantic Image Editing",
+      "type": "MarkdownNote",
+      "widgets_values": [
+        "## Nano Banana 2\n\nBrings your character and product together\n- Select an aspect ratio 👈\n"
+      ]
+    },
+    {
+      "bgcolor": "#000",
+      "color": "#222",
+      "flags": {
+        "collapsed": false
+      },
+      "id": 1231,
+      "inputs": [],
+      "mode": 0,
+      "order": 5,
+      "outputs": [],
+      "pos": [
+        31442.00132992053,
+        4645.999915917782
+      ],
+      "properties": {},
+      "size": [
+        400,
+        528.765625
+      ],
+      "title": "🔍 Core Concept",
+      "type": "MarkdownNote",
+      "widgets_values": [
+        "**Upload your character** and **product** and generate a **user generated content video**.\n\n## How It Works\n\n1. **Upload a character image**\n2. **Upload a product image**\n3. The system:\n   - Creates a **UGC hook** from your character and product images\n   - Uses the edited image and generates a Video with 3 Storyboards\n\n## Tips\n\n- Works best if characters and product are fully in frame\n\nThat's it.  \nCharacter + Product -> UGC"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 1239,
+      "inputs": [
+        {
+          "link": 1369,
+          "name": "reference_images",
+          "type": "IMAGE"
+        },
+        {
+          "link": 1360,
+          "name": "aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 10,
+      "outputs": [
+        {
+          "links": [
+            1358
+          ],
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        34381.999007017956,
+        4718.000240961595
+      ],
+      "properties": {
+        "Node name for S&R": "KlingOmniProImageToVideoNode"
+      },
+      "size": [
+        480,
+        738.65625
+      ],
+      "type": "KlingOmniProImageToVideoNode",
+      "widgets_values": [
+        "kling-v3-omni",
+        "addictive hook ad",
+        "9:16",
+        9,
+        "1080p",
+        "3 storyboards",
+        "\"My skin hits different\"",
+        3,
+        "\"I love this shit\", ambient sounds",
+        3,
+        "product packshot, ambient sounds",
+        3,
+        true,
+        85124566,
+        "randomize"
+      ]
+    }
+  ],
+  "revision": 0,
+  "version": 0.4
+}

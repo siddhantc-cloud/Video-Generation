@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+cd /d/startup_dev/so_sorry/simple_ads/production_v2
+B=./bible
+ST='Glossy 3D Pixar/DreamWorks-caricature style, cinematic rim lighting, vibrant, vertical 9:16, gut-cave with pink tissue and green gas, strong foreground/background depth. ABSOLUTELY NO TEXT.'
+gen(){ local name="$1" prompt="$2"; shift 2; local imgs=(); for p in "$@"; do imgs+=(--image "$p"); done; echo "### $name"; higgsfield generate create nano_banana_2 --prompt "$prompt" "${imgs[@]}" --aspect_ratio 9:16 --resolution 2k --wait --json 2>&1 | grep -o '"result_url": "[^"]*"' | head -1; }
+
+gen s3 "Speaker-focused: the carom-seed hero AJWAIN (image 1) is LARGE in the FOREGROUND center, facing camera, fierce and energetic, fists up. The green gooseberry Amla (image 2) is smaller to the LEFT as an ally. The Constipation King (image 3) is small in the upper background, scowling, mouth CLOSED. $ST" $B/ajwain.png $B/amla.png $B/king.png
+gen s4 "Speaker-focused: the fennel hero SAUNF (image 1) is LARGE in the FOREGROUND center, facing camera, cool and confident. Amla (image 2) and Ajwain (image 3) are smaller to the sides as allies. The King is small in the far background, mouth CLOSED. $ST" $B/saunf.png $B/amla.png $B/ajwain.png
+gen s5 "Speaker-focused: the ancient myrobalan hero HARITAKI (image 1) is LARGE in the FOREGROUND center, facing camera, crackling with golden thunder, powerful and wise. The three other herb heroes (Amla image2, Ajwain image3, Saunf image4) are smaller behind him. The Constipation King recoils small in the far background, mouth closed. $ST" $B/haritaki.png $B/amla.png $B/ajwain.png $B/saunf.png
+gen s6 "The FOUR herb heroes — Haritaki (image1) front-center as leader, with Amla (image2), Ajwain (image3), Saunf (image4) flanking just behind in a triumphant team row, all glowing with power and stepping forward. The Constipation King is tiny and terrified in the far background. Epic heroic team-up shot. $ST" $B/haritaki.png $B/amla.png $B/ajwain.png $B/saunf.png
+gen s7 "More than ten glowing Ayurvedic herbs swirl as streaks of golden light and MERGE into ONE radiant amber glass dropper bottle of Clear Gut (match the product reference bottle and yellow label), bottle standing heroic and glowing in the center, triumphant golden light rays, magical reveal. No characters talking. $ST" $B/bottle.png
+gen s8 "Victory scene: the pink STOMACH character (image 2) is now HAPPY, bright and energetic, smiling and dancing on the left; the amber Clear Gut dropper bottle (image 1, match reference) stands prominent and glowing on the right in a warm clean bright gut; faint green smoke (defeated villain) dissolving at the top edge. Uplifting. $ST" $B/bottle.png $B/stomach.png
+echo "KF_V2_DONE"

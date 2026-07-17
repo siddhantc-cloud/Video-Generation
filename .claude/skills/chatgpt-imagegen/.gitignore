@@ -1,0 +1,5 @@
+# The one-file CLI is fetched on first use (self-heal), never committed.
+chatgpt-imagegen
+
+# Throwaway smoke-test output — not part of the skill.
+_smoketest/

@@ -1,0 +1,4 @@
+1
+00:00:00,100 --> 00:00:08,925
+Agar aap roz subah uthkar ye sochte hain ki aaj pet saaf hoga ya nahi, toh aapko ye zaroor sunna chahiye.
+

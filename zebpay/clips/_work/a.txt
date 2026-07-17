@@ -1,0 +1,2 @@
+file 'D:\startup_dev\so_sorry\zebpay\clips\_work\00_S1-a.wav'
+file 'D:\startup_dev\so_sorry\zebpay\clips\_work\01_S4-c.wav'

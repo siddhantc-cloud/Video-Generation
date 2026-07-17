@@ -1,0 +1,14 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 1280
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Impact,58,&H0000D7FF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,3,0,2,30,30,200,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:02.86,Cap,,0,0,0,,{\kf96}Main {\kf14}hoon {\kf56}Constipation {\kf112}King!
+Dialogue: 0,0:00:03.42,0:00:05.34,Cap,,0,0,0,,{\kf56}Tumhara {\kf20}pet {\kf24}kabhi {\kf84}saaf
+Dialogue: 0,0:00:05.26,0:00:06.24,Cap,,0,0,0,,{\kf20}nahi {\kf22}hone {\kf48}dunga!

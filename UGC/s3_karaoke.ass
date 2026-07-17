@@ -1,0 +1,17 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 1280
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Impact,58,&H0000D7FF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,3,0,2,30,30,450,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.98,Cap,,0,0,0,,{\kf36}Kai {\kf24}log {\kf16}jinko {\kf14}saalon
+Dialogue: 0,0:00:00.90,0:00:01.92,Cap,,0,0,0,,{\kf38}se {\kf18}pet {\kf26}ki {\kf12}problems
+Dialogue: 0,0:00:01.82,0:00:03.64,Cap,,0,0,0,,{\kf44}thi, {\kf22}unhone {\kf76}kuch {\kf32}hi
+Dialogue: 0,0:00:03.56,0:00:05.08,Cap,,0,0,0,,{\kf48}hafton {\kf12}mein {\kf52}improvement {\kf32}dekha.
+Dialogue: 0,0:00:05.00,0:00:06.68,Cap,,0,0,0,,{\kf86}Lekin {\kf24}isme {\kf12}alag {\kf38}kya
+Dialogue: 0,0:00:06.60,0:00:07.08,Cap,,0,0,0,,{\kf40}hai?

@@ -1,0 +1,20 @@
+{
+ "fps": 30,
+ "resolution": [
+  1080,
+  1920
+ ],
+ "kenburns": false,
+ "output": "zebpay/clips/S1-a_NARRATED.mp4",
+ "default_pause_in": 0.2,
+ "default_pause_out": 0.4,
+ "shots": [
+  {
+   "id": "S1-a",
+   "video": "zebpay/clips/graded/S1-a.mp4",
+   "pause_in": 0.5,
+   "pause_out": 3.09,
+   "vo_audio": "zebpay/vo/tts_Acros_20260714_141654.mp3"
+  }
+ ]
+}

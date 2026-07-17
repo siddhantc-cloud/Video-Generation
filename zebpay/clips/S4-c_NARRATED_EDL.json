@@ -1,0 +1,28 @@
+{
+  "fps": 30,
+  "total_frames": 188,
+  "expected_sec": 6.267,
+  "video_sec": 6.267,
+  "audio_sec": 6.266,
+  "drift_sec": 0.0007,
+  "sync_locked": true,
+  "shots": [
+    {
+      "i": 0,
+      "id": "S4-c",
+      "vo_sec": 3.483,
+      "pause_in": 0.2,
+      "pause_out": 2.58,
+      "frames": 188,
+      "on_screen_sec": 6.267,
+      "images": [
+        {
+          "image": "S4-c.mp4 (video)",
+          "frames": 188,
+          "start": "00:00:00:00",
+          "end": "00:00:06:08"
+        }
+      ]
+    }
+  ]
+}

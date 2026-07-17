@@ -1,0 +1,28 @@
+{
+  "fps": 30,
+  "total_frames": 300,
+  "expected_sec": 10.0,
+  "video_sec": 10.0,
+  "audio_sec": 10.0,
+  "drift_sec": 0.0,
+  "sync_locked": true,
+  "shots": [
+    {
+      "i": 0,
+      "id": "S1-a",
+      "vo_sec": 6.409,
+      "pause_in": 0.5,
+      "pause_out": 3.09,
+      "frames": 300,
+      "on_screen_sec": 10.0,
+      "images": [
+        {
+          "image": "S1-a.mp4 (video)",
+          "frames": 300,
+          "start": "00:00:00:00",
+          "end": "00:00:10:00"
+        }
+      ]
+    }
+  ]
+}

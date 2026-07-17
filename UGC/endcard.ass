@@ -1,0 +1,14 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Brand,Impact,68,&H0020354A,&H00FFFFFF,&H00F0FAFF,&H00000000,-1,0,0,0,100,100,1,0,1,0,0,8,40,40,300,1
+Style: Tag,Impact,52,&H00808B96,&H00FFFFFF,&H00F0FAFF,&H00000000,0,0,0,0,100,100,1,0,1,0,0,8,40,40,560,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.30,0:00:03.50,Brand,,0,0,0,,{\fad(350,0)}Natural Support. Better Energy.\NBetter Mood.
+Dialogue: 0,0:00:01.00,0:00:03.50,Tag,,0,0,0,,{\fad(350,0)}BLUMELIFE Clear Gut Drops

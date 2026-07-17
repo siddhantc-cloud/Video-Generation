@@ -70,6 +70,15 @@ Confirm the ranges with the director/user when the call is editorial (what's "wr
 - **Still / product card:** `-loop 1 -i img.png -t T` + `zoompan` Ken-Burns + ass text; give it a silent 48k stereo track (`anullsrc`) so it concats with voiced clips.
 - **Color (only if asked):** `eq`/`curves`/`lut3d=x.cube`, per-segment at extract time (never a second pass).
 
+## Previz gate: build the storyboard + frame-locked animatic (before any spend)
+
+You also own the **pre-generation review gate**. After per-shot keyframes are locked and BEFORE the spend gate, assemble the keyframes into a storyboard board + a timed **animatic** so the human (and stakeholders) approve the whole film for free. Use the `storyboard-animatic` skill. Two non-negotiable rules, they are why the gate is trustworthy:
+
+- **Audio is the master clock, frame-locked.** NEVER eyeball a shot's on-screen time. Use `python tools/av_sync_render.py <manifest.json>` (manifest = the EDL: per-shot image(s) + narration + pauses). It renders a free Edge-TTS scratch VO, derives each shot's frames from the MEASURED narration, builds video (exactly F frames) and audio (F/fps s) from the SAME integer so they cannot drift over any shot count, and VERIFIES `SYNC LOCKED` (drift < 1 frame) or exits non-zero. Requires ffmpeg + `edge-tts` (free, no key). Method: `AV_SYNC_SYSTEM.md`.
+- **A line owns its visuals (semantic sync).** The picture on screen must illustrate the words spoken RIGHT THEN. A line needing 2+ pictures cuts them WITHIN the line (`"images":[...]` + `"weights"`), so the line's audio plays continuously across them. NEVER place an illustrating picture as a trailing SILENT beat AFTER its line ended (the classic defect: a reaction shows in silence after its narration already finished). `"hold"` silence is only for a deliberate pause with no line.
+
+The scratch VO is a placeholder; the final VO (ElevenLabs/recording) swaps in segment-for-segment at assembly, the frame-defined timeline keeps the lock. Zero credits (Mode B). Present both artifacts; the spend gate stays BLOCKED until the human approves. The SAME frame-lock and line-owns-visuals discipline governs the FINAL assembly, not just the animatic.
+
 ## HARD RULES (deviation = silent failure or a worse edit)
 1. Untouched ranges are **stream-copied**, never re-encoded. Prove it: their frames must be pixel-identical before/after.
 2. **Captions/overlays of text go LAST** in the chain; `-c:a copy` on that pass.

@@ -10,10 +10,17 @@ flowchart TD
     D[["🎬 DIRECTOR / ORCHESTRATOR<br/>brief · script · direction · prompts · spend gates · final cut"]]
     H <--> D
 
-    D --> P0[Phase 0 — PLAN<br/>brief, script v3, direction, prompts, research]
+    D --> HS[/"📜 HUMAN INPUT SCRIPT (frozen)<br/>save verbatim as 00_input_script_HUMAN.md<br/>IMMUTABLE reference of truth"/]
+    HS --> SR{{"✍️ SCRIPT REWRITER (Gate 0)<br/>raw script → AI-video-friendly<br/>fix every failure trigger · full reasoning"}}
+    SR -- revise --> SR
+    SR -- human APPROVES rewrite --> P0[Phase 0 — PLAN<br/>brief, AI-friendly script, direction, prompts, research]
     P0 --> AD{{"🧭 ASSISTANT DIRECTOR (loop)<br/>live-research model failure modes →<br/>pre-emptive STORY fixes → balance verdict"}}
     AD -- BALANCE NOT YET: revise --> P0
-    AD -- BALANCE ACHIEVED + human approve --> P1[Phase 1 — CHARACTER BIBLE<br/>generate 7 ID reference images ONCE]
+    AD -- BALANCE ACHIEVED --> SE{{"📏 SCENE-EXPECTATIONS<br/>measurable per-scene acceptance bar<br/>(expectations.json)"}}
+    SE --> PR{{"🛂 PROMPT REVIEWER (pre-gen GATE)<br/>final prompts vs 00_input_script_HUMAN.md<br/>regression hunt · auto-fix+loop · report<br/>+ model plan + cost + AV review method<br/>BLOCKS the spend"}}
+    PR -- regression: fix prompt + re-check --> PR
+    PR -- needs-human / spend approval --> H
+    PR -- READY + human APPROVES spend --> P1[Phase 1 — CHARACTER BIBLE<br/>generate 7 ID reference images ONCE]
     P1 --> P2[Phase 2 — KEYFRAMES fan-out]
 
     subgraph KF [parallel keyframe subagents · Nano Banana Pro]
@@ -44,7 +51,10 @@ flowchart TD
 | Role | Owns | Does NOT |
 |---|---|---|
 | **Director / Orchestrator** (me) | brief, script, direction, prompt authorship, spend gates, scene routing, final assembly, verification, reporting | declare "done" on motion/voice it can't perceive — those need human eyes/ears |
+| **Script Rewriter** (`script-rewriter` subagent) | **FIRST step (Gate 0):** rewrites the raw script into an AI-video-friendly one — fixes every generation-failure trigger (dashes, multi-mouth, onomatopoeia count, un-renderable actions, label-in-motion, …) at the story level, with full per-change reasoning; human-approved before handoff | write model prompts or generate video (rewrites the script only) |
 | **Assistant Director** (`assistant-director` subagent) | pre-emptive risk audit of script+prompts vs the model's live-researched failure modes; ranked STORY-level fixes; loops with Director to `BALANCE ACHIEVED` (safety ↔ creativity) before any spend | generate video, spend credits, or edit the script (advises only) |
+| **Scene-Expectations** (`scene-expectations` subagent) | the measurable per-scene acceptance bar (`expectations.json`/`.md`) across spatial/temporal/semantic axes; each criterion's severity + how-to-check + frame-vs-needs-human flag | review, generate, or edit (defines the bar only) |
+| **Prompt Reviewer** (`prompt-reviewer` subagent) | **pre-generation GATE:** checks the final per-scene prompts against `00_input_script_HUMAN.md` (the frozen original) for REGRESSIONS the approved rewrite did NOT sanction; auto-fixes the prompts it can and loops; reports every regression with reasons; recommends models + why + verified cost; defines the AV review method for this video. **BLOCKS the spend until the human approves.** | generate, spend, or edit the human script / approved rewrite (aligns the PROMPTS only) |
 | **Keyframe subagent** | one scene's start keyframe from bible IDs (speaker-focused; bottle scenes ref real product) | animate or voice |
 | **Animator subagent** | one scene: Veo 3.1 from the keyframe + the saved Veo prompt (native audio) | edit or assemble |
 | **QA subagent** | adversarial review of keyframes/clips against the checklist; PASS/FAIL with evidence (frame-grabs) | fix — it reports; director re-routes |
@@ -52,7 +62,9 @@ flowchart TD
 | **Editor** (director) | normalize → crossfade → music → burn captions LAST → product card → final verify | — |
 
 ## Phase gates (spend discipline)
-- **Gate A (after Phase 0):** the **Assistant Director ↔ Director loop** must reach `BALANCE ACHIEVED`, then human approves script + direction — before any generation.
+- **Gate 0 (before anything):** the human's raw script is frozen verbatim as **`00_input_script_HUMAN.md`** (the immutable reference of truth), then the **`script-rewriter`** turns it into an AI-video-friendly one (fixes every failure trigger, with full reasoning) and the **human approves the rewrite** — before any prompts or direction are written.
+- **Gate A (after Phase 0):** the **Assistant Director ↔ Director loop** must reach `BALANCE ACHIEVED`; then **scene-expectations** writes the acceptance bar.
+- **Gate A.5 — PROMPT REVIEW (the spend gate):** the **`prompt-reviewer`** checks every final prompt against `00_input_script_HUMAN.md` for regressions (distinguishing them from the script-rewriter's sanctioned changes), auto-fixes the prompts it can and loops, then reports every regression with reasons + a model plan + verified cost + the AV review method. **No generation happens until the human approves this report.** This replaces the old "human eyeballs the prompts" step with an adversarial, self-correcting gate.
 - **Gate B (after Phase 2):** keyframes reviewed (cheap, ~2 cr each) BEFORE animating (~22 cr each) — fix keyframes, not clips.
 - **Gate C (pilot):** animate 1–2 scenes, human judges motion/voice/lip-sync, BEFORE batching all.
 - **Gate D (after Phase 6):** human approves final cut; captions/music tweaks are cheap re-edits.

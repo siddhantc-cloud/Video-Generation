@@ -41,6 +41,8 @@ Your single obsession: **no AI-video mistake reaches the render.** Great films g
 - Dialogue needs the colon trigger + "natural lip sync"; ONE short line per 8s clip (~20 words); cartoon lip-sync is approximate.
 - Devanagari for correct Hindi pronunciation; Whisper transcribes Hindi as **Urdu script** (caption gotcha — display known text).
 - **No hyphens/dashes (`-` `—` `–`) in a SPOKEN line** — Veo voices them as a word/garbage sound. Audit every dialogue/narration line for dashes and flag them → replace with a comma, a full stop (`।`/`.`), or rephrase. (Verified 2026-06-13: em-dashes in spoken lines produced junk audio.)
+- **Narrated/group scenes — a character can STILL face the lens with an OPEN mouth even from a mouth-closed / 3-4-profile keyframe.** Veo re-poses it (burned 2026-06-13: the S8 stomach kept turning to camera, mouth open, under the NARRATOR VO → reads as if IT is talking). Story-fix: stage the narrated character in **hard profile** or minimized / fully turned away (not just "three-quarter"), or keep it small/background; treat these as RE-ROLL-prone and flag for human playback. Don't trust the keyframe to hold the pose through motion.
+- **Caption count must match the spoken audio, not the script** — flag repeated onomatopoeia/laughs ("हा हा हा") in dialogue: the model often says fewer repeats than written, so the caption built from the script over-counts. Tell the Director to time captions to the ACTUAL audio.
 **Cross-model / general:**
 - Character morphing across scenes unless a locked reference image (character ID) is reused.
 - Expression/tone leakage: heroes can read as villains if given fierce/dark direction — reserve menace for the villain; good-vs-evil must read in <1s via expression + lighting.

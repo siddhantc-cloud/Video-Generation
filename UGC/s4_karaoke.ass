@@ -1,0 +1,18 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 1280
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Impact,58,&H0000D7FF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,3,0,2,30,30,140,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.10,0:00:01.81,Cap,,0,0,0,,{\kf24}Ye {\kf35}koi {\kf45}harsh {\kf59}solution
+Dialogue: 0,0:00:01.73,0:00:04.47,Cap,,0,0,0,,{\kf31}nahi {\kf175}hai. {\kf23}Ye {\kf38}das
+Dialogue: 0,0:00:04.39,0:00:06.22,Cap,,0,0,0,,{\kf17}se {\kf42}zyada {\kf74}Ayurvedic {\kf41}herbs
+Dialogue: 0,0:00:06.14,0:00:07.71,Cap,,0,0,0,,{\kf16}se {\kf31}bana {\kf60}hai, {\kf41}jaise
+Dialogue: 0,0:00:07.62,0:00:09.72,Cap,,0,0,0,,{\kf75}Haritaki, {\kf57}Ajwain {\kf19}aur {\kf50}Saunf,
+Dialogue: 0,0:00:09.79,0:00:11.47,Cap,,0,0,0,,{\kf20}jo {\kf65}digestion {\kf18}ko {\kf57}naturally
+Dialogue: 0,0:00:11.39,0:00:12.64,Cap,,0,0,0,,{\kf49}support {\kf39}karte {\kf30}hain.
