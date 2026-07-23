@@ -8,7 +8,7 @@
 | Operational surfaces preserved | `.git`, `.codex`, `.claude`, `.agent-harness`, root instructions, MCP config, and lightweight tools remain active | Post-move inventory | Codex | Pass |
 | Legacy material recoverable | Every classified legacy path is under `_archive/legacy-workspace-2026-07-24/` | Post-move inventory | Codex | Pass |
 | No archive committed | `_archive/` is ignored; tracked legacy files become repository deletions while remaining recoverable locally and in Git history | Git status and `.gitignore` | Codex | Pass |
-| Final film retained | Approved v005 captioned film is promoted under `Ramayana-ZebpaySIP/deliverables/final/` and tracked with Git LFS | LFS pointer and hash checks | Codex | Pending until push |
+| Final film retained | Approved v005 captioned film is promoted under `Ramayana-ZebpaySIP/deliverables/final/` and tracked with Git LFS | LFS pointer, hash, and remote commit `3b3034d` | Codex | Pass |
 
 ## Archive root
 

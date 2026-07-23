@@ -8,7 +8,7 @@
 | Technical master | H.264/AAC, 1080×1920, 30 fps, 1,566 frames, 52.200 s, 48 kHz stereo | FFprobe | QC | Pass |
 | Decode and boundary QC | Full decode, black-frame, graph, logo, caption, and transition checks pass | `../../review/final-short-v005-premium-graphics-qc.md` | QC | Pass |
 | Human playback | Owner approved the complete captioned cut with sound | Conversation, 2026-07-24 | Human | Pass |
-| Git delivery | Final is represented by a Git LFS pointer and uploaded with the commit | Git/LFS verification | Partner agent | Pending until push |
+| Git delivery | Final is represented by a Git LFS pointer and uploaded with commit `3b3034d` | LFS upload and remote branch verification | Partner agent | Pass |
 | Legal release | Any required advertiser, platform, or legal approval is documented outside operator QC | Release record | Human / brand / legal | Pending |
 
 ## Primary deliverable
