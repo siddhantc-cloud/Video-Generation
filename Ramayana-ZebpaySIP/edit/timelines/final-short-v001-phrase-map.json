@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "fps": 30,
+  "resolution": [1080, 1920],
+  "narration": {
+    "audio": "edit/audio/animatic-short-v004/narration-scratch.mp3",
+    "word_boundaries": "edit/audio/animatic-short-v004/narration-word-boundaries.json",
+    "voice": "en-IN-PrabhatNeural",
+    "rate": "-4%",
+    "measured_audio_sec": 51.792
+  },
+  "total_frames": 1566,
+  "total_sec": 52.2,
+  "beats": [
+    {
+      "id": "K01",
+      "first_word_index": 0,
+      "phrase": "An army of vanaras was building Ram Setu, boulder by boulder.",
+      "start_frame": 0,
+      "end_frame": 176,
+      "source": "footage/selects/K01_v002_seedance20_480p_sound.mp4"
+    },
+    {
+      "id": "K02",
+      "first_word_index": 11,
+      "phrase": "At the edge of the shore,",
+      "start_frame": 176,
+      "end_frame": 233,
+      "source": "footage/selects/K02_v001_seedance20_480p_sound.mp4"
+    },
+    {
+      "id": "K03",
+      "first_word_index": 17,
+      "phrase": "a tiny squirrel carried one pebble at a time.",
+      "start_frame": 233,
+      "end_frame": 353,
+      "source": "edit/clips_graded/K03_v001_valid-conform.mp4"
+    },
+    {
+      "id": "K04",
+      "first_word_index": 26,
+      "phrase": "The others laughed.",
+      "start_frame": 353,
+      "end_frame": 416,
+      "source": "footage/selects/K04_v001_seedance20_480p_sound.mp4"
+    },
+    {
+      "id": "K05",
+      "first_word_index": 29,
+      "phrase": "What difference could something so small make?",
+      "start_frame": 416,
+      "end_frame": 525,
+      "source": "footage/selects/K05_v001_seedance20_480p_sound.mp4"
+    },
+    {
+      "id": "K06",
+      "first_word_index": 36,
+      "phrase": "But Rama saw what they missed.",
+      "start_frame": 525,
+      "end_frame": 608,
+      "source": "footage/selects/K06_v001_seedance20_480p_sound.mp4"
+    },
+    {
+      "id": "K07",
+      "first_word_index": 42,
+      "phrase": "The squirrel kept showing up, whether the tide was calm",
+      "start_frame": 608,
+      "end_frame": 715,
+      "source": "footage/selects/K07_v001_seedance20_480p_sound.mp4"
+    },
+    {
+      "id": "K08",
+      "first_word_index": 52,
+      "phrase": "or rough.",
+      "start_frame": 715,
+      "end_frame": 762,
+      "source": "footage/selects/K08_v001_seedance20_480p_sound.mp4"
+    },
+    {
+      "id": "K09",
+      "first_word_index": 54,
+      "phrase": "And with every return, another gap was filled.",
+      "start_frame": 762,
+      "end_frame": 891,
+      "source": "footage/selects/K09_v001_seedance20_480p_sound.mp4"
+    },
+    {
+      "id": "K10",
+      "first_word_index": 62,
+      "phrase": "Investing can work the same way.",
+      "start_frame": 891,
+      "end_frame": 983,
+      "source": "footage/selects/K10_v001_seedance20_480p_sound.mp4"
+    },
+    {
+      "id": "G11",
+      "first_word_index": 68,
+      "phrase": "You do not need to predict the perfect market moment.",
+      "start_frame": 983,
+      "end_frame": 1116,
+      "source": "edit/animations/animatic-short-v004/sip-metaphor.mp4",
+      "source_in_frame": 0
+    },
+    {
+      "id": "G12",
+      "first_word_index": 78,
+      "phrase": "A SIP lets you invest the same amount regularly,",
+      "start_frame": 1116,
+      "end_frame": 1228,
+      "source": "edit/animations/animatic-short-v004/sip-metaphor.mp4",
+      "source_in_frame": 133
+    },
+    {
+      "id": "G13",
+      "first_word_index": 87,
+      "phrase": "through the ups and downs.",
+      "start_frame": 1228,
+      "end_frame": 1302,
+      "source": "edit/animations/animatic-short-v004/sip-metaphor.mp4",
+      "source_in_frame": 245
+    },
+    {
+      "id": "K14",
+      "first_word_index": 92,
+      "phrase": "Small steps, repeated consistently, can build something bigger.",
+      "start_frame": 1302,
+      "end_frame": 1466,
+      "source": "footage/selects/K14_v001_seedance20_480p_sound.mp4"
+    },
+    {
+      "id": "G15",
+      "first_word_index": 100,
+      "phrase": "Start your SIP with ZebPay.",
+      "start_frame": 1466,
+      "end_frame": 1566,
+      "source": "edit/animations/animatic-short-v004/end-card.mp4"
+    }
+  ]
+}

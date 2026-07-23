@@ -1,0 +1,4 @@
+interface:
+  display_name: "Script Video Plan"
+  short_description: "Build a frame-locked, cost-aware production plan."
+  default_prompt: "Use $script-video-plan to convert this approved script into a shot and cost plan."

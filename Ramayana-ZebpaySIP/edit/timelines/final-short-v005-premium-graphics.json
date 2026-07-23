@@ -1,0 +1,73 @@
+{
+  "version": "final-short-v005-premium-graphics",
+  "status": "human-playback-pending",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "total_frames": 1566,
+  "duration_seconds": 52.2,
+  "base_picture_and_audio": "deliverables/final/Ramayana-ZebPaySIP_FINAL_v003_1080x1920_clean.mp4",
+  "picture_segments": [
+    {
+      "output_start_frame": 0,
+      "output_end_frame_exclusive": 983,
+      "source": "base_picture_and_audio",
+      "source_start_frame": 0,
+      "source_end_frame_exclusive": 983
+    },
+    {
+      "output_start_frame": 983,
+      "output_end_frame_exclusive": 1302,
+      "source": "edit/animations/slot_sip_graph_v005/renders/sip-graph-v005_r3_1080x1920_30fps_hq.mp4",
+      "source_start_frame": 0,
+      "source_end_frame_exclusive": 319
+    },
+    {
+      "output_start_frame": 1302,
+      "output_end_frame_exclusive": 1466,
+      "source": "base_picture_and_audio",
+      "source_start_frame": 1302,
+      "source_end_frame_exclusive": 1466
+    },
+    {
+      "output_start_frame": 1466,
+      "output_end_frame_exclusive": 1566,
+      "source": "edit/animations/slot_zebpay_logo_v005/renders/zebpay-logo-v005_1080x1920_30fps_hq.mp4",
+      "source_start_frame": 0,
+      "source_end_frame_exclusive": 100
+    }
+  ],
+  "audio": {
+    "operation": "stream-copy",
+    "source": "base_picture_and_audio",
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 2,
+    "elementary_stream_md5": "09db2492eab6ae63ba8d6295f08f9511"
+  },
+  "captions": {
+    "source": "edit/master-short-v001.srt",
+    "operation": "burn-after-picture-lock",
+    "font_requested": "Montserrat",
+    "font_resolved_by_libass": "Arial-BoldMT",
+    "font_size": 12.5,
+    "outline": 1.4,
+    "alignment": 2,
+    "margin_left": 90,
+    "margin_right": 90,
+    "margin_vertical": 55,
+    "g15_subtitle_omitted": true
+  },
+  "outputs": {
+    "clean": {
+      "path": "deliverables/review-cuts/final-short-v005/Ramayana-ZebPaySIP_REVIEW_v005_premium-graphics_clean.mp4",
+      "sha256": "0696E4B7F4F3474B0D8B90B15B34A5313E820A8FB0E232003934D512E05225E4",
+      "bytes": 50394436
+    },
+    "captioned": {
+      "path": "deliverables/review-cuts/final-short-v005/Ramayana-ZebPaySIP_REVIEW_v005_premium-graphics_captioned.mp4",
+      "sha256": "DBB08C1682CFCB45CDA8DE90C53DEDA9319DF862F0C099A123991F855B899B47",
+      "bytes": 47805218
+    }
+  }
+}

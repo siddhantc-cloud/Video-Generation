@@ -1,0 +1,93 @@
+{
+  "fps": 30,
+  "resolution": [1080, 1920],
+  "voice": "en-IN-PrabhatNeural",
+  "rate": "-4%",
+  "default_pause_in": 0.15,
+  "default_pause_out": 0.25,
+  "kenburns": true,
+  "output": "deliverables/review-cuts/animatic-short/ZebPay_Squirrel_SHORT_ANIMATIC_v002.mp4",
+  "shots": [
+    {
+      "id": "Q1-purpose",
+      "images": [
+        "keyframes/S1-a.png",
+        "keyframes/S1-b.png",
+        "keyframes/S1-c.png"
+      ],
+      "weights": [0.30, 0.40, 0.30],
+      "pause_in": 0.35,
+      "vo": "An army of vanaras was building Ram Setu, boulder by boulder."
+    },
+    {
+      "id": "Q2-contribution",
+      "images": [
+        "keyframes/S2-a.png",
+        "keyframes/S2-b.png",
+        "keyframes/S2-c.png"
+      ],
+      "weights": [0.25, 0.30, 0.45],
+      "vo": "At the edge of the shore, a tiny squirrel carried one pebble at a time."
+    },
+    {
+      "id": "Q3-mockery",
+      "images": [
+        "keyframes/S3-b.png",
+        "keyframes/S3-f_grouplaugh.png",
+        "keyframes/S3-e.png"
+      ],
+      "weights": [0.35, 0.40, 0.25],
+      "vo": "The others laughed. What difference could something so small make?"
+    },
+    {
+      "id": "Q4-recognition",
+      "images": [
+        "keyframes/S4-a.png",
+        "keyframes/S4-d.png",
+        "keyframes/S4-e.png"
+      ],
+      "weights": [0.40, 0.35, 0.25],
+      "pause_out": 0.50,
+      "vo": "But Rama saw what they missed."
+    },
+    {
+      "id": "Q5-persistence",
+      "images": [
+        "keyframes/S5-a.png",
+        "keyframes/S5-b.png",
+        "keyframes/S5-c.png",
+        "keyframes/S5-d.png",
+        "keyframes/S5-e.png"
+      ],
+      "weights": [0.18, 0.20, 0.18, 0.22, 0.22],
+      "pause_out": 0.45,
+      "vo": "The squirrel kept showing up, whether the tide was calm or rough. And with every return, another gap was filled."
+    },
+    {
+      "id": "Q6-sip-parallel",
+      "images": [
+        "edit/graphics/sip-animatic/S6-01-perfect-moment.png",
+        "edit/graphics/sip-animatic/S6-02-regularly.png",
+        "edit/graphics/sip-animatic/S6-03-ups-downs.png"
+      ],
+      "weights": [0.34, 0.34, 0.32],
+      "pause_in": 0.25,
+      "pause_out": 0.45,
+      "vo": "Investing can work the same way. You do not need to predict the perfect market moment. A SIP lets you invest the same amount regularly, through the ups and downs."
+    },
+    {
+      "id": "Q7-payoff",
+      "image": "keyframes/S7-a.png",
+      "pause_in": 0.25,
+      "pause_out": 0.45,
+      "vo": "Small steps, repeated consistently, can build something bigger."
+    },
+    {
+      "id": "Q8-zebpay",
+      "video": "edit/graphics/end-card/endcard.mp4",
+      "pause_in": 0.15,
+      "pause_out": 1.00,
+      "vo": "Start your SIP with ZebPay."
+    }
+  ]
+}

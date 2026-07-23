@@ -1,4 +1,4 @@
-# === SECRETS — never commit ===
+# Secrets — never commit
 .env
 *.env
 **/.env
@@ -8,7 +8,7 @@
 *.pem
 secrets*
 
-# === heavy / generated media ===
+# Generated media stays local by default
 *.mp4
 *.mov
 *.mkv
@@ -17,33 +17,25 @@ secrets*
 *.mp3
 *.aac
 *.flac
-# keep ONLY the final deliverable
-!ads/clear-gut/edit/final/ClearGut_IngredientArmy_FINAL_v5.mp4
 
-# === generated intermediates / logs ===
+# Explicitly promoted and owner-approved final
+!Ramayana-ZebpaySIP/deliverables/final/Ramayana-ZebPaySIP_FINAL_v005_1080x1920_captioned.mp4
+
+# Generated intermediates and logs
 *.err
 *.log
-ads/clear-gut/clips/
-ads/clear-gut/keyframes/
-ads/clear-gut/audio/
-ads/clear-gut/edit/review_frames/
-ads/clear-gut/edit/fcheck/
-ads/clear-gut/edit/s2frames/
-ads/clear-gut/edit/verify/
-
-# === browser-tool runtime state (session token + audit logs, not project source) ===
-.gstack/
-
-# === tooling / OS junk ===
 __pycache__/
 *.pyc
-.DS_Store
-Thumbs.db
 node_modules/
+
+# Local runtime and recoverable archive
+.gstack/
+_archive/
+
+# Heavy local tool payload
 tools/ffmpeg-libass/
 tools/*.zip
 
-# === third-party/vendor skills (their own git repos — not this project's source) ===
-.claude/skills/cut-video/
-.claude/skills/higgsfield-cinematic/
-.claude/skills/video-use/
+# OS junk
+.DS_Store
+Thumbs.db

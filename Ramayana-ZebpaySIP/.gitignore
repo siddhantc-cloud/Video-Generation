@@ -1,0 +1,7 @@
+# Runtime secrets and rebuildable caches
+.env
+.env.*
+!.env.example
+**/_work/
+**/__pycache__/
+*.tmp

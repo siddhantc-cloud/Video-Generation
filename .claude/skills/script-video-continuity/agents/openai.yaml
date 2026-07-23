@@ -1,0 +1,4 @@
+interface:
+  display_name: "Script Video Continuity"
+  short_description: "Control reusable elements and shot-to-shot continuity."
+  default_prompt: "Use $script-video-continuity to prepare and audit reusable visual references."

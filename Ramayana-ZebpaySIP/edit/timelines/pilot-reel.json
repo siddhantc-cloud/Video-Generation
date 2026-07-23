@@ -1,0 +1,27 @@
+{
+ "fps": 30,
+ "resolution": [
+  1080,
+  1920
+ ],
+ "kenburns": false,
+ "output": "deliverables/review-cuts/pilots/PILOTS_REEL.mp4",
+ "default_pause_in": 0.2,
+ "default_pause_out": 0.4,
+ "shots": [
+  {
+   "id": "S1-a",
+   "video": "footage/selects/S1-a.mp4",
+   "pause_in": 0.5,
+   "pause_out": 3.09,
+   "vo_audio": "audio/voiceover/pilot-lines/tts_Acros_20260714_141654.mp3"
+  },
+  {
+   "id": "S4-c",
+   "video": "footage/selects/S4-c.mp4",
+   "pause_in": 0.2,
+   "pause_out": 2.58,
+   "vo_audio": "audio/voiceover/pilot-lines/tts_He_wa_20260714_141733.mp3"
+  }
+ ]
+}

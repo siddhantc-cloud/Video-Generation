@@ -1,0 +1,4 @@
+interface:
+  display_name: "Script Video Animatic"
+  short_description: "Build an audio-master storyboard animatic before motion."
+  default_prompt: "Use $script-video-animatic to build and verify a frame-locked animatic."

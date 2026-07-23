@@ -1,0 +1,4 @@
+interface:
+  display_name: "Script Video Bootstrap"
+  short_description: "Scaffold a clean video project from an approved script."
+  default_prompt: "Use $script-video-bootstrap to create a clean production workspace for this script."

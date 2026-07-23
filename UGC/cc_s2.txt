@@ -1,2 +1,0 @@
-file 'stub_s2.mp4'
-file 'seg_s2.mp4'

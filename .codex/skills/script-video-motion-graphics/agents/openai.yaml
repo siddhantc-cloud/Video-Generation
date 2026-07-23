@@ -1,0 +1,4 @@
+interface:
+  display_name: "Script Video Motion Graphics"
+  short_description: "Build exact premium graphics with deterministic motion."
+  default_prompt: "Use $script-video-motion-graphics to design and verify this graphics section."

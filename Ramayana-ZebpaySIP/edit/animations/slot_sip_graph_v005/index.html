@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ink: #020816;
+        --navy: #071a3d;
+        --cobalt: #2e7cf6;
+        --electric: #68a8ff;
+        --amber: #e9b96e;
+        --warm-white: #f4f7fb;
+        --muted: #aebbd0;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--ink);
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--warm-white);
+      }
+
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        isolation: isolate;
+        background: var(--ink);
+      }
+
+      #stage {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background: var(--ink);
+      }
+
+      #background {
+        position: absolute;
+        inset: -26px;
+        background-image: url("./assets/bridge-base.png");
+        background-size: cover;
+        background-position: center;
+        transform-origin: 52% 42%;
+        will-change: transform;
+      }
+
+      #grade {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 50% 46%, rgba(46, 124, 246, 0.12) 0, rgba(46, 124, 246, 0) 43%),
+          radial-gradient(circle at 76% 36%, rgba(233, 185, 110, 0.14) 0, rgba(233, 185, 110, 0) 30%),
+          rgba(2, 8, 22, 0.48);
+      }
+
+      #top-shadow {
+        position: absolute;
+        inset: 0 0 auto;
+        height: 760px;
+        background: rgba(2, 8, 22, 0.56);
+        box-shadow: 0 150px 190px rgba(2, 8, 22, 0.46);
+      }
+
+      #edge-vignette {
+        position: absolute;
+        inset: 0;
+        box-shadow:
+          inset 0 0 190px rgba(0, 0, 0, 0.54),
+          inset 0 -240px 220px rgba(1, 5, 15, 0.58);
+      }
+
+      #grain {
+        position: absolute;
+        inset: 0;
+        opacity: 0.18;
+        mix-blend-mode: soft-light;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' seed='8' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E");
+      }
+
+      #header {
+        position: absolute;
+        top: 104px;
+        left: 74px;
+        right: 74px;
+        height: 58px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      #header-rule {
+        width: 58px;
+        height: 5px;
+        background: var(--amber);
+        transform-origin: left center;
+        box-shadow: 0 0 22px rgba(233, 185, 110, 0.38);
+      }
+
+      #eyebrow {
+        font-family: "Space Mono", monospace;
+        font-size: 25px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        color: var(--muted);
+      }
+
+      #beat-index {
+        margin-left: auto;
+        font-family: "Space Mono", monospace;
+        font-size: 23px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: var(--amber);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .headline {
+        position: absolute;
+        top: 228px;
+        left: 74px;
+        width: 920px;
+        font-size: 92px;
+        line-height: 1;
+        letter-spacing: -0.052em;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-wrap: balance;
+        will-change: transform, opacity;
+      }
+
+      .headline span {
+        display: block;
+      }
+
+      .headline .quiet {
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      .headline .accent {
+        color: var(--amber);
+      }
+
+      #headline-1 {
+        font-size: 86px;
+      }
+
+      #headline-2 {
+        font-size: 99px;
+      }
+
+      #headline-3 {
+        font-size: 91px;
+      }
+
+      #data-field {
+        position: absolute;
+        top: 630px;
+        left: 0;
+        width: 1080px;
+        height: 920px;
+      }
+
+      #market-svg,
+      #sip-svg {
+        position: absolute;
+        inset: 0;
+        width: 1080px;
+        height: 920px;
+        overflow: visible;
+      }
+
+      #market-ghost {
+        fill: none;
+        stroke: rgba(174, 187, 208, 0.22);
+        stroke-width: 15;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      #market-glow {
+        fill: none;
+        stroke: rgba(46, 124, 246, 0.34);
+        stroke-width: 28;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: blur(11px);
+      }
+
+      #market-path {
+        fill: none;
+        stroke: var(--electric);
+        stroke-width: 9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      #market-baseline {
+        stroke: rgba(174, 187, 208, 0.25);
+        stroke-width: 2;
+        stroke-dasharray: 5 15;
+      }
+
+      #market-label {
+        position: absolute;
+        top: 52px;
+        left: 76px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-family: "Space Mono", monospace;
+        color: var(--muted);
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.11em;
+      }
+
+      #market-label-dot {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: var(--electric);
+        box-shadow: 0 0 20px rgba(104, 168, 255, 0.75);
+      }
+
+      #reticle {
+        position: absolute;
+        left: 51px;
+        top: 320px;
+        width: 70px;
+        height: 70px;
+        border: 3px solid var(--amber);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 10px rgba(233, 185, 110, 0.1),
+          0 0 30px rgba(233, 185, 110, 0.38);
+        will-change: transform, opacity;
+      }
+
+      #reticle::before,
+      #reticle::after {
+        content: "";
+        position: absolute;
+        background: var(--amber);
+      }
+
+      #reticle::before {
+        top: 31px;
+        left: -15px;
+        width: 94px;
+        height: 3px;
+      }
+
+      #reticle::after {
+        top: -15px;
+        left: 31px;
+        width: 3px;
+        height: 94px;
+      }
+
+      #search-label {
+        position: absolute;
+        left: 94px;
+        top: 453px;
+        font-family: "Space Mono", monospace;
+        color: var(--amber);
+        font-size: 23px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+      }
+
+      #sip-rail-glow {
+        stroke: rgba(233, 185, 110, 0.28);
+        stroke-width: 28;
+        stroke-linecap: round;
+        filter: blur(9px);
+      }
+
+      #sip-rail {
+        stroke: var(--amber);
+        stroke-width: 7;
+        stroke-linecap: round;
+      }
+
+      #sip-rail-base {
+        stroke: rgba(244, 247, 251, 0.19);
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-dasharray: 4 14;
+      }
+
+      .deposit {
+        position: absolute;
+        width: 58px;
+        height: 58px;
+        margin: -29px 0 0 -29px;
+        border: 4px solid var(--amber);
+        border-radius: 50%;
+        background: rgba(7, 26, 61, 0.9);
+        box-shadow:
+          inset 0 0 0 8px rgba(233, 185, 110, 0.12),
+          0 0 28px rgba(233, 185, 110, 0.44);
+        will-change: transform, opacity;
+      }
+
+      .deposit::after {
+        content: "";
+        position: absolute;
+        inset: 16px;
+        border-radius: 50%;
+        background: var(--warm-white);
+        box-shadow: 0 0 18px rgba(244, 247, 251, 0.72);
+      }
+
+      #deposit-1 { left: 220px; top: 750px; }
+      #deposit-2 { left: 310px; top: 660px; }
+      #deposit-3 { left: 400px; top: 570px; }
+      #deposit-4 { left: 490px; top: 480px; }
+      #deposit-5 { left: 580px; top: 390px; }
+      #deposit-6 { left: 670px; top: 300px; }
+      #deposit-7 { left: 760px; top: 210px; }
+
+      #cadence-label {
+        position: absolute;
+        left: 74px;
+        top: 810px;
+        font-family: "Space Mono", monospace;
+        color: var(--warm-white);
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.11em;
+        white-space: nowrap;
+      }
+
+      #equal-amount {
+        position: absolute;
+        right: 52px;
+        top: 510px;
+        width: 270px;
+        padding-left: 22px;
+        border-left: 5px solid var(--amber);
+        font-family: "Space Mono", monospace;
+        color: var(--muted);
+        font-size: 22px;
+        line-height: 1.5;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+
+      #equal-amount strong {
+        display: block;
+        color: var(--warm-white);
+        font-size: 28px;
+      }
+
+      #principle {
+        position: absolute;
+        left: 74px;
+        top: 1484px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        font-family: "Space Mono", monospace;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 0.11em;
+        color: var(--warm-white);
+      }
+
+      #principle-mark {
+        position: relative;
+        width: 48px;
+        height: 48px;
+      }
+
+      #principle-mark::before,
+      #principle-mark::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 48px;
+        height: 6px;
+        background: var(--amber);
+        box-shadow: 0 0 18px rgba(233, 185, 110, 0.35);
+      }
+
+      #principle-mark::before {
+        top: 13px;
+      }
+
+      #principle-mark::after {
+        top: 29px;
+      }
+
+      #principle .muted {
+        color: var(--muted);
+      }
+
+      #lower-rule {
+        position: absolute;
+        left: 74px;
+        top: 1558px;
+        width: 932px;
+        height: 2px;
+        background: rgba(174, 187, 208, 0.22);
+        transform-origin: left center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-8es6" id="root" data-composition-id="sip-graph-v005" data-start="0" data-duration="10.633333" data-width="1080" data-height="1920" data-fps="30">
+      <div data-hf-id="hf-yaho" id="stage" class="clip" data-start="0" data-duration="10.633333" data-track-index="0">
+        <div data-hf-id="hf-1qic" id="background" data-layout-ignore=""></div>
+        <div data-hf-id="hf-zvl1" id="grade" data-layout-ignore=""></div>
+        <div data-hf-id="hf-j5ty" id="top-shadow" data-layout-ignore=""></div>
+        <div data-hf-id="hf-y0oe" id="edge-vignette" data-layout-ignore=""></div>
+        <div data-hf-id="hf-ksa1" id="grain" data-layout-ignore=""></div>
+
+        <div data-hf-id="hf-rw2y" id="header">
+          <div data-hf-id="hf-h8et" id="header-rule"></div>
+          <div data-hf-id="hf-ffj6" id="eyebrow">SYSTEMATIC INVESTMENT PLAN</div>
+          <div data-hf-id="hf-gqhd" id="beat-index">01 / 03</div>
+        </div>
+
+        <div data-hf-id="hf-4hlc" id="headline-1" class="headline">
+          <span data-hf-id="hf-5imv">No perfect</span>
+          <span data-hf-id="hf-xtmh" class="quiet">market moment</span>
+          <span data-hf-id="hf-df10" class="accent">required.</span>
+        </div>
+        <div data-hf-id="hf-fd2z" id="headline-2" class="headline">
+          <span data-hf-id="hf-lrx1">Same amount.</span>
+          <span data-hf-id="hf-ay64" class="accent">Regularly.</span>
+        </div>
+        <div data-hf-id="hf-97d6" id="headline-3" class="headline">
+          <span data-hf-id="hf-og7u">Steady through</span>
+          <span data-hf-id="hf-bbq2" class="accent">ups &amp; downs.</span>
+        </div>
+
+        <div data-hf-id="hf-s9cu" id="data-field">
+          <svg data-hf-id="hf-lvb5" id="market-svg" viewBox="0 0 1080 920" aria-hidden="true">
+            <line data-hf-id="hf-hvul" id="market-baseline" x1="70" y1="332" x2="1010" y2="332" />
+            <path data-hf-id="hf-imoa" id="market-ghost" d="M70 350 C140 300 180 410 250 365 S360 220 440 325 S555 455 625 330 S750 190 825 290 S930 400 1010 245" />
+            <path data-hf-id="hf-h1ze" id="market-glow" d="M70 350 C140 300 180 410 250 365 S360 220 440 325 S555 455 625 330 S750 190 825 290 S930 400 1010 245" />
+            <path data-hf-id="hf-fjr8" id="market-path" d="M70 350 C140 300 180 410 250 365 S360 220 440 325 S555 455 625 330 S750 190 825 290 S930 400 1010 245" />
+          </svg>
+
+          <div data-hf-id="hf-inud" id="market-label">
+            <span data-hf-id="hf-8kph" id="market-label-dot"></span>
+            MARKET MOVEMENT
+          </div>
+
+          <div data-hf-id="hf-tq7b" id="reticle"></div>
+          <div data-hf-id="hf-o8r7" id="search-label">SEARCHING FOR “PERFECT”</div>
+
+          <svg data-hf-id="hf-gwjn" id="sip-svg" viewBox="0 0 1080 920" aria-hidden="true">
+            <line data-hf-id="hf-kqsb" id="sip-rail-base" x1="220" y1="750" x2="760" y2="210" />
+            <line data-hf-id="hf-9w0r" id="sip-rail-glow" x1="220" y1="750" x2="760" y2="210" />
+            <line data-hf-id="hf-rqpj" id="sip-rail" x1="220" y1="750" x2="760" y2="210" />
+          </svg>
+
+          <div data-hf-id="hf-44qo" id="deposit-1" class="deposit"></div>
+          <div data-hf-id="hf-f08b" id="deposit-2" class="deposit"></div>
+          <div data-hf-id="hf-b24a" id="deposit-3" class="deposit"></div>
+          <div data-hf-id="hf-sael" id="deposit-4" class="deposit"></div>
+          <div data-hf-id="hf-riqs" id="deposit-5" class="deposit"></div>
+          <div data-hf-id="hf-06mn" id="deposit-6" class="deposit"></div>
+          <div data-hf-id="hf-w8im" id="deposit-7" class="deposit"></div>
+
+          <div data-hf-id="hf-hc5l" id="cadence-label">FIXED RHYTHM</div>
+          <div data-hf-id="hf-6g9j" id="equal-amount">
+            <strong data-hf-id="hf-a5ha">EQUAL</strong>
+            CONTRIBUTIONS
+          </div>
+        </div>
+
+        <div data-hf-id="hf-f06n" id="principle">
+          <span data-hf-id="hf-i930" id="principle-mark"></span>
+          CONSISTENCY <span data-hf-id="hf-bvdk" class="muted">OVER</span> TIMING
+        </div>
+        <div data-hf-id="hf-i43j" id="lower-rule"></div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      const tl = gsap.timeline({
+        paused: true,
+        defaults: { ease: "power3.out" },
+      });
+
+      const marketLength = document.querySelector("#market-path").getTotalLength();
+      const railLength = document.querySelector("#sip-rail").getTotalLength();
+      const phase2Start = 133 / 30;
+      const phase3Start = 245 / 30;
+
+      gsap.set("#background", { scale: 1.025, x: -4, y: 0 });
+      gsap.set("#header-rule", { scaleX: 0 });
+      gsap.set(["#eyebrow", "#beat-index"], { opacity: 0, y: 15 });
+      gsap.set(["#headline-1", "#headline-2", "#headline-3"], { opacity: 0, y: 58 });
+      gsap.set(["#market-ghost", "#market-baseline", "#market-label"], { opacity: 0 });
+      gsap.set(["#market-path", "#market-glow"], {
+        strokeDasharray: marketLength,
+        strokeDashoffset: marketLength,
+      });
+      gsap.set(["#reticle", "#search-label"], { opacity: 0 });
+      gsap.set(["#sip-rail", "#sip-rail-glow"], {
+        strokeDasharray: railLength,
+        strokeDashoffset: railLength,
+        opacity: 0,
+      });
+      gsap.set("#sip-rail-base", { opacity: 0 });
+      gsap.set(".deposit", { opacity: 0, scale: 0.36, y: -100 });
+      gsap.set(["#cadence-label", "#equal-amount"], { opacity: 0, y: 24 });
+      gsap.set(["#principle", "#lower-rule"], { opacity: 0 });
+      gsap.set("#principle", { y: 22 });
+      gsap.set("#lower-rule", { scaleX: 0 });
+
+      tl.addLabel("open", 0);
+      tl.to("#background", { scale: 1.065, x: 8, y: -12, duration: 10.633333, ease: "none" }, "open");
+      tl.to("#header-rule", { scaleX: 1, duration: 0.55 }, 0.12);
+      tl.to("#eyebrow", { opacity: 1, y: 0, duration: 0.58 }, 0.2);
+      tl.to("#beat-index", { opacity: 1, y: 0, duration: 0.58 }, 0.3);
+      tl.to("#headline-1", { opacity: 1, y: 0, duration: 0.72 }, 0.32);
+      tl.to(["#market-ghost", "#market-baseline", "#market-label"], { opacity: 1, duration: 0.5 }, 0.72);
+      tl.to(["#market-path", "#market-glow"], {
+        strokeDashoffset: 0,
+        duration: 1.62,
+        ease: "power2.inOut",
+      }, 0.76);
+      tl.to(["#reticle", "#search-label"], { opacity: 1, duration: 0.36 }, 1.18);
+
+      tl.addLabel("search", 1.25);
+      tl.to("#reticle", { x: 175, y: 15, duration: 0.52, ease: "power2.inOut" }, "search");
+      tl.to("#reticle", { x: 355, y: -12, duration: 0.52, ease: "power2.inOut" });
+      tl.to("#reticle", { x: 535, y: -105, duration: 0.52, ease: "power2.inOut" });
+      tl.to("#reticle", { x: 715, y: -35, duration: 0.52, ease: "power2.inOut" });
+      tl.to("#reticle", { scale: 1.28, duration: 0.18, ease: "power2.out" }, 3.4);
+      tl.to("#reticle", { scale: 1, duration: 0.25, ease: "power2.in" }, 3.58);
+
+      tl.addLabel("regular", 4.03);
+      tl.to(["#reticle", "#search-label"], { opacity: 0, duration: 0.25, ease: "power2.in" }, "regular");
+      tl.to("#headline-1", { opacity: 0, y: -34, duration: phase2Start - 4.2, ease: "power2.in" }, 4.2);
+      tl.set("#beat-index", { innerText: "02 / 03" }, phase2Start);
+      tl.set("#headline-2", { opacity: 1, y: 18 }, phase2Start);
+      tl.to("#headline-2", { y: 0, duration: 0.25 }, phase2Start);
+      tl.to("#sip-rail-base", { opacity: 1, duration: 0.35 }, phase2Start);
+      tl.to(["#sip-rail", "#sip-rail-glow"], {
+        opacity: 1,
+        strokeDashoffset: 0,
+        duration: 1.3,
+        ease: "power2.inOut",
+      }, phase2Start);
+      tl.to("#cadence-label", { opacity: 1, y: 0, duration: 0.42 }, 4.62);
+
+      tl.to(".deposit", {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 0.44,
+        ease: "back.out(1.6)",
+        stagger: 0.38,
+      }, 4.62);
+      tl.to("#equal-amount", { opacity: 1, y: 0, duration: 0.48 }, 5.48);
+
+      tl.addLabel("steady", 7.9);
+      tl.to("#headline-2", { opacity: 0, y: -34, duration: phase3Start - 7.9, ease: "power2.in" }, "steady");
+      tl.set("#beat-index", { innerText: "03 / 03" }, phase3Start);
+      tl.set("#headline-3", { opacity: 1, y: 18 }, phase3Start);
+      tl.to("#headline-3", { y: 0, duration: 0.25 }, phase3Start);
+      tl.to("#market-path", {
+        stroke: "#68a8ff",
+        duration: 0.35,
+      }, phase3Start);
+      tl.to(".deposit", {
+        scale: 1.18,
+        duration: 0.18,
+        ease: "power2.out",
+        stagger: 0.09,
+      }, 8.22);
+      tl.to(".deposit", {
+        scale: 1,
+        duration: 0.24,
+        ease: "power2.inOut",
+        stagger: 0.09,
+      }, 8.4);
+      tl.to("#principle", { opacity: 1, y: 0, duration: 0.48 }, 8.56);
+      tl.to("#lower-rule", { opacity: 1, scaleX: 1, duration: 0.62 }, 8.7);
+
+      tl.to("#market-glow", { opacity: 0.48, duration: 0.28 }, 9.15);
+      tl.to("#market-glow", { opacity: 0.72, duration: 0.34 }, 9.43);
+      tl.to("#market-glow", { opacity: 0.42, duration: 0.34 }, 9.77);
+
+      window.__timelines["sip-graph-v005"] = tl;
+    </script>
+  </body>
+</html>

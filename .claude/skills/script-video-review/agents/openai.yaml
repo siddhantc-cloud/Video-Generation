@@ -1,0 +1,4 @@
+interface:
+  display_name: "Script Video Review"
+  short_description: "Review encoded takes against measurable expectations."
+  default_prompt: "Use $script-video-review to produce an evidence-backed keeper verdict."

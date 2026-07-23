@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ramayana Elements and Continuity"
+  short_description: "Build stable characters, locations, and props"
+  default_prompt: "Use $ramayana-elements-continuity to prepare or audit reusable production Elements."

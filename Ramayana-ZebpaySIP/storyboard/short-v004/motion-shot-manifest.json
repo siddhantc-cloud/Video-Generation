@@ -1,0 +1,226 @@
+{
+  "schema": 1,
+  "project": "Ramayana-ZebpaySIP",
+  "picture_lock": "animatic-short-v004",
+  "model": "seedance_2_0",
+  "mode": "std",
+  "aspect_ratio": "9:16",
+  "resolution": "480p",
+  "bitrate_mode": "high",
+  "generate_audio": true,
+  "candidate_count": 1,
+  "shots": [
+    {
+      "id": "K01",
+      "version": "v002",
+      "edit_start_sec": 0.0,
+      "edit_end_sec": 5.866667,
+      "request_duration_sec": 6,
+      "start_image": "keyframes/short-v004/conformed/K01-army-building_9x16_1080x1920.png",
+      "image_references": [
+        "assets/characters/rama_ref.png",
+        "assets/environments/bridge/bridge_01_first_clean_location.png"
+      ],
+      "prompt": "Style and mood: warm amber coastal dawn, fine-film texture. One continuous take without cuts. Slow stabilized aerial drift over the rocky exterior seashore and first bridge line. The workforce moves as a varied background mass, carrying and settling stones with grounded weight; Rama stays still. Cloth, fur, salt haze and surf move naturally. Audio: stone scrapes, low thuds, surf and wind; mouths stay closed.",
+      "live_quote_credits": 18,
+      "job_id": "b503b2d0-c3c6-478f-88ba-ef4cd4b1e3bd",
+      "actual_charge_credits": 18,
+      "raw_output": "footage/generated/K01_v002_seedance20_480p_sound.mp4",
+      "sha256": "11010BBBA940D15495CDC5BE88F6021400B3D8537D87EA9271661A96D1509CFF",
+      "status": "keeper"
+    },
+    {
+      "id": "K02",
+      "version": "v001",
+      "edit_start_sec": 5.866667,
+      "edit_end_sec": 7.766667,
+      "request_duration_sec": 4,
+      "start_image": "keyframes/short-v004/conformed/K02-edge-scale_9x16_1080x1920.png",
+      "image_references": [
+        "assets/characters/squirrel_ref.png",
+        "assets/environments/bridge/bridge_01_first_clean_location.png"
+      ],
+      "prompt": "Style and mood: restrained amber coastal realism, fine-film grain and quiet determination. Setting: exterior early Ram Setu bridge at dawn. One continuous take without cuts. Camera: low ground-level slow push-in. The still, alert squirrel stays tiny in the foreground while background vanaras lift and pass stones with believable weight. Sea-darkened stone, ropes, cloth and surf move naturally. Audio: surf, rope strain, stone scrapes and low thuds; no voices.",
+      "live_quote_credits": 12,
+      "job_id": "f1c0b203-0d66-4efd-bc63-258929d0f430",
+      "actual_charge_credits": 12,
+      "raw_output": "footage/generated/K02_v001_seedance20_480p_sound.mp4",
+      "sha256": "C951BD420E9DCD67085182D3F9E7E3B7D3984105F647562F7181CBE88B9FAD2A",
+      "status": "keeper"
+    },
+    {
+      "id": "K03",
+      "version": "v001",
+      "edit_start_sec": 7.766667,
+      "edit_end_sec": 11.766667,
+      "request_duration_sec": 4,
+      "start_image": "keyframes/short-v004/conformed/K03-squirrel-carry_9x16_1080x1920.png",
+      "image_references": [
+        "assets/characters/squirrel_ref.png",
+        "assets/environments/bridge/bridge_01_first_clean_location.png"
+      ],
+      "prompt": "Style and mood: muted amber coastal realism, fine-film grain and contained determination. Setting: exterior early Ram Setu bridge at dawn. One continuous take without cuts. Camera: low side-tracking move at constant speed. The squirrel walks toward the gap carrying exactly one pebble; paws, mouth and pebble remain intact. Background workers stay behind it. Audio: tiny paws on sea-darkened stone, pebble taps, distant stone work, surf and wind; no voices.",
+      "live_quote_credits": 12,
+      "job_id": "4553146c-7329-4871-9e16-0f50603f604d",
+      "actual_charge_credits": 12,
+      "raw_output": "footage/generated/K03_v001_seedance20_480p_sound.mp4",
+      "sha256": "10C5E48872A4B647800BD85C5E24DDAD90CEB7A292E5E99D5C867D8E78F6395B",
+      "usable_range_sec": [0.0, 1.5],
+      "status": "partial_keeper"
+    },
+    {
+      "id": "K04",
+      "version": "v001",
+      "edit_start_sec": 11.766667,
+      "edit_end_sec": 13.866667,
+      "request_duration_sec": 4,
+      "start_image": "keyframes/short-v004/conformed/K04-mockery_9x16_1080x1920.png",
+      "image_references": [
+        "assets/characters/squirrel_ref.png",
+        "assets/characters/vanara_lead_ref.png",
+        "assets/environments/bridge/bridge_02_half_clean_location.png"
+      ],
+      "prompt": "Style and mood: muted earth tones, natural dawn light, fine-film grain and restrained amusement. Setting: exterior half-built Ram Setu bridge. One continuous take without cuts. Camera: low squirrel-eyeline slow push-in. The lead vanara keeps the boulder balanced and gives one brief amused glance; the squirrel remains composed. No broad laughter or dialogue. Audio: heavy footfalls, stone grit, cloth, surf and wind.",
+      "live_quote_credits": 12,
+      "job_id": "1f9880fb-36c3-4893-ae50-f0279a1e54af",
+      "actual_charge_credits": 12,
+      "raw_output": "footage/generated/K04_v001_seedance20_480p_sound.mp4",
+      "sha256": "308ABC921C555AE629044A217C70C0BA0D11B1414565B47FFBEEABD2CF0D899F",
+      "status": "keeper"
+    },
+    {
+      "id": "K05",
+      "version": "v001",
+      "edit_start_sec": 13.866667,
+      "edit_end_sec": 17.5,
+      "request_duration_sec": 4,
+      "start_image": "keyframes/short-v004/conformed/K05-scale-contrast_9x16_1080x1920.png",
+      "image_references": [
+        "assets/characters/squirrel_ref.png",
+        "assets/characters/vanara_lead_ref.png",
+        "assets/environments/bridge/bridge_02_half_clean_location.png"
+      ],
+      "prompt": "Style and mood: muted earth tones, natural dawn light, fine-film grain and severe scale contrast. Setting: exterior half-built Ram Setu bridge. One continuous take without cuts. Camera: static macro framing with a very slow dolly-in. Keep the tiny pebble and squirrel crisp in front while the enormous boulder and vanara legs move slowly behind with believable weight. Preserve separation and size. Audio: grit, deep footfalls, stone strain, surf and wind; no voices.",
+      "live_quote_credits": 12,
+      "job_id": "6415571c-d083-46ad-8f17-0ae2cd7494b8",
+      "actual_charge_credits": 12,
+      "raw_output": "footage/generated/K05_v001_seedance20_480p_sound.mp4",
+      "sha256": "FFED62C16D79BA23D139AEEBF0FF054CB19AA784B94B43A148D50950F1050535",
+      "status": "keeper"
+    },
+    {
+      "id": "K06",
+      "version": "v001",
+      "edit_start_sec": 17.5,
+      "edit_end_sec": 20.266667,
+      "request_duration_sec": 4,
+      "start_image": "keyframes/short-v004/conformed/K06-rama-recognition_9x16_1080x1920.png",
+      "image_references": [
+        "assets/characters/rama_ref.png",
+        "assets/characters/squirrel_ref.png",
+        "assets/environments/bridge/bridge_02_half_clean_location.png"
+      ],
+      "prompt": "Style and mood: reverent muted amber realism, soft natural dawn light and fine-film grain. Setting: exterior half-built Ram Setu bridge. One continuous take without cuts. Camera: gentle push-in on the profile composition. Rama remains kneeling and exchanges quiet eye contact with the squirrel; no touching, pickup or speech. Only breathing, one small eye movement, and wind in hair and cloth. Preserve Rama's face, hands, crown and single bow. Audio: surf, wind and cloth; mouths closed.",
+      "live_quote_credits": 12,
+      "job_id": "7f604ce9-c4a9-4427-92e2-1dbd451f9bad",
+      "actual_charge_credits": 12,
+      "raw_output": "footage/generated/K06_v001_seedance20_480p_sound.mp4",
+      "sha256": "FB45C4D27E6EC246D8ADCF2E85F92E55EA0B3C44C5EA4B5E905CAEFD72FEAEA5",
+      "status": "keeper"
+    },
+    {
+      "id": "K07",
+      "version": "v001",
+      "edit_start_sec": 20.266667,
+      "edit_end_sec": 23.833333,
+      "request_duration_sec": 4,
+      "start_image": "keyframes/short-v004/conformed/K07-calm-return_9x16_1080x1920.png",
+      "image_references": [
+        "assets/characters/squirrel_ref.png",
+        "assets/environments/bridge/bridge_02_half_clean_location.png"
+      ],
+      "prompt": "Style and mood: cool blue-grey dawn, soft haze, grounded realism and fine-film grain. Setting: exterior half-built Ram Setu bridge in calm weather. One continuous take without cuts. Camera: low side-tracking move at constant speed. The squirrel moves along the same seam carrying one pebble; paws stay planted and anatomy remains stable. Calm water and haze move softly. Audio: small paw steps, pebble tap, calm water and light wind; no voices.",
+      "live_quote_credits": 12,
+      "job_id": "187e9197-a17f-4423-984c-b9eaa5ce9b50",
+      "actual_charge_credits": 12,
+      "raw_output": "footage/generated/K07_v001_seedance20_480p_sound.mp4",
+      "sha256": "6666888DB7B7FD7D57137157298E328B7BEEE3F08FF60709395560333871812B",
+      "status": "keeper"
+    },
+    {
+      "id": "K08",
+      "version": "v001",
+      "edit_start_sec": 23.833333,
+      "edit_end_sec": 25.4,
+      "request_duration_sec": 4,
+      "start_image": "keyframes/short-v004/conformed/K08-rough-return_9x16_1080x1920.png",
+      "image_references": [
+        "assets/characters/squirrel_ref.png",
+        "assets/environments/bridge/bridge_02_half_clean_location.png"
+      ],
+      "prompt": "Style and mood: cold storm-grey light, dense rain, grounded realism and fine-film grain. Setting: exterior half-built Ram Setu bridge during a rough tide. One continuous take without cuts. Camera: stabilized low tracking move. The squirrel keeps moving in the approved direction through rain and spray; paws grip sea-darkened stone, body and tail remain stable, never sliding or floating. Waves, rain and ropes react naturally. Audio: heavy rain, rough surf, wind and water on stone; no voices.",
+      "live_quote_credits": 12,
+      "job_id": "29fe5358-0ddb-4daa-ab43-bec0f7bb89c4",
+      "actual_charge_credits": 12,
+      "raw_output": "footage/generated/K08_v001_seedance20_480p_sound.mp4",
+      "sha256": "8BA8CD01EBAF88C87D4B63AF20C64897D39E44A81910F08DFE456332AEA0690A",
+      "status": "keeper"
+    },
+    {
+      "id": "K09",
+      "version": "v001",
+      "edit_start_sec": 25.4,
+      "edit_end_sec": 29.7,
+      "request_duration_sec": 5,
+      "start_image": "keyframes/short-v004/conformed/K09-gap-filled_9x16_1080x1920.png",
+      "image_references": [
+        "assets/characters/squirrel_ref.png",
+        "assets/environments/bridge/bridge_02_half_clean_location.png"
+      ],
+      "prompt": "Style and mood: cool natural light, tactile stone detail, grounded realism and fine-film grain. Setting: exterior joint in the half-built Ram Setu bridge. One continuous take without cuts. Camera: macro gentle push-in. Keep the packed line of pebbles stable inside the joint while loose grit settles and a thin wash of water drains away. The squirrel pauses at frame edge without humanlike paw work. Audio: trickling water, tiny grit and pebble clicks, distant surf; no voices.",
+      "live_quote_credits": 15,
+      "job_id": "cff1a816-6403-4a57-ac8b-71256ad740d8",
+      "actual_charge_credits": 15,
+      "raw_output": "footage/generated/K09_v001_seedance20_480p_sound.mp4",
+      "sha256": "F9E583579753D4C98067E42CD8E52F339C1D2909A2FA0AE9E254B58E8CE2AA9A",
+      "status": "keeper"
+    },
+    {
+      "id": "K10",
+      "version": "v001",
+      "edit_start_sec": 29.7,
+      "edit_end_sec": 32.766667,
+      "request_duration_sec": 4,
+      "start_image": "keyframes/short-v004/conformed/K10-regular-path_9x16_1080x1920.png",
+      "image_references": [
+        "assets/environments/bridge/bridge_03_complete_clean_location.png"
+      ],
+      "prompt": "Style and mood: restrained blue dawn, muted stone, soft haze and fine-film grain. Setting: exterior completed Ram Setu causeway. One continuous take without cuts. Camera: slow high-oblique glide along the repeated pebble seam toward the island. Pebbles and bridge geometry remain fixed while ocean, haze and cloud light move naturally. Preserve clean negative space; no words, charts, symbols or logos. Audio: rhythmic surf, light wind and occasional pebble rattle.",
+      "live_quote_credits": 12,
+      "job_id": "070ebadc-f706-40d3-8a25-372cbacc7679",
+      "actual_charge_credits": 12,
+      "raw_output": "footage/generated/K10_v001_seedance20_480p_sound.mp4",
+      "sha256": "D444E085B1B9BC91588FF02A0D1F82F0B4356CD1CE1C9ACF638B796AC8CD7B5E",
+      "status": "keeper"
+    },
+    {
+      "id": "K14",
+      "version": "v001",
+      "edit_start_sec": 43.4,
+      "edit_end_sec": 48.866667,
+      "request_duration_sec": 6,
+      "start_image": "keyframes/short-v004/conformed/K14-completed-bridge_9x16_1080x1920.png",
+      "image_references": [
+        "assets/characters/squirrel_ref.png",
+        "assets/environments/bridge/bridge_03_complete_clean_location.png"
+      ],
+      "prompt": "Style and mood: soft amber-blue dawn, muted earth tones, fine-film grain and quiet earned resolve. Setting: exterior completed Ram Setu bridge. One continuous take without cuts. Camera: subtle crane-forward move. The squirrel stays small on the foreground stone with quiet breathing and one natural tail movement while the bridge remains stable through haze to the island. No triumphant glow, text or logo. Audio: dawn surf, light wind, distant stone ambience and one soft paw shift; no voices.",
+      "live_quote_credits": 18,
+      "job_id": "23c8706e-a3d4-4360-a85c-fde110452187",
+      "actual_charge_credits": 18,
+      "raw_output": "footage/generated/K14_v001_seedance20_480p_sound.mp4",
+      "sha256": "36E74C4BFDBB0071F305CE5A5AC3F42F1D0FDB2B54381898D72F36E05AF94694",
+      "status": "keeper"
+    }
+  ]
+}

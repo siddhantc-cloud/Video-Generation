@@ -1,0 +1,852 @@
+{
+  "schema": 1,
+  "source": "edge-tts-word-boundary",
+  "voice": "en-IN-PrabhatNeural",
+  "rate": "-4%",
+  "pitch": "+0Hz",
+  "volume": "+0%",
+  "text": "An army of vanaras was building Ram Setu, boulder by boulder.\n\nAt the edge of the shore, a tiny squirrel carried one pebble at a time.\n\nThe others laughed. What difference could something so small make?\n\nBut Rama saw what they missed.\n\nThe squirrel kept showing up, whether the tide was calm or rough. And with every return, another gap was filled.\n\nInvesting can work the same way. You do not need to predict the perfect market moment. A SIP lets you invest the same amount regularly, through the ups and downs.\n\nSmall steps, repeated consistently, can build something bigger.\n\nStart your SIP with ZebPay.",
+  "word_count": 105,
+  "words": [
+    {
+      "index": 0,
+      "text": "An",
+      "offset_ticks": 1020830,
+      "duration_ticks": 2083330,
+      "start_sec": 0.102083,
+      "end_sec": 0.310416
+    },
+    {
+      "index": 1,
+      "text": "army",
+      "offset_ticks": 3885410,
+      "duration_ticks": 4947910,
+      "start_sec": 0.388541,
+      "end_sec": 0.883332
+    },
+    {
+      "index": 2,
+      "text": "of",
+      "offset_ticks": 9224160,
+      "duration_ticks": 2343750,
+      "start_sec": 0.922416,
+      "end_sec": 1.156791
+    },
+    {
+      "index": 3,
+      "text": "vanaras",
+      "offset_ticks": 11697910,
+      "duration_ticks": 6640830,
+      "start_sec": 1.169791,
+      "end_sec": 1.833874
+    },
+    {
+      "index": 4,
+      "text": "was",
+      "offset_ticks": 18338750,
+      "duration_ticks": 3125000,
+      "start_sec": 1.833875,
+      "end_sec": 2.146375
+    },
+    {
+      "index": 5,
+      "text": "building",
+      "offset_ticks": 21463750,
+      "duration_ticks": 4557080,
+      "start_sec": 2.146375,
+      "end_sec": 2.602083
+    },
+    {
+      "index": 6,
+      "text": "Ram",
+      "offset_ticks": 26020830,
+      "duration_ticks": 3125000,
+      "start_sec": 2.602083,
+      "end_sec": 2.914583
+    },
+    {
+      "index": 7,
+      "text": "Setu",
+      "offset_ticks": 29145830,
+      "duration_ticks": 4687500,
+      "start_sec": 2.914583,
+      "end_sec": 3.383333
+    },
+    {
+      "index": 8,
+      "text": "boulder",
+      "offset_ticks": 36567910,
+      "duration_ticks": 4947910,
+      "start_sec": 3.656791,
+      "end_sec": 4.151582
+    },
+    {
+      "index": 9,
+      "text": "by",
+      "offset_ticks": 41515830,
+      "duration_ticks": 2473750,
+      "start_sec": 4.151583,
+      "end_sec": 4.398958
+    },
+    {
+      "index": 10,
+      "text": "boulder",
+      "offset_ticks": 43989580,
+      "duration_ticks": 5338750,
+      "start_sec": 4.398958,
+      "end_sec": 4.932833
+    },
+    {
+      "index": 11,
+      "text": "At",
+      "offset_ticks": 58724160,
+      "duration_ticks": 1953330,
+      "start_sec": 5.872416,
+      "end_sec": 6.067749
+    },
+    {
+      "index": 12,
+      "text": "the",
+      "offset_ticks": 60807500,
+      "duration_ticks": 2474160,
+      "start_sec": 6.08075,
+      "end_sec": 6.328166
+    },
+    {
+      "index": 13,
+      "text": "edge",
+      "offset_ticks": 64062500,
+      "duration_ticks": 2213750,
+      "start_sec": 6.40625,
+      "end_sec": 6.627625
+    },
+    {
+      "index": 14,
+      "text": "of",
+      "offset_ticks": 67317910,
+      "duration_ticks": 1562500,
+      "start_sec": 6.731791,
+      "end_sec": 6.888041
+    },
+    {
+      "index": 15,
+      "text": "the",
+      "offset_ticks": 68880410,
+      "duration_ticks": 1432080,
+      "start_sec": 6.888041,
+      "end_sec": 7.031249
+    },
+    {
+      "index": 16,
+      "text": "shore",
+      "offset_ticks": 70312500,
+      "duration_ticks": 3906250,
+      "start_sec": 7.03125,
+      "end_sec": 7.421875
+    },
+    {
+      "index": 17,
+      "text": "a",
+      "offset_ticks": 77734580,
+      "duration_ticks": 651250,
+      "start_sec": 7.773458,
+      "end_sec": 7.838583
+    },
+    {
+      "index": 18,
+      "text": "tiny",
+      "offset_ticks": 78515830,
+      "duration_ticks": 4296660,
+      "start_sec": 7.851583,
+      "end_sec": 8.281249
+    },
+    {
+      "index": 19,
+      "text": "squirrel",
+      "offset_ticks": 82812500,
+      "duration_ticks": 4817910,
+      "start_sec": 8.28125,
+      "end_sec": 8.763041
+    },
+    {
+      "index": 20,
+      "text": "carried",
+      "offset_ticks": 87630410,
+      "duration_ticks": 4687500,
+      "start_sec": 8.763041,
+      "end_sec": 9.231791
+    },
+    {
+      "index": 21,
+      "text": "one",
+      "offset_ticks": 92317910,
+      "duration_ticks": 3255000,
+      "start_sec": 9.231791,
+      "end_sec": 9.557291
+    },
+    {
+      "index": 22,
+      "text": "pebble",
+      "offset_ticks": 95572910,
+      "duration_ticks": 4687500,
+      "start_sec": 9.557291,
+      "end_sec": 10.026041
+    },
+    {
+      "index": 23,
+      "text": "at",
+      "offset_ticks": 100911660,
+      "duration_ticks": 2343750,
+      "start_sec": 10.091166,
+      "end_sec": 10.325541
+    },
+    {
+      "index": 24,
+      "text": "a",
+      "offset_ticks": 103255410,
+      "duration_ticks": 520830,
+      "start_sec": 10.325541,
+      "end_sec": 10.377624
+    },
+    {
+      "index": 25,
+      "text": "time",
+      "offset_ticks": 103776250,
+      "duration_ticks": 4687500,
+      "start_sec": 10.377625,
+      "end_sec": 10.846375
+    },
+    {
+      "index": 26,
+      "text": "The",
+      "offset_ticks": 117578330,
+      "duration_ticks": 1562500,
+      "start_sec": 11.757833,
+      "end_sec": 11.914083
+    },
+    {
+      "index": 27,
+      "text": "others",
+      "offset_ticks": 119922080,
+      "duration_ticks": 4557080,
+      "start_sec": 11.992208,
+      "end_sec": 12.447916
+    },
+    {
+      "index": 28,
+      "text": "laughed",
+      "offset_ticks": 124479160,
+      "duration_ticks": 4947910,
+      "start_sec": 12.447916,
+      "end_sec": 12.942707
+    },
+    {
+      "index": 29,
+      "text": "What",
+      "offset_ticks": 138802080,
+      "duration_ticks": 2995000,
+      "start_sec": 13.880208,
+      "end_sec": 14.179708
+    },
+    {
+      "index": 30,
+      "text": "difference",
+      "offset_ticks": 142447910,
+      "duration_ticks": 5338750,
+      "start_sec": 14.244791,
+      "end_sec": 14.778666
+    },
+    {
+      "index": 31,
+      "text": "could",
+      "offset_ticks": 148047080,
+      "duration_ticks": 2083330,
+      "start_sec": 14.804708,
+      "end_sec": 15.013041
+    },
+    {
+      "index": 32,
+      "text": "something",
+      "offset_ticks": 150130410,
+      "duration_ticks": 5338330,
+      "start_sec": 15.013041,
+      "end_sec": 15.546874
+    },
+    {
+      "index": 33,
+      "text": "so",
+      "offset_ticks": 155468750,
+      "duration_ticks": 2474160,
+      "start_sec": 15.546875,
+      "end_sec": 15.794291
+    },
+    {
+      "index": 34,
+      "text": "small",
+      "offset_ticks": 157942910,
+      "duration_ticks": 3906250,
+      "start_sec": 15.794291,
+      "end_sec": 16.184916
+    },
+    {
+      "index": 35,
+      "text": "make",
+      "offset_ticks": 161849160,
+      "duration_ticks": 3906250,
+      "start_sec": 16.184916,
+      "end_sec": 16.575541
+    },
+    {
+      "index": 36,
+      "text": "But",
+      "offset_ticks": 175000000,
+      "duration_ticks": 2343750,
+      "start_sec": 17.5,
+      "end_sec": 17.734375
+    },
+    {
+      "index": 37,
+      "text": "Rama",
+      "offset_ticks": 177604160,
+      "duration_ticks": 3906250,
+      "start_sec": 17.760416,
+      "end_sec": 18.151041
+    },
+    {
+      "index": 38,
+      "text": "saw",
+      "offset_ticks": 181510410,
+      "duration_ticks": 2604160,
+      "start_sec": 18.151041,
+      "end_sec": 18.411457
+    },
+    {
+      "index": 39,
+      "text": "what",
+      "offset_ticks": 184114580,
+      "duration_ticks": 3125000,
+      "start_sec": 18.411458,
+      "end_sec": 18.723958
+    },
+    {
+      "index": 40,
+      "text": "they",
+      "offset_ticks": 187239580,
+      "duration_ticks": 2213750,
+      "start_sec": 18.723958,
+      "end_sec": 18.945333
+    },
+    {
+      "index": 41,
+      "text": "missed",
+      "offset_ticks": 189453330,
+      "duration_ticks": 3906250,
+      "start_sec": 18.945333,
+      "end_sec": 19.335958
+    },
+    {
+      "index": 42,
+      "text": "The",
+      "offset_ticks": 202604160,
+      "duration_ticks": 911660,
+      "start_sec": 20.260416,
+      "end_sec": 20.351582
+    },
+    {
+      "index": 43,
+      "text": "squirrel",
+      "offset_ticks": 203515830,
+      "duration_ticks": 5077910,
+      "start_sec": 20.351583,
+      "end_sec": 20.859374
+    },
+    {
+      "index": 44,
+      "text": "kept",
+      "offset_ticks": 208593750,
+      "duration_ticks": 3125000,
+      "start_sec": 20.859375,
+      "end_sec": 21.171875
+    },
+    {
+      "index": 45,
+      "text": "showing",
+      "offset_ticks": 211979160,
+      "duration_ticks": 4166660,
+      "start_sec": 21.197916,
+      "end_sec": 21.614582
+    },
+    {
+      "index": 46,
+      "text": "up",
+      "offset_ticks": 216145830,
+      "duration_ticks": 2995000,
+      "start_sec": 21.614583,
+      "end_sec": 21.914083
+    },
+    {
+      "index": 47,
+      "text": "whether",
+      "offset_ticks": 221614580,
+      "duration_ticks": 3776250,
+      "start_sec": 22.161458,
+      "end_sec": 22.539083
+    },
+    {
+      "index": 48,
+      "text": "the",
+      "offset_ticks": 225390830,
+      "duration_ticks": 1302080,
+      "start_sec": 22.539083,
+      "end_sec": 22.669291
+    },
+    {
+      "index": 49,
+      "text": "tide",
+      "offset_ticks": 226692910,
+      "duration_ticks": 4036250,
+      "start_sec": 22.669291,
+      "end_sec": 23.072916
+    },
+    {
+      "index": 50,
+      "text": "was",
+      "offset_ticks": 230729160,
+      "duration_ticks": 3125000,
+      "start_sec": 23.072916,
+      "end_sec": 23.385416
+    },
+    {
+      "index": 51,
+      "text": "calm",
+      "offset_ticks": 233984580,
+      "duration_ticks": 3645830,
+      "start_sec": 23.398458,
+      "end_sec": 23.763041
+    },
+    {
+      "index": 52,
+      "text": "or",
+      "offset_ticks": 238281250,
+      "duration_ticks": 1953330,
+      "start_sec": 23.828125,
+      "end_sec": 24.023458
+    },
+    {
+      "index": 53,
+      "text": "rough",
+      "offset_ticks": 240234580,
+      "duration_ticks": 4427080,
+      "start_sec": 24.023458,
+      "end_sec": 24.466166
+    },
+    {
+      "index": 54,
+      "text": "And",
+      "offset_ticks": 253906250,
+      "duration_ticks": 2474160,
+      "start_sec": 25.390625,
+      "end_sec": 25.638041
+    },
+    {
+      "index": 55,
+      "text": "with",
+      "offset_ticks": 256380410,
+      "duration_ticks": 2474160,
+      "start_sec": 25.638041,
+      "end_sec": 25.885457
+    },
+    {
+      "index": 56,
+      "text": "every",
+      "offset_ticks": 259765830,
+      "duration_ticks": 4166660,
+      "start_sec": 25.976583,
+      "end_sec": 26.393249
+    },
+    {
+      "index": 57,
+      "text": "return",
+      "offset_ticks": 263932500,
+      "duration_ticks": 5729160,
+      "start_sec": 26.39325,
+      "end_sec": 26.966166
+    },
+    {
+      "index": 58,
+      "text": "another",
+      "offset_ticks": 272265830,
+      "duration_ticks": 4947910,
+      "start_sec": 27.226583,
+      "end_sec": 27.721374
+    },
+    {
+      "index": 59,
+      "text": "gap",
+      "offset_ticks": 277213750,
+      "duration_ticks": 3515410,
+      "start_sec": 27.721375,
+      "end_sec": 28.072916
+    },
+    {
+      "index": 60,
+      "text": "was",
+      "offset_ticks": 280729160,
+      "duration_ticks": 3385410,
+      "start_sec": 28.072916,
+      "end_sec": 28.411457
+    },
+    {
+      "index": 61,
+      "text": "filled",
+      "offset_ticks": 284114580,
+      "duration_ticks": 3776250,
+      "start_sec": 28.411458,
+      "end_sec": 28.789083
+    },
+    {
+      "index": 62,
+      "text": "Investing",
+      "offset_ticks": 297135410,
+      "duration_ticks": 5989580,
+      "start_sec": 29.713541,
+      "end_sec": 30.312499
+    },
+    {
+      "index": 63,
+      "text": "can",
+      "offset_ticks": 303125000,
+      "duration_ticks": 2864580,
+      "start_sec": 30.3125,
+      "end_sec": 30.598958
+    },
+    {
+      "index": 64,
+      "text": "work",
+      "offset_ticks": 305989580,
+      "duration_ticks": 3906250,
+      "start_sec": 30.598958,
+      "end_sec": 30.989583
+    },
+    {
+      "index": 65,
+      "text": "the",
+      "offset_ticks": 309895830,
+      "duration_ticks": 1562500,
+      "start_sec": 30.989583,
+      "end_sec": 31.145833
+    },
+    {
+      "index": 66,
+      "text": "same",
+      "offset_ticks": 311458330,
+      "duration_ticks": 3906250,
+      "start_sec": 31.145833,
+      "end_sec": 31.536458
+    },
+    {
+      "index": 67,
+      "text": "way",
+      "offset_ticks": 315364580,
+      "duration_ticks": 2864580,
+      "start_sec": 31.536458,
+      "end_sec": 31.822916
+    },
+    {
+      "index": 68,
+      "text": "You",
+      "offset_ticks": 327604160,
+      "duration_ticks": 1562500,
+      "start_sec": 32.760416,
+      "end_sec": 32.916666
+    },
+    {
+      "index": 69,
+      "text": "do",
+      "offset_ticks": 329166660,
+      "duration_ticks": 1432500,
+      "start_sec": 32.916666,
+      "end_sec": 33.059916
+    },
+    {
+      "index": 70,
+      "text": "not",
+      "offset_ticks": 330859580,
+      "duration_ticks": 3385410,
+      "start_sec": 33.085958,
+      "end_sec": 33.424499
+    },
+    {
+      "index": 71,
+      "text": "need",
+      "offset_ticks": 334765830,
+      "duration_ticks": 3515830,
+      "start_sec": 33.476583,
+      "end_sec": 33.828166
+    },
+    {
+      "index": 72,
+      "text": "to",
+      "offset_ticks": 339062500,
+      "duration_ticks": 1302080,
+      "start_sec": 33.90625,
+      "end_sec": 34.036458
+    },
+    {
+      "index": 73,
+      "text": "predict",
+      "offset_ticks": 340495000,
+      "duration_ticks": 4557500,
+      "start_sec": 34.0495,
+      "end_sec": 34.50525
+    },
+    {
+      "index": 74,
+      "text": "the",
+      "offset_ticks": 345572910,
+      "duration_ticks": 1562500,
+      "start_sec": 34.557291,
+      "end_sec": 34.713541
+    },
+    {
+      "index": 75,
+      "text": "perfect",
+      "offset_ticks": 347135410,
+      "duration_ticks": 5468750,
+      "start_sec": 34.713541,
+      "end_sec": 35.260416
+    },
+    {
+      "index": 76,
+      "text": "market",
+      "offset_ticks": 353125000,
+      "duration_ticks": 4687500,
+      "start_sec": 35.3125,
+      "end_sec": 35.78125
+    },
+    {
+      "index": 77,
+      "text": "moment",
+      "offset_ticks": 357812500,
+      "duration_ticks": 4947910,
+      "start_sec": 35.78125,
+      "end_sec": 36.276041
+    },
+    {
+      "index": 78,
+      "text": "A",
+      "offset_ticks": 372005410,
+      "duration_ticks": 520830,
+      "start_sec": 37.200541,
+      "end_sec": 37.252624
+    },
+    {
+      "index": 79,
+      "text": "SIP",
+      "offset_ticks": 372656250,
+      "duration_ticks": 3255410,
+      "start_sec": 37.265625,
+      "end_sec": 37.591166
+    },
+    {
+      "index": 80,
+      "text": "lets",
+      "offset_ticks": 376041660,
+      "duration_ticks": 3906250,
+      "start_sec": 37.604166,
+      "end_sec": 37.994791
+    },
+    {
+      "index": 81,
+      "text": "you",
+      "offset_ticks": 379947910,
+      "duration_ticks": 2343750,
+      "start_sec": 37.994791,
+      "end_sec": 38.229166
+    },
+    {
+      "index": 82,
+      "text": "invest",
+      "offset_ticks": 382942910,
+      "duration_ticks": 4947910,
+      "start_sec": 38.294291,
+      "end_sec": 38.789082
+    },
+    {
+      "index": 83,
+      "text": "the",
+      "offset_ticks": 388411660,
+      "duration_ticks": 1302080,
+      "start_sec": 38.841166,
+      "end_sec": 38.971374
+    },
+    {
+      "index": 84,
+      "text": "same",
+      "offset_ticks": 389713750,
+      "duration_ticks": 4166660,
+      "start_sec": 38.971375,
+      "end_sec": 39.388041
+    },
+    {
+      "index": 85,
+      "text": "amount",
+      "offset_ticks": 394140830,
+      "duration_ticks": 4166660,
+      "start_sec": 39.414083,
+      "end_sec": 39.830749
+    },
+    {
+      "index": 86,
+      "text": "regularly",
+      "offset_ticks": 398828330,
+      "duration_ticks": 6640830,
+      "start_sec": 39.882833,
+      "end_sec": 40.546916
+    },
+    {
+      "index": 87,
+      "text": "through",
+      "offset_ticks": 409245000,
+      "duration_ticks": 2083330,
+      "start_sec": 40.9245,
+      "end_sec": 41.132833
+    },
+    {
+      "index": 88,
+      "text": "the",
+      "offset_ticks": 411328330,
+      "duration_ticks": 1692500,
+      "start_sec": 41.132833,
+      "end_sec": 41.302083
+    },
+    {
+      "index": 89,
+      "text": "ups",
+      "offset_ticks": 413020830,
+      "duration_ticks": 3255410,
+      "start_sec": 41.302083,
+      "end_sec": 41.627624
+    },
+    {
+      "index": 90,
+      "text": "and",
+      "offset_ticks": 417057500,
+      "duration_ticks": 2473750,
+      "start_sec": 41.70575,
+      "end_sec": 41.953125
+    },
+    {
+      "index": 91,
+      "text": "downs",
+      "offset_ticks": 419531250,
+      "duration_ticks": 5338750,
+      "start_sec": 41.953125,
+      "end_sec": 42.487
+    },
+    {
+      "index": 92,
+      "text": "Small",
+      "offset_ticks": 433984580,
+      "duration_ticks": 4166660,
+      "start_sec": 43.398458,
+      "end_sec": 43.815124
+    },
+    {
+      "index": 93,
+      "text": "steps",
+      "offset_ticks": 438151250,
+      "duration_ticks": 4817910,
+      "start_sec": 43.815125,
+      "end_sec": 44.296916
+    },
+    {
+      "index": 94,
+      "text": "repeated",
+      "offset_ticks": 445572910,
+      "duration_ticks": 5599160,
+      "start_sec": 44.557291,
+      "end_sec": 45.117207
+    },
+    {
+      "index": 95,
+      "text": "consistently",
+      "offset_ticks": 451432500,
+      "duration_ticks": 8984580,
+      "start_sec": 45.14325,
+      "end_sec": 46.041708
+    },
+    {
+      "index": 96,
+      "text": "can",
+      "offset_ticks": 464192910,
+      "duration_ticks": 1952910,
+      "start_sec": 46.419291,
+      "end_sec": 46.614582
+    },
+    {
+      "index": 97,
+      "text": "build",
+      "offset_ticks": 466145830,
+      "duration_ticks": 3515830,
+      "start_sec": 46.614583,
+      "end_sec": 46.966166
+    },
+    {
+      "index": 98,
+      "text": "something",
+      "offset_ticks": 469661660,
+      "duration_ticks": 5208330,
+      "start_sec": 46.966166,
+      "end_sec": 47.486999
+    },
+    {
+      "index": 99,
+      "text": "bigger",
+      "offset_ticks": 474870000,
+      "duration_ticks": 4427080,
+      "start_sec": 47.487,
+      "end_sec": 47.929708
+    },
+    {
+      "index": 100,
+      "text": "Start",
+      "offset_ticks": 488672080,
+      "duration_ticks": 4166660,
+      "start_sec": 48.867208,
+      "end_sec": 49.283874
+    },
+    {
+      "index": 101,
+      "text": "your",
+      "offset_ticks": 492838750,
+      "duration_ticks": 2994580,
+      "start_sec": 49.283875,
+      "end_sec": 49.583333
+    },
+    {
+      "index": 102,
+      "text": "SIP",
+      "offset_ticks": 495833330,
+      "duration_ticks": 3125000,
+      "start_sec": 49.583333,
+      "end_sec": 49.895833
+    },
+    {
+      "index": 103,
+      "text": "with",
+      "offset_ticks": 499088750,
+      "duration_ticks": 2604160,
+      "start_sec": 49.908875,
+      "end_sec": 50.169291
+    },
+    {
+      "index": 104,
+      "text": "ZebPay",
+      "offset_ticks": 502213750,
+      "duration_ticks": 5989580,
+      "start_sec": 50.221375,
+      "end_sec": 50.820333
+    }
+  ]
+}

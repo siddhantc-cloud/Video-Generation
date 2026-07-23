@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ramayana Video Planning"
+  short_description: "Plan shots, iterations, approvals, and costs"
+  default_prompt: "Use $ramayana-video-plan to prepare the next shot and its cost-controlled iteration plan."

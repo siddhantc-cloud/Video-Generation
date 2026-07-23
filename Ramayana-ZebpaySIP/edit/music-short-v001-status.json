@@ -1,0 +1,6 @@
+﻿{
+    "state":  "failed",
+    "output":  "audio/music/short-v001-elevenlabs-music-v2.mp3",
+    "error":  "The remote server returned an error: (402) Payment Required.",
+    "failed_at":  "2026-07-23T22:06:38.6625211+05:30"
+}

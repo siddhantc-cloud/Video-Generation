@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ramayana Production Learn"
+  short_description: "Promote verified production lessons into skills"
+  default_prompt: "Use $ramayana-learn to update the runbook and project skills from current evidence."

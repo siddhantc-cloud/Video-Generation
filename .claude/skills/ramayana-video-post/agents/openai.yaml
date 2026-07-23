@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ramayana Video Post"
+  short_description: "Assemble picture, narration, sound, and graphics"
+  default_prompt: "Use $ramayana-video-post to assemble and verify the next review cut."

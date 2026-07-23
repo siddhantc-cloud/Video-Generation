@@ -1,0 +1,4 @@
+interface:
+  display_name: "Script Video Post"
+  short_description: "Assemble, mix, caption, master, and verify the video."
+  default_prompt: "Use $script-video-post to assemble approved selects into a review or final master."

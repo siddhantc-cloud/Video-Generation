@@ -1,0 +1,219 @@
+{
+  "fps": 30,
+  "total_frames": 1737,
+  "expected_sec": 57.9,
+  "video_sec": 57.9,
+  "audio_sec": 57.9,
+  "drift_sec": 0.0,
+  "sync_locked": true,
+  "shots": [
+    {
+      "i": 0,
+      "id": "Q1-purpose",
+      "vo_sec": 5.88,
+      "pause_in": 0.35,
+      "pause_out": 0.25,
+      "frames": 195,
+      "on_screen_sec": 6.5,
+      "images": [
+        {
+          "image": "S1-a.png",
+          "frames": 58,
+          "start": "00:00:00:00",
+          "end": "00:00:01:28"
+        },
+        {
+          "image": "S1-b.png",
+          "frames": 78,
+          "start": "00:00:01:28",
+          "end": "00:00:04:16"
+        },
+        {
+          "image": "S1-c.png",
+          "frames": 59,
+          "start": "00:00:04:16",
+          "end": "00:00:06:15"
+        }
+      ]
+    },
+    {
+      "i": 1,
+      "id": "Q2-contribution",
+      "vo_sec": 6.0,
+      "pause_in": 0.15,
+      "pause_out": 0.25,
+      "frames": 192,
+      "on_screen_sec": 6.4,
+      "images": [
+        {
+          "image": "S2-a.png",
+          "frames": 48,
+          "start": "00:00:06:15",
+          "end": "00:00:08:03"
+        },
+        {
+          "image": "S2-b.png",
+          "frames": 58,
+          "start": "00:00:08:03",
+          "end": "00:00:10:01"
+        },
+        {
+          "image": "S2-c.png",
+          "frames": 86,
+          "start": "00:00:10:01",
+          "end": "00:00:12:27"
+        }
+      ]
+    },
+    {
+      "i": 2,
+      "id": "Q3-mockery",
+      "vo_sec": 5.856,
+      "pause_in": 0.15,
+      "pause_out": 0.25,
+      "frames": 188,
+      "on_screen_sec": 6.267,
+      "images": [
+        {
+          "image": "S3-b.png",
+          "frames": 66,
+          "start": "00:00:12:27",
+          "end": "00:00:15:03"
+        },
+        {
+          "image": "S3-f_grouplaugh.png",
+          "frames": 75,
+          "start": "00:00:15:03",
+          "end": "00:00:17:18"
+        },
+        {
+          "image": "S3-e.png",
+          "frames": 47,
+          "start": "00:00:17:18",
+          "end": "00:00:19:05"
+        }
+      ]
+    },
+    {
+      "i": 3,
+      "id": "Q4-recognition",
+      "vo_sec": 2.88,
+      "pause_in": 0.15,
+      "pause_out": 0.5,
+      "frames": 106,
+      "on_screen_sec": 3.533,
+      "images": [
+        {
+          "image": "S4-a.png",
+          "frames": 42,
+          "start": "00:00:19:05",
+          "end": "00:00:20:17"
+        },
+        {
+          "image": "S4-d.png",
+          "frames": 37,
+          "start": "00:00:20:17",
+          "end": "00:00:21:24"
+        },
+        {
+          "image": "S4-e.png",
+          "frames": 27,
+          "start": "00:00:21:24",
+          "end": "00:00:22:21"
+        }
+      ]
+    },
+    {
+      "i": 4,
+      "id": "Q5-persistence",
+      "vo_sec": 9.576,
+      "pause_in": 0.15,
+      "pause_out": 0.45,
+      "frames": 306,
+      "on_screen_sec": 10.2,
+      "images": [
+        {
+          "image": "S5-a.png",
+          "frames": 55,
+          "start": "00:00:22:21",
+          "end": "00:00:24:16"
+        },
+        {
+          "image": "S5-b.png",
+          "frames": 61,
+          "start": "00:00:24:16",
+          "end": "00:00:26:17"
+        },
+        {
+          "image": "S5-c.png",
+          "frames": 55,
+          "start": "00:00:26:17",
+          "end": "00:00:28:12"
+        },
+        {
+          "image": "S5-d.png",
+          "frames": 67,
+          "start": "00:00:28:12",
+          "end": "00:00:30:19"
+        },
+        {
+          "image": "S5-e.png",
+          "frames": 68,
+          "start": "00:00:30:19",
+          "end": "00:00:32:27"
+        }
+      ]
+    },
+    {
+      "i": 5,
+      "id": "Q6-sip-parallel",
+      "vo_sec": 13.8,
+      "pause_in": 0.25,
+      "pause_out": 0.45,
+      "frames": 435,
+      "on_screen_sec": 14.5,
+      "images": [
+        {
+          "image": "S6_calm.png",
+          "frames": 435,
+          "start": "00:00:32:27",
+          "end": "00:00:47:12"
+        }
+      ]
+    },
+    {
+      "i": 6,
+      "id": "Q7-payoff",
+      "vo_sec": 5.592,
+      "pause_in": 0.25,
+      "pause_out": 0.45,
+      "frames": 189,
+      "on_screen_sec": 6.3,
+      "images": [
+        {
+          "image": "S7-a.png",
+          "frames": 189,
+          "start": "00:00:47:12",
+          "end": "00:00:53:21"
+        }
+      ]
+    },
+    {
+      "i": 7,
+      "id": "Q8-zebpay",
+      "vo_sec": 3.024,
+      "pause_in": 0.15,
+      "pause_out": 1.0,
+      "frames": 126,
+      "on_screen_sec": 4.2,
+      "images": [
+        {
+          "image": "endcard.mp4 (video)",
+          "frames": 126,
+          "start": "00:00:53:21",
+          "end": "00:00:57:27"
+        }
+      ]
+    }
+  ]
+}

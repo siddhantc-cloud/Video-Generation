@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ramayana Shot Generation"
+  short_description: "Stage and run one approved Higgsfield shot"
+  default_prompt: "Use $ramayana-shot-generate to stage one cost-controlled shot without duplicate submissions."

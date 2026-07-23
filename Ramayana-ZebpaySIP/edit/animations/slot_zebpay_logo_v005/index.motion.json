@@ -1,0 +1,16 @@
+{
+  "duration": 3.333333,
+  "maxStaticSec": 1.8,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#horizon-flare", "bySec": 0.6 },
+    { "kind": "appearsBy", "selector": "#mark-frame", "bySec": 1.15 },
+    { "kind": "appearsBy", "selector": "#brand-name", "bySec": 1.45 },
+    { "kind": "appearsBy", "selector": "#cta", "bySec": 1.75 },
+    { "kind": "before", "a": "#horizon-flare", "b": "#mark-frame" },
+    { "kind": "before", "a": "#mark-frame", "b": "#cta" },
+    { "kind": "staysInFrame", "selector": "#mark-frame" },
+    { "kind": "staysInFrame", "selector": "#brand-name" },
+    { "kind": "staysInFrame", "selector": "#cta" },
+    { "kind": "keepsMoving", "withinSelector": "#stage" }
+  ]
+}

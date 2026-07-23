@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cinema Workspace Navigation"
+  short_description: "Navigate and document authenticated cinema workspaces."
+  default_prompt: "Use $script-video-cinema-navigation to inspect this provider page safely."

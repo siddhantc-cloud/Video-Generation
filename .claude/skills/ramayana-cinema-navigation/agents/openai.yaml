@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ramayana Cinema Navigation"
+  short_description: "Map and operate Cinema Studio safely"
+  default_prompt: "Use $ramayana-cinema-navigation to navigate and record the next Cinema Studio page."

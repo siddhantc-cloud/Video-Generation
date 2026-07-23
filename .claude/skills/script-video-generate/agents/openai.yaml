@@ -1,0 +1,4 @@
+interface:
+  display_name: "Script Video Generate"
+  short_description: "Run one approved paid generative video job safely."
+  default_prompt: "Use $script-video-generate for this approved shot packet and no other job."

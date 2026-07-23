@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ink: #020817;
+        --navy: #061733;
+        --navy-2: #09275b;
+        --brand-blue: #2072ef;
+        --brand-light: #79aeff;
+        --warm-white: #f4f7ff;
+        --muted: #b6c8e6;
+        --amber: #e9b96e;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--ink);
+      }
+
+      body {
+        color: var(--warm-white);
+        font-family: "Montserrat", sans-serif;
+      }
+
+      #root,
+      #stage {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--ink);
+      }
+
+      .full {
+        position: absolute;
+        inset: 0;
+      }
+
+      #outgoing-image {
+        background-image: url("assets/k14-outgoing-frame.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform-origin: 50% 43%;
+      }
+
+      #film-grade {
+        opacity: 0;
+        background:
+          radial-gradient(circle at 50% 42%, rgba(233, 185, 110, 0.12) 0, rgba(2, 8, 23, 0) 38%),
+          radial-gradient(circle at 50% 62%, rgba(4, 18, 45, 0) 0, rgba(2, 8, 23, 0.42) 78%);
+      }
+
+      #navy-wash {
+        opacity: 0;
+        background: rgba(3, 13, 34, 0.62);
+      }
+
+      #bridge-energy {
+        position: absolute;
+        inset: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: visible;
+      }
+
+      #bridge-energy path {
+        fill: none;
+        stroke-linecap: round;
+      }
+
+      #bridge-left,
+      #bridge-right {
+        filter: drop-shadow(0 0 18px rgba(32, 114, 239, 0.78));
+        stroke: var(--brand-blue);
+        stroke-width: 8;
+      }
+
+      #bridge-core {
+        filter: drop-shadow(0 0 12px rgba(233, 185, 110, 0.66));
+        stroke: var(--amber);
+        stroke-width: 3;
+      }
+
+      #horizon-flare {
+        left: 540px;
+        position: absolute;
+        top: 816px;
+        width: 44px;
+        height: 44px;
+        margin: -22px 0 0 -22px;
+        opacity: 0;
+        border-radius: 50%;
+        background: var(--warm-white);
+        box-shadow:
+          0 0 28px rgba(244, 247, 255, 0.95),
+          0 0 90px rgba(32, 114, 239, 0.95),
+          0 0 210px rgba(32, 114, 239, 0.72);
+      }
+
+      #brand-field {
+        opacity: 0;
+        background:
+          radial-gradient(circle at 50% 36%, rgba(32, 114, 239, 0.48) 0, rgba(32, 114, 239, 0.12) 31%, rgba(6, 23, 51, 0) 61%),
+          var(--navy);
+      }
+
+      #brand-field::after {
+        position: absolute;
+        inset: 0;
+        content: "";
+        opacity: 0.36;
+        background-image:
+          radial-gradient(circle at 18% 18%, rgba(121, 174, 255, 0.30) 0 1px, transparent 2px),
+          radial-gradient(circle at 78% 67%, rgba(121, 174, 255, 0.22) 0 1px, transparent 2px);
+        background-size: 73px 73px, 109px 109px;
+      }
+
+      #perspective-grid {
+        position: absolute;
+        inset: 0;
+        width: 1080px;
+        height: 1920px;
+        opacity: 0;
+      }
+
+      #perspective-grid path {
+        fill: none;
+        stroke: rgba(121, 174, 255, 0.20);
+        stroke-width: 2;
+      }
+
+      #perspective-grid .accent {
+        stroke: rgba(32, 114, 239, 0.52);
+        stroke-width: 3;
+      }
+
+      #halo-back,
+      #halo-front {
+        left: 540px;
+        position: absolute;
+        top: 694px;
+        border-radius: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+      }
+
+      #halo-back {
+        width: 590px;
+        height: 590px;
+        border: 2px solid rgba(121, 174, 255, 0.18);
+        box-shadow:
+          0 0 96px rgba(32, 114, 239, 0.18),
+          inset 0 0 72px rgba(32, 114, 239, 0.12);
+      }
+
+      #halo-front {
+        width: 430px;
+        height: 430px;
+        border: 3px solid rgba(121, 174, 255, 0.40);
+      }
+
+      #rail-left,
+      #rail-right {
+        position: absolute;
+        top: 200px;
+        width: 220px;
+        height: 10px;
+        background: var(--brand-blue);
+        box-shadow: 0 0 24px rgba(32, 114, 239, 0.52);
+        opacity: 0;
+      }
+
+      #rail-left {
+        left: -52px;
+        transform: rotate(-45deg);
+      }
+
+      #rail-right {
+        right: -52px;
+        transform: rotate(45deg);
+      }
+
+      #brand-lockup {
+        position: absolute;
+        left: 120px;
+        top: 466px;
+        width: 840px;
+        height: 920px;
+        text-align: center;
+      }
+
+      #mark-frame {
+        position: absolute;
+        left: 258px;
+        top: 64px;
+        width: 324px;
+        height: 324px;
+        padding: 18px;
+        border: 2px solid rgba(121, 174, 255, 0.68);
+        border-radius: 66px;
+        background: rgba(5, 24, 58, 0.70);
+        box-shadow:
+          0 30px 90px rgba(0, 0, 0, 0.32),
+          0 0 72px rgba(32, 114, 239, 0.22),
+          inset 0 0 0 1px rgba(244, 247, 255, 0.12);
+        overflow: hidden;
+        opacity: 0;
+      }
+
+      #mark-frame::before,
+      #mark-frame::after {
+        position: absolute;
+        z-index: 2;
+        content: "";
+        width: 112px;
+        height: 4px;
+        background: var(--warm-white);
+        opacity: 0.88;
+      }
+
+      #mark-frame::before {
+        left: -28px;
+        top: 38px;
+        transform: rotate(-45deg);
+      }
+
+      #mark-frame::after {
+        right: -28px;
+        bottom: 38px;
+        transform: rotate(-45deg);
+      }
+
+      #logo-mask {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        overflow: hidden;
+      }
+
+      #logo {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      #brand-name-mask {
+        position: absolute;
+        left: 0;
+        top: 440px;
+        width: 840px;
+        height: 170px;
+        overflow: hidden;
+      }
+
+      #brand-name {
+        color: var(--warm-white);
+        opacity: 0;
+        font-size: 150px;
+        font-weight: 900;
+        letter-spacing: -9px;
+        line-height: 1;
+        text-shadow: 0 18px 54px rgba(0, 0, 0, 0.30);
+      }
+
+      #brand-name-accent {
+        color: var(--brand-light);
+      }
+
+      #cta {
+        position: absolute;
+        left: 60px;
+        top: 662px;
+        width: 720px;
+        height: 150px;
+        border: 3px solid rgba(121, 174, 255, 0.75);
+        border-radius: 30px;
+        background: rgba(32, 114, 239, 0.18);
+        box-shadow:
+          0 18px 52px rgba(0, 0, 0, 0.22),
+          inset 0 0 30px rgba(32, 114, 239, 0.12);
+        color: var(--warm-white);
+        font-size: 63px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        line-height: 144px;
+        opacity: 0;
+      }
+
+      #cta-arrow {
+        display: inline-block;
+        margin-left: 22px;
+        color: var(--brand-light);
+        font-size: 66px;
+        transform: translateY(-2px);
+      }
+
+      #cta-rule {
+        position: absolute;
+        left: 200px;
+        top: 854px;
+        width: 440px;
+        height: 3px;
+        transform-origin: 50% 50%;
+        background: var(--brand-blue);
+        box-shadow: 0 0 18px rgba(32, 114, 239, 0.66);
+        opacity: 0;
+      }
+
+      #micro-copy {
+        position: absolute;
+        left: 0;
+        top: 886px;
+        width: 840px;
+        color: var(--muted);
+        font-family: "Space Mono", monospace;
+        font-size: 23px;
+        font-weight: 700;
+        letter-spacing: 8px;
+        line-height: 1.3;
+        text-transform: uppercase;
+        opacity: 0;
+      }
+
+      #end-rule {
+        position: absolute;
+        left: 150px;
+        bottom: 190px;
+        width: 780px;
+        height: 2px;
+        transform-origin: 50% 50%;
+        background: rgba(121, 174, 255, 0.30);
+        opacity: 0;
+      }
+
+      #end-index-left,
+      #end-index-right {
+        position: absolute;
+        bottom: 142px;
+        color: rgba(182, 200, 230, 0.62);
+        font-family: "Space Mono", monospace;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        opacity: 0;
+      }
+
+      #end-index-left {
+        left: 150px;
+      }
+
+      #end-index-right {
+        right: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      data-hf-id="hf-logo-root"
+      id="root"
+      data-composition-id="zebpay-logo-v005"
+      data-start="0"
+      data-duration="3.333333"
+      data-width="1080"
+      data-height="1920"
+      data-fps="30"
+    >
+      <div
+        data-hf-id="hf-logo-stage"
+        id="stage"
+        class="clip"
+        data-start="0"
+        data-duration="3.333333"
+        data-track-index="0"
+      >
+        <div data-hf-id="hf-outgoing" id="outgoing-image" class="full" data-layout-ignore></div>
+        <div data-hf-id="hf-grade" id="film-grade" class="full" data-layout-ignore></div>
+        <div data-hf-id="hf-wash" id="navy-wash" class="full" data-layout-ignore></div>
+
+        <svg
+          data-hf-id="hf-bridge-energy"
+          id="bridge-energy"
+          viewBox="0 0 1080 1920"
+          aria-hidden="true"
+          data-layout-ignore
+        >
+          <path id="bridge-left" d="M 0 1840 C 154 1510, 292 1120, 540 816" stroke-dasharray="1320" stroke-dashoffset="1320" />
+          <path id="bridge-right" d="M 420 1920 C 454 1540, 500 1125, 540 816" stroke-dasharray="1180" stroke-dashoffset="1180" />
+          <path id="bridge-core" d="M 210 1920 C 316 1490, 410 1120, 540 816" stroke-dasharray="1220" stroke-dashoffset="1220" />
+        </svg>
+        <div data-hf-id="hf-flare" id="horizon-flare" data-layout-ignore></div>
+
+        <div data-hf-id="hf-brand-field" id="brand-field" class="full" data-layout-ignore></div>
+        <svg
+          data-hf-id="hf-perspective"
+          id="perspective-grid"
+          viewBox="0 0 1080 1920"
+          aria-hidden="true"
+          data-layout-ignore
+        >
+          <path class="accent" d="M -110 1920 L 540 694" />
+          <path class="accent" d="M 1190 1920 L 540 694" />
+          <path d="M 90 1920 L 540 694" />
+          <path d="M 990 1920 L 540 694" />
+          <path d="M 280 1920 L 540 694" />
+          <path d="M 800 1920 L 540 694" />
+          <path d="M 155 1580 Q 540 1438 925 1580" />
+          <path d="M 278 1320 Q 540 1224 802 1320" />
+          <path d="M 370 1122 Q 540 1066 710 1122" />
+        </svg>
+        <div data-hf-id="hf-halo-back" id="halo-back" data-layout-ignore></div>
+        <div data-hf-id="hf-halo-front" id="halo-front" data-layout-ignore></div>
+        <div data-hf-id="hf-rail-left" id="rail-left" data-layout-ignore></div>
+        <div data-hf-id="hf-rail-right" id="rail-right" data-layout-ignore></div>
+
+        <main data-hf-id="hf-lockup" id="brand-lockup" data-layout-allow-overlap>
+          <div data-hf-id="hf-mark-frame" id="mark-frame">
+            <div data-hf-id="hf-logo-mask" id="logo-mask" data-layout-allow-overflow>
+              <img data-hf-id="hf-logo" id="logo" src="assets/zebpay_logo.png" alt="ZebPay" />
+            </div>
+          </div>
+
+          <div data-hf-id="hf-brand-mask" id="brand-name-mask" data-layout-allow-overflow>
+            <div data-hf-id="hf-brand-name" id="brand-name">Zeb<span id="brand-name-accent">Pay</span></div>
+          </div>
+
+          <div data-hf-id="hf-cta" id="cta">START YOUR SIP<span id="cta-arrow">→</span></div>
+          <div data-hf-id="hf-cta-rule" id="cta-rule" data-layout-ignore></div>
+          <div data-hf-id="hf-micro" id="micro-copy">small steps · steady rhythm</div>
+        </main>
+
+        <div data-hf-id="hf-end-rule" id="end-rule" data-layout-ignore></div>
+        <div data-hf-id="hf-end-left" id="end-index-left">RAM SETU / SIP</div>
+        <div data-hf-id="hf-end-right" id="end-index-right">ZEBPAY</div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      const tl = gsap.timeline({ paused: true });
+
+      gsap.set(
+        [
+          "#brand-field",
+          "#perspective-grid",
+          "#halo-back",
+          "#halo-front",
+          "#rail-left",
+          "#rail-right",
+          "#mark-frame",
+          "#brand-name",
+          "#cta",
+          "#cta-rule",
+          "#micro-copy",
+          "#end-rule",
+          "#end-index-left",
+          "#end-index-right"
+        ],
+        { opacity: 0 }
+      );
+      gsap.set("#horizon-flare", { opacity: 0, scale: 0.18 });
+      gsap.set("#mark-frame", { scale: 0.72, rotation: -4 });
+      gsap.set("#logo", { scale: 1.18 });
+      gsap.set("#brand-name", { y: 155 });
+      gsap.set("#cta", { y: 64, scale: 0.96 });
+      gsap.set("#cta-rule", { scaleX: 0 });
+      gsap.set("#micro-copy", { y: 20 });
+      gsap.set("#end-rule", { scaleX: 0 });
+      gsap.set("#rail-left", { x: -180 });
+      gsap.set("#rail-right", { x: 180 });
+
+      tl.to("#outgoing-image", { scale: 1.025, duration: 0.70, ease: "power2.out" }, 0);
+      tl.to("#film-grade", { opacity: 1, duration: 0.32, ease: "power2.out" }, 0.02);
+      tl.to("#navy-wash", { opacity: 0.84, duration: 0.52, ease: "power2.inOut" }, 0.02);
+      tl.to("#bridge-left", { strokeDashoffset: 0, duration: 0.46, ease: "power3.in" }, 0.04);
+      tl.to("#bridge-right", { strokeDashoffset: 0, duration: 0.44, ease: "power3.in" }, 0.09);
+      tl.to("#bridge-core", { strokeDashoffset: 0, duration: 0.38, ease: "power2.in" }, 0.14);
+      tl.to("#horizon-flare", { opacity: 1, scale: 1, duration: 0.28, ease: "power4.out" }, 0.31);
+      tl.to("#horizon-flare", { scale: 32, opacity: 0.06, duration: 0.46, ease: "power3.in" }, 0.60);
+      tl.to("#brand-field", { opacity: 1, duration: 0.34, ease: "power2.out" }, 0.48);
+      tl.to(["#outgoing-image", "#film-grade", "#navy-wash", "#bridge-energy"], { opacity: 0, duration: 0.24, ease: "power2.out" }, 0.62);
+
+      tl.to("#perspective-grid", { opacity: 1, duration: 0.42, ease: "power2.out" }, 0.62);
+      tl.to(["#halo-back", "#halo-front"], { opacity: 1, scale: 1, duration: 0.48, ease: "power4.out" }, 0.66);
+      tl.to("#rail-left", { opacity: 1, x: 0, duration: 0.44, ease: "power4.out" }, 0.70);
+      tl.to("#rail-right", { opacity: 1, x: 0, duration: 0.44, ease: "power4.out" }, 0.76);
+
+      tl.to("#mark-frame", { opacity: 1, scale: 1, rotation: 0, duration: 0.52, ease: "power4.out" }, 0.72);
+      tl.to("#logo", { scale: 1, duration: 0.62, ease: "power3.out" }, 0.72);
+      tl.to("#brand-name", { opacity: 1, y: 0, duration: 0.48, ease: "power4.out" }, 0.98);
+      tl.to("#cta", { opacity: 1, y: 0, scale: 1, duration: 0.44, ease: "power3.out" }, 1.20);
+      tl.to("#cta-rule", { opacity: 1, scaleX: 1, duration: 0.34, ease: "power3.out" }, 1.32);
+      tl.to("#micro-copy", { opacity: 1, y: 0, duration: 0.34, ease: "power2.out" }, 1.42);
+
+      tl.to("#end-rule", { opacity: 1, scaleX: 1, duration: 0.40, ease: "power3.out" }, 1.34);
+      tl.to(["#end-index-left", "#end-index-right"], { opacity: 1, duration: 0.34, ease: "power2.out" }, 1.52);
+
+      tl.to("#halo-back", { scale: 1.055, opacity: 0.74, duration: 1.18, ease: "sine.inOut" }, 1.58);
+      tl.to("#halo-front", { scale: 0.97, opacity: 0.72, duration: 1.18, ease: "sine.inOut" }, 1.58);
+      tl.to("#perspective-grid", { opacity: 0.72, duration: 1.18, ease: "sine.inOut" }, 1.58);
+
+      window.__timelines["zebpay-logo-v005"] = tl;
+    </script>
+  </body>
+</html>

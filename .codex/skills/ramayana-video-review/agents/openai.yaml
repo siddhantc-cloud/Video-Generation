@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ramayana Video Review"
+  short_description: "Review generated video, motion, and sound"
+  default_prompt: "Use $ramayana-video-review to issue a keeper or reject verdict with timestamped evidence."
