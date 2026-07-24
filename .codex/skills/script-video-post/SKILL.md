@@ -34,6 +34,11 @@ Editorial starts from approved ranges and an integer-frame manifest. Narration o
     ASR to map normalized provider words back to the approved script before conforming. ASR spelling
     or word duration is rejection evidence, not final pronunciation approval: a human must listen
     to the actual encoded review. Follow the project recipe for the pinned model and environment.
+16. For India-focused hosted TTS, verify the current language-recommended voices and audition the
+    exact difficult terms before a full request. Prefer the provider's latest quality model,
+    pronunciation dictionary, native pace, and storytelling temperature over a legacy model chosen
+    only for pitch/loudness knobs. Keep gain and dynamics in post. A provider language label and
+    exact ASR spelling still do not replace human accent and phoneme approval.
 
 ## Delivery
 

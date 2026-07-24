@@ -1,0 +1,394 @@
+{
+  "language_code": "eng",
+  "language_probability": 1.0,
+  "text": "An army of Vanars was building Ram Setu. A SIP lets you invest the same amount regularly through the ups and downs. Start your SIP with Zepp Pay",
+  "words": [
+    {
+      "text": "An",
+      "start": 0.259,
+      "end": 0.479,
+      "type": "word",
+      "logprob": -0.0006949870148673654
+    },
+    {
+      "text": " ",
+      "start": 0.479,
+      "end": 0.579,
+      "type": "spacing",
+      "logprob": -0.0005554801900871098
+    },
+    {
+      "text": "army",
+      "start": 0.579,
+      "end": 0.879,
+      "type": "word",
+      "logprob": -0.0005554801900871098
+    },
+    {
+      "text": " ",
+      "start": 0.879,
+      "end": 0.939,
+      "type": "spacing",
+      "logprob": -1.490105023549404e-05
+    },
+    {
+      "text": "of",
+      "start": 0.939,
+      "end": 1.1,
+      "type": "word",
+      "logprob": -1.490105023549404e-05
+    },
+    {
+      "text": " ",
+      "start": 1.1,
+      "end": 1.22,
+      "type": "spacing",
+      "logprob": -0.20088542997837067
+    },
+    {
+      "text": "Vanars",
+      "start": 1.22,
+      "end": 1.699,
+      "type": "word",
+      "logprob": -0.15122193843126297
+    },
+    {
+      "text": " ",
+      "start": 1.699,
+      "end": 1.819,
+      "type": "spacing",
+      "logprob": -5.960446742392378e-06
+    },
+    {
+      "text": "was",
+      "start": 1.819,
+      "end": 2.099,
+      "type": "word",
+      "logprob": -5.960446742392378e-06
+    },
+    {
+      "text": " ",
+      "start": 2.099,
+      "end": 2.259,
+      "type": "spacing",
+      "logprob": -3.576272320060525e-06
+    },
+    {
+      "text": "building",
+      "start": 2.259,
+      "end": 2.639,
+      "type": "word",
+      "logprob": -3.576272320060525e-06
+    },
+    {
+      "text": " ",
+      "start": 2.639,
+      "end": 2.759,
+      "type": "spacing",
+      "logprob": -0.0012902038870379329
+    },
+    {
+      "text": "Ram",
+      "start": 2.759,
+      "end": 3.019,
+      "type": "word",
+      "logprob": -0.0012902038870379329
+    },
+    {
+      "text": " ",
+      "start": 3.019,
+      "end": 3.119,
+      "type": "spacing",
+      "logprob": -0.006217897403985262
+    },
+    {
+      "text": "Setu.",
+      "start": 3.119,
+      "end": 3.559,
+      "type": "word",
+      "logprob": -0.017876738589075104
+    },
+    {
+      "text": " ",
+      "start": 3.559,
+      "end": 3.959,
+      "type": "spacing",
+      "logprob": -0.0030834770295768976
+    },
+    {
+      "text": "A",
+      "start": 3.959,
+      "end": 4.0,
+      "type": "word",
+      "logprob": -0.0030834770295768976
+    },
+    {
+      "text": " ",
+      "start": 4.0,
+      "end": 4.199,
+      "type": "spacing",
+      "logprob": -4.684815212385729e-05
+    },
+    {
+      "text": "SIP",
+      "start": 4.199,
+      "end": 4.719,
+      "type": "word",
+      "logprob": -4.684815212385729e-05
+    },
+    {
+      "text": " ",
+      "start": 4.719,
+      "end": 5.259,
+      "type": "spacing",
+      "logprob": -9.762764238985255e-05
+    },
+    {
+      "text": "lets",
+      "start": 5.259,
+      "end": 5.639,
+      "type": "word",
+      "logprob": -9.762764238985255e-05
+    },
+    {
+      "text": " ",
+      "start": 5.639,
+      "end": 5.699,
+      "type": "spacing",
+      "logprob": -4.768370445162873e-07
+    },
+    {
+      "text": "you",
+      "start": 5.699,
+      "end": 5.799,
+      "type": "word",
+      "logprob": -4.768370445162873e-07
+    },
+    {
+      "text": " ",
+      "start": 5.799,
+      "end": 5.959,
+      "type": "spacing",
+      "logprob": -5.960446742392378e-06
+    },
+    {
+      "text": "invest",
+      "start": 5.96,
+      "end": 6.339,
+      "type": "word",
+      "logprob": -5.960446742392378e-06
+    },
+    {
+      "text": " ",
+      "start": 6.339,
+      "end": 6.399,
+      "type": "spacing",
+      "logprob": -8.344646857949556e-07
+    },
+    {
+      "text": "the",
+      "start": 6.399,
+      "end": 6.48,
+      "type": "word",
+      "logprob": -8.344646857949556e-07
+    },
+    {
+      "text": " ",
+      "start": 6.48,
+      "end": 6.639,
+      "type": "spacing",
+      "logprob": -1.1920928244535389e-07
+    },
+    {
+      "text": "same",
+      "start": 6.639,
+      "end": 6.919,
+      "type": "word",
+      "logprob": -1.1920928244535389e-07
+    },
+    {
+      "text": " ",
+      "start": 6.919,
+      "end": 7.119,
+      "type": "spacing",
+      "logprob": -7.152555099310121e-07
+    },
+    {
+      "text": "amount",
+      "start": 7.119,
+      "end": 7.46,
+      "type": "word",
+      "logprob": -7.152555099310121e-07
+    },
+    {
+      "text": " ",
+      "start": 7.46,
+      "end": 7.559,
+      "type": "spacing",
+      "logprob": -8.106198947643861e-06
+    },
+    {
+      "text": "regularly",
+      "start": 7.559,
+      "end": 8.319,
+      "type": "word",
+      "logprob": -8.106198947643861e-06
+    },
+    {
+      "text": " ",
+      "start": 8.319,
+      "end": 8.859,
+      "type": "spacing",
+      "logprob": -0.00010513706365600228
+    },
+    {
+      "text": "through",
+      "start": 8.859,
+      "end": 9.079,
+      "type": "word",
+      "logprob": -0.00010513706365600228
+    },
+    {
+      "text": " ",
+      "start": 9.079,
+      "end": 9.139,
+      "type": "spacing",
+      "logprob": -8.344646857949556e-07
+    },
+    {
+      "text": "the",
+      "start": 9.139,
+      "end": 9.26,
+      "type": "word",
+      "logprob": -8.344646857949556e-07
+    },
+    {
+      "text": " ",
+      "start": 9.26,
+      "end": 9.76,
+      "type": "spacing",
+      "logprob": -5.483612312673358e-06
+    },
+    {
+      "text": "ups",
+      "start": 9.76,
+      "end": 10.099,
+      "type": "word",
+      "logprob": -5.483612312673358e-06
+    },
+    {
+      "text": " ",
+      "start": 10.099,
+      "end": 10.159,
+      "type": "spacing",
+      "logprob": 0.0
+    },
+    {
+      "text": "and",
+      "start": 10.159,
+      "end": 10.359,
+      "type": "word",
+      "logprob": 0.0
+    },
+    {
+      "text": " ",
+      "start": 10.359,
+      "end": 10.439,
+      "type": "spacing",
+      "logprob": -7.510157047363464e-06
+    },
+    {
+      "text": "downs.",
+      "start": 10.439,
+      "end": 10.96,
+      "type": "word",
+      "logprob": -1.8635902506503044e-05
+    },
+    {
+      "text": " ",
+      "start": 10.96,
+      "end": 11.719,
+      "type": "spacing",
+      "logprob": -1.168244216387393e-05
+    },
+    {
+      "text": "Start",
+      "start": 11.719,
+      "end": 12.119,
+      "type": "word",
+      "logprob": -1.168244216387393e-05
+    },
+    {
+      "text": " ",
+      "start": 12.119,
+      "end": 12.219,
+      "type": "spacing",
+      "logprob": -3.099436753473128e-06
+    },
+    {
+      "text": "your",
+      "start": 12.219,
+      "end": 12.34,
+      "type": "word",
+      "logprob": -3.099436753473128e-06
+    },
+    {
+      "text": " ",
+      "start": 12.34,
+      "end": 12.619,
+      "type": "spacing",
+      "logprob": -8.4638240878121e-06
+    },
+    {
+      "text": "SIP",
+      "start": 12.619,
+      "end": 13.019,
+      "type": "word",
+      "logprob": -8.4638240878121e-06
+    },
+    {
+      "text": " ",
+      "start": 13.019,
+      "end": 13.079,
+      "type": "spacing",
+      "logprob": -7.30726242181845e-05
+    },
+    {
+      "text": "with",
+      "start": 13.079,
+      "end": 13.219,
+      "type": "word",
+      "logprob": -7.30726242181845e-05
+    },
+    {
+      "text": " ",
+      "start": 13.219,
+      "end": 13.339,
+      "type": "spacing",
+      "logprob": -0.6095985174179077
+    },
+    {
+      "text": "Zepp",
+      "start": 13.34,
+      "end": 13.659,
+      "type": "word",
+      "logprob": -0.9181516766548157
+    },
+    {
+      "text": " ",
+      "start": 13.659,
+      "end": 13.68,
+      "type": "spacing",
+      "logprob": -0.22931751608848572
+    },
+    {
+      "text": "Pay",
+      "start": 13.68,
+      "end": 13.859,
+      "type": "word",
+      "logprob": -0.22931751608848572
+    }
+  ],
+  "transcription_id": "WdSVlobUh2IQ6t1mah91",
+  "audio_duration_secs": 14.08
+}

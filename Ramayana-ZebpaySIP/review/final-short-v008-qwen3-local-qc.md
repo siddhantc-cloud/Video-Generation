@@ -18,7 +18,7 @@
 | Black-frame check | No black interval of 0.10 seconds or longer | FFmpeg blackdetect returned zero intervals | QC | Pass |
 | Caption order | Captions are rebuilt from v008 timing and burned last | v008 SRT and encoded contacts | Editor/QC | Pass |
 | Graph/logo safety | Captions remain readable and G15 is subtitle-free | Overview and boundary contacts | Brand/QC | Pass |
-| Human listening | Owner accepts voice identity, accent, mythology terms, SIP initials, pace, and mix | Complete captioned v008 playback | Human | Pending |
+| Human listening | Owner accepts voice identity, accent, mythology terms, SIP initials, pace, and mix | Complete captioned v008 playback | Human | Fail: foreign accent; SIP controlled/robotic |
 
 ## Technical evidence
 
@@ -47,6 +47,6 @@ human listening can certify the exact phonemes.
 
 ## Verdict
 
-`NEEDS HUMAN`. All measurable criteria pass. This is a new review version, not a replacement final.
-The owner must listen to the full captioned review and accept or reject the voice before any
-promotion.
+`REJECTED BY HUMAN`. The measurable checks remain valid, but owner playback found the accent too
+foreign and the SIP delivery too controlled and robotic. See `final-short-v008-human-rejection.md`.
+v008 is not a replacement final.

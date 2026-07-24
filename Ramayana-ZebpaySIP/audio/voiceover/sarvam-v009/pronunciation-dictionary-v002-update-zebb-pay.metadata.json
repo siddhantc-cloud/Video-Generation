@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-24T06:58:40.666812+00:00",
+  "provider": "Sarvam AI",
+  "operation": "update_pronunciation_dictionary",
+  "dictionary_id": "p_2811321e",
+  "source": "D:\\startup_dev\\so_sorry\\Ramayana-ZebpaySIP\\audio\\voiceover\\sarvam-v009\\pronunciation-dictionary.json",
+  "source_sha256": "d82aab2659dd81c5f2dd465fdb1b397da1afb6852493f175acb998f53b428207",
+  "languages": [
+    "en-IN"
+  ],
+  "entry_counts": {
+    "en-IN": 2
+  },
+  "updated_pronunciations": {
+    "en-IN": {
+      "SIP": "S I P",
+      "ZebPay": "Zebb Pay"
+    }
+  },
+  "request_seconds": 0.279
+}

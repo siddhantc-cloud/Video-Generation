@@ -111,6 +111,29 @@ $qwenRecipe = Join-Path $repoRoot '.agent-harness\recipes\local-qwen3-tts-narrat
 Add-Result 'local-tts:generator' (Test-Path -LiteralPath $qwenGenerator) $qwenGenerator
 Add-Result 'local-tts:recipe' (Test-Path -LiteralPath $qwenRecipe) $qwenRecipe
 
+$sarvamGenerator = Join-Path $repoRoot 'Ramayana-ZebpaySIP\tools\generate_sarvam_tts.py'
+$sarvamRecipe = Join-Path $repoRoot '.agent-harness\recipes\sarvam-bulbul-v3-narration.md'
+$sarvamCompile = ''
+$sarvamGeneratorPassed = Test-Path -LiteralPath $sarvamGenerator
+if ($sarvamGeneratorPassed) {
+    $sarvamCompile = (& python -m py_compile $sarvamGenerator 2>&1 | Out-String).Trim()
+    $sarvamGeneratorPassed = $LASTEXITCODE -eq 0
+}
+Add-Result 'hosted-tts:sarvam-generator' $sarvamGeneratorPassed $(if ($sarvamGeneratorPassed) { $sarvamGenerator } else { $sarvamCompile })
+Add-Result 'hosted-tts:sarvam-recipe' (Test-Path -LiteralPath $sarvamRecipe) $sarvamRecipe
+
+$dotenvPath = Join-Path $repoRoot '.env'
+$sarvamCredentialPresent = $false
+$dotenvIgnored = $false
+if (Test-Path -LiteralPath $dotenvPath) {
+    $sarvamCredentialPresent = [bool](Get-Content -LiteralPath $dotenvPath | Where-Object {
+        $_ -match '^\s*(?:export\s+)?SARVAM_API_KEY\s*='
+    } | Select-Object -First 1)
+    & git -C $repoRoot check-ignore -q -- '.env'
+    $dotenvIgnored = $LASTEXITCODE -eq 0
+}
+Add-Result 'credential:sarvam-ignored-env' ($sarvamCredentialPresent -and $dotenvIgnored) $(if ($sarvamCredentialPresent -and $dotenvIgnored) { 'SARVAM_API_KEY entry present in ignored .env; value not displayed' } else { 'Missing key entry or .env is not ignored' })
+
 $mcpPath = Join-Path $repoRoot '.mcp.json'
 $mcpSafe = $false
 if (Test-Path -LiteralPath $mcpPath) {

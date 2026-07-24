@@ -1,0 +1,90 @@
+{
+  "version": "final-short-v009-sarvam",
+  "status": "needs-human-voice-playback",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "total_frames": 1566,
+  "duration_seconds": 52.2,
+  "picture_source": {
+    "path": "deliverables/review-cuts/final-short-v005/Ramayana-ZebPaySIP_REVIEW_v005_premium-graphics_clean.mp4",
+    "operation": "video-stream-copy-for-clean-v009",
+    "sha256": "0696E4B7F4F3474B0D8B90B15B34A5313E820A8FB0E232003934D512E05225E4"
+  },
+  "narration": {
+    "provider": "Sarvam AI",
+    "model": "bulbul:v3",
+    "target_language_code": "en-IN",
+    "speaker": "mani",
+    "pace": 1.0,
+    "temperature": 0.75,
+    "dictionary_id": "p_2811321e",
+    "dictionary": "audio/voiceover/sarvam-v009/pronunciation-dictionary.json",
+    "display_script": "audio/voiceover/sarvam-v009/full-narration-display-text.txt",
+    "raw_audio": "audio/voiceover/sarvam-v009/ramayana-zebpay-narration-mani-p100-t075-raw-v004-comped.wav",
+    "raw_audio_sha256": "1C76C9B893D133310D4BEE9F40048AD005C8E613E4B7756DF12E86E962DFF611",
+    "raw_duration_seconds": 50.372,
+    "raw_scribe": "audio/voiceover/sarvam-v009/ramayana-zebpay-narration-mani-p100-t075-raw-v004-comped-scribe-v2.json",
+    "phrase_locked_audio": "edit/audio/sarvam-v009/narration-phrase-locked-v001.wav",
+    "phrase_locked_sha256": "15D5D24C125E582F2B9863A9A28DB5093B8227D86EFFD6522FE965C227C1B27F",
+    "phrase_lock_edl": "edit/audio/sarvam-v009/narration-phrase-locked-v001-edl.json",
+    "word_timings": "edit/audio/sarvam-v009/narration-word-boundaries-v001.json",
+    "max_phrase_onset_after_picture_cut_ms": 30,
+    "maximum_tempo": 1.2,
+    "sample_rate": 48000,
+    "channels": 1,
+    "estimated_tts_experiment_cost_inr": 7.656
+  },
+  "native_sfx": {
+    "source": "edit/audio/elevenlabs-v006/sfx-native-phrase-locked-v001.wav",
+    "sha256": "5462EEAB829501766AB36F7D91C7641205746D187A7FF58F4B0A87A1FC24539C",
+    "gain_db": -10,
+    "operation": "reuse-approved-independent-stem"
+  },
+  "audio_master": {
+    "path": "edit/audio/sarvam-v009/Ramayana-ZebPaySIP_AUDIO_MASTER_v009.wav",
+    "sha256": "5794DED38912658478210A70BF57A6A08D6ABC719BCC2C27087536FC7C7A132D",
+    "sample_rate": 48000,
+    "channels": 2,
+    "samples": 2505600,
+    "duration_seconds": 52.2,
+    "normalization": {
+      "method": "ffmpeg-loudnorm-two-pass-after-stem-mix",
+      "target_lufs": -16,
+      "target_true_peak_dbtp": -2.5,
+      "target_lra_lu": 7
+    },
+    "integrated_lufs_after_aac": -16.06,
+    "true_peak_dbtp_after_aac": -2.46
+  },
+  "captions": {
+    "source": "edit/master-short-v009-sarvam.srt",
+    "operation": "rebuild-from-conformed-sarvam-word-timing-and-burn-last",
+    "g15_subtitle_omitted": true
+  },
+  "outputs": {
+    "clean": {
+      "path": "deliverables/review-cuts/final-short-v009/Ramayana-ZebPaySIP_REVIEW_v009_sarvam-mani_clean.mp4",
+      "sha256": "EE5C2C81FB36CDA1AB80FB51D8CC900DEA6442723B40E10BD9106E7927C46234",
+      "bytes": 50389841
+    },
+    "captioned": {
+      "path": "deliverables/review-cuts/final-short-v009/Ramayana-ZebPaySIP_REVIEW_v009_sarvam-mani_captioned.mp4",
+      "sha256": "FEFB1FAAD69A82C2E532254E6C2969B4D4754262A0E247638C74DAF4AFA3ED8D",
+      "bytes": 44141626
+    },
+    "audio_elementary_stream_md5": "bd104521069e1e068a1dce449040093e"
+  },
+  "verification": {
+    "encoded_scribe": "edit/audio/sarvam-v009/scribe-final-mix/Ramayana-ZebPaySIP_REVIEW_v009_sarvam-mani_captioned.json",
+    "encoded_word_tokens": 104,
+    "overview_contact": "edit/verify/final-short-v009/overview-caption-contact.png",
+    "boundary_contact": "edit/verify/final-short-v009/boundary-caption-contact.png",
+    "full_decode": "pass",
+    "black_intervals_at_least_0_10_seconds": 0
+  },
+  "promotion": {
+    "final_master_overwritten": false,
+    "requires": "Human playback and voice approval, plus independent brand/legal release if required"
+  }
+}

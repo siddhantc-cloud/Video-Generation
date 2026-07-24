@@ -198,3 +198,34 @@ picture slots, at 1.030x and 1.120x.
 **Outstanding:** Human listening is still authoritative because Scribe normalizes initialisms.
 Keep v005 as the approved final until the owner accepts the complete v008 performance. Brand/legal
 release remains separate.
+
+## Session 8 - 2026-07-24
+
+| Requirement | Pass condition | Evidence | Owner | Status |
+|---|---|---|---|---|
+| v008 disposition | Human feedback overrides automated voice checks | `review/final-short-v008-human-rejection.md` | Human/Reviewer | Rejected |
+| Indian-English route | Current Sarvam model, voices, controls, dictionary, and price are verified | Sarvam v009 voice record | Voice producer | Pass |
+| Cheap selection | Difficult terms are tested before full synthesis | Four voice/temperature auditions | Voice producer | Pass |
+| Pronunciation lock | SIP and ZebPay survive the encoded review | Final Scribe and dictionary `p_2811321e` | Audio QC | Pass; listening required |
+| Phrase lock | New voice preserves all 1,566 picture frames | v009 EDL; 30 ms max onset; 1.200x max tempo | Editor | Pass |
+| Encoded review | Clean/captioned cuts decode, match duration, and share audio | v009 QC | Editor/QC | Pass |
+| Human voice approval | Owner accepts accent, naturalness, terms, compression, and mix | Captioned v009 review | Human | Pending |
+
+**Strategy:** Replace the rejected foreign-sounding local voice with Sarvam Bulbul v3 Indian
+English. Compare short real-script auditions, use a provider pronunciation dictionary instead of
+visible phonetic spelling, select native pace plus warm temperature, generate one continuous take,
+and phrase-lock it to the unchanged v005 picture.
+
+**Decisions:** `mani` at pace 1.0 and temperature 0.75 was selected over faster `ratan` and `shubh`
+auditions. Dictionary `p_2811321e` maps SIP to `S I P` and ZebPay to `Zebb Pay`. A same-voice closing
+phrase retest was comped into the selected full performance. Five phrases require pitch-safe local
+compression; the maximum is K01 at 1.200x. Native SFX remains a separate stem at -10 dB.
+
+**Evidence:** `audio/voiceover/sarvam-v009/VOICEOVER-v009.md`;
+`edit/timelines/final-short-v009-sarvam.json`;
+`review/final-short-v009-sarvam-qc.md`; review cuts under
+`deliverables/review-cuts/final-short-v009/`.
+
+**Outstanding:** Human playback must judge whether the first article plus S-I-P cadence sounds
+natural, whether ZebPay is exact, and whether K01/K14 compression is perceptible. v005 remains the
+approved final. Brand/legal release remains separate.

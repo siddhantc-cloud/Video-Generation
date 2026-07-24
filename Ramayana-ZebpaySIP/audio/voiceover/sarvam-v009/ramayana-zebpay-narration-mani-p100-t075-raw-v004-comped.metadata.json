@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-24T07:01:00+00:00",
+  "status": "unreviewed",
+  "human_listening_required": true,
+  "operation": "same-voice-phrase-comp",
+  "provider": "Sarvam AI",
+  "speaker": "mani",
+  "model": "bulbul:v3",
+  "target_language_code": "en-IN",
+  "pace": 1.0,
+  "temperature": 0.75,
+  "inputs": [
+    {
+      "path": "ramayana-zebpay-narration-mani-p100-t075-raw-v003.wav",
+      "sha256": "A1E1918325976FA21A17D1EF7FAF7B466973BAD177D28994EECAE90ED51F0F8D",
+      "used_range_seconds": [0.0, 47.6]
+    },
+    {
+      "path": "pronunciation-retest-zebb-pay-mani-p100-t075.wav",
+      "sha256": "F159AA42C3470C6CBB96ECE86A20E11E1B9CD02A8574170FE0BE9A773CD5A134",
+      "used_range_seconds": [5.82, 8.592]
+    }
+  ],
+  "reason": "Use the same-voice pronunciation retest for the closing SIP and ZebPay phrase while preserving the continuous selected performance for all preceding copy.",
+  "audio": {
+    "path": "ramayana-zebpay-narration-mani-p100-t075-raw-v004-comped.wav",
+    "sha256": "1C76C9B893D133310D4BEE9F40048AD005C8E613E4B7756DF12E86E962DFF611",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_seconds": 50.372
+  }
+}

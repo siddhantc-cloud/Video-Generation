@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-24T06:52:10.481063+00:00",
+  "status": "unreviewed",
+  "human_listening_required": true,
+  "provider": "Sarvam AI",
+  "endpoint": "POST /text-to-speech",
+  "request": {
+    "model": "bulbul:v3",
+    "target_language_code": "en-IN",
+    "speaker": "ratan",
+    "pace": 1.0,
+    "temperature": 0.75,
+    "speech_sample_rate": 48000,
+    "output_audio_codec": "wav",
+    "dict_id": "p_682ca1d1",
+    "text_source": "D:\\startup_dev\\so_sorry\\Ramayana-ZebpaySIP\\audio\\voiceover\\sarvam-v009\\audition-text.txt",
+    "text_characters": 145,
+    "text_sha256": "a0e32a67e7486eaa6f19ab2d75dc040339a40b7e070d1d462d592b6884827a0c"
+  },
+  "cost": {
+    "price_inr_per_10000_characters": 30.0,
+    "estimated_inr": 0.435,
+    "pricing_as_of": "2026-07-24",
+    "pricing_source": "https://docs.sarvam.ai/api/getting-started/pricing"
+  },
+  "request_id": "20260724_c9667ef9-dd9c-4541-941e-9d79348d7aba",
+  "request_seconds": 6.098,
+  "audio": {
+    "path": "D:\\startup_dev\\so_sorry\\Ramayana-ZebpaySIP\\audio\\voiceover\\sarvam-v009\\audition-ratan-p100-t075.wav",
+    "bytes": 843820,
+    "sha256": "8b74ca7a8d83b853e1bebd2de0886da2caeb6a9836981030b801182611eda798",
+    "channels": 1,
+    "sample_width_bytes": 2,
+    "sample_rate": 48000,
+    "frames": 421888,
+    "duration_seconds": 8.789333
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-24T06:56:38.693424+00:00",
+  "status": "unreviewed",
+  "human_listening_required": true,
+  "provider": "Sarvam AI",
+  "endpoint": "POST /text-to-speech",
+  "request": {
+    "model": "bulbul:v3",
+    "target_language_code": "en-IN",
+    "speaker": "mani",
+    "pace": 1.0,
+    "temperature": 0.75,
+    "speech_sample_rate": 48000,
+    "output_audio_codec": "wav",
+    "dict_id": "p_2811321e",
+    "text_source": "D:\\startup_dev\\so_sorry\\Ramayana-ZebpaySIP\\audio\\voiceover\\sarvam-v009\\pronunciation-retest-text.txt",
+    "text_characters": 77,
+    "text_sha256": "4c4e067778d406fb44cb232ba1e82401deb8ad5d9410d79143b717e4ab7e1dbc"
+  },
+  "cost": {
+    "price_inr_per_10000_characters": 30.0,
+    "estimated_inr": 0.231,
+    "pricing_as_of": "2026-07-24",
+    "pricing_source": "https://docs.sarvam.ai/api/getting-started/pricing"
+  },
+  "request_id": "20260724_66677e85-07ac-4fa0-9fa5-515c3360687f",
+  "request_seconds": 3.616,
+  "audio": {
+    "path": "D:\\startup_dev\\so_sorry\\Ramayana-ZebpaySIP\\audio\\voiceover\\sarvam-v009\\pronunciation-retest-mani-p100-t075.wav",
+    "bytes": 783916,
+    "sha256": "4cad88ed06328543a88f55986e10e5fd0fbf7da291f4e6dc4ac25da5371f11b3",
+    "channels": 1,
+    "sample_width_bytes": 2,
+    "sample_rate": 48000,
+    "frames": 391936,
+    "duration_seconds": 8.165333
+  }
+}

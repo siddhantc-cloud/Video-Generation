@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "status": "selected",
+  "provider": "Sarvam AI",
+  "dictionary_id": "p_2811321e",
+  "source": "pronunciation-dictionary.json",
+  "source_sha256": "D82AAB2659DD81C5F2DD465FDB1B397DA1AFB6852493F175ACB998F53B428207",
+  "created_as_sip_only": "pronunciation-dictionary-v002-create-sip-only.metadata.json",
+  "selected_update": "pronunciation-dictionary-v002-update-zebb-pay.metadata.json",
+  "pronunciations": {
+    "en-IN": {
+      "SIP": "S I P",
+      "ZebPay": "Zebb Pay"
+    }
+  }
+}

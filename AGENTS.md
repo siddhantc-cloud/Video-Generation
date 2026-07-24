@@ -127,10 +127,12 @@ support, and price override remembered defaults.
 | FFmpeg / FFprobe | Canonical assembly, compositing, audio, probing, and delivery |
 | video-use dependencies | Timeline and editorial helpers |
 | Qwen3-TTS 1.7B VoiceDesign | Project-local, rights-clean narration design on the RTX 5060 Ti; use `Ramayana-ZebpaySIP/.venv-qwen3-tts`, PyTorch SDPA, and D-drive caches |
+| Sarvam Bulbul v3 REST API | Hosted Indian-language and Indian-English narration with production voices, pace/temperature controls, and pronunciation dictionaries |
 | HyperFrames CLI | Deterministic HTML/CSS/SVG/GSAP motion design and rendering |
 | Node.js / npm | HyperFrames, Remotion, and provider CLI tooling |
 | Python | Validation and deterministic helpers |
 | `Ramayana-ZebpaySIP/tools/generate_qwen3_tts.py` | Generate reproducible Qwen3-TTS VoiceDesign WAVs with runtime, VRAM, and hash metadata |
+| `Ramayana-ZebpaySIP/tools/generate_sarvam_tts.py` | Create Sarvam pronunciation dictionaries and reproducible Bulbul v3 WAVs without persisting credentials |
 | `Ramayana-ZebpaySIP/tools/transcribe_elevenlabs_scribe.py` | Create versioned Scribe timing evidence without persisting the API key |
 | `Ramayana-ZebpaySIP/tools/build_elevenlabs_phrase_locked_audio.py` | Conform timestamped ElevenLabs alignment or Scribe word timing to whole-frame phrase slots without pitch shift |
 | `yt-dlp` | Fetch only explicitly authorized online media |
@@ -152,6 +154,13 @@ Windows host; use PyTorch SDPA. Treat Indian-accent and project-term pronunciati
 questions, not assumed model capabilities, and keep every local-TTS result behind human listening
 approval. Follow `.agent-harness/recipes/local-qwen3-tts-narration.md`; it records the verified v008
 workflow and the synthesis/display-copy separation required for phonetic spelling.
+
+For Indian-English hosted narration, follow
+`.agent-harness/recipes/sarvam-bulbul-v3-narration.md`. The Sarvam helper reads
+`SARVAM_API_KEY` from the process environment or the ignored repository `.env`; never copy the key
+into metadata, recipes, commands, or tracked files. Bulbul v3 supports speaker, pace, temperature,
+sample rate, and pronunciation dictionaries; apply gain, EQ, and dynamics in post because v3 does
+not expose pitch or loudness controls.
 
 ## Git and media policy
 

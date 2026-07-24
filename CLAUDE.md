@@ -46,5 +46,11 @@ recorded benchmark and human listening approval before a take can replace approv
 Follow `.agent-harness/recipes/local-qwen3-tts-narration.md`; the canonical generator, Scribe
 verifier, and phrase conformer are listed in `AGENTS.md`.
 
+For hosted Indian-English narration, follow
+`.agent-harness/recipes/sarvam-bulbul-v3-narration.md` and use
+`Ramayana-ZebpaySIP/tools/generate_sarvam_tts.py`. Load `SARVAM_API_KEY` only from the process
+environment or ignored repository `.env`. Preserve the pronunciation dictionary, request metadata,
+raw take, phrase-lock evidence, separate sound stems, and human listening gate.
+
 Follow `.agent-harness/recipes/git-lfs-video-delivery.md` when the owner explicitly requests the
 approved final in Git. Never add raw takes or review media to Git as a shortcut.

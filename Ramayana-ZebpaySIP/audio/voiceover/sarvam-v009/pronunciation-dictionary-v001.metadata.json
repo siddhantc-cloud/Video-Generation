@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-24T06:51:54.831955+00:00",
+  "provider": "Sarvam AI",
+  "operation": "create_pronunciation_dictionary",
+  "dictionary_id": "p_682ca1d1",
+  "source": "D:\\startup_dev\\so_sorry\\Ramayana-ZebpaySIP\\audio\\voiceover\\sarvam-v009\\pronunciation-dictionary-v001.json",
+  "source_sha256": "48dcc860a5db0a0dc19bec60ff3fb3526163c87d476f9ca83d3f433adcac047a",
+  "languages": [
+    "en-IN"
+  ],
+  "entry_counts": {
+    "en-IN": 2
+  },
+  "request_seconds": 0.398
+}

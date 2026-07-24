@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-24T06:59:03.872114+00:00",
+  "status": "unreviewed",
+  "human_listening_required": true,
+  "provider": "Sarvam AI",
+  "endpoint": "POST /text-to-speech",
+  "request": {
+    "model": "bulbul:v3",
+    "target_language_code": "en-IN",
+    "speaker": "mani",
+    "pace": 1.0,
+    "temperature": 0.75,
+    "speech_sample_rate": 48000,
+    "output_audio_codec": "wav",
+    "dict_id": "p_2811321e",
+    "text_source": "D:\\startup_dev\\so_sorry\\Ramayana-ZebpaySIP\\audio\\voiceover\\sarvam-v009\\full-narration-display-text.txt",
+    "text_characters": 606,
+    "text_sha256": "8f668c6170e022593b29a7d6eb95d428d2ed4890e1e82dca7cdc56fe9478cb6a"
+  },
+  "cost": {
+    "price_inr_per_10000_characters": 30.0,
+    "estimated_inr": 1.818,
+    "pricing_as_of": "2026-07-24",
+    "pricing_source": "https://docs.sarvam.ai/api/getting-started/pricing"
+  },
+  "request_id": "20260724_920d24ce-0237-4d0f-a86b-e1981c6b6b63",
+  "request_seconds": 11.304,
+  "audio": {
+    "path": "D:\\startup_dev\\so_sorry\\Ramayana-ZebpaySIP\\audio\\voiceover\\sarvam-v009\\ramayana-zebpay-narration-mani-p100-t075-raw-v003.wav",
+    "bytes": 4823596,
+    "sha256": "a1e1918325976fa21a17d1ef7faf7b466973bad177d28994eecae90ed51f0f8d",
+    "channels": 1,
+    "sample_width_bytes": 2,
+    "sample_rate": 48000,
+    "frames": 2411776,
+    "duration_seconds": 50.245333
+  }
+}

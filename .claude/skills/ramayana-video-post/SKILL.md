@@ -53,6 +53,11 @@ Read:
     `.agent-harness/recipes/local-qwen3-tts-narration.md`. Keep `S. I. P.` / `Zeb Pay` synthesis
     spelling separate from `SIP` / `ZebPay` display copy. Benchmark two seeds, require exact
     normalized 105-word recovery, and retain the encoded review behind a human listening gate.
+15. The Sarvam narrator route follows
+    `.agent-harness/recipes/sarvam-bulbul-v3-narration.md`. Use Bulbul v3 with `en-IN`, select from
+    actual difficult-term auditions, and pass dictionary `p_2811321e` for SIP and ZebPay. The v009
+    reference uses `mani`, pace 1.0, temperature 0.75, and 48 kHz WAV. Do not use v2 merely for pitch
+    or loudness controls; apply gain and dynamics in post.
 
 ## Final QC
 
@@ -87,5 +92,17 @@ Read:
   pitch-safe tempo is 1.120x.
 - The encoded captioned review is -16.3 LUFS / -2.0 dBTP. Scribe v2 recovers all 105 words and the
   required mythology, acronym, and brand terms.
-- Promotion status is `NEEDS HUMAN`. ASR normalizes `SIP`, so the owner must certify the spoken
-  initials and voice quality by listening to the complete v008 review.
+- Human status is `REJECTED`. Owner playback found the accent too foreign and the SIP delivery too
+  controlled and robotic. This proves that exact ASR and long acronym timing are not approval.
+
+## Verified v009 Sarvam review
+
+- Bulbul v3 `en-IN` with `mani`, pace 1.0, temperature 0.75, and dictionary `p_2811321e` replaces
+  the rejected local narrator in a new review only.
+- Phrase lock produces exactly 1,566 frames / 52.200 seconds; maximum onset is 30 ms and maximum
+  pitch-safe tempo is 1.200x.
+- The encoded captioned review is -16.06 LUFS / -2.46 dBTP. Final ASR recovers Vanaras, Ram Setu,
+  Rama, both SIP occurrences, and ZebPay.
+- Promotion status is `NEEDS HUMAN`. Scribe merges the short article before the first SIP, so the
+  owner must judge exact copy, Indian accent, acronym cadence, brand pronunciation, compression,
+  and SFX balance on the encoded v009 review.

@@ -10,7 +10,7 @@
 | Copy fidelity | Full raw and encoded review contain all 105 approved words | Raw/final Scribe v2 results | Audio QC | Pass |
 | Acronym evidence | Both encoded SIP spans are materially longer than the rejected 60 ms occurrence | Final word timing: 0.860 s and 1.221 s | Audio QC | Pass; human listening still required |
 | Frame sync | Phrase-locked narration is exactly 1,566 frames / 52.200 seconds | EDL and FFprobe | Editor | Pass |
-| Human voice approval | Owner accepts identity, accent, terms, pacing, and mix | Complete captioned v008 playback | Human | Pending |
+| Human voice approval | Owner accepts identity, accent, terms, pacing, and mix | Complete captioned v008 playback | Human | Fail: foreign accent; SIP controlled/robotic |
 
 ## Selection
 
@@ -101,6 +101,6 @@ review. The account key cannot read reliable currency totals here, so no currenc
 
 ## Verdict
 
-`NEEDS HUMAN`. Technical, semantic, timing, loudness, caption, and encoded-file checks pass. The
-owner must listen to the entire captioned v008 cut and explicitly accept or reject the voice,
-accent, exact spoken initials, mythology terms, pacing, phrase compression, and SFX balance.
+`REJECTED BY HUMAN`. Technical, semantic, timing, loudness, caption, and encoded-file checks pass,
+but owner playback found the accent too foreign and the SIP delivery too controlled and robotic.
+The v008 take is retained as failure evidence and must not be promoted.
