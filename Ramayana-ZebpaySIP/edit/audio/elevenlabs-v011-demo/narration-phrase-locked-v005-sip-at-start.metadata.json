@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "base_audio": "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\narration-phrase-locked-v003.wav",
+  "replacement_audio": "Ramayana-ZebpaySIP\\audio\\voiceover\\elevenlabs-v011\\g12-sip-at-start-v001.mp3",
+  "output_audio": "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v011-demo\\narration-phrase-locked-v005-sip-at-start.wav",
+  "beat_id": "G12",
+  "start_frame": 1116,
+  "end_frame_exclusive": 1228,
+  "target_samples": 179200,
+  "target_seconds": 3.7333333333333334,
+  "trim_start_seconds": 0.049,
+  "tempo": 1.1440178571428572,
+  "pitch_preserved": true,
+  "fade_ms": 30.0,
+  "replacement_display_text": "SIP lets you invest the same amount regularly"
+}

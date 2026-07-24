@@ -19,7 +19,7 @@
 | Black-frame check | No black interval of 0.10 seconds or longer | FFmpeg blackdetect returned zero intervals | QC | Pass |
 | Caption order | Captions are rebuilt from v009 timing and burned last | v009 SRT and contacts | Editor/QC | Pass |
 | Graph/logo safety | Captions remain readable and G15 is subtitle-free | Overview and boundary contacts | Brand/QC | Pass |
-| Human listening | Owner accepts voice, accent, terms, pace, compression, and mix | Complete captioned v009 playback | Human | Pending |
+| Human listening | Owner accepts voice, accent, terms, pace, compression, and mix | `review/final-short-v009-human-rejection.md` | Human | Fail — rejected |
 
 ## Technical evidence
 
@@ -49,6 +49,6 @@ evidence, not permission to claim exact human-perceived copy. Human playback clo
 
 ## Verdict
 
-`NEEDS HUMAN`. The encoded artifact is technically ready for owner playback, but exact voice,
-accent, article/acronym perception, and brand pronunciation are human blockers. v009 is a review
-version, not a replacement final.
+`REJECTED`. Owner playback supersedes the technical pass: the accent felt exaggerated, “A SIP”
+fused into one phrase, and the normalized mix changed the perceived SFX relationship. v009 remains
+rejection evidence and is not a replacement final.

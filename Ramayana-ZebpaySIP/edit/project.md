@@ -229,3 +229,34 @@ compression; the maximum is K01 at 1.200x. Native SFX remains a separate stem at
 **Outstanding:** Human playback must judge whether the first article plus S-I-P cadence sounds
 natural, whether ZebPay is exact, and whether K01/K14 compression is perceptible. v005 remains the
 approved final. Brand/legal release remains separate.
+
+## Session 9 - 2026-07-24
+
+| Requirement | Pass condition | Evidence | Owner | Status |
+|---|---|---|---|---|
+| v009 disposition | Human accent, phrase, and mix feedback overrides automated checks | `review/final-short-v009-human-rejection.md` | Human/Reviewer | Rejected |
+| Familiar narrator | The previously acceptable owned ElevenLabs voice is reused | v011 voice record | Voice producer | Pass |
+| SIP repair | The middle sentence begins with `SIP`; no preceding article can fuse with it | Candidate and final Scribe transcripts | Audio QC | Pass; listening required |
+| Mix preservation | v006 narration/SFX coefficients remain unchanged and unnormalized | v011 mix metadata | Sound editor | Pass |
+| Demo music | Rights-recorded music is separate, ducked, and replaceable | `audio/music/demo-v011/SOURCE.md` | Sound editor | Pass |
+| Encoded review | Both cuts decode, match 1,566 frames, share audio, and contain safe captions | v011 QC | Editor/QC | Pass |
+| Human approval | Owner accepts SIP cadence, voice, ZebPay, music, and SFX balance | Complete captioned v011 playback | Human | Pending |
+
+**Strategy:** Return to the account-owned `NarratorZebPay` performance that was already closer to the
+desired tone. Repair only G12, remove the optional article before the initialism, preserve the
+approved v006 narration/SFX coefficients, and add temporary music as an independent speech-ducked
+stem.
+
+**Decisions:** No ElevenLabs plan upgrade was required for the owned-voice repair. The selected
+provider phrase is `S. I. P. lets you invest the same amount regularly.` and display copy is
+`SIP lets you invest`. The candidate is pitch-preserving conformed at `1.144017857x` into G12.
+The mix has no full-bus normalization and no limiter. Mixkit `Sun and His Daughter` is used only
+for this demo, at -15.42 dB with another 6 dB duck under speech.
+
+**Evidence:** `audio/voiceover/elevenlabs-v011/VOICEOVER-v011.md`;
+`edit/timelines/final-short-v011-elevenlabs-music-demo.json`;
+`review/final-short-v011-elevenlabs-music-demo-qc.md`; review cuts under
+`deliverables/review-cuts/final-short-v011/`.
+
+**Outstanding:** Human playback. v011 is not a promoted final; music taste, commercial voice rights,
+brand/legal/regulatory release, and final campaign music remain separate approvals.

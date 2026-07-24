@@ -12,7 +12,7 @@
 | Continuous performance | One full request carries the narration; only the closing same-voice phrase is comped from a verified retest | Raw v003, comp metadata, and raw v004 | Sound editor | Pass |
 | Phrase lock | Narration is exactly 1,566 frames / 52.200 seconds | Phrase-lock EDL | Editor | Pass |
 | Encoded review | Both variants decode, match frame/runtime, and share audio | v009 QC | Reviewer | Pass |
-| Human listening | Owner accepts accent, naturalness, exact SIP initials, brand, pacing, and mix | Complete captioned v009 playback | Human | Pending |
+| Human listening | Owner accepts accent, naturalness, exact SIP initials, brand, pacing, and mix | `review/final-short-v009-human-rejection.md` | Human | Fail — rejected |
 
 ## Provider contract and selection
 
@@ -94,7 +94,7 @@ metered separately; the current key cannot read plan totals, so no currency amou
 
 ## Verdict
 
-`NEEDS HUMAN`. The measurable timing, stream, intelligibility, loudness, caption, and encoded-file
-checks pass. The owner must listen to the complete captioned v009 review and judge the Indian
-accent, naturalness, exact S-I-P cadence, ZebPay pronunciation, K01/K14 compression, and SFX
-balance. The approved v005 final remains unchanged.
+`REJECTED`. Human playback on 2026-07-24 found the accent exaggerated enough to feel mocking, heard
+the first article and acronym as the fused phrase “A SIP,” and found the dynamically normalized mix
+less natural with the native SFX. The technical and ASR checks remain useful evidence, but they do
+not qualify the performance for promotion. The approved v005 final remains unchanged.

@@ -58,6 +58,12 @@ Read:
     actual difficult-term auditions, and pass dictionary `p_2811321e` for SIP and ZebPay. The v009
     reference uses `mani`, pace 1.0, temperature 0.75, and 48 kHz WAV. Do not use v2 merely for pitch
     or loudness controls; apply gain and dynamics in post.
+16. Human playback rejected v009 despite its technical pass. Do not reuse its accent direction,
+    article-plus-acronym phrasing, or full-mix dynamic normalization. If `A SIP` is heard as one
+    fused phrase, begin the sentence with `S. I. P.` and keep display copy as `SIP`.
+17. When adding music to the accepted v006 narration/SFX architecture, freeze narration at +0.2 dB
+    and native SFX at net -9.8 dB. Duck only the independent music stem during speech; do not
+    normalize or limit the complete bus. Reduce music first if peak safety fails.
 
 ## Final QC
 
@@ -103,6 +109,17 @@ Read:
   pitch-safe tempo is 1.200x.
 - The encoded captioned review is -16.06 LUFS / -2.46 dBTP. Final ASR recovers Vanaras, Ram Setu,
   Rama, both SIP occurrences, and ZebPay.
-- Promotion status is `NEEDS HUMAN`. Scribe merges the short article before the first SIP, so the
-  owner must judge exact copy, Indian accent, acronym cadence, brand pronunciation, compression,
-  and SFX balance on the encoded v009 review.
+- Human status is `REJECTED`. Owner playback found the accent exaggerated enough to feel mocking,
+  heard the first occurrence as the fused phrase “A SIP,” and found the normalized mix less natural
+  against the native SFX. Technical/ASR passes do not qualify this voice for promotion.
+
+## Verified v011 ElevenLabs + demo-music review
+
+- The account-owned v006 `NarratorZebPay` voice repairs only G12. The provider text begins
+  `S. I. P. lets...`; the preceding article is removed.
+- The 4.320-second candidate is pitch-preserving conformed into frames 1116–1227 at
+  `1.144017857x`. Final Scribe recovers `SIP lets you invest...` and the complete narration.
+- The v006 narration/SFX coefficients remain fixed. No master normalization or limiter is applied.
+- Mixkit demo music is a separate stem at -15.42 dB and ducks another 6 dB during speech.
+- Encoded audio measures -16.5 LUFS, 4.2 LU LRA, and -3.2 dBTP. Promotion remains `NEEDS HUMAN` for
+  voice, acronym cadence, brand, music, and perceived SFX balance.

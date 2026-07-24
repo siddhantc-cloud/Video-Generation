@@ -73,6 +73,10 @@ break semantic sync.
    into generative footage or overwrite the source picture.
 9. Mix narration and SFX as separate stems. Measure integrated loudness and true peak; do not hide a
    poor performance with aggressive dynamic processing.
+   - When adding music to an already accepted narration/SFX mix, freeze those reference
+     coefficients. Duck only the independent music stem during speech.
+   - Do not normalize or limit the complete bus merely to make the music louder. If peak safety
+     fails, reduce the music first.
 10. Rebuild captions from the conformed word boundaries and omit copy already rendered
     deterministically when duplication would be distracting.
 11. Mux clean and captioned review cuts from the same picture and audio master.
@@ -80,6 +84,21 @@ break semantic sync.
     boundaries, loudness, peaks, and ASR on the encoded artifact.
 13. Mark the result `NEEDS HUMAN` until a person listens to the complete encoded review cut. Do not
     replace the approved final before that approval.
+
+## Surgical phrase-repair exception
+
+After a full continuous performance has already passed voice-direction review, a narrowly rejected
+phrase may be regenerated and inserted without reopening the entire take when all of these are true:
+
+1. The same owned voice, model, and documented settings are used.
+2. The repair owns one explicit half-open frame range.
+3. The new phrase is verified alone before insertion.
+4. Conform is pitch-preserving, boundary-faded, and versioned.
+5. Encoded mixed-media ASR and complete human playback are repeated.
+
+For an acronym preceded by a short article, do not assume punctuation will create an audible gap.
+If the article is optional and human playback hears a fused phrase, begin the sentence with the
+initialism instead. Preserve readable display copy separately from provider spelling.
 
 ## Host rows
 
@@ -100,3 +119,16 @@ break semantic sync.
 - Encoded audio: approximately -16.0 LUFS integrated and -3.3 dBTP
 - Semantic check: ASR recovered all 105 narration words and all required names
 - Promotion status: technical pass, human listening approval still required
+
+## Verified follow-up run
+
+- Project: `Ramayana-ZebpaySIP`
+- Version: v011 demo review
+- Date: 2026-07-24
+- Repair: G12 begins `S. I. P. lets...`; the preceding article is removed
+- Conform: frames 1116–1227, `1.144017857x`, pitch preserved
+- Mix: v006 narration/SFX coefficients frozen; no bus normalization or limiter
+- Demo music: independent Mixkit stem at -15.42 dB, ducked another 6 dB during speech
+- Encoded audio: -16.5 LUFS, 4.2 LU LRA, -3.2 dBTP
+- Semantic check: encoded ASR recovers the full narration and both SIP occurrences
+- Promotion status: technical pass, human voice/music/SFX playback pending

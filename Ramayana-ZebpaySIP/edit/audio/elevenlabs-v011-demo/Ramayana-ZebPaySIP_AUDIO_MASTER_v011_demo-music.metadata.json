@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "narration": "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v011-demo\\narration-phrase-locked-v005-sip-at-start.wav",
+  "sfx": "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-native-phrase-locked-v001.wav",
+  "music": "Ramayana-ZebpaySIP\\audio\\music\\demo-v011\\music-bed-52s-v001.wav",
+  "ducked_music_output": "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v011-demo\\music-ducked-v001.wav",
+  "output": "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v011-demo\\Ramayana-ZebPaySIP_AUDIO_MASTER_v011_demo-music.wav",
+  "sample_rate": 48000,
+  "channels": 2,
+  "samples": 2505600,
+  "duration_seconds": 52.2,
+  "mix": {
+    "master_normalization": "none",
+    "limiter": "none",
+    "narration_gain_db": 0.2,
+    "narration_mono_to_stereo": "equal-power; -3.0103 dB per channel",
+    "sfx_gain_db": -9.8,
+    "music_requested_gain_db": -15.42,
+    "music_selected_gain_db": -15.42,
+    "music_duck_db_during_speech": -6.0,
+    "speech_threshold_dbfs": -45.0,
+    "duck_attack_ms": 30.0,
+    "duck_release_ms": 350.0,
+    "peak_ceiling_dbfs": -2.0,
+    "measured_sample_peak_dbfs": -3.2194192891109727,
+    "peak_safety_action": "reduce-music-only"
+  }
+}

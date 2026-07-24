@@ -1,0 +1,84 @@
+{
+  "version": "final-short-v011-elevenlabs-music-demo",
+  "status": "needs-human-playback",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "total_frames": 1566,
+  "duration_seconds": 52.2,
+  "picture_source": {
+    "path": "deliverables/review-cuts/final-short-v006/Ramayana-ZebPaySIP_REVIEW_v006_elevenlabs_clean.mp4",
+    "operation": "unchanged-v005-picture"
+  },
+  "narration": {
+    "base": "edit/audio/elevenlabs-v006/narration-phrase-locked-v003.wav",
+    "replacement_beat": "G12",
+    "replacement_frames": [1116, 1228],
+    "replacement_text": "SIP lets you invest the same amount regularly",
+    "provider_text": "S. I. P. lets you invest the same amount regularly.",
+    "provider": "ElevenLabs",
+    "model_id": "eleven_v3",
+    "voice_id": "al4r3VzsNW11MRVgGcBe",
+    "voice_name": "NarratorZebPay",
+    "seed": 24072029,
+    "raw_candidate": "audio/voiceover/elevenlabs-v011/g12-sip-at-start-v001.mp3",
+    "raw_candidate_sha256": "5473FDA816FB01C103FBAB5CA4D41E8E638A2D89CC51E889518F31D99FCEB131",
+    "phrase_locked": "edit/audio/elevenlabs-v011-demo/narration-phrase-locked-v005-sip-at-start.wav",
+    "phrase_locked_sha256": "04E520FCA974291585D579A0705E30B647F86168F5EA3A31BD7607A3A84F2CEE",
+    "tempo": 1.1440178571428572,
+    "pitch_preserved": true
+  },
+  "native_sfx": {
+    "source": "edit/audio/elevenlabs-v006/sfx-native-phrase-locked-v001.wav",
+    "gain_db": -9.8
+  },
+  "music": {
+    "track": "Sun and His Daughter",
+    "creator": "Eugenio Mininni",
+    "source_record": "audio/music/demo-v011/SOURCE.md",
+    "bed": "audio/music/demo-v011/music-bed-52s-v001.wav",
+    "bed_sha256": "D32D9E29A6F515EEDEFCB50C9EAED7E191A16EA8C69F8917C5F3950257934C9B",
+    "static_gain_db": -15.42,
+    "speech_duck_db": -6.0,
+    "final_campaign_approved": false
+  },
+  "audio_master": {
+    "path": "edit/audio/elevenlabs-v011-demo/Ramayana-ZebPaySIP_AUDIO_MASTER_v011_demo-music.wav",
+    "sha256": "DD4E3C898802A3CB9A9CBA29FB2E2F3D6E13B2A6F39F6F6BA6E5A7052D22E88E",
+    "master_normalization": "none",
+    "limiter": "none",
+    "integrated_lufs_after_aac": -16.5,
+    "lra_lu_after_aac": 4.2,
+    "true_peak_dbtp_after_aac": -3.2
+  },
+  "captions": {
+    "source": "edit/master-short-v011-elevenlabs-music-demo.srt",
+    "sha256": "D8F1DC064D5DCCC9B54B440C689AB455480A4873154A5CD8C79FC1A09056A1A6",
+    "font_requested": "Montserrat",
+    "font_resolved_by_libass": "Arial-BoldMT",
+    "font_size": 12.5,
+    "outline": 1.4,
+    "alignment": 2,
+    "margin_left": 90,
+    "margin_right": 90,
+    "margin_vertical": 55,
+    "g15_subtitle_omitted": true
+  },
+  "outputs": {
+    "clean": {
+      "path": "deliverables/review-cuts/final-short-v011/Ramayana-ZebPaySIP_REVIEW_v011_elevenlabs-sip-at-start_music-demo_clean.mp4",
+      "sha256": "80CE2F3322830FD4F0E91F5B7430308E32F33C014CA7507667A4A184E8C89091",
+      "bytes": 50463540
+    },
+    "captioned": {
+      "path": "deliverables/review-cuts/final-short-v011/Ramayana-ZebPaySIP_REVIEW_v011_elevenlabs-sip-at-start_music-demo_captioned.mp4",
+      "sha256": "7CD0003E9318DBA1BAD640A4E8552B2D991D401097B1D8AEC69BE164F201705B",
+      "bytes": 44218578
+    },
+    "audio_elementary_stream_md5": "c601bde7540f0585612040174888e336"
+  },
+  "promotion": {
+    "final_master_overwritten": false,
+    "requires": "Human playback plus separate music, brand, legal, and regulatory approval"
+  }
+}
