@@ -173,6 +173,25 @@ Add one row immediately after every job. Never erase rejected attempts: they are
 | K01 v002 | Correct the structural media-role failure while preserving every creative control | Seedance 2.0 Standard; explicit start image; 9:16; 480p; 6 s; one candidate; High; Sound On; approved K01 frame + Early Bridge + Rama | 18 | 1 | 18 | Complete: keeper; actual charge 18 credits |
 | K02-K10/K14 first pass | Replace all remaining approved short-v004 motion cells | Seedance 2.0 Standard; explicit start images; 9:16; 480p; 4-6 s; one candidate each; High; Sound On | 12-18 | 10 | 129 | Complete: nine full keepers, one K03 partial keeper; actual charge 129 credits |
 
+## Voiceover experiment ledger
+
+ElevenLabs usage is metered differently from Higgsfield video credits. The current restricted API
+key can synthesize and transcribe but cannot read subscription/quota totals, so only measured
+characters/minutes are recorded. Currency or plan-credit cost is unknown.
+
+| Date | Operation | Surface/model | Measured usage | Provider result | Production decision |
+|---|---|---|---:|---|---|
+| 2026-07-24 | Exact mythology library-voice test | ElevenLabs API, Shardul K Hindu Mythology Storyteller | 0 media | HTTP 402 `paid_plan_required`; library voice unavailable to free users through API | Do not route through paid Higgsfield merely to bypass this entitlement |
+| 2026-07-24 | Pronunciation auditions | ElevenLabs API, `eleven_v3`, account-owned `NarratorZebPay` | 240 TTS characters | Two outputs | Reject r1 `Zeb-pay`; keep r2 `Zeb Pay` |
+| 2026-07-24 | Final continuous narration | ElevenLabs API, `eleven_v3`, account-owned `NarratorZebPay` | 606 TTS characters | 48.080-second timestamped performance | Phrase-lock to the approved 52.2-second picture |
+| 2026-07-24 | Automated intelligibility checks | ElevenLabs Scribe | 175.68 seconds / 2.928 minutes | Exact 105-word recovery from final mix | Technical speech gate passed; human tone gate remains |
+
+For cheaper repeats, keep the selected voice, seed, model settings, dictionary r2, and audition text.
+Run one short pronunciation audition only when new proper nouns or brand terms enter the script.
+Generate the full narration once after copy lock, and reuse its timestamp alignment for phrase
+conform and captions. Do not re-transcribe immutable intermediate files after the selected final-mix
+transcript exists.
+
 ## Approval packet for every paid run
 
 - Shot/version and purpose.

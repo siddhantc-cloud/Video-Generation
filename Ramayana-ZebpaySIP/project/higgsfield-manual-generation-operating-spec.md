@@ -465,6 +465,32 @@ The film is narration-led. Use the existing scratch narration and integer-frame 
 
 Do not attach the narration as `@Audio` to Seedance. That would condition visuals and can invite lip-sync or voice-linked behavior that this film does not need.
 
+### Verified ElevenLabs narration path (2026-07-24)
+
+1. Search both the live Higgsfield preset list and the underlying ElevenLabs Voice Library. A voice
+   being discoverable does not prove the current account can synthesize it through the API.
+2. ElevenLabs currently hosts Hindu-mythology voices explicitly described for Ramayana narration,
+   but the current free/API entitlement returns HTTP 402 for Voice Library TTS. Higgsfield's live
+   voice list does not expose those mythology labels or accent metadata.
+3. Use the account-owned original Voice Design voice `NarratorZebPay` for this film. Never imitate
+   or clone a real actor/public person without rights and consent.
+4. Use Eleven v3 with one versioned pronunciation dictionary. Current selected aliases are:
+   `vanaras` → `vaa-nuh-raas`, `Ram Setu` → `Raam Say-too`, `Rama` → `Raa-muh`, `SIP` →
+   `ess eye pee`, and `ZebPay` → `Zeb Pay`. The earlier hyphenated `Zeb-pay` alias is rejected.
+5. Generate one continuous take with character timestamps. Do not generate isolated sentences and
+   hope they share cadence.
+6. If the continuous take is shorter than the locked picture, do not globally stretch it. Global
+   scaling moved some v006 phrase starts by up to 868 ms. Partition in inter-phrase silence, keep
+   naturally shorter phrases intact and pad their tails, and accelerate only phrases that overrun
+   their exact frame slots. Rebuild captions from the conformed word timings.
+7. Mix approved native SFX as a separate stem with 30 ms shot-boundary fades. The selected v006
+   mix uses SFX at -10 dB, final gain +0.2 dB, and measures -16.01 LUFS / -3.28 dBTP after AAC.
+8. The automated transcript/loudness/sync gate cannot approve timbre. The owner must listen to the
+   encoded review cut before promotion.
+
+Evidence and exact IDs/settings live in
+`../audio/voiceover/elevenlabs-v006/VOICEOVER-v006.md`, not in this general operating section.
+
 ## 12. Manual step-by-step production procedure
 
 ### Phase 0: Freeze the production truth

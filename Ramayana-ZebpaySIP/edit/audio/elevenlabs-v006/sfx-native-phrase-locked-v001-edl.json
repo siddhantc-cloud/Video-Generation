@@ -1,0 +1,146 @@
+﻿{
+    "schema":  1,
+    "source_phrase_map":  "edit/timelines/final-short-v001-phrase-map.json",
+    "sample_rate":  48000,
+    "channels":  2,
+    "fade_ms":  30,
+    "total_frames":  1566,
+    "duration_seconds":  52.2,
+    "segments":  [
+                     {
+                         "id":  "K01",
+                         "start_frame":  0,
+                         "end_frame_exclusive":  176,
+                         "frames":  176,
+                         "duration_seconds":  5.8666666666666663,
+                         "source":  "Ramayana-ZebpaySIP\\audio\\sfx\\generated\\K01_v002_native.wav",
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\00_K01.wav"
+                     },
+                     {
+                         "id":  "K02",
+                         "start_frame":  176,
+                         "end_frame_exclusive":  233,
+                         "frames":  57,
+                         "duration_seconds":  1.9,
+                         "source":  "Ramayana-ZebpaySIP\\audio\\sfx\\generated\\K02_v001_native.wav",
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\01_K02.wav"
+                     },
+                     {
+                         "id":  "K03",
+                         "start_frame":  233,
+                         "end_frame_exclusive":  353,
+                         "frames":  120,
+                         "duration_seconds":  4,
+                         "source":  "Ramayana-ZebpaySIP\\audio\\sfx\\generated\\K03_v001_native.wav",
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\02_K03.wav"
+                     },
+                     {
+                         "id":  "K04",
+                         "start_frame":  353,
+                         "end_frame_exclusive":  416,
+                         "frames":  63,
+                         "duration_seconds":  2.1,
+                         "source":  "Ramayana-ZebpaySIP\\audio\\sfx\\generated\\K04_v001_native.wav",
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\03_K04.wav"
+                     },
+                     {
+                         "id":  "K05",
+                         "start_frame":  416,
+                         "end_frame_exclusive":  525,
+                         "frames":  109,
+                         "duration_seconds":  3.6333333333333333,
+                         "source":  "Ramayana-ZebpaySIP\\audio\\sfx\\generated\\K05_v001_native.wav",
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\04_K05.wav"
+                     },
+                     {
+                         "id":  "K06",
+                         "start_frame":  525,
+                         "end_frame_exclusive":  608,
+                         "frames":  83,
+                         "duration_seconds":  2.7666666666666666,
+                         "source":  "Ramayana-ZebpaySIP\\audio\\sfx\\generated\\K06_v001_native.wav",
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\05_K06.wav"
+                     },
+                     {
+                         "id":  "K07",
+                         "start_frame":  608,
+                         "end_frame_exclusive":  715,
+                         "frames":  107,
+                         "duration_seconds":  3.5666666666666669,
+                         "source":  "Ramayana-ZebpaySIP\\audio\\sfx\\generated\\K07_v001_native.wav",
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\06_K07.wav"
+                     },
+                     {
+                         "id":  "K08",
+                         "start_frame":  715,
+                         "end_frame_exclusive":  762,
+                         "frames":  47,
+                         "duration_seconds":  1.5666666666666667,
+                         "source":  "Ramayana-ZebpaySIP\\audio\\sfx\\generated\\K08_v001_native.wav",
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\07_K08.wav"
+                     },
+                     {
+                         "id":  "K09",
+                         "start_frame":  762,
+                         "end_frame_exclusive":  891,
+                         "frames":  129,
+                         "duration_seconds":  4.3,
+                         "source":  "Ramayana-ZebpaySIP\\audio\\sfx\\generated\\K09_v001_native.wav",
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\08_K09.wav"
+                     },
+                     {
+                         "id":  "K10",
+                         "start_frame":  891,
+                         "end_frame_exclusive":  983,
+                         "frames":  92,
+                         "duration_seconds":  3.0666666666666669,
+                         "source":  "Ramayana-ZebpaySIP\\audio\\sfx\\generated\\K10_v001_native.wav",
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\09_K10.wav"
+                     },
+                     {
+                         "id":  "G11",
+                         "start_frame":  983,
+                         "end_frame_exclusive":  1116,
+                         "frames":  133,
+                         "duration_seconds":  4.4333333333333336,
+                         "source":  null,
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\10_G11.wav"
+                     },
+                     {
+                         "id":  "G12",
+                         "start_frame":  1116,
+                         "end_frame_exclusive":  1228,
+                         "frames":  112,
+                         "duration_seconds":  3.7333333333333334,
+                         "source":  null,
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\11_G12.wav"
+                     },
+                     {
+                         "id":  "G13",
+                         "start_frame":  1228,
+                         "end_frame_exclusive":  1302,
+                         "frames":  74,
+                         "duration_seconds":  2.4666666666666668,
+                         "source":  null,
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\12_G13.wav"
+                     },
+                     {
+                         "id":  "K14",
+                         "start_frame":  1302,
+                         "end_frame_exclusive":  1466,
+                         "frames":  164,
+                         "duration_seconds":  5.4666666666666668,
+                         "source":  "Ramayana-ZebpaySIP\\audio\\sfx\\generated\\K14_v001_native.wav",
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\13_K14.wav"
+                     },
+                     {
+                         "id":  "G15",
+                         "start_frame":  1466,
+                         "end_frame_exclusive":  1566,
+                         "frames":  100,
+                         "duration_seconds":  3.3333333333333335,
+                         "source":  null,
+                         "segment":  "Ramayana-ZebpaySIP\\edit\\audio\\elevenlabs-v006\\sfx-stem-v001\\14_G15.wav"
+                     }
+                 ]
+}

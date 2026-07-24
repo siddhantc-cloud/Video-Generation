@@ -1,0 +1,72 @@
+{
+  "version": "final-short-v006-elevenlabs",
+  "status": "needs-human-voice-playback",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "total_frames": 1566,
+  "duration_seconds": 52.2,
+  "picture_source": {
+    "path": "deliverables/review-cuts/final-short-v005/Ramayana-ZebPaySIP_REVIEW_v005_premium-graphics_clean.mp4",
+    "operation": "video-stream-copy-for-clean-v006",
+    "sha256": "0696E4B7F4F3474B0D8B90B15B34A5313E820A8FB0E232003934D512E05225E4"
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "model_id": "eleven_v3",
+    "voice_id": "al4r3VzsNW11MRVgGcBe",
+    "voice_name": "NarratorZebPay",
+    "source_script": "scripts/short-narration-v004.txt",
+    "raw_audio": "audio/voiceover/elevenlabs-v006/Ramayana-ZebPaySIP_NARRATION_v006_raw_v001.mp3",
+    "raw_audio_sha256": "01FEBE4ED8AF656C545D9D55697E1064FB3077B72C741F6FD993AE549080368C",
+    "raw_duration_seconds": 48.08,
+    "phrase_locked_audio": "edit/audio/elevenlabs-v006/narration-phrase-locked-v003.wav",
+    "phrase_locked_sha256": "FAB95B9CDD65B8B9D5746177C1E3688BF5E81DD9D6A7A4088CC8F5E5A2D78CD5",
+    "phrase_lock_edl": "edit/audio/elevenlabs-v006/narration-phrase-locked-v003-edl.json",
+    "word_timings": "edit/audio/elevenlabs-v006/narration-word-boundaries-v003.json",
+    "max_phrase_onset_after_picture_cut_ms": 30.0,
+    "sample_rate": 48000,
+    "channels": 1
+  },
+  "native_sfx": {
+    "source_directory": "audio/sfx/generated",
+    "phrase_locked_stem": "edit/audio/elevenlabs-v006/sfx-native-phrase-locked-v001.wav",
+    "sha256": "5462EEAB829501766AB36F7D91C7641205746D187A7FF58F4B0A87A1FC24539C",
+    "gain_db": -10.0,
+    "fade_ms": 30
+  },
+  "audio_master": {
+    "path": "edit/audio/elevenlabs-v006/Ramayana-ZebPaySIP_AUDIO_MASTER_v006.wav",
+    "sha256": "E9360849C099534511F6498DDE206E7B60260280574B74F9927C2D9CEDF516B4",
+    "sample_rate": 48000,
+    "channels": 2,
+    "samples": 2505600,
+    "duration_seconds": 52.2,
+    "final_gain_db": 0.2,
+    "integrated_lufs_after_aac": -16.01,
+    "true_peak_dbtp_after_aac": -3.28
+  },
+  "captions": {
+    "source": "edit/master-short-v006-elevenlabs.srt",
+    "sha256": "157702BC006FEC4A626B2F84EEC72D3D1BAEF29B390C37533F1EC0B92D159337",
+    "operation": "burn-after-picture-and-audio-lock",
+    "g15_subtitle_omitted": true
+  },
+  "outputs": {
+    "clean": {
+      "path": "deliverables/review-cuts/final-short-v006/Ramayana-ZebPaySIP_REVIEW_v006_elevenlabs_clean.mp4",
+      "sha256": "B6A326787D76617440C3D4F110AD0801B3CE4BAA5A5AD1AB982AE0EE0D015924",
+      "bytes": 50423639
+    },
+    "captioned": {
+      "path": "deliverables/review-cuts/final-short-v006/Ramayana-ZebPaySIP_REVIEW_v006_elevenlabs_captioned.mp4",
+      "sha256": "31BB76427D5978A76F698AF0D52506BEB501DF101C6C8033495989631CA7FA0E",
+      "bytes": 43593119
+    },
+    "audio_elementary_stream_md5": "fdb5cc91a7730c73a655f5190c5fdf81"
+  },
+  "promotion": {
+    "final_master_overwritten": false,
+    "requires": "Human playback and voice approval, plus independent brand/legal release if required"
+  }
+}

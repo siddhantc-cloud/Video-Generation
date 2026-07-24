@@ -129,6 +129,7 @@ support, and price override remembered defaults.
 | HyperFrames CLI | Deterministic HTML/CSS/SVG/GSAP motion design and rendering |
 | Node.js / npm | HyperFrames, Remotion, and provider CLI tooling |
 | Python | Validation and deterministic helpers |
+| `Ramayana-ZebpaySIP/tools/build_elevenlabs_phrase_locked_audio.py` | Conform one timestamped ElevenLabs performance to whole-frame phrase slots without pitch shift |
 | `yt-dlp` | Fetch only explicitly authorized online media |
 | Git LFS | Store explicitly promoted final videos |
 | DaVinci Resolve Free | Optional supervised finishing; not an MCP dependency |
@@ -136,6 +137,11 @@ support, and price override remembered defaults.
 The canonical editorial stack is video-use plus FFmpeg/FFprobe. Resolve is optional after picture
 lock; do not purchase Studio or introduce a different NLE without a verified limitation and human
 approval.
+
+For an ElevenLabs narration replacement after picture lock, follow
+`.agent-harness/recipes/elevenlabs-phrase-locked-narration.md`. The project helper named above is
+the verified implementation; its project path is intentionally Ramayana-specific while the recipe
+is reusable.
 
 ## Git and media policy
 

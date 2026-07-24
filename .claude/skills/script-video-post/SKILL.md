@@ -21,6 +21,14 @@ Editorial starts from approved ranges and an integer-frame manifest. Narration o
 10. Inspect boundary frames and watch the entire encoded file with sound.
 11. If audio was intended to pass unchanged, verify elementary audio-stream MD5 before and after muxing.
 12. Promote only the human-approved cut into `deliverables/final/`.
+13. A discoverable provider/library voice is not proof of API entitlement. Preflight the exact
+    voice and surface before committing the narration plan; use an owned, rights-safe designed voice
+    as the fallback rather than cloning or imitating a public person.
+14. Prefer one continuous timestamped TTS performance plus a versioned pronunciation dictionary.
+    When the performance and picture map differ, conform by phrase: retain natural shorter phrases
+    and pad their tails, accelerate only overrunning phrases without pitch change, then derive new
+    captions from the conformed word timings. Do not use one global time stretch unless measured
+    semantic drift remains within the project tolerance.
 
 ## Delivery
 

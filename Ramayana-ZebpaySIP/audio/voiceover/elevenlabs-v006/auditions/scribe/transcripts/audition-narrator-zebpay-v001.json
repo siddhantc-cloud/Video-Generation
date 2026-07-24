@@ -1,0 +1,353 @@
+{
+  "language_code": "eng",
+  "language_probability": 1.0,
+  "text": "An army of Vanaras was building Ram Setu, boulder by boulder. But Rama saw what they missed. Start your SIP with Zeppi",
+  "words": [
+    {
+      "text": "An",
+      "start": 0.079,
+      "end": 0.179,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -0.0028174726758152246
+    },
+    {
+      "text": " ",
+      "start": 0.179,
+      "end": 0.259,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -0.0002965487365145236
+    },
+    {
+      "text": "army",
+      "start": 0.259,
+      "end": 0.539,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -0.0002965487365145236
+    },
+    {
+      "text": " ",
+      "start": 0.539,
+      "end": 0.599,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -2.5629668016335927e-05
+    },
+    {
+      "text": "of",
+      "start": 0.599,
+      "end": 0.699,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -2.5629668016335927e-05
+    },
+    {
+      "text": " ",
+      "start": 0.699,
+      "end": 0.819,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -0.00811754073947668
+    },
+    {
+      "text": "Vanaras",
+      "start": 0.819,
+      "end": 1.559,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -0.004684956079082829
+    },
+    {
+      "text": " ",
+      "start": 1.559,
+      "end": 1.619,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -5.602820692729438e-06
+    },
+    {
+      "text": "was",
+      "start": 1.62,
+      "end": 1.839,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -5.602820692729438e-06
+    },
+    {
+      "text": " ",
+      "start": 1.839,
+      "end": 1.859,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -1.9073468138230965e-06
+    },
+    {
+      "text": "building",
+      "start": 1.86,
+      "end": 2.399,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -1.9073468138230965e-06
+    },
+    {
+      "text": " ",
+      "start": 2.399,
+      "end": 2.439,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -0.0002379134384682402
+    },
+    {
+      "text": "Ram",
+      "start": 2.44,
+      "end": 2.679,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -0.0002379134384682402
+    },
+    {
+      "text": " ",
+      "start": 2.679,
+      "end": 2.799,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -0.004758818540722132
+    },
+    {
+      "text": "Setu,",
+      "start": 2.799,
+      "end": 3.22,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -0.042161249276205126
+    },
+    {
+      "text": " ",
+      "start": 3.22,
+      "end": 3.699,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -0.0005273620481602848
+    },
+    {
+      "text": "boulder",
+      "start": 3.699,
+      "end": 4.259,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -0.0005273620481602848
+    },
+    {
+      "text": " ",
+      "start": 4.259,
+      "end": 4.299,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -2.3841855067985307e-07
+    },
+    {
+      "text": "by",
+      "start": 4.299,
+      "end": 4.46,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -2.3841855067985307e-07
+    },
+    {
+      "text": " ",
+      "start": 4.46,
+      "end": 4.579,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -6.806619057897478e-05
+    },
+    {
+      "text": "boulder.",
+      "start": 4.579,
+      "end": 5.0,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -0.0003090224763582228
+    },
+    {
+      "text": " ",
+      "start": 5.0,
+      "end": 5.0,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -7.629365427419543e-06
+    },
+    {
+      "text": "But",
+      "start": 6.119,
+      "end": 6.259,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -7.629365427419543e-06
+    },
+    {
+      "text": " ",
+      "start": 6.259,
+      "end": 6.339,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -9.727005090098828e-05
+    },
+    {
+      "text": "Rama",
+      "start": 6.339,
+      "end": 6.899,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -9.727005090098828e-05
+    },
+    {
+      "text": " ",
+      "start": 6.899,
+      "end": 7.099,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -1.6331539882230572e-05
+    },
+    {
+      "text": "saw",
+      "start": 7.099,
+      "end": 7.319,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -1.6331539882230572e-05
+    },
+    {
+      "text": " ",
+      "start": 7.319,
+      "end": 7.359,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -1.1920928244535389e-07
+    },
+    {
+      "text": "what",
+      "start": 7.359,
+      "end": 7.559,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -1.1920928244535389e-07
+    },
+    {
+      "text": " ",
+      "start": 7.559,
+      "end": 7.579,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -8.344646857949556e-07
+    },
+    {
+      "text": "they",
+      "start": 7.579,
+      "end": 7.759,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -8.344646857949556e-07
+    },
+    {
+      "text": " ",
+      "start": 7.759,
+      "end": 7.799,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -1.0728830375228426e-06
+    },
+    {
+      "text": "missed.",
+      "start": 7.799,
+      "end": 8.159,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -5.458777172862028e-05
+    },
+    {
+      "text": " ",
+      "start": 8.159,
+      "end": 8.779,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -1.6331539882230572e-05
+    },
+    {
+      "text": "Start",
+      "start": 8.779,
+      "end": 9.139,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -1.6331539882230572e-05
+    },
+    {
+      "text": " ",
+      "start": 9.139,
+      "end": 9.239,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -8.702239938429557e-06
+    },
+    {
+      "text": "your",
+      "start": 9.239,
+      "end": 9.46,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -8.702239938429557e-06
+    },
+    {
+      "text": " ",
+      "start": 9.46,
+      "end": 9.659,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -4.2437604861333966e-05
+    },
+    {
+      "text": "SIP",
+      "start": 9.659,
+      "end": 10.219,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -4.2437604861333966e-05
+    },
+    {
+      "text": " ",
+      "start": 10.219,
+      "end": 10.619,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -1.07287787614041e-05
+    },
+    {
+      "text": "with",
+      "start": 10.619,
+      "end": 10.899,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -1.07287787614041e-05
+    },
+    {
+      "text": " ",
+      "start": 10.899,
+      "end": 11.039,
+      "type": "spacing",
+      "speaker_id": "speaker_0",
+      "logprob": -0.03547404706478119
+    },
+    {
+      "text": "Zeppi",
+      "start": 11.039,
+      "end": 11.539,
+      "type": "word",
+      "speaker_id": "speaker_0",
+      "logprob": -0.40229678750038145
+    }
+  ],
+  "transcription_id": "Q3xBy1EEDSBSXzaNdyJg",
+  "audio_duration_secs": 11.6
+}

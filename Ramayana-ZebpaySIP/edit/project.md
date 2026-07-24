@@ -135,3 +135,35 @@ no interval, and their audio elementary streams match the v003 source MD5.
 
 **Outstanding:** Human playback and ZebPay brand/legal approval. Narration, music, and SFX remain a
 separate future pass; no audio change was made here.
+
+## Session 6 - 2026-07-24
+
+| Requirement | Pass condition | Evidence | Owner | Status |
+|---|---|---|---|---|
+| ElevenLabs provider truth | Mythology availability and current API entitlement are verified live | Voice Library/API evidence in `VOICEOVER-v006.md` | Voice producer | Complete |
+| Voice identity | One rights-safe Indian-English narrator is selected and versioned | Account-owned `NarratorZebPay` Voice Design voice | Voice producer | Complete |
+| Pronunciation | Vanaras, Ram Setu, Rama, SIP, and ZebPay survive the final mixed output | Dictionary r2 and final Scribe transcript | Audio QC | Pass |
+| Phrase lock | New performance preserves every approved picture/graph/logo beat | v006 phrase-lock EDL; max onset 30 ms | Editor | Pass |
+| SFX architecture | Approved native SFX remain separate and intelligible under narration | v006 SFX stem and -16.01 LUFS mix | Sound/QC | Pass |
+| Encoded review | Clean/captioned cuts decode, match duration, and retain identical audio | v006 review QC | Editor/QC | Pass |
+| Human voice approval | Owner accepts the full voice performance | Captioned v006 review cut | Human | Pending |
+
+**Strategy:** Check the live Higgsfield and ElevenLabs catalogs before synthesis. Prefer an exact
+mythology library voice only when the current account can legally and technically use it through the
+chosen surface; otherwise use the account-owned original Voice Design narrator. Generate one
+continuous timestamped performance, phrase-lock it to the approved 1,566-frame picture, rebuild
+captions from the conformed word timings, and preserve the reviewed native SFX architecture.
+
+**Decisions:** ElevenLabs hosts exact Hindu-mythology voices, but the current free/API entitlement
+returns HTTP 402 for Voice Library TTS. Higgsfield exposes only generic voice IDs and does not expose
+those mythology labels. The selected `NarratorZebPay` voice is an original generated Indian-English
+documentary narrator already in the account. Dictionary r2 uses `Zeb Pay` rather than the rejected
+hyphenated alias. The new mix retains approved shot-local SFX at -10 dB and requires no limiter.
+
+**Evidence:** `audio/voiceover/elevenlabs-v006/VOICEOVER-v006.md`;
+`edit/timelines/final-short-v006-elevenlabs.json`;
+`review/final-short-v006-elevenlabs-qc.md`; captioned review cut under
+`deliverables/review-cuts/final-short-v006/`.
+
+**Outstanding:** Human playback of v006. Do not overwrite or demote the approved v005 final until
+the owner accepts voice tone, pace, and pronunciation. Brand/legal release remains separate.

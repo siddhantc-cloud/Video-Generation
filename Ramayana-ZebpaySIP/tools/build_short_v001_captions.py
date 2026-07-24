@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import math
 import re
@@ -36,8 +37,18 @@ def phrase_tokens(phrase: str, expected: int) -> list[str]:
 
 
 def main() -> None:
-    timeline = json.loads(TIMELINE.read_text(encoding="utf-8"))
-    timing_path = PROJECT / timeline["narration"]["word_boundaries"]
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--timeline", type=Path, default=TIMELINE)
+    parser.add_argument("--word-boundaries", type=Path)
+    parser.add_argument("--output", type=Path, default=OUTPUT)
+    args = parser.parse_args()
+
+    timeline = json.loads(args.timeline.read_text(encoding="utf-8-sig"))
+    timing_path = (
+        args.word_boundaries
+        if args.word_boundaries
+        else PROJECT / timeline["narration"]["word_boundaries"]
+    )
     words = json.loads(timing_path.read_text(encoding="utf-8"))["words"]
     beats = timeline["beats"]
     entries: list[tuple[float, float, str]] = []
@@ -81,12 +92,13 @@ def main() -> None:
         blocks.append(
             f"{index}\n{timestamp(start)} --> {timestamp(end)}\n{text}\n"
         )
-    OUTPUT.write_text("\n".join(blocks), encoding="utf-8")
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text("\n".join(blocks), encoding="utf-8")
     print(
         json.dumps(
             {
                 "entries": len(entries),
-                "output": str(OUTPUT),
+                "output": str(args.output),
                 "first": entries[0],
                 "last": entries[-1],
             },

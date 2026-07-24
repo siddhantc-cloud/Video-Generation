@@ -40,6 +40,15 @@ Read:
 11. Inspect captions on the assembled render. A nominal caption-safe band or static composition
     check is preliminary; if subtitles cross a graph, face, prop, or CTA focal area, reposition and
     burn them again after picture lock.
+12. For the final narrator, verify both voice discovery and actual synthesis entitlement. The
+    ElevenLabs Voice Library contains Ramayana-specific mythology voices, but the current free API
+    tier rejects library-voice TTS. Use the account-owned original `NarratorZebPay` voice unless a
+    later live preflight proves an approved library voice is usable.
+13. Generate one continuous timestamped narrator performance with the project pronunciation
+    dictionary. If it does not match the locked 1,566-frame phrase map, preserve natural delivery,
+    pad shorter phrase tails, accelerate only overrunning phrases without pitch change, and rebuild
+    captions from the conformed word timings. Never globally stretch when measured phrase drift
+    exceeds the semantic tolerance.
 
 ## Final QC
 

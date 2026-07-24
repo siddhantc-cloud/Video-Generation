@@ -34,5 +34,10 @@ The canonical editorial stack is video-use plus FFmpeg/FFprobe and the project f
 DaVinci Resolve Free is optional supervised finishing only. The external Resolve MCP requires Studio
 and is not a dependency for this workflow.
 
+For an ElevenLabs narration replacement after picture lock, follow
+`.agent-harness/recipes/elevenlabs-phrase-locked-narration.md`. The verified conformer is
+`Ramayana-ZebpaySIP/tools/build_elevenlabs_phrase_locked_audio.py`; keep the continuous performance,
+provider timing metadata, whole-frame phrase slots, native SFX, and human listening gate separate.
+
 Follow `.agent-harness/recipes/git-lfs-video-delivery.md` when the owner explicitly requests the
 approved final in Git. Never add raw takes or review media to Git as a shortcut.
