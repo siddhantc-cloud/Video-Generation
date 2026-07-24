@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A non-technical presentation of the idea-to-cinematic-video workflow for marketing and product teams.">
-  <title>From idea to cinematic social film</title>
+  <meta name="description" content="How the Ramayana-ZebPay SIP film was made: story beats, reusable elements, keyframes, image-only animatic, Higgsfield motion, and post-production.">
+  <title>How we made Ramayana-ZebPay SIP</title>
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,7 +119,7 @@
       height: 3.8rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       gap: 1rem;
       padding: 0 var(--slide-pad-x);
       border-bottom: 1px solid var(--line);
@@ -1312,6 +1312,580 @@
       position: fixed;
     }
 
+    .legacy-deck[hidden] {
+      display: none !important;
+    }
+
+    .step-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 1rem;
+      color: var(--gold-soft);
+      font-family: var(--display);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .step-kicker__number {
+      display: inline-grid;
+      width: 2.2rem;
+      height: 2.2rem;
+      place-items: center;
+      background: var(--gold);
+      color: #07111d;
+      font-size: 0.72rem;
+      letter-spacing: 0;
+    }
+
+    .workflow-map {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin-top: clamp(1.4rem, 3vh, 2.4rem);
+      border-top: 1px solid var(--line-strong);
+      border-left: 1px solid var(--line-strong);
+    }
+
+    .workflow-map__step {
+      position: relative;
+      min-height: clamp(9rem, 19vh, 12rem);
+      padding: 1.2rem;
+      border-right: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+      background: rgba(255, 255, 255, 0.018);
+    }
+
+    .workflow-map__step:nth-child(n+5) {
+      background: rgba(64, 140, 255, 0.045);
+    }
+
+    .workflow-map__step strong {
+      display: block;
+      margin-bottom: 0.8rem;
+      color: var(--blue-soft);
+      font-family: var(--display);
+      font-size: 0.78rem;
+      letter-spacing: 0.13em;
+    }
+
+    .workflow-map__step h3 {
+      margin-bottom: 0.45rem;
+      font-size: clamp(1rem, 1.4vw, 1.25rem);
+    }
+
+    .workflow-map__step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(0.8rem, 1vw, 0.98rem);
+      line-height: 1.45;
+    }
+
+    .beat-layout,
+    .element-layout,
+    .keyframe-layout,
+    .cinema-layout,
+    .packet-layout,
+    .post-layout,
+    .repeat-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .beat-strip {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .beat-row {
+      display: grid;
+      grid-template-columns: 3.2rem minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.95rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .beat-row__id {
+      color: var(--blue-soft);
+      font-family: var(--display);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    .beat-row p {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(0.88rem, 1.1vw, 1.05rem);
+      line-height: 1.45;
+    }
+
+    .beat-row time {
+      color: var(--gold-soft);
+      font-size: 0.74rem;
+      white-space: nowrap;
+    }
+
+    .fact-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 1.4rem;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .fact {
+      padding: 1rem;
+      background: var(--paper-2);
+    }
+
+    .fact strong {
+      display: block;
+      color: var(--gold-soft);
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 2.3vw, 2.15rem);
+    }
+
+    .fact span {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .asset-card {
+      position: relative;
+      min-height: 14rem;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+
+    .asset-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 14rem;
+      object-fit: cover;
+    }
+
+    .asset-card::after {
+      position: absolute;
+      inset: 46% 0 0;
+      content: "";
+      background: linear-gradient(to bottom, transparent, rgba(3, 10, 18, 0.95));
+      pointer-events: none;
+    }
+
+    .asset-card__label {
+      position: absolute;
+      z-index: 1;
+      left: 0.9rem;
+      right: 0.9rem;
+      bottom: 0.8rem;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 0.5rem;
+      color: white;
+    }
+
+    .asset-card__label strong {
+      font-family: var(--display);
+      font-size: 0.95rem;
+    }
+
+    .asset-card__label span {
+      color: #b9cce0;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .rule-list {
+      display: grid;
+      gap: 0;
+      margin-top: 1.35rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .rule-list__item {
+      display: grid;
+      grid-template-columns: 2.2rem minmax(0, 1fr);
+      gap: 0.9rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .rule-list__item > span {
+      color: var(--blue-soft);
+      font-family: var(--display);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .rule-list__item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.45;
+    }
+
+    .rule-list__item strong {
+      color: var(--ink);
+    }
+
+    .reference-board {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .reference-board figure {
+      position: relative;
+      min-height: 24rem;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+
+    .reference-board img {
+      width: 100%;
+      height: 100%;
+      min-height: 24rem;
+      object-fit: cover;
+    }
+
+    .reference-board figcaption {
+      position: absolute;
+      left: 0.7rem;
+      right: 0.7rem;
+      bottom: 0.7rem;
+      padding: 0.6rem 0.7rem;
+      background: rgba(7, 17, 29, 0.88);
+      color: white;
+      font-size: 0.72rem;
+      line-height: 1.35;
+      backdrop-filter: blur(10px);
+    }
+
+    .reference-formula {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-top: 1.4rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .reference-formula strong {
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--line-strong);
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .animatic-band {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+      gap: clamp(1.5rem, 4vw, 4rem);
+      align-items: center;
+    }
+
+    .animatic-band .story-contact {
+      height: clamp(27rem, 61vh, 42rem);
+    }
+
+    .cinema-card,
+    .packet-card,
+    .tool-card,
+    .repeat-card {
+      border: 1px solid var(--line-strong);
+      background: rgba(255, 255, 255, 0.022);
+    }
+
+    .cinema-card {
+      padding: 1.3rem;
+    }
+
+    .cinema-card + .cinema-card {
+      margin-top: 0.8rem;
+    }
+
+    .cinema-card__label,
+    .packet-card__label,
+    .tool-card__label {
+      display: block;
+      margin-bottom: 0.55rem;
+      color: var(--blue-soft);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .cinema-card h3,
+    .packet-card h3,
+    .tool-card h3 {
+      margin-bottom: 0.35rem;
+      font-size: 1rem;
+    }
+
+    .cinema-card p,
+    .packet-card p,
+    .tool-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .shot-packet {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .packet-card {
+      min-height: 8.1rem;
+      padding: 1.1rem;
+    }
+
+    .packet-card--result {
+      grid-column: 1 / -1;
+      min-height: auto;
+      border-color: rgba(67, 201, 154, 0.5);
+      background: rgba(67, 201, 154, 0.055);
+    }
+
+    .literal-prompt {
+      margin-top: 1.25rem;
+      padding: 1rem 1.1rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(228, 184, 92, 0.065);
+      color: var(--gold-soft);
+      font-size: clamp(0.82rem, 1.05vw, 0.98rem);
+      line-height: 1.55;
+    }
+
+    .cost-and-review {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.8fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .review-stack {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .review-row {
+      display: grid;
+      grid-template-columns: 7rem minmax(0, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+    }
+
+    .review-row strong {
+      color: var(--green);
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .review-row:nth-child(2) strong {
+      color: var(--gold-soft);
+    }
+
+    .review-row:nth-child(3) strong {
+      color: var(--red);
+    }
+
+    .review-row p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .tool-chain {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .tool-card {
+      min-height: 9rem;
+      padding: 1.15rem;
+    }
+
+    .tool-card strong {
+      display: block;
+      margin-bottom: 0.4rem;
+      color: var(--ink);
+      font-family: var(--display);
+      font-size: 1.05rem;
+    }
+
+    .tool-card--wide {
+      grid-column: 1 / -1;
+      min-height: auto;
+      border-color: rgba(64, 140, 255, 0.5);
+    }
+
+    .delivery-line {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      margin-top: 1.5rem;
+      border-top: 1px solid var(--line-strong);
+      border-left: 1px solid var(--line-strong);
+    }
+
+    .delivery-line div {
+      padding: 0.9rem;
+      border-right: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+      color: var(--muted);
+      font-size: 0.76rem;
+      text-align: center;
+    }
+
+    .delivery-line strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: var(--blue-soft);
+      font-family: var(--display);
+      font-size: 0.7rem;
+    }
+
+    .repeat-card {
+      min-height: 9.5rem;
+      padding: 1.2rem;
+    }
+
+    .repeat-card strong {
+      display: block;
+      margin-bottom: 0.55rem;
+      color: var(--gold-soft);
+      font-family: var(--display);
+      font-size: 1.8rem;
+    }
+
+    .repeat-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.48;
+    }
+
+    .slide--elements h2,
+    .slide--keyframes h2,
+    .slide--animatic h2,
+    .slide--final h2 {
+      font-size: clamp(2.45rem, 4vw, 4.05rem);
+    }
+
+    .slide--elements .lede,
+    .slide--animatic .lede,
+    .slide--final .lede {
+      font-size: clamp(1rem, 1.45vw, 1.3rem);
+      line-height: 1.48;
+    }
+
+    .slide--elements .rule-list {
+      margin-top: 1rem;
+    }
+
+    .slide--elements .rule-list__item {
+      padding: 0.62rem 0;
+    }
+
+    .slide--elements .asset-card {
+      height: clamp(10rem, 25vh, 13.5rem);
+      min-height: 0;
+    }
+
+    .slide--elements .asset-card img {
+      height: 100%;
+      min-height: 0;
+    }
+
+    .slide--keyframes .lede {
+      margin-bottom: 1rem;
+    }
+
+    .slide--keyframes .reference-board figure,
+    .slide--keyframes .reference-board img {
+      height: clamp(12rem, 29vh, 16rem);
+      min-height: 0;
+    }
+
+    .slide--keyframes .reference-formula {
+      margin-top: 0.8rem;
+    }
+
+    .slide--animatic .story-contact {
+      height: clamp(23rem, 54vh, 32rem);
+    }
+
+    .slide--animatic h2 {
+      margin-bottom: 0.8rem;
+      font-size: clamp(2.25rem, 3.55vw, 3.6rem);
+    }
+
+    .slide--animatic .lede {
+      margin-bottom: 0.55rem;
+    }
+
+    .slide--animatic .sequence__item {
+      padding-block: 0.38rem;
+    }
+
+    .slide--final .case-grid {
+      align-items: center;
+    }
+
+    .slide--final h2 {
+      max-width: 11ch;
+    }
+
+    @media (max-width: 1024px) {
+      .workflow-map {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .beat-layout,
+      .element-layout,
+      .keyframe-layout,
+      .cinema-layout,
+      .packet-layout,
+      .post-layout,
+      .repeat-layout,
+      .animatic-band,
+      .cost-and-review {
+        gap: 2rem;
+      }
+
+      .reference-board figure,
+      .reference-board img {
+        min-height: 20rem;
+      }
+    }
+
     @media (max-width: 1024px) {
       :root {
         --slide-pad-x: clamp(1.4rem, 4vw, 3rem);
@@ -1384,8 +1958,39 @@
       .audio-grid,
       .case-grid,
       .close-grid,
-      .reuse-grid {
+      .reuse-grid,
+      .beat-layout,
+      .element-layout,
+      .keyframe-layout,
+      .cinema-layout,
+      .packet-layout,
+      .post-layout,
+      .repeat-layout,
+      .animatic-band,
+      .cost-and-review {
         grid-template-columns: 1fr;
+      }
+
+      .workflow-map,
+      .reference-board,
+      .shot-packet,
+      .tool-chain {
+        grid-template-columns: 1fr;
+      }
+
+      .packet-card--result,
+      .tool-card--wide {
+        grid-column: auto;
+      }
+
+      .reference-board figure,
+      .reference-board img {
+        min-height: 28rem;
+      }
+
+      .delivery-line {
+        grid-template-columns: repeat(5, minmax(6rem, 1fr));
+        overflow-x: auto;
       }
 
       .film-window,
@@ -1559,30 +2164,449 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#slide-1">Skip to presentation</a>
+  <a class="skip-link" href="#process-1">Skip to presentation</a>
 
   <div class="shell" id="presentation-shell">
-    <header class="topbar" aria-label="Presentation controls">
+    <header class="topbar" aria-label="Presentation title">
       <div class="brand">
         <span class="brand__mark" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
             <path d="M5 8.25h14M5 12h14M5 15.75h9" stroke="white" stroke-width="2" stroke-linecap="square"/>
           </svg>
         </span>
-        <span>Idea to film</span>
-        <span class="brand__secondary">Marketing × Product</span>
-      </div>
-
-      <div class="topbar__actions">
-        <button class="icon-button" id="edit-copy" type="button" title="Toggle editable copy (E)" aria-label="Toggle editable copy" aria-pressed="false">E</button>
-        <button class="icon-button" id="notes-toggle" type="button" title="Toggle speaker notes (N)" aria-label="Toggle speaker notes" aria-pressed="false">N</button>
-        <button class="icon-button" id="overview-toggle" type="button" title="Toggle slide overview (O)" aria-label="Toggle slide overview" aria-pressed="false">O</button>
-        <button class="icon-button" id="fullscreen-toggle" type="button" title="Toggle fullscreen (F)" aria-label="Toggle fullscreen">F</button>
-        <button class="icon-button" id="help-toggle" type="button" title="Keyboard help (?)" aria-label="Open keyboard help">?</button>
+        <span>Ramayana-ZebPay SIP</span>
+        <span class="brand__secondary">How the film was made</span>
       </div>
     </header>
 
     <main class="deck" id="deck" aria-live="polite">
+      <section class="slide is-active" id="process-1" data-title="How we made the film" aria-labelledby="process-title-1">
+        <div class="slide__inner">
+          <div class="hero-grid">
+            <div>
+              <div class="section-label">The actual production, step by step</div>
+              <h1 id="process-title-1" data-pretext contenteditable="false">How we made <span class="accent">Ramayana–ZebPay SIP.</span></h1>
+              <p class="lede" data-pretext contenteditable="false">We fixed the story first, built reusable characters and locations, created every key visual, proved the whole film with images, then generated motion and finished the exact parts in post.</p>
+              <div class="hero-proof" aria-label="Final film facts">
+                <div class="hero-proof__item">
+                  <strong>52.2s</strong>
+                  <span>finished story</span>
+                </div>
+                <div class="hero-proof__item">
+                  <strong>15 beats</strong>
+                  <span>timed to narration</span>
+                </div>
+                <div class="hero-proof__item">
+                  <strong>9:16</strong>
+                  <span>Shorts &amp; Reels</span>
+                </div>
+              </div>
+            </div>
+
+            <figure class="film-window">
+              <img src="../Ramayana-ZebpaySIP/edit/verify/final-short-v005/overview-5sec-contact.png" alt="Frames from the finished Ramayana-ZebPay SIP film: Rama, the squirrel, the bridge, the SIP graph, and the ZebPay end card">
+              <figcaption class="film-window__caption">
+                <span>Finished reference cut</span>
+                <span>v005 · 1080 × 1920</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-2" data-title="The actual workflow" aria-labelledby="process-title-2">
+        <div class="slide__inner slide__inner--top">
+          <div class="section-label">The complete path</div>
+          <h2 id="process-title-2" data-pretext contenteditable="false">This is the process we <span class="accent-blue">actually followed.</span></h2>
+          <p class="lede" data-pretext contenteditable="false">The image-only film comes before paid motion. Every later step replaces or improves something that already works.</p>
+
+          <div class="workflow-map" aria-label="Eight-step film production workflow">
+            <article class="workflow-map__step">
+              <strong>STEP 01</strong>
+              <h3 data-pretext contenteditable="false">Fix the story</h3>
+              <p data-pretext contenteditable="false">Shorten the script and split it into timed visual beats.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 02</strong>
+              <h3 data-pretext contenteditable="false">Build the world</h3>
+              <p data-pretext contenteditable="false">Approve characters, locations, important objects, and visual rules.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 03</strong>
+              <h3 data-pretext contenteditable="false">Create keyframes</h3>
+              <p data-pretext contenteditable="false">Make one strong image for each story beat from the same references.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 04</strong>
+              <h3 data-pretext contenteditable="false">Make the image film</h3>
+              <p data-pretext contenteditable="false">Time those images to narration and watch the complete story.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 05</strong>
+              <h3 data-pretext contenteditable="false">Set up Cinema Studio</h3>
+              <p data-pretext contenteditable="false">Register approved Elements and attach the correct references.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 06</strong>
+              <h3 data-pretext contenteditable="false">Generate motion</h3>
+              <p data-pretext contenteditable="false">Animate one beat at a time with Seedance at low test resolution.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 07</strong>
+              <h3 data-pretext contenteditable="false">Review and edit</h3>
+              <p data-pretext contenteditable="false">Keep good ranges, reject broken motion, and retry only one variable.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 08</strong>
+              <h3 data-pretext contenteditable="false">Finish in post</h3>
+              <p data-pretext contenteditable="false">Add exact graphics, voice, SFX, music, captions, and final QC.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-3" data-title="Step 1 — Story beats" aria-labelledby="process-title-3">
+        <div class="slide__inner">
+          <div class="beat-layout">
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">01</span> Fix the story and script</div>
+              <h2 id="process-title-3" data-pretext contenteditable="false">Turn narration into <span class="accent">timed visual beats.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">The voice becomes the master clock. Each phrase gets one clear visual idea, so we know exactly what image—and later what motion—the film needs.</p>
+              <div class="fact-row" aria-label="Animatic timing facts">
+                <div class="fact"><strong>52.2s</strong><span>locked runtime</span></div>
+                <div class="fact"><strong>15</strong><span>phrase slots</span></div>
+                <div class="fact"><strong>30 fps</strong><span>frame-locked edit</span></div>
+              </div>
+            </div>
+
+            <div class="beat-strip" aria-label="Examples of narration beats">
+              <div class="beat-row">
+                <span class="beat-row__id">K01</span>
+                <p data-pretext contenteditable="false">“An army of Vanaras was building Ram Setu…”</p>
+                <time>0.0–5.9s</time>
+              </div>
+              <div class="beat-row">
+                <span class="beat-row__id">K03</span>
+                <p data-pretext contenteditable="false">“A tiny squirrel carried one pebble at a time.”</p>
+                <time>7.8–11.8s</time>
+              </div>
+              <div class="beat-row">
+                <span class="beat-row__id">K06</span>
+                <p data-pretext contenteditable="false">“But Rama saw what they missed.”</p>
+                <time>17.5–20.3s</time>
+              </div>
+              <div class="beat-row">
+                <span class="beat-row__id">G12</span>
+                <p data-pretext contenteditable="false">“A SIP lets you invest the same amount regularly…”</p>
+                <time>37.2–40.9s</time>
+              </div>
+              <div class="beat-row">
+                <span class="beat-row__id">G15</span>
+                <p data-pretext contenteditable="false">“Start your SIP with ZebPay.”</p>
+                <time>48.9–52.2s</time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--elements" id="process-4" data-title="Step 2 — Build the visual world" aria-labelledby="process-title-4">
+        <div class="slide__inner slide__inner--top">
+          <div class="element-layout">
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">02</span> Create reusable elements</div>
+              <h2 id="process-title-4" data-pretext contenteditable="false">Characters first. Then <span class="accent-blue">scenes and story objects.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">We created clean reference images for Rama, the squirrel, the Vanaras, and each Ram Setu construction state before asking for any moving shot.</p>
+              <div class="rule-list">
+                <div class="rule-list__item"><span>01</span><p data-pretext contenteditable="false"><strong>Lock identity.</strong> Face, body, costume, fur, colours, and proportions remain stable.</p></div>
+                <div class="rule-list__item"><span>02</span><p data-pretext contenteditable="false"><strong>Clean the location.</strong> Remove baked-in characters so the same bridge plate can be reused.</p></div>
+                <div class="rule-list__item"><span>03</span><p data-pretext contenteditable="false"><strong>Separate temporary state.</strong> Pose, emotion, camera, pebble, and boulder belong to the shot—not the character identity.</p></div>
+                <div class="rule-list__item"><span>04</span><p data-pretext contenteditable="false"><strong>Keep exact branding out.</strong> The ZebPay logo and written text are added later in post.</p></div>
+              </div>
+            </div>
+
+            <div class="asset-grid" aria-label="Approved production elements">
+              <figure class="asset-card">
+                <img src="../Ramayana-ZebpaySIP/assets/characters/rama_front.png" alt="Approved full-body Rama reference">
+                <figcaption class="asset-card__label"><strong>Rama</strong><span>Character</span></figcaption>
+              </figure>
+              <figure class="asset-card">
+                <img src="../Ramayana-ZebpaySIP/assets/characters/squirrel_front.png" alt="Approved squirrel reference">
+                <figcaption class="asset-card__label"><strong>Squirrel</strong><span>Character</span></figcaption>
+              </figure>
+              <figure class="asset-card">
+                <img src="../Ramayana-ZebpaySIP/assets/characters/vanara_lead_ref.png" alt="Approved lead Vanara reference">
+                <figcaption class="asset-card__label"><strong>Lead Vanara</strong><span>Character</span></figcaption>
+              </figure>
+              <figure class="asset-card">
+                <img src="../Ramayana-ZebpaySIP/assets/environments/bridge/bridge_02_half_clean_location.png" alt="Clean half-built Ram Setu location plate without characters">
+                <figcaption class="asset-card__label"><strong>Half-built Ram Setu</strong><span>Location</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--keyframes" id="process-5" data-title="Step 3 — Keyframes" aria-labelledby="process-title-5">
+        <div class="slide__inner slide__inner--top">
+          <div class="step-kicker"><span class="step-kicker__number">03</span> Create one image for each beat</div>
+          <h2 id="process-title-5" data-pretext contenteditable="false">Use the approved elements to make <span class="accent">story keyframes.</span></h2>
+          <p class="lede" data-pretext contenteditable="false">Each keyframe is the exact moment the audience must understand. The same character and location references are reused; only action, composition, and bridge state change.</p>
+
+          <div class="reference-board" aria-label="Three story keyframes created from the approved visual world">
+            <figure>
+              <img src="../Ramayana-ZebpaySIP/keyframes/short-v004/K01-army-building.png" alt="Vanaras building Ram Setu at the start of the film">
+              <figcaption><strong>K01 · Establish the world</strong><br>Vanaras, early bridge state, golden coastal light.</figcaption>
+            </figure>
+            <figure>
+              <img src="../Ramayana-ZebpaySIP/keyframes/short-v004/K03-squirrel-carry.png" alt="The squirrel carrying one pebble on the shore">
+              <figcaption><strong>K03 · Show the small action</strong><br>Same world, close scale, one readable pebble.</figcaption>
+            </figure>
+            <figure>
+              <img src="../Ramayana-ZebpaySIP/keyframes/short-v004/K06-rama-recognition.png" alt="Rama recognizing the squirrel's contribution">
+              <figcaption><strong>K06 · Land the emotional turn</strong><br>Canonical Rama, quiet recognition, no dialogue.</figcaption>
+            </figure>
+          </div>
+
+          <div class="reference-formula" aria-label="Keyframe construction formula">
+            <strong>Character reference</strong><span>+</span><strong>Location reference</strong><span>+</span><strong>Beat action &amp; composition</strong><span>→</span><strong>Approved keyframe</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--animatic" id="process-6" data-title="Step 4 — Image-only animatic" aria-labelledby="process-title-6">
+        <div class="slide__inner slide__inner--top">
+          <div class="animatic-band">
+            <figure class="story-contact">
+              <img src="../Ramayana-ZebpaySIP/edit/verify/animatic-short-v004/sequence-contact-sheet.png" alt="The complete image-only Ramayana-ZebPay SIP animatic sequence, from the Vanaras and squirrel through the SIP graph and ZebPay end card">
+              <figcaption class="story-contact__label">The whole 52.2-second film built from still images first</figcaption>
+            </figure>
+
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">04</span> Make the video with images</div>
+              <h2 id="process-title-6" data-pretext contenteditable="false">Before motion, watch the <span class="accent-blue">complete image film.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">We placed each keyframe on its narration beat, added simple holds and moves, then watched the entire story from beginning to end.</p>
+              <div class="sequence">
+                <div class="sequence__item"><div><strong data-pretext contenteditable="false">Images on exact timecodes</strong><span data-pretext contenteditable="false">No guessing how long a shot should last.</span></div></div>
+                <div class="sequence__item"><div><strong data-pretext contenteditable="false">Scratch narration as the clock</strong><span data-pretext contenteditable="false">Every picture change follows a spoken phrase.</span></div></div>
+                <div class="sequence__item"><div><strong data-pretext contenteditable="false">Graph and logo placeholders included</strong><span data-pretext contenteditable="false">The complete message is visible before animation.</span></div></div>
+                <div class="sequence__item"><div><strong data-pretext contenteditable="false">Pacing approved before credits</strong><span data-pretext contenteditable="false">Story changes happen here, while they are cheap.</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-7" data-title="Step 5 — Cinema Studio" aria-labelledby="process-title-7">
+        <div class="slide__inner">
+          <div class="cinema-layout">
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">05</span> Set up Higgsfield Cinema Studio</div>
+              <h2 id="process-title-7" data-pretext contenteditable="false">Register the approved assets as <span class="accent">reusable Elements.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">We created project Elements once, then attached the right character and location to each shot instead of describing the visual world again from memory.</p>
+              <div class="callout" data-pretext contenteditable="false">We did not create Prop Elements for this film. Pebbles and boulders stayed shot-level objects; the bow stayed with Rama; text and logo stayed in post.</div>
+            </div>
+
+            <div>
+              <article class="cinema-card">
+                <span class="cinema-card__label">Characters</span>
+                <h3 data-pretext contenteditable="false">@Rama-Canonical-Character</h3>
+                <p data-pretext contenteditable="false">@Squirrel-Canonical-Character · @Lead-Vanara-Canonical-Character · @Baby-Vanara-Canonical-Character</p>
+              </article>
+              <article class="cinema-card">
+                <span class="cinema-card__label">Locations</span>
+                <h3 data-pretext contenteditable="false">@Ram-Setu-Shoreline-Canonical-Location</h3>
+                <p data-pretext contenteditable="false">Early, half-built, and complete bridge states were registered as separate clean Location Elements.</p>
+              </article>
+              <article class="cinema-card">
+                <span class="cinema-card__label">Per shot</span>
+                <h3 data-pretext contenteditable="false">Keyframe + correct Elements + motion prompt</h3>
+                <p data-pretext contenteditable="false">Selecting an Element card is not enough—we attach it with “Use,” confirm its thumbnail, and keep the approved keyframe in the explicit start-image role.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-8" data-title="Step 6 — Generate one beat" aria-labelledby="process-title-8">
+        <div class="slide__inner">
+          <div class="packet-layout">
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">06</span> Generate motion one beat at a time</div>
+              <h2 id="process-title-8" data-pretext contenteditable="false">Tell Seedance only <span class="accent-blue">what should move.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">The start image already contains the art direction. The prompt adds one clear action, one camera move, stability rules, and native ambience or SFX.</p>
+              <div class="literal-prompt" data-pretext contenteditable="false">Example: subtle work motion across the bridge; cloth and fur move naturally; one slow dolly forward; stable faces, hands, boulders, and framing. Audio: ocean surf, coastal wind, stone impacts. No dialogue.</div>
+            </div>
+
+            <div class="shot-packet" aria-label="Contents of one Seedance generation packet">
+              <article class="packet-card">
+                <span class="packet-card__label">01 · Story anchor</span>
+                <h3 data-pretext contenteditable="false">Approved start image</h3>
+                <p data-pretext contenteditable="false">The exact keyframe is supplied as <code>start_image</code>, not a generic reference.</p>
+              </article>
+              <article class="packet-card">
+                <span class="packet-card__label">02 · Continuity</span>
+                <h3 data-pretext contenteditable="false">Character + location</h3>
+                <p data-pretext contenteditable="false">Attach only the Elements actually visible in this shot.</p>
+              </article>
+              <article class="packet-card">
+                <span class="packet-card__label">03 · Motion</span>
+                <h3 data-pretext contenteditable="false">One action, one camera move</h3>
+                <p data-pretext contenteditable="false">Avoid stacking multiple story changes into a four-second request.</p>
+              </article>
+              <article class="packet-card">
+                <span class="packet-card__label">04 · Test controls</span>
+                <h3 data-pretext contenteditable="false">Seedance 2.0 · 480p · 9:16</h3>
+                <p data-pretext contenteditable="false">4–6 seconds, High bitrate, Sound On, one candidate.</p>
+              </article>
+              <article class="packet-card packet-card--result">
+                <span class="packet-card__label">Important continuity rule</span>
+                <p data-pretext contenteditable="false">Use the previous generated clip only for a true continuous shot. For a new composition, return to the approved character, location, and keyframe sources.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-9" data-title="Step 7 — Review and cost" aria-labelledby="process-title-9">
+        <div class="slide__inner">
+          <div class="cost-and-review">
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">07</span> Review before retrying</div>
+              <h2 id="process-title-9" data-pretext contenteditable="false">Keep usable motion. <span class="accent">Do not reroll blindly.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">Every take is checked against the keyframe, character continuity, story direction, temporal stability, and audio. A broken ending does not erase a good opening.</p>
+              <div class="review-stack">
+                <div class="review-row"><strong>Keeper</strong><p data-pretext contenteditable="false">Use the clip as generated.</p></div>
+                <div class="review-row"><strong>Partial</strong><p data-pretext contenteditable="false">Use the valid range, then hold or cut before the failure.</p></div>
+                <div class="review-row"><strong>Reject</strong><p data-pretext contenteditable="false">Record the failure class and change one control only.</p></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="section-label">What this motion pass cost</div>
+              <div class="fact-row">
+                <div class="fact"><strong>49s</strong><span>billed motion</span></div>
+                <div class="fact"><strong>147</strong><span>learned-path credits</span></div>
+                <div class="fact"><strong>11</strong><span>source jobs</span></div>
+              </div>
+              <div class="rule-list">
+                <div class="rule-list__item"><span>01</span><p data-pretext contenteditable="false"><strong>Low-resolution learning.</strong> 480p preserved the model and direction while keeping experiments cheaper.</p></div>
+                <div class="rule-list__item"><span>02</span><p data-pretext contenteditable="false"><strong>One candidate.</strong> We reviewed evidence before buying another attempt.</p></div>
+                <div class="rule-list__item"><span>03</span><p data-pretext contenteditable="false"><strong>Real first-project ledger: 265 credits.</strong> That includes a 100-credit abandoned pilot and one 18-credit wrong-start-role attempt.</p></div>
+                <div class="rule-list__item"><span>04</span><p data-pretext contenteditable="false"><strong>Future reserve: 221–294 credits.</strong> This allows roughly 1.5–2 learned-path passes.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-10" data-title="Step 8 — Post-production" aria-labelledby="process-title-10">
+        <div class="slide__inner">
+          <div class="post-layout">
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">08</span> Finish the film in post</div>
+              <h2 id="process-title-10" data-pretext contenteditable="false">Good motion becomes a <span class="accent-blue">finished film.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">The generated clips are ingredients. Post-production restores the locked timing and adds every part that must be exact, editable, and reviewable.</p>
+              <div class="delivery-line" aria-label="Post-production sequence">
+                <div><strong>01</strong>Conform clips</div>
+                <div><strong>02</strong>Add graphics</div>
+                <div><strong>03</strong>Build audio</div>
+                <div><strong>04</strong>Add captions</div>
+                <div><strong>05</strong>Encode &amp; QC</div>
+              </div>
+            </div>
+
+            <div class="tool-chain" aria-label="Tools used in post-production">
+              <article class="tool-card">
+                <span class="tool-card__label">Edit and assembly</span>
+                <strong>video-use + FFmpeg</strong>
+                <p data-pretext contenteditable="false">Trim keeper ranges, fit clips to exact frames, crop 9:16, mix stems, render, and inspect.</p>
+              </article>
+              <article class="tool-card">
+                <span class="tool-card__label">Exact motion graphics</span>
+                <strong>HyperFrames + Remotion</strong>
+                <p data-pretext contenteditable="false">Build the premium SIP graph and ZebPay logo animation with exact type, colour, data, and timing.</p>
+              </article>
+              <article class="tool-card">
+                <span class="tool-card__label">Narration</span>
+                <strong>ElevenLabs</strong>
+                <p data-pretext contenteditable="false">Generate the Indian-English voice, test pronunciations, and phrase-lock SIP, Vanaras, Ram Setu, Rama, and ZebPay.</p>
+              </article>
+              <article class="tool-card">
+                <span class="tool-card__label">Sound</span>
+                <strong>Separate audio stems</strong>
+                <p data-pretext contenteditable="false">Keep narration, Seedance ambience/SFX, added SFX, and music independently adjustable.</p>
+              </article>
+              <article class="tool-card tool-card--wide">
+                <span class="tool-card__label">Why this separation matters</span>
+                <p data-pretext contenteditable="false">A logo, graph, pronunciation, caption, or music change can be fixed without regenerating a single video shot.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--final" id="process-11" data-title="The finished film" aria-labelledby="process-title-11">
+        <div class="slide__inner slide__inner--top">
+          <div class="case-grid">
+            <div>
+              <div class="section-label">Ramayana–ZebPay SIP</div>
+              <h2 id="process-title-11" data-pretext contenteditable="false">The <span class="accent">finished film.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">The mythological story, SIP explanation, motion graphics, brand close, narration, SFX, captions, and 9:16 delivery now play as one frame-locked film.</p>
+              <div class="case-metrics">
+                <article class="case-metric"><strong>52.2s</strong><span>final runtime</span></article>
+                <article class="case-metric"><strong>1080×1920</strong><span>delivery frame</span></article>
+                <article class="case-metric"><strong>14s</strong><span>graph + logo</span></article>
+                <article class="case-metric"><strong>v005</strong><span>promoted master</span></article>
+              </div>
+            </div>
+
+            <div class="video-frame">
+              <video controls preload="metadata" playsinline poster="../Ramayana-ZebpaySIP/edit/verify/final-short-v005/overview-5sec-contact.png">
+                <source src="../Ramayana-ZebpaySIP/deliverables/final/Ramayana-ZebPaySIP_FINAL_v005_1080x1920_captioned.mp4" type="video/mp4">
+                Your browser cannot play the reference film. Open the promoted v005 master from the project deliverables folder.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-12" data-title="Repeat the recipe" aria-labelledby="process-title-12">
+        <div class="slide__inner">
+          <div class="repeat-layout">
+            <div>
+              <div class="section-label">What we can repeat next time</div>
+              <h2 id="process-title-12" data-pretext contenteditable="false">New story. New world. <span class="accent-blue">Same proven recipe.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">We do not copy this campaign’s characters or claims. We reuse the production order, review gates, timing system, low-cost testing pattern, and post-production toolchain.</p>
+              <div class="delivery-line" aria-label="Repeatable production recipe">
+                <div><strong>01</strong>Story beats</div>
+                <div><strong>02</strong>Elements</div>
+                <div><strong>03</strong>Keyframes</div>
+                <div><strong>04</strong>Image film</div>
+                <div><strong>05</strong>Motion + post</div>
+              </div>
+            </div>
+
+            <div class="tool-chain">
+              <article class="repeat-card">
+                <strong>Before Higgsfield</strong>
+                <p data-pretext contenteditable="false">Approve the script, visual world, keyframes, full image-only animatic, timing, and cost cap.</p>
+              </article>
+              <article class="repeat-card">
+                <strong>Inside Higgsfield</strong>
+                <p data-pretext contenteditable="false">Reuse canonical Elements, explicit start images, one-action prompts, native SFX, and low-resolution first passes.</p>
+              </article>
+              <article class="repeat-card tool-card--wide">
+                <strong>After Higgsfield</strong>
+                <p data-pretext contenteditable="false">Conform only reviewed motion, then add exact graphics, controlled narration, music, captions, and delivery QC with the same post system.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <main class="legacy-deck" id="legacy-deck" hidden>
       <section class="slide is-active" id="slide-1" data-title="From idea to film" aria-labelledby="title-1">
         <div class="slide__inner">
           <div class="hero-grid">
@@ -2079,40 +3103,18 @@
     </footer>
   </div>
 
-  <aside class="help-panel" id="help-panel" role="dialog" aria-modal="true" aria-labelledby="help-title" tabindex="-1" hidden>
-    <h2 id="help-title">Presentation controls</h2>
-    <div class="shortcut-grid">
-      <kbd>→</kbd><span>Next slide</span>
-      <kbd>←</kbd><span>Previous slide</span>
-      <kbd>O</kbd><span>Slide overview</span>
-      <kbd>N</kbd><span>Speaker notes</span>
-      <kbd>E</kbd><span>Edit slide copy in the browser</span>
-      <kbd>F</kbd><span>Fullscreen</span>
-      <kbd>Home</kbd><span>First slide</span>
-      <kbd>End</kbd><span>Last slide</span>
-      <kbd>?</kbd><span>Open or close this help</span>
-    </div>
-  </aside>
-
   <!-- FALLBACK: vendor/pretext.js missing, using CDN. The deck remains readable if the import is unavailable. -->
   <script type="module">
-    const slides = Array.from(document.querySelectorAll(".slide"));
-    const shell = document.getElementById("presentation-shell");
+    const slides = Array.from(document.querySelectorAll("#deck .slide"));
     const deck = document.getElementById("deck");
     const counter = document.getElementById("slide-counter");
     const progressBar = document.getElementById("progress-bar");
     const previousButton = document.getElementById("previous-slide");
     const nextButton = document.getElementById("next-slide");
-    const notesButton = document.getElementById("notes-toggle");
-    const overviewButton = document.getElementById("overview-toggle");
-    const editButton = document.getElementById("edit-copy");
-    const fullscreenButton = document.getElementById("fullscreen-toggle");
-    const helpButton = document.getElementById("help-toggle");
-    const helpPanel = document.getElementById("help-panel");
-    const editableElements = Array.from(document.querySelectorAll("[data-pretext]"));
+    const editableElements = Array.from(document.querySelectorAll("#deck [data-pretext]"));
 
-    let current = Math.max(0, Math.min(slides.length - 1, Number(location.hash.replace("#slide-", "")) - 1 || 0));
-    let isOverview = false;
+    const initialIndex = Math.max(0, Math.min(slides.length - 1, Number(location.hash.replace("#process-", "")) - 1 || 0));
+    let current = 0;
     let touchStartX = null;
     let prepared = new Map();
     let pretextApi = null;
@@ -2125,19 +3127,19 @@
     function updateSlide(nextIndex, { replaceHash = false } = {}) {
       const bounded = Math.max(0, Math.min(slides.length - 1, nextIndex));
       if (bounded === current && slides[bounded].classList.contains("is-active")) {
-        const hash = `#slide-${current + 1}`;
+        const hash = `#process-${current + 1}`;
         if (replaceHash) history.replaceState(null, "", hash);
-        document.title = `${slides[current].dataset.title} · Idea to film`;
+        document.title = `${slides[current].dataset.title} · Ramayana-ZebPay SIP`;
         updateChrome();
         return;
       }
 
       clearTimeout(leaveTimer);
       const previous = slides[current];
+      const moveFocus = previous?.contains(document.activeElement);
       if (previous) {
         previous.classList.remove("is-active");
         previous.classList.add("is-leaving");
-        previous.setAttribute("aria-hidden", "true");
       }
 
       current = bounded;
@@ -2145,6 +3147,8 @@
       active.classList.remove("is-leaving");
       active.classList.add("is-active");
       active.setAttribute("aria-hidden", "false");
+      if (moveFocus) active.focus({ preventScroll: true });
+      previous?.setAttribute("aria-hidden", "true");
 
       leaveTimer = window.setTimeout(() => {
         slides.forEach((slide, index) => {
@@ -2152,12 +3156,12 @@
         });
       }, 320);
 
-      const hash = `#slide-${current + 1}`;
+      const hash = `#process-${current + 1}`;
       if (replaceHash) history.replaceState(null, "", hash);
       else history.pushState(null, "", hash);
 
       updateChrome();
-      document.title = `${active.dataset.title} · Idea to film`;
+      document.title = `${active.dataset.title} · Ramayana-ZebPay SIP`;
     }
 
     function updateChrome() {
@@ -2166,57 +3170,17 @@
       previousButton.disabled = current === 0;
       nextButton.disabled = current === slides.length - 1;
       slides.forEach((slide, index) => {
-        slide.setAttribute("aria-hidden", String(index !== current && !isOverview));
-        slide.tabIndex = isOverview ? 0 : (index === current ? 0 : -1);
+        slide.setAttribute("aria-hidden", String(index !== current));
+        slide.tabIndex = index === current ? 0 : -1;
       });
     }
 
     function next() {
-      if (!isOverview) updateSlide(current + 1);
+      updateSlide(current + 1);
     }
 
     function previous() {
-      if (!isOverview) updateSlide(current - 1);
-    }
-
-    function toggleOverview(force) {
-      isOverview = typeof force === "boolean" ? force : !isOverview;
-      shell.classList.toggle("overview", isOverview);
-      overviewButton.setAttribute("aria-pressed", String(isOverview));
-      updateChrome();
-      if (!isOverview) slides[current].scrollIntoView({ block: "center" });
-    }
-
-    function toggleNotes() {
-      const nextValue = !document.body.classList.contains("show-notes");
-      document.body.classList.toggle("show-notes", nextValue);
-      notesButton.setAttribute("aria-pressed", String(nextValue));
-    }
-
-    function toggleEditing() {
-      const nextValue = editButton.getAttribute("aria-pressed") !== "true";
-      editButton.setAttribute("aria-pressed", String(nextValue));
-      editableElements.forEach((element) => {
-        element.contentEditable = nextValue ? "plaintext-only" : "false";
-        element.spellcheck = nextValue;
-      });
-      if (nextValue) editableElements.find((element) => element.closest(".is-active"))?.focus();
-    }
-
-    async function toggleFullscreen() {
-      try {
-        if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
-        else await document.exitFullscreen();
-      } catch {
-        // Fullscreen may be disabled by the embedding browser; slide navigation still works.
-      }
-    }
-
-    function toggleHelp(force) {
-      const shouldOpen = typeof force === "boolean" ? force : helpPanel.hidden;
-      helpPanel.hidden = !shouldOpen;
-      if (shouldOpen) helpPanel.focus();
-      else helpButton.focus();
+      updateSlide(current - 1);
     }
 
     function handleKeydown(event) {
@@ -2236,59 +3200,25 @@
       } else if (event.key === "End") {
         event.preventDefault();
         updateSlide(slides.length - 1);
-      } else if (event.key.toLowerCase() === "o") {
-        event.preventDefault();
-        toggleOverview();
-      } else if (event.key.toLowerCase() === "n") {
-        event.preventDefault();
-        toggleNotes();
-      } else if (event.key.toLowerCase() === "e") {
-        event.preventDefault();
-        toggleEditing();
-      } else if (event.key.toLowerCase() === "f") {
-        event.preventDefault();
-        toggleFullscreen();
-      } else if (event.key === "?" || event.key === "/") {
-        event.preventDefault();
-        toggleHelp();
-      } else if (event.key === "Escape" && !helpPanel.hidden) {
-        toggleHelp(false);
       }
     }
 
     function handleHashChange() {
-      const requested = Number(location.hash.replace("#slide-", "")) - 1;
+      const requested = Number(location.hash.replace("#process-", "")) - 1;
       if (Number.isFinite(requested)) updateSlide(requested, { replaceHash: true });
     }
 
     previousButton.addEventListener("click", previous);
     nextButton.addEventListener("click", next);
-    notesButton.addEventListener("click", toggleNotes);
-    overviewButton.addEventListener("click", () => toggleOverview());
-    editButton.addEventListener("click", toggleEditing);
-    fullscreenButton.addEventListener("click", toggleFullscreen);
-    helpButton.addEventListener("click", () => toggleHelp());
-    helpPanel.addEventListener("click", (event) => {
-      if (event.target === helpPanel) toggleHelp(false);
-    });
     document.addEventListener("keydown", handleKeydown);
     window.addEventListener("hashchange", handleHashChange);
-
-    deck.addEventListener("click", (event) => {
-      if (!isOverview) return;
-      const slide = event.target.closest(".slide");
-      if (!slide) return;
-      current = slides.indexOf(slide);
-      toggleOverview(false);
-      updateSlide(current, { replaceHash: true });
-    });
 
     deck.addEventListener("touchstart", (event) => {
       touchStartX = event.changedTouches[0]?.clientX ?? null;
     }, { passive: true });
 
     deck.addEventListener("touchend", (event) => {
-      if (touchStartX === null || isOverview) return;
+      if (touchStartX === null) return;
       const delta = (event.changedTouches[0]?.clientX ?? touchStartX) - touchStartX;
       touchStartX = null;
       if (Math.abs(delta) < 55) return;
@@ -2354,7 +3284,7 @@
       slide.querySelector("h1, h2")?.setAttribute("tabindex", "-1");
     });
 
-    updateSlide(current, { replaceHash: true });
+    updateSlide(initialIndex, { replaceHash: true });
     initializePretext();
   </script>
 </body>

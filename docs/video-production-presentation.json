@@ -5,10 +5,13 @@
   "html_file": "docs/video-production-presentation.html",
   "pretext_tier": "simple-layout",
   "framework": "vanilla",
-  "iterations": 2,
+  "iterations": 3,
   "date": "2026-07-24",
   "screen": "video-production-presentation",
   "branch": "main",
+  "narrative": "actual-production-process",
+  "slides": 12,
+  "case_study": "Ramayana-ZebpaySIP",
   "audience": [
     "marketing",
     "product"
