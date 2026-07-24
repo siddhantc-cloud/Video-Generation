@@ -126,10 +126,13 @@ support, and price override remembered defaults.
 | Higgsfield CLI | Account inspection and authenticated generation |
 | FFmpeg / FFprobe | Canonical assembly, compositing, audio, probing, and delivery |
 | video-use dependencies | Timeline and editorial helpers |
+| Qwen3-TTS 1.7B VoiceDesign | Project-local, rights-clean narration design on the RTX 5060 Ti; use `Ramayana-ZebpaySIP/.venv-qwen3-tts`, PyTorch SDPA, and D-drive caches |
 | HyperFrames CLI | Deterministic HTML/CSS/SVG/GSAP motion design and rendering |
 | Node.js / npm | HyperFrames, Remotion, and provider CLI tooling |
 | Python | Validation and deterministic helpers |
-| `Ramayana-ZebpaySIP/tools/build_elevenlabs_phrase_locked_audio.py` | Conform one timestamped ElevenLabs performance to whole-frame phrase slots without pitch shift |
+| `Ramayana-ZebpaySIP/tools/generate_qwen3_tts.py` | Generate reproducible Qwen3-TTS VoiceDesign WAVs with runtime, VRAM, and hash metadata |
+| `Ramayana-ZebpaySIP/tools/transcribe_elevenlabs_scribe.py` | Create versioned Scribe timing evidence without persisting the API key |
+| `Ramayana-ZebpaySIP/tools/build_elevenlabs_phrase_locked_audio.py` | Conform timestamped ElevenLabs alignment or Scribe word timing to whole-frame phrase slots without pitch shift |
 | `yt-dlp` | Fetch only explicitly authorized online media |
 | Git LFS | Store explicitly promoted final videos |
 | DaVinci Resolve Free | Optional supervised finishing; not an MCP dependency |
@@ -142,6 +145,13 @@ For an ElevenLabs narration replacement after picture lock, follow
 `.agent-harness/recipes/elevenlabs-phrase-locked-narration.md`. The project helper named above is
 the verified implementation; its project path is intentionally Ramayana-specific while the recipe
 is reusable.
+
+For local narration experiments, Qwen3-TTS is isolated in a project virtual environment and its
+package/model caches belong under ignored `_cache/` on `D:`. Do not install FlashAttention on this
+Windows host; use PyTorch SDPA. Treat Indian-accent and project-term pronunciation as benchmark
+questions, not assumed model capabilities, and keep every local-TTS result behind human listening
+approval. Follow `.agent-harness/recipes/local-qwen3-tts-narration.md`; it records the verified v008
+workflow and the synthesis/display-copy separation required for phonetic spelling.
 
 ## Git and media policy
 

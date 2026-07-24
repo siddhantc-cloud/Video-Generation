@@ -49,6 +49,10 @@ Read:
     pad shorter phrase tails, accelerate only overrunning phrases without pitch change, and rebuild
     captions from the conformed word timings. Never globally stretch when measured phrase drift
     exceeds the semantic tolerance.
+14. The local open-source narrator route follows
+    `.agent-harness/recipes/local-qwen3-tts-narration.md`. Keep `S. I. P.` / `Zeb Pay` synthesis
+    spelling separate from `SIP` / `ZebPay` display copy. Benchmark two seeds, require exact
+    normalized 105-word recovery, and retain the encoded review behind a human listening gate.
 
 ## Final QC
 
@@ -74,3 +78,14 @@ Read:
   must not be inferred from creative approval.
 - When the owner requests repository delivery, track only this promoted final with Git LFS. Keep
   raw generations, review cuts, stems, and intermediate renders ignored.
+
+## Verified v008 local-voice review
+
+- Qwen3-TTS 1.7B VoiceDesign seed `240726` generated one continuous 47.600-second local performance
+  on the RTX 5060 Ti with 4.640 GiB peak allocated VRAM.
+- Phrase lock produces exactly 1,566 frames / 52.200 seconds; maximum onset is 30 ms and maximum
+  pitch-safe tempo is 1.120x.
+- The encoded captioned review is -16.3 LUFS / -2.0 dBTP. Scribe v2 recovers all 105 words and the
+  required mythology, acronym, and brand terms.
+- Promotion status is `NEEDS HUMAN`. ASR normalizes `SIP`, so the owner must certify the spoken
+  initials and voice quality by listening to the complete v008 review.

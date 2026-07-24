@@ -95,6 +95,22 @@ Add-Result 'command:yt-dlp' ($null -ne $ytDlp) $ytDlpEvidence
 $importCheck = & python -c 'import librosa, matplotlib, PIL, numpy, requests' 2>&1
 Add-Result 'video-use:python-dependencies' ($LASTEXITCODE -eq 0) $(if ($LASTEXITCODE -eq 0) { 'imports succeeded' } else { [string]$importCheck })
 
+$qwenPython = Join-Path $repoRoot 'Ramayana-ZebpaySIP\.venv-qwen3-tts\Scripts\python.exe'
+$qwenCheck = ''
+$qwenPassed = $false
+if (Test-Path -LiteralPath $qwenPython) {
+    $qwenCheck = (& $qwenPython -c "import importlib.metadata, torch; assert torch.cuda.is_available(); x=torch.ones(1, device='cuda'); print('qwen-tts=' + importlib.metadata.version('qwen-tts') + '; torch=' + torch.__version__ + '; gpu=' + torch.cuda.get_device_name(0) + '; tensor=' + str(x.item()))" 2>&1 | Out-String).Trim()
+    $qwenPassed = $LASTEXITCODE -eq 0
+} else {
+    $qwenCheck = 'project environment not found'
+}
+Add-Result 'local-tts:qwen3-cuda' $qwenPassed $qwenCheck
+
+$qwenGenerator = Join-Path $repoRoot 'Ramayana-ZebpaySIP\tools\generate_qwen3_tts.py'
+$qwenRecipe = Join-Path $repoRoot '.agent-harness\recipes\local-qwen3-tts-narration.md'
+Add-Result 'local-tts:generator' (Test-Path -LiteralPath $qwenGenerator) $qwenGenerator
+Add-Result 'local-tts:recipe' (Test-Path -LiteralPath $qwenRecipe) $qwenRecipe
+
 $mcpPath = Join-Path $repoRoot '.mcp.json'
 $mcpSafe = $false
 if (Test-Path -LiteralPath $mcpPath) {

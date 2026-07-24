@@ -1,0 +1,86 @@
+{
+  "version": "final-short-v008-qwen3-local",
+  "status": "needs-human-voice-playback",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "total_frames": 1566,
+  "duration_seconds": 52.2,
+  "picture_source": {
+    "path": "deliverables/review-cuts/final-short-v005/Ramayana-ZebPaySIP_REVIEW_v005_premium-graphics_clean.mp4",
+    "operation": "video-stream-copy-for-clean-v008",
+    "sha256": "0696E4B7F4F3474B0D8B90B15B34A5313E820A8FB0E232003934D512E05225E4"
+  },
+  "narration": {
+    "provider": "local-qwen3-tts",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "package": "qwen-tts==0.1.1",
+    "seed": 240726,
+    "voice_instruction": "audio/voiceover/qwen3-v008/voice-instruction.txt",
+    "synthesis_script": "audio/voiceover/qwen3-v008/full-narration-text.txt",
+    "display_script": "audio/voiceover/qwen3-v008/full-narration-display-text.txt",
+    "raw_audio": "audio/voiceover/qwen3-v008/Ramayana-ZebPaySIP_NARRATION_v008_qwen3_raw_seed-240726.wav",
+    "raw_audio_sha256": "E2ECFFA8A8408D2F65BF86BA532DBC388B2592769EF0346CF3EA31D872CC69A4",
+    "raw_duration_seconds": 47.6,
+    "raw_scribe": "audio/voiceover/qwen3-v008/Ramayana-ZebPaySIP_NARRATION_v008_qwen3_raw_seed-240726-scribe-v2.json",
+    "phrase_locked_audio": "edit/audio/qwen3-v008/narration-phrase-locked-v001.wav",
+    "phrase_locked_sha256": "5963BB2FD8C02D37CAEE648481B3E50E901E0A6BFB1F966ADB1861353C3475D7",
+    "phrase_lock_edl": "edit/audio/qwen3-v008/narration-phrase-locked-v001-edl.json",
+    "word_timings": "edit/audio/qwen3-v008/narration-word-boundaries-v001.json",
+    "max_phrase_onset_after_picture_cut_ms": 30,
+    "maximum_tempo": 1.11964285714286,
+    "sample_rate": 48000,
+    "channels": 1
+  },
+  "native_sfx": {
+    "source": "edit/audio/elevenlabs-v006/sfx-native-phrase-locked-v001.wav",
+    "sha256": "5462EEAB829501766AB36F7D91C7641205746D187A7FF58F4B0A87A1FC24539C",
+    "operation": "reuse-approved-independent-stem"
+  },
+  "audio_master": {
+    "path": "edit/audio/qwen3-v008/Ramayana-ZebPaySIP_AUDIO_MASTER_v008.wav",
+    "sha256": "A214D87B6B07C6317FAE1DB777E2FC49D4BE127F2F26F9115CC8D90B4791CEE8",
+    "sample_rate": 48000,
+    "channels": 2,
+    "samples": 2505600,
+    "duration_seconds": 52.2,
+    "normalization": {
+      "method": "ffmpeg-loudnorm-two-pass-after-stem-mix",
+      "target_lufs": -16,
+      "target_true_peak_dbtp": -2.5,
+      "target_lra_lu": 7
+    },
+    "integrated_lufs_after_aac": -16.3,
+    "true_peak_dbtp_after_aac": -2.0
+  },
+  "captions": {
+    "source": "edit/master-short-v008-qwen3.srt",
+    "operation": "rebuild-from-conformed-qwen-word-timing-and-burn-last",
+    "g15_subtitle_omitted": true
+  },
+  "outputs": {
+    "clean": {
+      "path": "deliverables/review-cuts/final-short-v008/Ramayana-ZebPaySIP_REVIEW_v008_qwen3-local_clean.mp4",
+      "sha256": "8501B8EE5ED45A64C9C55FB3C78657856841836CB4F70670107775E65FC1A772",
+      "bytes": 50445083
+    },
+    "captioned": {
+      "path": "deliverables/review-cuts/final-short-v008/Ramayana-ZebPaySIP_REVIEW_v008_qwen3-local_captioned.mp4",
+      "sha256": "82E9FADC92D95635DBBAE5276DF677375D6C2D5403986B41B6B2F71513FDCAA3",
+      "bytes": 47924918
+    },
+    "audio_elementary_stream_md5": "cfb431ab17da7f85bd4cbb8a7ddd7e52"
+  },
+  "verification": {
+    "encoded_scribe": "edit/audio/qwen3-v008/scribe-final-mix/Ramayana-ZebPaySIP_REVIEW_v008_qwen3-local_captioned.json",
+    "encoded_word_count": 105,
+    "overview_contact": "edit/verify/final-short-v008/overview-caption-contact.png",
+    "boundary_contact": "edit/verify/final-short-v008/boundary-caption-contact.png",
+    "full_decode": "pass",
+    "black_intervals_at_least_0_10_seconds": 0
+  },
+  "promotion": {
+    "final_master_overwritten": false,
+    "requires": "Human playback and voice approval, plus independent brand/legal release if required"
+  }
+}

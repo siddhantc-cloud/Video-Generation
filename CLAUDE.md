@@ -39,5 +39,12 @@ For an ElevenLabs narration replacement after picture lock, follow
 `Ramayana-ZebpaySIP/tools/build_elevenlabs_phrase_locked_audio.py`; keep the continuous performance,
 provider timing metadata, whole-frame phrase slots, native SFX, and human listening gate separate.
 
+Qwen3-TTS 1.7B VoiceDesign is the project-local open-source narration tool. Run it only from
+`Ramayana-ZebpaySIP/.venv-qwen3-tts`, keep its package/model caches under ignored `_cache/` on `D:`,
+and use PyTorch SDPA on this Windows host. Indian-accent and project-term pronunciation require a
+recorded benchmark and human listening approval before a take can replace approved narration.
+Follow `.agent-harness/recipes/local-qwen3-tts-narration.md`; the canonical generator, Scribe
+verifier, and phrase conformer are listed in `AGENTS.md`.
+
 Follow `.agent-harness/recipes/git-lfs-video-delivery.md` when the owner explicitly requests the
 approved final in Git. Never add raw takes or review media to Git as a shortcut.

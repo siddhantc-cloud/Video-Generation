@@ -10,6 +10,7 @@
 | Editorial workflow | `video-use` and its Python imports work | Real timeline render | Partner agent | Complete |
 | Motion graphics workflow | Four selected Remotion skills exist on both hosts | Verifier output | Partner agent | Complete |
 | Core binaries | FFmpeg, FFprobe, Python, Node, npm, and yt-dlp resolve | Verifier output | Partner agent | Complete |
+| Local narration | Project Python 3.12, CUDA PyTorch, and Qwen3-TTS VoiceDesign pass a real GPU generation | v008 metadata and local-TTS recipe | Partner agent | Complete |
 | Credential hygiene | `.mcp.json` has no embedded credential; ElevenLabs user environment variable exists | Verifier output | Partner agent | Complete |
 | Cross-host parity | Every selected skill tree matches across Codex and Claude | Verifier output | Partner agent | Complete |
 | Higgsfield account | Read-only account status succeeds | `higgsfield account status --json` | Human + partner agent | Complete; authenticated and sole workspace selected |
@@ -17,7 +18,11 @@
 
 ## Scope
 
-This recipe provisions the reusable environment for `Ramayana-ZebpaySIP`: Higgsfield generation, FFmpeg/video-use editing, and Remotion-based motion graphics. It intentionally does not install Manim, Blender, ComfyUI models, or a global Remotion project. Those are heavyweight, shot-specific dependencies and should be introduced only when the storyboard requires them.
+This recipe provisions the reusable environment for `Ramayana-ZebpaySIP`: Higgsfield generation,
+FFmpeg/video-use editing, Remotion-based motion graphics, and project-local Qwen3-TTS narration.
+It intentionally does not install Manim, Blender, ComfyUI models, or a global Remotion project.
+Those are heavyweight, shot-specific dependencies and should be introduced only when the
+storyboard requires them.
 
 ## Sources pinned on 2026-07-21
 
@@ -52,6 +57,9 @@ Review upstream changes before refreshing a pin. A newer commit is not automatic
 
 5. Restart Codex and Claude so both hosts rediscover the new user-level skills.
 6. Run the verifier from the repository root.
+7. For local narration, follow `.agent-harness/recipes/local-qwen3-tts-narration.md`. Keep its
+   Python 3.12 environment inside the film project, keep UV/Hugging Face caches under ignored
+   repository `_cache/` on `D:`, and use PyTorch SDPA instead of FlashAttention on Windows.
 
 ## Authentication and cost boundary
 
@@ -60,6 +68,8 @@ Review upstream changes before refreshing a pin. A newer commit is not automatic
 - Before a generation, inspect the chosen model, fetch its current schema, validate all arguments, and show the estimated cost. Submit only after the intended shot and cost are accepted.
 - Soul training requires suitable face photographs and a paid Higgsfield plan. It is optional for the Ramayana campaign unless a real person's identity must be preserved.
 - ElevenLabs credentials live only in the Windows user environment. Rotate a credential immediately if it is ever printed or committed.
+- Qwen3-TTS generation spends no hosted generation credits after installation. Scribe verification,
+  if used, is still hosted usage; record seconds and do not invent currency cost.
 
 ## Editing rules
 
@@ -79,3 +89,7 @@ powershell -ExecutionPolicy Bypass -File tools/verify-video-environment.ps1
 ```
 
 The reference real-file smoke test uses the first four seconds of `Ramayana-ZebpaySIP/deliverables/review-cuts/pilots/PILOTS_REEL.mp4` and writes `.agent-harness/evidence/video-environment/video-use-timeline.png`. It performs no network transcription and spends no generation credits.
+
+The local-TTS reference is the v008 Ramayana review: Qwen3-TTS 0.1.1 and PyTorch 2.11.0+cu128
+generated on the RTX 5060 Ti with 4.640 GiB peak allocated VRAM. The encoded 52.200-second cut
+passed frame, decode, loudness, caption, and semantic checks; human voice approval remains pending.

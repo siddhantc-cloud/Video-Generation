@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-24T02:02:55.816757+00:00",
+  "status": "unreviewed",
+  "human_listening_required": true,
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+  "model_mode": "voice_design",
+  "language": "English",
+  "text": "An army of vanaras was building Ram Setu, boulder by boulder.\n\nAt the edge of the shore, a tiny squirrel carried one pebble at a time.\n\nThe others laughed. What difference could something so small make?\n\nBut Rama saw what they missed.\n\nThe squirrel kept showing up, whether the tide was calm or rough. And with every return, another gap was filled.\n\nInvesting can work the same way. You do not need to predict the perfect market moment. A S. I. P. lets you invest the same amount regularly, through the ups and downs.\n\nSmall steps, repeated consistently, can build something bigger.\n\nStart your S. I. P. with Zeb Pay.",
+  "instruction": "A mature Indian English male narrator, around forty-five, with a deep resonant baritone and a neutral educated Indian accent. Reverent and grounded like a premium epic-mythology documentary, measured medium-slow pace, warm authority, restrained emotion, clean close-mic studio sound, precise consonants, and natural pauses. Clearly pronounce every initial in S. I. P. separately. Pronounce vanaras, Ram Setu, Rama, and Zeb Pay naturally. Avoid theatrical booming, caricature, sales-announcer energy, and imitation of any real person.",
+  "generation": {
+    "seed": 240726,
+    "do_sample": true,
+    "temperature": 0.9,
+    "top_p": 0.95,
+    "top_k": 50,
+    "repetition_penalty": 1.05,
+    "max_new_tokens": 8192,
+    "attention": "sdpa",
+    "dtype": "bfloat16"
+  },
+  "runtime": {
+    "python": "3.12.10",
+    "torch": "2.11.0+cu128",
+    "qwen_tts": "0.1.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "gpu_total_vram_gib": 15.928,
+    "gpu_peak_allocated_gib": 4.64,
+    "model_load_seconds": 15.331,
+    "generation_seconds": 260.831,
+    "cache_dir": "D:\\startup_dev\\so_sorry\\_cache\\huggingface"
+  },
+  "audio": {
+    "path": "D:\\startup_dev\\so_sorry\\Ramayana-ZebpaySIP\\audio\\voiceover\\qwen3-v008\\Ramayana-ZebPaySIP_NARRATION_v008_qwen3_raw_seed-240726.wav",
+    "sha256": "e2ecffa8a8408d2f65bf86ba532dbc388b2592769ef0346cf3ea31d872cc69a4",
+    "sample_rate": 24000,
+    "channels": 1,
+    "subtype": "PCM_24",
+    "samples": 1142400,
+    "duration_seconds": 47.6,
+    "peak_linear": 0.703125,
+    "rms_linear": 0.05998801
+  }
+}

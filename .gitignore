@@ -24,13 +24,17 @@ secrets*
 # Generated intermediates and logs
 *.err
 *.log
+**/edit/audio/**/segments-*/concat.txt
 __pycache__/
 *.pyc
 node_modules/
+.venv*/
+**/.venv*/
 
 # Local runtime and recoverable archive
 .gstack/
 _archive/
+_cache/
 
 # Heavy local tool payload
 tools/ffmpeg-libass/

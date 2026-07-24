@@ -1,0 +1,757 @@
+{
+    "schema":  1,
+    "source":  "elevenlabs-alignment-phrase-locked-sip-repair",
+    "text":  "An army of vanaras was building Ram Setu, boulder by boulder.\n\nAt the edge of the shore, a tiny squirrel carried one pebble at a time.\n\nThe others laughed. What difference could something so small make?\n\nBut Rama saw what they missed.\n\nThe squirrel kept showing up, whether the tide was calm or rough. And with every return, another gap was filled.\n\nInvesting can work the same way. You do not need to predict the perfect market moment. A SIP lets you invest the same amount regularly, through the ups and downs.\n\nSmall steps, repeated consistently, can build something bigger.\n\nStart your SIP with ZebPay.",
+    "word_count":  105,
+    "fps":  30,
+    "sample_rate":  48000,
+    "audio":  "Ramayana-ZebpaySIP/edit/audio/elevenlabs-v007/narration-phrase-locked-v004-sip-repaired.wav",
+    "words":  [
+                  {
+                      "index":  0,
+                      "text":  "An",
+                      "start_sec":  0.0,
+                      "end_sec":  0.08,
+                      "beat_id":  "K01"
+                  },
+                  {
+                      "index":  1,
+                      "text":  "army",
+                      "start_sec":  0.16,
+                      "end_sec":  0.48,
+                      "beat_id":  "K01"
+                  },
+                  {
+                      "index":  2,
+                      "text":  "of",
+                      "start_sec":  0.56,
+                      "end_sec":  0.72,
+                      "beat_id":  "K01"
+                  },
+                  {
+                      "index":  3,
+                      "text":  "vanaras",
+                      "start_sec":  0.8,
+                      "end_sec":  1.52,
+                      "beat_id":  "K01"
+                  },
+                  {
+                      "index":  4,
+                      "text":  "was",
+                      "start_sec":  1.58,
+                      "end_sec":  1.76,
+                      "beat_id":  "K01"
+                  },
+                  {
+                      "index":  5,
+                      "text":  "building",
+                      "start_sec":  1.849,
+                      "end_sec":  2.56,
+                      "beat_id":  "K01"
+                  },
+                  {
+                      "index":  6,
+                      "text":  "Ram",
+                      "start_sec":  2.64,
+                      "end_sec":  2.96,
+                      "beat_id":  "K01"
+                  },
+                  {
+                      "index":  7,
+                      "text":  "Setu",
+                      "start_sec":  3.02,
+                      "end_sec":  3.52,
+                      "beat_id":  "K01"
+                  },
+                  {
+                      "index":  8,
+                      "text":  "boulder",
+                      "start_sec":  3.96,
+                      "end_sec":  4.64,
+                      "beat_id":  "K01"
+                  },
+                  {
+                      "index":  9,
+                      "text":  "by",
+                      "start_sec":  4.72,
+                      "end_sec":  4.88,
+                      "beat_id":  "K01"
+                  },
+                  {
+                      "index":  10,
+                      "text":  "boulder",
+                      "start_sec":  4.92,
+                      "end_sec":  5.28,
+                      "beat_id":  "K01"
+                  },
+                  {
+                      "index":  11,
+                      "text":  "At",
+                      "start_sec":  5.8966666666666665,
+                      "end_sec":  6.323666666666667,
+                      "beat_id":  "K02"
+                  },
+                  {
+                      "index":  12,
+                      "text":  "the",
+                      "start_sec":  6.363666666666667,
+                      "end_sec":  6.483666666666667,
+                      "beat_id":  "K02"
+                  },
+                  {
+                      "index":  13,
+                      "text":  "edge",
+                      "start_sec":  6.531666666666667,
+                      "end_sec":  6.723666666666667,
+                      "beat_id":  "K02"
+                  },
+                  {
+                      "index":  14,
+                      "text":  "of",
+                      "start_sec":  6.776666666666667,
+                      "end_sec":  6.883666666666667,
+                      "beat_id":  "K02"
+                  },
+                  {
+                      "index":  15,
+                      "text":  "the",
+                      "start_sec":  6.923666666666667,
+                      "end_sec":  7.043666666666667,
+                      "beat_id":  "K02"
+                  },
+                  {
+                      "index":  16,
+                      "text":  "shore",
+                      "start_sec":  7.110666666666667,
+                      "end_sec":  7.443666666666667,
+                      "beat_id":  "K02"
+                  },
+                  {
+                      "index":  17,
+                      "text":  "a",
+                      "start_sec":  7.796666666666667,
+                      "end_sec":  7.876666666666666,
+                      "beat_id":  "K03"
+                  },
+                  {
+                      "index":  18,
+                      "text":  "tiny",
+                      "start_sec":  7.972666666666666,
+                      "end_sec":  8.356666666666666,
+                      "beat_id":  "K03"
+                  },
+                  {
+                      "index":  19,
+                      "text":  "squirrel",
+                      "start_sec":  8.409666666666666,
+                      "end_sec":  8.836666666666666,
+                      "beat_id":  "K03"
+                  },
+                  {
+                      "index":  20,
+                      "text":  "carried",
+                      "start_sec":  8.896666666666665,
+                      "end_sec":  9.316666666666666,
+                      "beat_id":  "K03"
+                  },
+                  {
+                      "index":  21,
+                      "text":  "one",
+                      "start_sec":  9.396666666666665,
+                      "end_sec":  9.636666666666667,
+                      "beat_id":  "K03"
+                  },
+                  {
+                      "index":  22,
+                      "text":  "pebble",
+                      "start_sec":  9.663666666666668,
+                      "end_sec":  9.876666666666665,
+                      "beat_id":  "K03"
+                  },
+                  {
+                      "index":  23,
+                      "text":  "at",
+                      "start_sec":  9.929666666666666,
+                      "end_sec":  10.036666666666665,
+                      "beat_id":  "K03"
+                  },
+                  {
+                      "index":  24,
+                      "text":  "a",
+                      "start_sec":  10.076666666666668,
+                      "end_sec":  10.116666666666667,
+                      "beat_id":  "K03"
+                  },
+                  {
+                      "index":  25,
+                      "text":  "time",
+                      "start_sec":  10.212666666666667,
+                      "end_sec":  10.596666666666668,
+                      "beat_id":  "K03"
+                  },
+                  {
+                      "index":  26,
+                      "text":  "The",
+                      "start_sec":  11.796666666666667,
+                      "end_sec":  11.996666666666666,
+                      "beat_id":  "K04"
+                  },
+                  {
+                      "index":  27,
+                      "text":  "others",
+                      "start_sec":  12.065666666666667,
+                      "end_sec":  12.476666666666667,
+                      "beat_id":  "K04"
+                  },
+                  {
+                      "index":  28,
+                      "text":  "laughed",
+                      "start_sec":  12.536666666666667,
+                      "end_sec":  12.956666666666667,
+                      "beat_id":  "K04"
+                  },
+                  {
+                      "index":  29,
+                      "text":  "What",
+                      "start_sec":  13.896666666666667,
+                      "end_sec":  14.312666666666665,
+                      "beat_id":  "K05"
+                  },
+                  {
+                      "index":  30,
+                      "text":  "difference",
+                      "start_sec":  14.356666666666666,
+                      "end_sec":  14.792666666666666,
+                      "beat_id":  "K05"
+                  },
+                  {
+                      "index":  31,
+                      "text":  "could",
+                      "start_sec":  14.819666666666667,
+                      "end_sec":  14.952666666666666,
+                      "beat_id":  "K05"
+                  },
+                  {
+                      "index":  32,
+                      "text":  "something",
+                      "start_sec":  14.992666666666667,
+                      "end_sec":  15.352666666666666,
+                      "beat_id":  "K05"
+                  },
+                  {
+                      "index":  33,
+                      "text":  "so",
+                      "start_sec":  15.432666666666666,
+                      "end_sec":  15.592666666666666,
+                      "beat_id":  "K05"
+                  },
+                  {
+                      "index":  34,
+                      "text":  "small",
+                      "start_sec":  15.659666666666666,
+                      "end_sec":  15.992666666666667,
+                      "beat_id":  "K05"
+                  },
+                  {
+                      "index":  35,
+                      "text":  "make",
+                      "start_sec":  16.072666666666667,
+                      "end_sec":  16.391666666666666,
+                      "beat_id":  "K05"
+                  },
+                  {
+                      "index":  36,
+                      "text":  "But",
+                      "start_sec":  17.52985611510791,
+                      "end_sec":  18.246402877697843,
+                      "beat_id":  "K06"
+                  },
+                  {
+                      "index":  37,
+                      "text":  "Rama",
+                      "start_sec":  18.3658273381295,
+                      "end_sec":  19.002757793764992,
+                      "beat_id":  "K06"
+                  },
+                  {
+                      "index":  38,
+                      "text":  "saw",
+                      "start_sec":  19.052517985611512,
+                      "end_sec":  19.201798561151083,
+                      "beat_id":  "K06"
+                  },
+                  {
+                      "index":  39,
+                      "text":  "what",
+                      "start_sec":  19.233645083932856,
+                      "end_sec":  19.361031175059956,
+                      "beat_id":  "K06"
+                  },
+                  {
+                      "index":  40,
+                      "text":  "they",
+                      "start_sec":  19.39287769784173,
+                      "end_sec":  19.520263788968826,
+                      "beat_id":  "K06"
+                  },
+                  {
+                      "index":  41,
+                      "text":  "missed",
+                      "start_sec":  19.58893285371703,
+                      "end_sec":  19.997961630695446,
+                      "beat_id":  "K06"
+                  },
+                  {
+                      "index":  42,
+                      "text":  "The",
+                      "start_sec":  20.29145526854319,
+                      "end_sec":  20.836804509826635,
+                      "beat_id":  "K07"
+                  },
+                  {
+                      "index":  43,
+                      "text":  "squirrel",
+                      "start_sec":  20.88803428703811,
+                      "end_sec":  21.29952507818835,
+                      "beat_id":  "K07"
+                  },
+                  {
+                      "index":  44,
+                      "text":  "kept",
+                      "start_sec":  21.33918684119078,
+                      "end_sec":  21.497833893200507,
+                      "beat_id":  "K07"
+                  },
+                  {
+                      "index":  45,
+                      "text":  "showing",
+                      "start_sec":  21.5308853623692,
+                      "end_sec":  21.76224564655006,
+                      "beat_id":  "K07"
+                  },
+                  {
+                      "index":  46,
+                      "text":  "up",
+                      "start_sec":  21.828348584887443,
+                      "end_sec":  21.96055446156222,
+                      "beat_id":  "K07"
+                  },
+                  {
+                      "index":  47,
+                      "text":  "whether",
+                      "start_sec":  22.109286072821345,
+                      "end_sec":  22.687686783273485,
+                      "beat_id":  "K07"
+                  },
+                  {
+                      "index":  48,
+                      "text":  "the",
+                      "start_sec":  22.720738252442178,
+                      "end_sec":  22.81989265994826,
+                      "beat_id":  "K07"
+                  },
+                  {
+                      "index":  49,
+                      "text":  "tide",
+                      "start_sec":  22.87277501061817,
+                      "end_sec":  23.08430441329781,
+                      "beat_id":  "K07"
+                  },
+                  {
+                      "index":  50,
+                      "text":  "was",
+                      "start_sec":  23.13388161705085,
+                      "end_sec":  23.28261322830997,
+                      "beat_id":  "K07"
+                  },
+                  {
+                      "index":  51,
+                      "text":  "calm",
+                      "start_sec":  23.388377929649792,
+                      "end_sec":  23.81143673500907,
+                      "beat_id":  "K07"
+                  },
+                  {
+                      "index":  52,
+                      "text":  "or",
+                      "start_sec":  23.85983333333333,
+                      "end_sec":  23.96683333333333,
+                      "beat_id":  "K08"
+                  },
+                  {
+                      "index":  53,
+                      "text":  "rough",
+                      "start_sec":  24.03383333333333,
+                      "end_sec":  24.36683333333333,
+                      "beat_id":  "K08"
+                  },
+                  {
+                      "index":  54,
+                      "text":  "And",
+                      "start_sec":  25.428615794143745,
+                      "end_sec":  25.772005323868676,
+                      "beat_id":  "K09"
+                  },
+                  {
+                      "index":  55,
+                      "text":  "with",
+                      "start_sec":  25.802528837622006,
+                      "end_sec":  25.924622892635313,
+                      "beat_id":  "K09"
+                  },
+                  {
+                      "index":  56,
+                      "text":  "every",
+                      "start_sec":  25.988531499556345,
+                      "end_sec":  26.306166814551904,
+                      "beat_id":  "K09"
+                  },
+                  {
+                      "index":  57,
+                      "text":  "return",
+                      "start_sec":  26.382475598935226,
+                      "end_sec":  26.840328305235136,
+                      "beat_id":  "K09"
+                  },
+                  {
+                      "index":  58,
+                      "text":  "another",
+                      "start_sec":  27.18371783496007,
+                      "end_sec":  27.450798580301687,
+                      "beat_id":  "K09"
+                  },
+                  {
+                      "index":  59,
+                      "text":  "gap",
+                      "start_sec":  27.565261756876662,
+                      "end_sec":  27.908651286601597,
+                      "beat_id":  "K09"
+                  },
+                  {
+                      "index":  60,
+                      "text":  "was",
+                      "start_sec":  27.984960070984915,
+                      "end_sec":  28.21388642413487,
+                      "beat_id":  "K09"
+                  },
+                  {
+                      "index":  61,
+                      "text":  "filled",
+                      "start_sec":  28.268256433007988,
+                      "end_sec":  28.595430346051465,
+                      "beat_id":  "K09"
+                  },
+                  {
+                      "index":  62,
+                      "text":  "Investing",
+                      "start_sec":  29.73,
+                      "end_sec":  30.702,
+                      "beat_id":  "K10"
+                  },
+                  {
+                      "index":  63,
+                      "text":  "can",
+                      "start_sec":  30.742,
+                      "end_sec":  30.862000000000002,
+                      "beat_id":  "K10"
+                  },
+                  {
+                      "index":  64,
+                      "text":  "work",
+                      "start_sec":  30.926000000000002,
+                      "end_sec":  31.182000000000002,
+                      "beat_id":  "K10"
+                  },
+                  {
+                      "index":  65,
+                      "text":  "the",
+                      "start_sec":  31.222,
+                      "end_sec":  31.342000000000002,
+                      "beat_id":  "K10"
+                  },
+                  {
+                      "index":  66,
+                      "text":  "same",
+                      "start_sec":  31.39,
+                      "end_sec":  31.582,
+                      "beat_id":  "K10"
+                  },
+                  {
+                      "index":  67,
+                      "text":  "way",
+                      "start_sec":  31.682000000000002,
+                      "end_sec":  31.982,
+                      "beat_id":  "K10"
+                  },
+                  {
+                      "index":  68,
+                      "text":  "You",
+                      "start_sec":  32.79666666666667,
+                      "end_sec":  33.096666666666664,
+                      "beat_id":  "G11"
+                  },
+                  {
+                      "index":  69,
+                      "text":  "do",
+                      "start_sec":  33.14966666666667,
+                      "end_sec":  33.25666666666667,
+                      "beat_id":  "G11"
+                  },
+                  {
+                      "index":  70,
+                      "text":  "not",
+                      "start_sec":  33.31666666666667,
+                      "end_sec":  33.49666666666667,
+                      "beat_id":  "G11"
+                  },
+                  {
+                      "index":  71,
+                      "text":  "need",
+                      "start_sec":  33.528666666666666,
+                      "end_sec":  33.656666666666666,
+                      "beat_id":  "G11"
+                  },
+                  {
+                      "index":  72,
+                      "text":  "to",
+                      "start_sec":  33.709666666666664,
+                      "end_sec":  33.81666666666667,
+                      "beat_id":  "G11"
+                  },
+                  {
+                      "index":  73,
+                      "text":  "predict",
+                      "start_sec":  33.86666666666667,
+                      "end_sec":  34.21666666666667,
+                      "beat_id":  "G11"
+                  },
+                  {
+                      "index":  74,
+                      "text":  "the",
+                      "start_sec":  34.25666666666667,
+                      "end_sec":  34.376666666666665,
+                      "beat_id":  "G11"
+                  },
+                  {
+                      "index":  75,
+                      "text":  "perfect",
+                      "start_sec":  34.43666666666667,
+                      "end_sec":  34.85666666666667,
+                      "beat_id":  "G11"
+                  },
+                  {
+                      "index":  76,
+                      "text":  "market",
+                      "start_sec":  34.91366666666667,
+                      "end_sec":  35.25666666666667,
+                      "beat_id":  "G11"
+                  },
+                  {
+                      "index":  77,
+                      "text":  "moment",
+                      "start_sec":  35.32566666666667,
+                      "end_sec":  35.73666666666667,
+                      "beat_id":  "G11"
+                  },
+                  {
+                      "index":  78,
+                      "text":  "A",
+                      "start_sec":  37.229543656026602130490766492,
+                      "end_sec":  37.465892904239419174416898432,
+                      "beat_id":  "G12"
+                  },
+                  {
+                      "index":  79,
+                      "text":  "SIP",
+                      "start_sec":  37.486573463458040665760434976,
+                      "end_sec":  38.765813769409912916010624098,
+                      "beat_id":  "G12"
+                  },
+                  {
+                      "index":  80,
+                      "text":  "lets",
+                      "start_sec":  38.844596852147518597319334744,
+                      "end_sec":  39.061250329675934220918289022,
+                      "beat_id":  "G12"
+                  },
+                  {
+                      "index":  81,
+                      "text":  "you",
+                      "start_sec":  39.100641871044737061572644345,
+                      "end_sec":  39.159729183097941322554177330,
+                      "beat_id":  "G12"
+                  },
+                  {
+                      "index":  82,
+                      "text":  "invest",
+                      "start_sec":  39.199120724466744163208532654,
+                      "end_sec":  39.594020926688992640768444769,
+                      "beat_id":  "G12"
+                  },
+                  {
+                      "index":  83,
+                      "text":  "the",
+                      "start_sec":  39.652123450207976830733618870,
+                      "end_sec":  39.770298074314385352696684840,
+                      "beat_id":  "G12"
+                  },
+                  {
+                      "index":  84,
+                      "text":  "same",
+                      "start_sec":  39.830370174901809684694576708,
+                      "end_sec":  40.026343093211603816949994441,
+                      "beat_id":  "G12"
+                  },
+                  {
+                      "index":  85,
+                      "text":  "amount",
+                      "start_sec":  40.046038863896005237277172103,
+                      "end_sec":  40.380866965530829382839192350,
+                      "beat_id":  "G12"
+                  },
+                  {
+                      "index":  86,
+                      "text":  "regularly",
+                      "start_sec":  40.459650048268435064147902996,
+                      "end_sec":  40.892957003325266311345811552,
+                      "beat_id":  "G12"
+                  },
+                  {
+                      "index":  87,
+                      "text":  "through",
+                      "start_sec":  40.96333333333333,
+                      "end_sec":  41.173333333333325,
+                      "beat_id":  "G13"
+                  },
+                  {
+                      "index":  88,
+                      "text":  "the",
+                      "start_sec":  41.21333333333333,
+                      "end_sec":  41.33333333333333,
+                      "beat_id":  "G13"
+                  },
+                  {
+                      "index":  89,
+                      "text":  "ups",
+                      "start_sec":  41.41333333333333,
+                      "end_sec":  41.65333333333333,
+                      "beat_id":  "G13"
+                  },
+                  {
+                      "index":  90,
+                      "text":  "and",
+                      "start_sec":  41.69333333333333,
+                      "end_sec":  41.813333333333325,
+                      "beat_id":  "G13"
+                  },
+                  {
+                      "index":  91,
+                      "text":  "downs",
+                      "start_sec":  41.90633333333333,
+                      "end_sec":  42.37333333333333,
+                      "beat_id":  "G13"
+                  },
+                  {
+                      "index":  92,
+                      "text":  "Small",
+                      "start_sec":  43.43,
+                      "end_sec":  43.786,
+                      "beat_id":  "K14"
+                  },
+                  {
+                      "index":  93,
+                      "text":  "steps",
+                      "start_sec":  43.866,
+                      "end_sec":  44.266,
+                      "beat_id":  "K14"
+                  },
+                  {
+                      "index":  94,
+                      "text":  "repeated",
+                      "start_sec":  44.755,
+                      "end_sec":  45.146,
+                      "beat_id":  "K14"
+                  },
+                  {
+                      "index":  95,
+                      "text":  "consistently",
+                      "start_sec":  45.214,
+                      "end_sec":  46.026,
+                      "beat_id":  "K14"
+                  },
+                  {
+                      "index":  96,
+                      "text":  "can",
+                      "start_sec":  46.376,
+                      "end_sec":  46.586,
+                      "beat_id":  "K14"
+                  },
+                  {
+                      "index":  97,
+                      "text":  "build",
+                      "start_sec":  46.639,
+                      "end_sec":  46.906,
+                      "beat_id":  "K14"
+                  },
+                  {
+                      "index":  98,
+                      "text":  "something",
+                      "start_sec":  46.954,
+                      "end_sec":  47.386,
+                      "beat_id":  "K14"
+                  },
+                  {
+                      "index":  99,
+                      "text":  "bigger",
+                      "start_sec":  47.432,
+                      "end_sec":  47.706,
+                      "beat_id":  "K14"
+                  },
+                  {
+                      "index":  100,
+                      "text":  "Start",
+                      "start_sec":  48.89666666666667,
+                      "end_sec":  50.02966666666667,
+                      "beat_id":  "G15"
+                  },
+                  {
+                      "index":  101,
+                      "text":  "your",
+                      "start_sec":  50.06166666666667,
+                      "end_sec":  50.18966666666667,
+                      "beat_id":  "G15"
+                  },
+                  {
+                      "index":  102,
+                      "text":  "SIP",
+                      "start_sec":  50.24966666666667,
+                      "end_sec":  50.42966666666667,
+                      "beat_id":  "G15"
+                  },
+                  {
+                      "index":  103,
+                      "text":  "with",
+                      "start_sec":  50.48966666666667,
+                      "end_sec":  51.14966666666667,
+                      "beat_id":  "G15"
+                  },
+                  {
+                      "index":  104,
+                      "text":  "ZebPay",
+                      "start_sec":  51.229666666666674,
+                      "end_sec":  51.78966666666667,
+                      "beat_id":  "G15"
+                  }
+              ],
+    "repair":  {
+                   "replaced_beat":  "G12",
+                   "output_start_frame":  1116,
+                   "output_end_frame_exclusive":  1228,
+                   "source_candidate":  "Ramayana-ZebpaySIP/audio/voiceover/elevenlabs-v007/patch-candidates/g12-letter-punctuation-v002.mp3",
+                   "source_text":  "A, S. I. P., lets you invest the same amount regularly.",
+                   "trim_start_seconds":  0.049,
+                   "tempo":  1.0154464286,
+                   "gain_db":  -1,
+                   "pitch_preserved":  true
+               }
+}

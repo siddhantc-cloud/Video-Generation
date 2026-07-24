@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""Conform one ElevenLabs timestamped narration to an integer-frame phrase map.
+"""Conform one timestamped narration to an integer-frame phrase map.
 
 The input performance remains continuous: this tool partitions it only in the
 silence between mapped phrases. A segment that overruns its existing picture
 slot is accelerated with Rubber Band without changing pitch. A shorter segment
 keeps its natural delivery and receives silence at the tail. Every output slot
-therefore has exactly the sample count implied by its frame range.
+therefore has exactly the sample count implied by its frame range. ElevenLabs
+character alignment remains the default input; Scribe word timing is accepted
+when the canonical display text is supplied separately.
 """
 
 from __future__ import annotations
@@ -45,7 +47,92 @@ def probe_duration(path: Path) -> float:
     return float(result.stdout.strip())
 
 
-def load_words(payload: dict[str, Any]) -> list[dict[str, Any]]:
+def normalized_token(value: str) -> str:
+    return "".join(character.lower() for character in value if character.isalnum())
+
+
+def load_scribe_words(
+    payload: dict[str, Any], canonical_text: str
+) -> list[dict[str, Any]]:
+    canonical_matches = list(WORD_RE.finditer(canonical_text))
+    canonical_tokens = [normalized_token(match.group(0)) for match in canonical_matches]
+    scribe_words = [
+        word
+        for word in payload.get("words", [])
+        if word.get("type") == "word" and normalized_token(str(word.get("text", "")))
+    ]
+    scribe_tokens = [normalized_token(str(word["text"])) for word in scribe_words]
+    canonical_stream = "".join(canonical_tokens)
+    scribe_stream = "".join(scribe_tokens)
+    if canonical_stream != scribe_stream:
+        raise ValueError(
+            "Scribe transcript does not match the canonical narration after "
+            "case/punctuation/word-boundary normalization. Reject or repair the take "
+            "before conforming it."
+        )
+
+    scribe_spans: list[dict[str, Any]] = []
+    cursor = 0
+    for word, token in zip(scribe_words, scribe_tokens):
+        scribe_spans.append(
+            {
+                "start_offset": cursor,
+                "end_offset": cursor + len(token),
+                "start_sec": float(word["start"]),
+                "end_sec": float(word["end"]),
+            }
+        )
+        cursor += len(token)
+
+    def offset_to_time(offset: int, boundary: str) -> float:
+        if boundary not in {"start", "end"}:
+            raise ValueError(f"Unsupported boundary direction: {boundary}")
+        if offset == len(scribe_stream):
+            return float(scribe_spans[-1]["end_sec"])
+        for span in scribe_spans:
+            span_start = int(span["start_offset"])
+            span_end = int(span["end_offset"])
+            contains_offset = (
+                span_start <= offset < span_end
+                if boundary == "start"
+                else span_start < offset <= span_end
+            )
+            if contains_offset:
+                token_length = int(span["end_offset"]) - int(span["start_offset"])
+                fraction = (offset - int(span["start_offset"])) / token_length
+                return float(span["start_sec"]) + fraction * (
+                    float(span["end_sec"]) - float(span["start_sec"])
+                )
+        raise ValueError(f"Unable to map canonical character offset {offset}.")
+
+    words: list[dict[str, Any]] = []
+    cursor = 0
+    for index, (match, token) in enumerate(zip(canonical_matches, canonical_tokens)):
+        start_offset = cursor
+        end_offset = cursor + len(token)
+        words.append(
+            {
+                "index": index,
+                "text": match.group(0),
+                "start_sec": offset_to_time(start_offset, "start"),
+                "end_sec": offset_to_time(end_offset, "end"),
+            }
+        )
+        cursor = end_offset
+    return words
+
+
+def load_words(
+    payload: dict[str, Any], canonical_text: str | None = None
+) -> list[dict[str, Any]]:
+    if "alignment" not in payload:
+        if canonical_text is None:
+            raise ValueError(
+                "Scribe timing input requires --canonical-text so provider word "
+                "boundaries can be mapped to the approved display script."
+            )
+        return load_scribe_words(payload, canonical_text)
+
     text = payload["text"]
     alignment = payload["alignment"]
     characters = alignment["characters"]
@@ -77,7 +164,9 @@ def phrase_boundaries(
     source_duration: float,
     fade_seconds: float,
 ) -> list[float]:
-    boundaries = [0.0]
+    boundaries = [
+        max(0.0, float(words[0]["start_sec"]) - fade_seconds)
+    ]
     for beat in beats[1:]:
         first = int(beat["first_word_index"])
         previous_end = float(words[first - 1]["end_sec"])
@@ -102,6 +191,11 @@ def main() -> int:
     parser.add_argument("--segments-dir", type=Path, required=True)
     parser.add_argument("--edl", type=Path, required=True)
     parser.add_argument("--word-timings", type=Path)
+    parser.add_argument(
+        "--canonical-text",
+        type=Path,
+        help="Approved display text; required when alignment_json is Scribe word timing.",
+    )
     parser.add_argument("--sample-rate", type=int, default=48_000)
     parser.add_argument("--fade-ms", type=float, default=30.0)
     args = parser.parse_args()
@@ -110,7 +204,16 @@ def main() -> int:
     phrase_map = json.loads(args.phrase_map_json.read_text(encoding="utf-8-sig"))
     beats = phrase_map["beats"]
     fps = int(phrase_map["fps"])
-    words = load_words(alignment_payload)
+    canonical_text = (
+        args.canonical_text.read_text(encoding="utf-8-sig").strip()
+        if args.canonical_text
+        else None
+    )
+    words = load_words(alignment_payload, canonical_text)
+    alignment_source = (
+        "scribe-word-timing" if "alignment" not in alignment_payload else "elevenlabs-alignment"
+    )
+    resolved_text = canonical_text or alignment_payload["text"]
 
     expected_words = max(int(beat["first_word_index"]) for beat in beats) + 1
     if len(words) < expected_words:
@@ -290,6 +393,8 @@ def main() -> int:
         "schema": 1,
         "source_audio": args.source_audio.as_posix(),
         "alignment": args.alignment_json.as_posix(),
+        "alignment_source": alignment_source,
+        "canonical_text": args.canonical_text.as_posix() if args.canonical_text else None,
         "phrase_map": args.phrase_map_json.as_posix(),
         "fps": fps,
         "sample_rate": args.sample_rate,
@@ -310,8 +415,8 @@ def main() -> int:
         args.word_timings.parent.mkdir(parents=True, exist_ok=True)
         word_timing_payload = {
             "schema": 1,
-            "source": "elevenlabs-alignment-phrase-locked",
-            "text": alignment_payload["text"],
+            "source": f"{alignment_source}-phrase-locked",
+            "text": resolved_text,
             "word_count": len(word_records),
             "fps": fps,
             "sample_rate": args.sample_rate,

@@ -1,0 +1,324 @@
+{
+  "language_code": "eng",
+  "language_probability": 1.0,
+  "text": "An army of Annaras was building Ram Setu. A SIP lets you invest the same amount regularly. Start your SIP with Zeb Pay.",
+  "words": [
+    {
+      "text": "An",
+      "start": 0.119,
+      "end": 0.219,
+      "type": "word",
+      "logprob": -0.0004577780782710761
+    },
+    {
+      "text": " ",
+      "start": 0.219,
+      "end": 0.379,
+      "type": "spacing",
+      "logprob": -0.0011720937909558415
+    },
+    {
+      "text": "army",
+      "start": 0.379,
+      "end": 0.659,
+      "type": "word",
+      "logprob": -0.0011720937909558415
+    },
+    {
+      "text": " ",
+      "start": 0.659,
+      "end": 0.699,
+      "type": "spacing",
+      "logprob": -1.9073468138230965e-06
+    },
+    {
+      "text": "of",
+      "start": 0.699,
+      "end": 0.779,
+      "type": "word",
+      "logprob": -1.9073468138230965e-06
+    },
+    {
+      "text": " ",
+      "start": 0.779,
+      "end": 0.799,
+      "type": "spacing",
+      "logprob": -2.123814105987549
+    },
+    {
+      "text": "Annaras",
+      "start": 0.799,
+      "end": 1.36,
+      "type": "word",
+      "logprob": -0.9114041022424187
+    },
+    {
+      "text": " ",
+      "start": 1.36,
+      "end": 1.379,
+      "type": "spacing",
+      "logprob": -3.814689989667386e-06
+    },
+    {
+      "text": "was",
+      "start": 1.379,
+      "end": 1.539,
+      "type": "word",
+      "logprob": -3.814689989667386e-06
+    },
+    {
+      "text": " ",
+      "start": 1.539,
+      "end": 1.559,
+      "type": "spacing",
+      "logprob": -3.099436753473128e-06
+    },
+    {
+      "text": "building",
+      "start": 1.559,
+      "end": 1.939,
+      "type": "word",
+      "logprob": -3.099436753473128e-06
+    },
+    {
+      "text": " ",
+      "start": 1.939,
+      "end": 2.019,
+      "type": "spacing",
+      "logprob": -0.09996163845062256
+    },
+    {
+      "text": "Ram",
+      "start": 2.019,
+      "end": 2.259,
+      "type": "word",
+      "logprob": -0.09996163845062256
+    },
+    {
+      "text": " ",
+      "start": 2.259,
+      "end": 2.319,
+      "type": "spacing",
+      "logprob": -0.1298663318157196
+    },
+    {
+      "text": "Setu.",
+      "start": 2.319,
+      "end": 2.899,
+      "type": "word",
+      "logprob": -0.07839918997487985
+    },
+    {
+      "text": " ",
+      "start": 2.899,
+      "end": 3.699,
+      "type": "spacing",
+      "logprob": -0.004796783905476332
+    },
+    {
+      "text": "A",
+      "start": 3.699,
+      "end": 3.819,
+      "type": "word",
+      "logprob": -0.004796783905476332
+    },
+    {
+      "text": " ",
+      "start": 3.819,
+      "end": 3.879,
+      "type": "spacing",
+      "logprob": -0.00042274597217328846
+    },
+    {
+      "text": "SIP",
+      "start": 3.879,
+      "end": 4.639,
+      "type": "word",
+      "logprob": -0.00042274597217328846
+    },
+    {
+      "text": " ",
+      "start": 4.639,
+      "end": 4.799,
+      "type": "spacing",
+      "logprob": -2.0265373677830212e-05
+    },
+    {
+      "text": "lets",
+      "start": 4.799,
+      "end": 4.96,
+      "type": "word",
+      "logprob": -2.0265373677830212e-05
+    },
+    {
+      "text": " ",
+      "start": 4.96,
+      "end": 5.0,
+      "type": "spacing",
+      "logprob": -5.960462772236497e-07
+    },
+    {
+      "text": "you",
+      "start": 5.0,
+      "end": 5.079,
+      "type": "word",
+      "logprob": -5.960462772236497e-07
+    },
+    {
+      "text": " ",
+      "start": 5.079,
+      "end": 5.119,
+      "type": "spacing",
+      "logprob": -5.483612312673358e-06
+    },
+    {
+      "text": "invest",
+      "start": 5.119,
+      "end": 5.46,
+      "type": "word",
+      "logprob": -5.483612312673358e-06
+    },
+    {
+      "text": " ",
+      "start": 5.46,
+      "end": 5.5,
+      "type": "spacing",
+      "logprob": -3.576272320060525e-06
+    },
+    {
+      "text": "the",
+      "start": 5.5,
+      "end": 5.559,
+      "type": "word",
+      "logprob": -3.576272320060525e-06
+    },
+    {
+      "text": " ",
+      "start": 5.559,
+      "end": 5.699,
+      "type": "spacing",
+      "logprob": -1.1920928244535389e-07
+    },
+    {
+      "text": "same",
+      "start": 5.699,
+      "end": 5.859,
+      "type": "word",
+      "logprob": -1.1920928244535389e-07
+    },
+    {
+      "text": " ",
+      "start": 5.859,
+      "end": 5.959,
+      "type": "spacing",
+      "logprob": -3.933898824470816e-06
+    },
+    {
+      "text": "amount",
+      "start": 5.96,
+      "end": 6.239,
+      "type": "word",
+      "logprob": -3.933898824470816e-06
+    },
+    {
+      "text": " ",
+      "start": 6.239,
+      "end": 6.299,
+      "type": "spacing",
+      "logprob": -5.125986263010418e-06
+    },
+    {
+      "text": "regularly.",
+      "start": 6.299,
+      "end": 6.839,
+      "type": "word",
+      "logprob": -1.7642114607951952e-05
+    },
+    {
+      "text": " ",
+      "start": 6.839,
+      "end": 7.719,
+      "type": "spacing",
+      "logprob": -6.556489552167477e-06
+    },
+    {
+      "text": "Start",
+      "start": 7.719,
+      "end": 7.96,
+      "type": "word",
+      "logprob": -6.556489552167477e-06
+    },
+    {
+      "text": " ",
+      "start": 7.96,
+      "end": 8.039,
+      "type": "spacing",
+      "logprob": -1.3947389561508317e-05
+    },
+    {
+      "text": "your",
+      "start": 8.039,
+      "end": 8.139,
+      "type": "word",
+      "logprob": -1.3947389561508317e-05
+    },
+    {
+      "text": " ",
+      "start": 8.139,
+      "end": 8.259,
+      "type": "spacing",
+      "logprob": -8.940656698541716e-06
+    },
+    {
+      "text": "SIP",
+      "start": 8.26,
+      "end": 8.939,
+      "type": "word",
+      "logprob": -8.940656698541716e-06
+    },
+    {
+      "text": " ",
+      "start": 8.939,
+      "end": 9.119,
+      "type": "spacing",
+      "logprob": -1.5616295058862306e-05
+    },
+    {
+      "text": "with",
+      "start": 9.119,
+      "end": 9.239,
+      "type": "word",
+      "logprob": -1.5616295058862306e-05
+    },
+    {
+      "text": " ",
+      "start": 9.239,
+      "end": 9.359,
+      "type": "spacing",
+      "logprob": -0.011883183382451534
+    },
+    {
+      "text": "Zeb",
+      "start": 9.359,
+      "end": 9.619,
+      "type": "word",
+      "logprob": -0.011883183382451534
+    },
+    {
+      "text": " ",
+      "start": 9.619,
+      "end": 9.679,
+      "type": "spacing",
+      "logprob": -0.508842945098877
+    },
+    {
+      "text": "Pay.",
+      "start": 9.679,
+      "end": 10.039,
+      "type": "word",
+      "logprob": -0.47952764481306076
+    }
+  ],
+  "transcription_id": "U7raiT6qcUk1eomvUmnW",
+  "audio_duration_secs": 10.32
+}

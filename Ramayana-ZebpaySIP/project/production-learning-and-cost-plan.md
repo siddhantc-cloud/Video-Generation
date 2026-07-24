@@ -185,12 +185,21 @@ characters/minutes are recorded. Currency or plan-credit cost is unknown.
 | 2026-07-24 | Pronunciation auditions | ElevenLabs API, `eleven_v3`, account-owned `NarratorZebPay` | 240 TTS characters | Two outputs | Reject r1 `Zeb-pay`; keep r2 `Zeb Pay` |
 | 2026-07-24 | Final continuous narration | ElevenLabs API, `eleven_v3`, account-owned `NarratorZebPay` | 606 TTS characters | 48.080-second timestamped performance | Phrase-lock to the approved 52.2-second picture |
 | 2026-07-24 | Automated intelligibility checks | ElevenLabs Scribe | 175.68 seconds / 2.928 minutes | Exact 105-word recovery from final mix | Technical speech gate passed; human tone gate remains |
+| 2026-07-24 | Local narrator benchmarks and full take | Qwen3-TTS 1.7B VoiceDesign, RTX 5060 Ti | 67.92 seconds generated; 375.638 seconds synthesis compute | Two benchmarks plus one 47.600-second full performance; 4.640 GiB peak allocated VRAM | Select seed `240726`; no hosted TTS generation credits |
+| 2026-07-24 | Local narrator verification | ElevenLabs Scribe v2 | 120.12 seconds / 2.002 minutes | Two benchmarks, raw full take, and encoded v008 review checked | Exact 105-word final recovery; human phoneme/tone gate remains |
 
 For cheaper repeats, keep the selected voice, seed, model settings, dictionary r2, and audition text.
 Run one short pronunciation audition only when new proper nouns or brand terms enter the script.
 Generate the full narration once after copy lock, and reuse its timestamp alignment for phrase
 conform and captions. Do not re-transcribe immutable intermediate files after the selected final-mix
 transcript exists.
+
+For local repeats, follow `.agent-harness/recipes/local-qwen3-tts-narration.md`. The reusable
+environment and model cache eliminate hosted TTS generation charges, but machine time, electricity,
+disk, and optional hosted ASR still exist. Keep the selected voice instruction and benchmark pattern;
+run two short seeds only when a new script introduces unproven names or brand terms, then generate
+one continuous full take. Never claim an Indian accent or acronym pronunciation from model metadata
+alone.
 
 ## Approval packet for every paid run
 

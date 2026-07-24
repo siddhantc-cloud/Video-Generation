@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-24T01:56:48.585140+00:00",
+  "status": "unreviewed",
+  "human_listening_required": true,
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+  "model_mode": "voice_design",
+  "language": "English",
+  "text": "An army of vanaras was building Ram Setu. A S. I. P. lets you invest the same amount regularly. Start your S. I. P. with Zeb Pay.",
+  "instruction": "A mature Indian English male narrator, around forty-five, with a deep resonant baritone and a neutral educated Indian accent. Reverent and grounded like a premium epic-mythology documentary, measured medium-slow pace, warm authority, restrained emotion, clean close-mic studio sound, precise consonants, and natural pauses. Clearly pronounce every initial in S. I. P. separately. Pronounce vanaras, Ram Setu, Rama, and Zeb Pay naturally. Avoid theatrical booming, caricature, sales-announcer energy, and imitation of any real person.",
+  "generation": {
+    "seed": 240727,
+    "do_sample": true,
+    "temperature": 0.9,
+    "top_p": 0.95,
+    "top_k": 50,
+    "repetition_penalty": 1.05,
+    "max_new_tokens": 4096,
+    "attention": "sdpa",
+    "dtype": "bfloat16"
+  },
+  "runtime": {
+    "python": "3.12.10",
+    "torch": "2.11.0+cu128",
+    "qwen_tts": "0.1.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "gpu_total_vram_gib": 15.928,
+    "gpu_peak_allocated_gib": 4.198,
+    "model_load_seconds": 15.517,
+    "generation_seconds": 56.556,
+    "cache_dir": "D:\\startup_dev\\so_sorry\\_cache\\huggingface"
+  },
+  "audio": {
+    "path": "D:\\startup_dev\\so_sorry\\Ramayana-ZebpaySIP\\audio\\voiceover\\qwen3-v008\\benchmark-seed-240727.wav",
+    "sha256": "c98d1f53b7a6b377a8d56337f9c1fc25111fe491d3a83ed96d471f7e976b0b0b",
+    "sample_rate": 24000,
+    "channels": 1,
+    "subtype": "PCM_24",
+    "samples": 247680,
+    "duration_seconds": 10.32,
+    "peak_linear": 0.6171875,
+    "rms_linear": 0.07938456
+  }
+}

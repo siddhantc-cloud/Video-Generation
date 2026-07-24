@@ -29,6 +29,11 @@ Editorial starts from approved ranges and an integer-frame manifest. Narration o
     and pad their tails, accelerate only overrunning phrases without pitch change, then derive new
     captions from the conformed word timings. Do not use one global time stretch unless measured
     semantic drift remains within the project tolerance.
+15. For local voice-design TTS, keep synthesis orthography separate from approved display copy.
+    Benchmark every difficult term with at least two short seeds before a full take; use timestamped
+    ASR to map normalized provider words back to the approved script before conforming. ASR spelling
+    or word duration is rejection evidence, not final pronunciation approval: a human must listen
+    to the actual encoded review. Follow the project recipe for the pinned model and environment.
 
 ## Delivery
 

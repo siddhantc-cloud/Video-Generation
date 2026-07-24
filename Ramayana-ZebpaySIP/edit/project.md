@@ -167,3 +167,34 @@ hyphenated alias. The new mix retains approved shot-local SFX at -10 dB and requ
 
 **Outstanding:** Human playback of v006. Do not overwrite or demote the approved v005 final until
 the owner accepts voice tone, pace, and pronunciation. Brand/legal release remains separate.
+
+## Session 7 - 2026-07-24
+
+| Requirement | Pass condition | Evidence | Owner | Status |
+|---|---|---|---|---|
+| Local voice runtime | Open-source TTS runs on the available 16 GB GPU without hosted synthesis credits | Qwen v008 metadata; 4.640 GiB peak allocated | Voice producer | Pass |
+| Exact terms | Vanaras, Ram Setu, Rama, both SIP occurrences, and ZebPay survive the encoded mix | v008 Scribe v2 transcript | Audio QC | Pass |
+| SIP correction evidence | Acronym timing is materially longer than the rejected 60 ms v006 occurrence | Encoded v008 SIP spans 0.860 s and 1.221 s | Audio QC | Pass; human listening pending |
+| Phrase lock | Continuous local take preserves every approved picture beat | v008 EDL; max onset 30 ms; max tempo 1.120x | Editor | Pass |
+| Encoded review | Clean/captioned cuts decode, match duration, and share identical audio | v008 review QC | Editor/QC | Pass |
+| Human voice approval | Owner accepts voice, accent, pronunciation, pace, and mix | Captioned v008 review cut | Human | Pending |
+
+**Strategy:** Benchmark the exact difficult terms before generating a full local voice. Select the
+seed by transcript/timing evidence, generate one continuous take, map synthesis orthography back to
+approved display copy, phrase-lock with pitch-safe local compression, reuse the independent native
+SFX stem, and rebuild captions from the conformed Qwen timing.
+
+**Decisions:** Qwen3-TTS 1.7B VoiceDesign is isolated in a project Python 3.12 environment and uses
+PyTorch SDPA on the RTX 5060 Ti. Seed `240726` was selected because Scribe recovered `Vanaras`;
+seed `240727` was rejected after `Annaras`. Synthesis uses `S. I. P.` and `Zeb Pay`, while captions
+retain `SIP` and `ZebPay`. The raw local take is 47.600 seconds. Only K10 and G12 overrun their
+picture slots, at 1.030x and 1.120x.
+
+**Evidence:** `audio/voiceover/qwen3-v008/VOICEOVER-v008.md`;
+`edit/timelines/final-short-v008-qwen3-local.json`;
+`review/final-short-v008-qwen3-local-qc.md`; review cuts under
+`deliverables/review-cuts/final-short-v008/`.
+
+**Outstanding:** Human listening is still authoritative because Scribe normalizes initialisms.
+Keep v005 as the approved final until the owner accepts the complete v008 performance. Brand/legal
+release remains separate.
