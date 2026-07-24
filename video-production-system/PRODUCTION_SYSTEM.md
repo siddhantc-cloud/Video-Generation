@@ -1,5 +1,9 @@
 # Script-to-video production system
 
+The canonical from-idea execution recipe is
+`.agent-harness/recipes/idea-to-cinematic-social-video.md`. This file defines the compact system
+contract and project structure.
+
 ## Checklist
 
 | Requirement | Pass condition | Evidence | Owner | Status |
@@ -107,3 +111,7 @@ powershell -ExecutionPolicy Bypass -File tools/New-VideoProject.ps1 `
 
 Provider features, pricing, limits, and model quality are time-sensitive. Inspect current schemas and
 live quotes before use; never turn one project's dated result into a universal default.
+
+Price generative work from billed source seconds and expected attempts, not final runtime.
+Deterministic graph, copy, caption, logo, hold, and reusable-select intervals do not belong in the
+provider-seconds total.

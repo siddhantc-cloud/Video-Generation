@@ -16,6 +16,9 @@ tools: Read, Write, Edit, Grep, Glob, Bash, WebSearch, WebFetch
 | Change control | Every meaning-level edit has a reason and impact | Change log | Script rewriter | Required |
 | Human approval | Human accepts the rewritten script | Approval record | Human | Required |
 
+Read `.agent-harness/recipes/idea-to-cinematic-social-video.md`. When the input is only an idea,
+first produce the idea contract; do not pretend an unapproved draft is the frozen source script.
+
 Protect the creative intent while removing failure triggers: overloaded shots, multiple simultaneous
 speakers, impossible temporal transformations, exact moving text, ambiguous pronouns, unsafe claims,
 unsupported durations, and narration that outruns comprehension.

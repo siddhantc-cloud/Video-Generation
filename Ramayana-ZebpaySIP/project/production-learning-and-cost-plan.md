@@ -173,6 +173,31 @@ Add one row immediately after every job. Never erase rejected attempts: they are
 | K01 v002 | Correct the structural media-role failure while preserving every creative control | Seedance 2.0 Standard; explicit start image; 9:16; 480p; 6 s; one candidate; High; Sound On; approved K01 frame + Early Bridge + Rama | 18 | 1 | 18 | Complete: keeper; actual charge 18 credits |
 | K02-K10/K14 first pass | Replace all remaining approved short-v004 motion cells | Seedance 2.0 Standard; explicit start images; 9:16; 480p; 4-6 s; one candidate each; High; Sound On | 12-18 | 10 | 129 | Complete: nine full keepers, one K03 partial keeper; actual charge 129 credits |
 
+## Repeat cost for the polished 52.2-second structure
+
+Reverified through the authenticated Higgsfield CLI on 2026-07-24. The current keeper structure
+contains eleven Seedance source jobs of 6, 4, 4, 4, 4, 4, 4, 4, 5, 4, and 6 seconds: **49 billed
+source seconds**. The graph and logo occupy about 14 seconds of the final timeline but are
+deterministic post-production and add no Higgsfield video credits.
+
+| Seedance 2.0 Standard tier | Current tested rate | One learned-path pass | Practical 1.5-2 pass reserve |
+|---|---:|---:|---:|
+| 480p | 3 credits/s | 147 | 221-294 |
+| 720p | 4.5 credits/s | 220.5 | 331-441 |
+| 1080p | 9 credits/s | 441 | 662-882 |
+
+The actual final-path experiment spent **165 credits**: 147 on keeper sources plus one rejected
+six-second setup attempt at 18 credits. Including the earlier abandoned 100-credit Cinema Studio
+pilot, the current ledger records **265 credits**. The repeat forecast excludes that abandoned
+route; it does not claim undocumented jobs were free.
+
+The tested quote used 9:16, `seedance_2_0`, `mode=std`, high bitrate, and Sound On. Sound Off and
+standard bitrate returned the same quote in the tested matrix; a six-second `start_image` cost
+preflight also remained unchanged. These results are plan- and date-specific. Re-run
+`higgsfield model get seedance_2_0 --json` and `higgsfield generate cost ... --json` before any new
+approval. The reusable from-idea method and prompt packets live in
+`.agent-harness/recipes/idea-to-cinematic-social-video.md`.
+
 ## Voiceover experiment ledger
 
 ElevenLabs usage is metered differently from Higgsfield video credits. The current restricted API

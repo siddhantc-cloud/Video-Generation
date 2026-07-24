@@ -1,5 +1,9 @@
 # Recipe: Script-to-video production
 
+For a complete workflow that starts from an idea, includes reusable prompt packets, separates the
+four production lanes, and records the current cost-calculation method, read
+`idea-to-cinematic-social-video.md`. This file remains the compact gate summary.
+
 ## Checklist
 
 | Requirement | Pass condition | Evidence | Owner | Status |
@@ -29,7 +33,8 @@ A canonical project scaffold created from `video-production-system/templates/pro
 
 ## Workflow
 
-1. **Bootstrap** with `$script-video-bootstrap`.
+1. **Enter the full workflow** with `$script-video-production`, which begins with
+   `$script-video-bootstrap`.
 2. **Rewrite only if needed.** Preserve the source and obtain human approval for the shooting-script change log.
 3. **Plan** with `$script-video-plan`; classify each beat as deterministic, turnkey, or generative.
 4. **Prepare continuity** with `$script-video-continuity`.

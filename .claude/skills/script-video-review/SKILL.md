@@ -21,6 +21,10 @@ Read the shot tracker, expectation rows, continuity records, prompt packet, prov
 6. **Graphics:** exact copy, logo integrity, safe margins, legibility, data truthfulness.
 7. **Full playback:** watch the encoded file with sound at delivery scale.
 
+For any failed take, record the longest usable frame range and whether deterministic salvage can
+cover the approved phrase interval. Explicitly test for unintended internal cuts in prompts that
+asked for a continuous shot.
+
 For deterministic boundaries inspect frames `n-1`, `n`, and `n+1`.
 
 ## Verdict

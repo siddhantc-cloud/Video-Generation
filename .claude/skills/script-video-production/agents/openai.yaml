@@ -1,0 +1,4 @@
+interface:
+  display_name: "Script Video Production"
+  short_description: "Route an idea through cinematic video production"
+  default_prompt: "Use $script-video-production to turn this idea into a cost-controlled cinematic social video."

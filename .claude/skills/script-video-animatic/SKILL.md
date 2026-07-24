@@ -20,6 +20,8 @@ The animatic is the first complete film. It proves story, timing, composition, a
 9. Render an encoded MP4.
 10. Inspect every transition at frames `n-1`, `n`, and `n+1`, then review the full video with sound.
 11. Record human approval before any paid motion generation.
+12. Record which intervals will remain deterministic, which require generative source seconds, and
+    which can use a hold or reused partial take.
 
 ## Acceptance
 
@@ -28,6 +30,7 @@ The animatic is the first complete film. It proves story, timing, composition, a
 - No shot is present only because a keyframe already exists.
 - Every shot transition occurs on a whole frame.
 - The final frame resolves the call to action or story ending.
+- The billed-source estimate excludes deterministic graph, copy, caption, and logo intervals.
 - Approval evidence is recorded in `review/`.
 
 ## Guardrails

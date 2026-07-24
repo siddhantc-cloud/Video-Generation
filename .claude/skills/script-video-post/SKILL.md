@@ -39,6 +39,9 @@ Editorial starts from approved ranges and an integer-frame manifest. Narration o
     pronunciation dictionary, native pace, and storytelling temperature over a legacy model chosen
     only for pitch/loudness knobs. Keep gain and dynamics in post. A provider language label and
     exact ASR spelling still do not replace human accent and phoneme approval.
+17. Do not solve a weak mix by globally making narration louder. Preserve useful native SFX,
+    place music on its own stem, and duck music under speech. Keep full-mix normalization and
+    limiting as explicit mastering decisions, not hidden defaults.
 
 ## Delivery
 

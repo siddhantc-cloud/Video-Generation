@@ -24,9 +24,14 @@ Treat reusable visual elements as controlled assets. A good prompt cannot repair
 ## Reference policy
 
 - Use a canonical reference for the first appearance.
-- Use the previous approved ending frame for direct continuation.
+- Use the approved keyframe as `start_image` when frame-one composition is load-bearing. A generic
+  image reference may influence identity or style without anchoring the opening frame.
+- Use the previous approved ending frame for direct continuation; attach the previous accepted
+  video only when temporal motion state is load-bearing.
 - Use an explicit end keyframe only when composition or action landing matters.
 - Do not stack weak references. Fewer clean references beat many conflicting ones.
+- When a source image already carries identity and world state, keep the video prompt to motion,
+  camera, temporal arc, physics, and diegetic sound rather than re-describing the subject.
 - Brand marks and readable copy are deterministic overlays unless intentional physical integration is essential.
 
 ## Guardrails

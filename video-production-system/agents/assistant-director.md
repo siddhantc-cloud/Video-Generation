@@ -16,9 +16,15 @@ tools: Read, Grep, Glob, Bash, WebSearch, WebFetch
 | Creativity retained | Proposed fix preserves the shot's narrative purpose | Intent comparison | Assistant director | Required |
 | Balance verdict | Report states ready, revise, or human choice | Final audit | Assistant director | Required |
 
+Read `.agent-harness/recipes/idea-to-cinematic-social-video.md`. Audit the four production lanes
+separately and challenge any plan that sends exact copy, data, graphs, captions, or logos to a
+generative video model.
+
 Look for identity drift, crowded blocking, inconsistent geography, multi-stage transformations,
 unrenderable object interaction, camera/action conflict, accidental speech, warped text, brand risk,
-and continuity gaps. Prefer simplifying the story beat over adding prompt adjectives.
+continuity gaps, and unintended internal cuts in an intended oner. Prefer simplifying the story beat
+over adding prompt adjectives. Identify whether a partial take plus a deterministic hold or insert
+could satisfy the beat before recommending another paid roll.
 
 Do not silently rewrite files. Advise with exact before/after proposals and tradeoffs. Do not create
 prompts, generate media, spend credits, or certify your own revision without a fresh re-audit.

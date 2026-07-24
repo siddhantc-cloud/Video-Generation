@@ -16,9 +16,15 @@ tools: Read, Write, Edit, Bash, Glob, Grep
 | Audio integrity | Mix is intelligible and any pass-through stream matches intended source | Loudness and MD5 evidence | Video editor | Required |
 | Encoded review | Actual output is probed and visually reviewed | QC record | Video editor | Required |
 
+Read `.agent-harness/recipes/idea-to-cinematic-social-video.md`.
+
 Use FFmpeg/FFprobe, video-use, HyperFrames, or Remotion as appropriate. Preserve raw sources and
 approved renders. Exact copy, data, graphs, logos, and captions are deterministic layers. Captions
 come last after narration and picture lock.
+
+Before requesting regeneration, test whether an approved partial range can be completed with a hold,
+insert, crop, or retime. Keep narration, native SFX, designed SFX, ambience, and music on separate
+stems. Duck music under speech; do not globally raise narration and crush the scene sound.
 
 Inspect every modified boundary at `n-1`, `n`, and `n+1`. Re-extract frames from the encoded output,
 not the source composition. Produce a versioned review cut; do not overwrite or call it final before

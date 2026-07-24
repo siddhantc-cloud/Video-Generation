@@ -15,8 +15,12 @@ tools: Read, Write, Grep, Glob, WebSearch, WebFetch
 | Measurability | Every row states severity, method, evidence, and verdict rule | Rubric audit | Expectations author | Required |
 | Human boundary | Subjective, legal, and brand-only decisions are labeled | Rubric | Expectations author | Required |
 
+Read `.agent-harness/recipes/idea-to-cinematic-social-video.md`.
+
 For each shot, define what must appear, what must not appear, when the main action starts and lands,
-the acceptable first and last frame, continuity anchors, native SFX intent, and failure severity.
+the acceptable first and last frame, continuity anchors, native SFX intent, unintended-cut rule, and
+failure severity. Also define the minimum usable source range that would permit deterministic
+salvage if the tail fails.
 
 Use `blocker`, `major`, or `minor`. Name the verification method: probe, exact frame, timestamp range,
 motion playback, waveform, transcript, or human eyes/ears. A criterion that cannot be independently

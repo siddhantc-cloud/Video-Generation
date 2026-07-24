@@ -14,7 +14,8 @@ Require shot ID, attempt ID, model, duration, resolution, aspect ratio, start/en
 ## Workflow
 
 1. Read the current shot tracker, continuity records, and provider runbook.
-2. Inspect the provider's current model schema and live quote.
+2. For Higgsfield work, read the current `higgsfield` root skill and its routed model, prompt,
+   audio, and stack guidance, then inspect the live model schema and quote through the official CLI.
 3. Compare them with the approved packet. Stop on any material drift.
 4. Create a unique local job ledger entry before submission.
 5. Confirm no matching job or provider ID already exists.
@@ -24,6 +25,10 @@ Require shot ID, attempt ID, model, duration, resolution, aspect ratio, start/en
 9. Download the raw result into `footage/raw/` without overwriting.
 10. Hash and probe it, then update the ledger.
 11. Send the take to `$script-video-review`.
+
+If the result contains a useful approved range followed by a local failure, preserve the raw take
+and let review decide whether a deterministic hold, insert, crop, or retime can cover the interval.
+Do not spend on a retry before salvage is evaluated.
 
 ## Prompt shape
 

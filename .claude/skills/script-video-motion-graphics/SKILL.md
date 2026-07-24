@@ -15,7 +15,8 @@ Use deterministic rendering for anything that must be exact: copy, numbers, grap
 
 ## Workflow
 
-1. Read `.agent-harness/recipes/hyperframes-motion-graphics.md`.
+1. Read `.agent-harness/recipes/hyperframes-motion-graphics.md` and the deterministic lane in
+   `.agent-harness/recipes/idea-to-cinematic-social-video.md`.
 2. Confirm exact frame interval, dimensions, frame rate, safe area, copy, data, logo source, and incoming/outgoing visual state.
 3. Create `frame.md` before code: hierarchy, palette, typography, grid, depth, and motion beats.
 4. Build all motion as a pure function of frame number. Avoid wall-clock state and nondeterministic randomness.

@@ -7,6 +7,9 @@ description: Convert an approved script into a cost-aware shot plan and approval
 
 Plan from message and timing first. More shots are not automatically better; every cut must earn its place.
 
+Read `.agent-harness/recipes/idea-to-cinematic-social-video.md` for the canonical idea-to-film
+sequence and reusable prompt packets.
+
 ## Required inputs
 
 Read:
@@ -28,7 +31,9 @@ Read:
    - **Turnkey**: a model or app with predictable bounded output.
    - **Generative**: cinematic or organic motion where variation is acceptable.
 5. Choose the longest coherent shot that preserves one clear subject, action, and camera idea.
-6. Define start keyframe, optional end keyframe, previous-shot continuity reference, native SFX intent, and narration relationship.
+6. Define reference roles explicitly: canonical identity, `start_image`, optional `end_image`, and
+   previous accepted video only for true continuation or motion reference. Define native diegetic
+   SFX intent and narration relationship.
 7. Build a free still/keyframe animatic before paid motion.
 8. Estimate quote ranges and iteration tiers: experiment, keeper, final.
 9. Write the plan to `scripts/shot-tracker.md` and the budget to `project/cost-plan.md`.
@@ -37,8 +42,13 @@ Read:
 
 - Experiment on the lowest supported resolution without changing the approved model.
 - Price from the provider's live quote immediately before submission.
-- Budget by attempts, not just duration. Use a default three-attempt cap per generative shot.
+- Price generated source seconds, not final runtime. Keep exact graphics and holds out of the
+  provider-seconds total.
+- Budget by attempts, not just duration. Show one-pass cost and a 1.5–2-pass practical reserve;
+  retain a hard three-attempt cap per generative shot unless the project records a stricter cap.
 - Promote only reviewed keepers. Do not upscale failed composition.
+- Treat a higher-resolution rerun as a fresh take unless the live provider exposes a verified
+  seed/re-render mechanism.
 
 ## Approval packet
 

@@ -23,7 +23,9 @@ Turn observed evidence into repeatable behavior without confusing project taste 
    - reusable production law;
    - hypothesis needing another reproduction.
 3. Update the narrowest project source of truth first.
-4. Promote only cross-project learning into `video-production-system/`, `.agent-harness/recipes/`, or a `script-video-*` skill.
+4. Promote only cross-project learning into `video-production-system/`,
+   `.agent-harness/recipes/idea-to-cinematic-social-video.md`, another narrow recipe, or a
+   `script-video-*` skill.
 5. Remove stale contradictory instructions instead of appending duplicate rules.
 6. Preserve checklist-first structure and link evidence.
 7. Synchronize canonical Codex skills and shared agent definitions to Claude.

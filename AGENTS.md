@@ -15,7 +15,8 @@
 
 This repository is a script-to-video production workspace. Read
 `video-production-system/PRODUCTION_SYSTEM.md` and
-`.agent-harness/recipes/script-to-video-production.md` before starting a new film.
+`.agent-harness/recipes/idea-to-cinematic-social-video.md` before starting from an idea.
+`.agent-harness/recipes/script-to-video-production.md` remains the compact gate summary.
 
 - Keep original scripts, raw provider results, narration sources, and approved renders immutable.
 - Use one continuous narration performance as the master clock unless the project records otherwise.
@@ -60,6 +61,7 @@ Canonical packages live under `.codex/skills/` and are mirrored under `.claude/s
 
 | Skill | Trigger | Purpose |
 |---|---|---|
+| `script-video-production` | Turn an idea into a complete cinematic social video | Route the full workflow through atomic skills, agents, gates, and evidence |
 | `script-video-bootstrap` | Start a film from a script | Create the clean canonical project workspace |
 | `script-video-plan` | Script breakdown, shots, timing, or cost | Build frame-locked production and iteration plans |
 | `script-video-continuity` | Characters, locations, props, or brand sources | Control reusable element identity and continuity |
@@ -80,7 +82,7 @@ powershell -ExecutionPolicy Bypass -File tools/sync-script-video-skills.ps1 -Che
 
 ## Shared production agents
 
-Canonical definitions live in `video-production-system/agents/` and are mirrored into
+Canonical agent prompts live in `video-production-system/agents/` and are mirrored into
 `.claude/agents/`: `script-rewriter`, `assistant-director`, `scene-expectations`,
 `prompt-reviewer`, `video-editor`, and `video-reviewer`.
 
@@ -118,6 +120,10 @@ User-level host skills supply provider-specific execution:
 
 Generic project skills decide when these tools are appropriate. Current provider schema, model
 support, and price override remembered defaults.
+
+The reusable prompt packets and four-lane production model live only in
+`.agent-harness/recipes/idea-to-cinematic-social-video.md`; skills and agent prompts link to that
+recipe rather than duplicating it. Its credit table is dated evidence, never a standing tariff.
 
 ## Native tools
 
