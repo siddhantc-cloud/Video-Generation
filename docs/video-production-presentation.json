@@ -1,0 +1,16 @@
+{
+  "source_mockup": null,
+  "source_plan": "docs/video-production-workflow.md",
+  "mode": "plan-driven",
+  "html_file": "docs/video-production-presentation.html",
+  "pretext_tier": "simple-layout",
+  "framework": "vanilla",
+  "iterations": 2,
+  "date": "2026-07-24",
+  "screen": "video-production-presentation",
+  "branch": "main",
+  "audience": [
+    "marketing",
+    "product"
+  ]
+}

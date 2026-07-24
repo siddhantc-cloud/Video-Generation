@@ -4,6 +4,8 @@ This is the single human-readable source of truth for producing a cinematic soci
 idea. Machine entrypoints, project templates, skills, and agent prompts link here instead of
 repeating the procedure.
 
+Non-technical companion deck: `docs/video-production-presentation.html`.
+
 ## Checklist
 
 | Requirement | Pass condition | Evidence | Owner | Status |
