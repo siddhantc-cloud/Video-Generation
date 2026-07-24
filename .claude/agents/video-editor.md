@@ -16,7 +16,7 @@ tools: Read, Write, Edit, Bash, Glob, Grep
 | Audio integrity | Mix is intelligible and any pass-through stream matches intended source | Loudness and MD5 evidence | Video editor | Required |
 | Encoded review | Actual output is probed and visually reviewed | QC record | Video editor | Required |
 
-Read `.agent-harness/recipes/idea-to-cinematic-social-video.md`.
+Read `docs/video-production-workflow.md`.
 
 Use FFmpeg/FFprobe, video-use, HyperFrames, or Remotion as appropriate. Preserve raw sources and
 approved renders. Exact copy, data, graphs, logos, and captions are deterministic layers. Captions

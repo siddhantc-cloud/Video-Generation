@@ -5,7 +5,7 @@
 | Requirement | Pass condition | Evidence | Owner | Status |
 |---|---|---|---|---|
 | Active scope | Root contains the current film, reusable system, tools, and agent configuration only | Root inventory | Partner agent | Required |
-| Repeatable workflow | Generic production skills and recipe cover script through delivery | `.codex/skills/script-video-*` and recipe | Partner agent | Required |
+| Repeatable workflow | Generic production skills and canonical documentation cover script through delivery | `.codex/skills/script-video-*` and `docs/video-production-workflow.md` | Partner agent | Required |
 | Host parity | Canonical skills and agents match Claude mirrors byte-for-byte | Sync scripts with `-Check` | Partner agent | Required |
 | Source safety | Raw media and working renders stay immutable and outside Git by default | Project layout and `.gitignore` | All operators | Required |
 | Spend safety | Every paid generation has a current quote and explicit approval | Shot packet and job ledger | Human / operator | Required |
@@ -14,9 +14,10 @@
 ## Operating contract
 
 This repository is a script-to-video production workspace. Read
-`video-production-system/PRODUCTION_SYSTEM.md` and
-`.agent-harness/recipes/idea-to-cinematic-social-video.md` before starting from an idea.
-`.agent-harness/recipes/script-to-video-production.md` remains the compact gate summary.
+`docs/video-production-workflow.md` and `video-production-system/PRODUCTION_SYSTEM.md` before
+starting from an idea. `.agent-harness/recipes/idea-to-cinematic-social-video.md` is the
+machine-routing entry; `.agent-harness/recipes/script-to-video-production.md` is a compatibility
+pointer. Neither duplicates the process.
 
 - Keep original scripts, raw provider results, narration sources, and approved renders immutable.
 - Use one continuous narration performance as the master clock unless the project records otherwise.
@@ -32,6 +33,7 @@ This repository is a script-to-video production workspace. Read
 | Path | Purpose |
 |---|---|
 | `Ramayana-ZebpaySIP/` | Current film: sources, assets, keyframes, footage, edit state, review, and delivery |
+| `docs/` | Canonical human-readable production process |
 | `video-production-system/` | Canonical generic production contract, templates, shared agent definitions, and archive manifest |
 | `.codex/skills/script-video-*/` | Canonical reusable production skills |
 | `.claude/skills/script-video-*/` | Byte-equivalent Claude mirrors |
@@ -122,8 +124,9 @@ Generic project skills decide when these tools are appropriate. Current provider
 support, and price override remembered defaults.
 
 The reusable prompt packets and four-lane production model live only in
-`.agent-harness/recipes/idea-to-cinematic-social-video.md`; skills and agent prompts link to that
-recipe rather than duplicating it. Its credit table is dated evidence, never a standing tariff.
+`docs/video-production-workflow.md`; recipes, skills, agent prompts, system references, and project
+status files link there rather than duplicating it. Its credit table is dated evidence, never a
+standing tariff.
 
 ## Native tools
 

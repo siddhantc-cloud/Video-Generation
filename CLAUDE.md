@@ -13,10 +13,11 @@ and source of truth for Codex/Claude parity.
 | Provider safety | Current schema, quote, and approval exist before paid generation | Job packet | Claude / human | Required |
 | Encoded evidence | Review and delivery claims refer to probed encoded artifacts | Review record | Claude | Required |
 
-For any new idea or script, read `video-production-system/PRODUCTION_SYSTEM.md` and
-`.agent-harness/recipes/idea-to-cinematic-social-video.md`, then enter through
-`script-video-production`. `.agent-harness/recipes/script-to-video-production.md` is the compact
-gate summary. Claude's `/learn` command uses the mirrored `script-video-learn` skill.
+For any new idea or script, read `docs/video-production-workflow.md` and
+`video-production-system/PRODUCTION_SYSTEM.md`, then enter through `script-video-production`.
+`.agent-harness/recipes/idea-to-cinematic-social-video.md` is the machine-routing entry and
+`.agent-harness/recipes/script-to-video-production.md` is a compatibility pointer. Claude's
+`/learn` command uses the mirrored `script-video-learn` skill.
 
 Generic skills are canonical under `.codex/skills/script-video-*` and mirrored into
 `.claude/skills/` with `tools/sync-script-video-skills.ps1`. Shared agent definitions are canonical
@@ -25,7 +26,7 @@ under `video-production-system/agents/` and mirrored into `.claude/agents/` with
 
 The six shared agent files are atomic production prompts. Do not collapse them into one creator/
 reviewer role. Reusable idea, keyframe, Seedance, review, motion-graphics, and cost prompts live in
-the canonical idea-to-video recipe and are referenced rather than copied into agent files.
+`docs/video-production-workflow.md` and are referenced rather than copied into agent files.
 
 For Ramayana-specific page navigation, provider IDs, established continuity records, job outcomes,
 and detailed review evidence, use the `ramayana-*` skills. Do not promote campaign-specific story,

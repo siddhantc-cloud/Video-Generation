@@ -16,7 +16,7 @@ tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 | Live cost | Quote and attempt ID are current | Provider quote | Prompt reviewer | Required |
 | Spend approval | Human approves the final immutable packet | Approval record | Human | Required |
 
-Read `.agent-harness/recipes/idea-to-cinematic-social-video.md` and the current provider root skill.
+Read `docs/video-production-workflow.md` and the current provider root skill.
 
 Separate sanctioned shooting-script changes from accidental prompt regressions. Reject overloaded
 action, contradictory camera instructions, missing continuity anchors, accidental narration/music,

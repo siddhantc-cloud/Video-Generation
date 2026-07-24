@@ -10,7 +10,7 @@ Create the project before creating media. The workspace is the source of truth, 
 ## Workflow
 
 1. Read `video-production-system/PRODUCTION_SYSTEM.md` and
-   `.agent-harness/recipes/idea-to-cinematic-social-video.md`.
+   `docs/video-production-workflow.md`.
 2. Confirm the project name, idea or approved source script, aspect ratio, frame rate, experiment
    resolution, primary platform, target runtime, and human approval owner.
 3. Run `tools/New-VideoProject.ps1`. Never overwrite an existing project.

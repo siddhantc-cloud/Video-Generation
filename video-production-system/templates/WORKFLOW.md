@@ -1,16 +1,18 @@
-# Video workflow
+# Project workflow status
+
+Canonical production procedure: `docs/video-production-workflow.md` from the repository root.
+
+This file records only the current project's progress and evidence. Replace each status with a
+dated result or blocker; do not copy generic production instructions into this file.
 
 ## Checklist
 
-| Stage | Pass condition | Evidence | Owner | Status |
+| Stage | Project pass condition | Evidence | Owner | Status |
 |---|---|---|---|---|
-| Script | Frozen source and approved adaptation exist | `scripts/` | Human/Director | Pending |
-| Design | Visual law and reusable Elements are approved | `assets/`, `project/` | Human/Art | Pending |
-| Animatic | Phrase-locked whole-film preview is approved | `storyboard/`, `deliverables/review-cuts/` | Human/Editor | Pending |
-| Generation | Every paid shot has approval and a review verdict | `footage/`, `review/takes/` | Producer/Reviewer | Pending |
-| Picture lock | Integer-frame timeline uses approved ranges only | `edit/timelines/` | Editor | Pending |
-| Finish | Sound, graphics, captions, and legal copy pass | `edit/verify/`, `review/` | QC/Human | Pending |
-| Delivery | Final master and hash manifest are approved | `deliverables/final/` | Human/Brand | Pending |
-
-Follow `../video-production-system/PRODUCTION_SYSTEM.md` and the project-local evidence. Current
-project evidence overrides generic examples.
+| Brief and script | Source, audience, message, format, and approved adaptation are recorded | `project/`, `scripts/` | Human / director | Pending |
+| Visual plan | Continuity assets, shot plan, storyboard, and keyframes are reviewable | `assets/`, `keyframes/`, `storyboard/` | Human / art | Pending |
+| Animatic | The encoded whole film passes timing, crop, and transition review | `deliverables/review-cuts/`, `review/` | Human / editor | Pending |
+| Generative picture | Every paid take has an approval packet and keeper verdict | `footage/`, `review/takes/` | Producer / reviewer | Pending |
+| Deterministic finish | Exact graphics, captions, and brand material pass encoded boundary review | `edit/animations/`, `edit/verify/` | Motion / QC | Pending |
+| Sound | Narration, SFX, ambience, and music are versioned, controllable, and approved | `audio/`, `edit/audio/`, `review/` | Sound / human | Pending |
+| Delivery | One exact review cut is promoted, hashed, and release status is explicit | `deliverables/final/` | Human / brand | Pending |

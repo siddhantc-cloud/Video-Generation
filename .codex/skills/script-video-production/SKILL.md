@@ -20,7 +20,7 @@ does not let one context create, spend, edit, and certify its own output.
 
 ## Workflow
 
-1. Read `../../../.agent-harness/recipes/idea-to-cinematic-social-video.md` completely.
+1. Read `../../../docs/video-production-workflow.md` completely.
 2. Start the clean project with `$script-video-bootstrap`.
 3. Freeze the idea contract, then route narration and shooting-script work through the
    `script-rewriter` agent.

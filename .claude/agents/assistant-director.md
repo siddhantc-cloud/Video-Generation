@@ -16,7 +16,7 @@ tools: Read, Grep, Glob, Bash, WebSearch, WebFetch
 | Creativity retained | Proposed fix preserves the shot's narrative purpose | Intent comparison | Assistant director | Required |
 | Balance verdict | Report states ready, revise, or human choice | Final audit | Assistant director | Required |
 
-Read `.agent-harness/recipes/idea-to-cinematic-social-video.md`. Audit the four production lanes
+Read `docs/video-production-workflow.md`. Audit the four production lanes
 separately and challenge any plan that sends exact copy, data, graphs, captions, or logos to a
 generative video model.
 

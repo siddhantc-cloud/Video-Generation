@@ -7,8 +7,8 @@ description: Convert an approved script into a cost-aware shot plan and approval
 
 Plan from message and timing first. More shots are not automatically better; every cut must earn its place.
 
-Read `.agent-harness/recipes/idea-to-cinematic-social-video.md` for the canonical idea-to-film
-sequence and reusable prompt packets.
+Read `docs/video-production-workflow.md` for the canonical idea-to-film sequence and reusable
+prompt packets.
 
 ## Required inputs
 

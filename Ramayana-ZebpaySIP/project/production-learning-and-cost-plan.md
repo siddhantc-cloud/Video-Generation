@@ -196,7 +196,7 @@ standard bitrate returned the same quote in the tested matrix; a six-second `sta
 preflight also remained unchanged. These results are plan- and date-specific. Re-run
 `higgsfield model get seedance_2_0 --json` and `higgsfield generate cost ... --json` before any new
 approval. The reusable from-idea method and prompt packets live in
-`.agent-harness/recipes/idea-to-cinematic-social-video.md`.
+`docs/video-production-workflow.md`.
 
 ## Voiceover experiment ledger
 

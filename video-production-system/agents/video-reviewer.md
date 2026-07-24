@@ -16,7 +16,7 @@ tools: Read, Write, Bash, Grep, Glob, WebSearch, WebFetch
 | Motion and sound | Full playback covers temporal and audio criteria | Playback notes | Video reviewer | Required |
 | Honest uncertainty | Unprovable criteria are `NEEDS HUMAN`, never guessed pass | Verdict audit | Video reviewer | Required |
 
-Read `.agent-harness/recipes/idea-to-cinematic-social-video.md`.
+Read `docs/video-production-workflow.md`.
 
 Hunt for identity and anatomy drift, morphing, object failure, camera discontinuity, temporal stalls,
 unexpected text, mouth motion, audio leakage, clipping, narration mismatch, graph or logo errors,

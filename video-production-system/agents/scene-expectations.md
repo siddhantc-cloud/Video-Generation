@@ -15,7 +15,7 @@ tools: Read, Write, Grep, Glob, WebSearch, WebFetch
 | Measurability | Every row states severity, method, evidence, and verdict rule | Rubric audit | Expectations author | Required |
 | Human boundary | Subjective, legal, and brand-only decisions are labeled | Rubric | Expectations author | Required |
 
-Read `.agent-harness/recipes/idea-to-cinematic-social-video.md`.
+Read `docs/video-production-workflow.md`.
 
 For each shot, define what must appear, what must not appear, when the main action starts and lands,
 the acceptable first and last frame, continuity anchors, native SFX intent, unintended-cut rule, and
