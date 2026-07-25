@@ -14,17 +14,18 @@ no review cut becomes a final merely because its technical QC passed.
 | Animatic | Complete phrase-locked film passes human story and timing review | v004 animatic, phrase map, and EDL | Human / editor | Passed at 52.2 seconds |
 | Narrative motion | Every used source range has generation and review evidence | `footage/generated/`, `footage/selects/`, `review/short-v004-motion-first-pass-review.md` | Production / reviewer | Complete |
 | Promoted master | Premium graph/logo picture, captions, sound, playback, hash, and Git LFS delivery are recorded | `deliverables/final/DELIVERY-v005.md` | Human / editor / QC | v005 promoted; legal release pending |
-| Voice and demo-music candidate | SIP, ZebPay, accent, music, and SFX balance pass complete human playback | `review/final-short-v011-elevenlabs-music-demo-qc.md` | Human | v011 technically passed; human playback pending |
+| Voice and demo-music candidate | SIP, ZebPay, accent, music, and SFX balance pass complete human playback | `review/final-short-v011-elevenlabs-music-demo-qc.md` | Human | v011 creative playback passed |
 | Release | Music rights plus brand, legal, and regulatory approval are documented | Release records | Human / brand / legal | Pending |
 
 ## Current version authority
 
 - **Promoted final:** v005 captioned master. Its delivery record documents human playback and Git
   LFS promotion; legal release remains pending.
-- **Newest review candidate:** v011 clean and captioned cuts. Technical QC passed, but the demo
-  music is not final-campaign approved and human listening remains the acceptance authority.
-- **Promotion rule:** keep v005 unchanged until v011 passes human playback and separately receives
-  music, brand, legal, and regulatory approval.
+- **Newest creative-approved review:** v011 clean and captioned cuts. Technical QC and owner
+  playback passed. The demo music is not final-campaign approved, and commercial voice
+  entitlement plus brand, legal, and regulatory release remain separate gates.
+- **Promotion rule:** keep v005 unchanged until the owner explicitly selects a replacement whose
+  final music, voice entitlement, brand, legal, and regulatory approvals are documented.
 
 ## Project-specific operating evidence
 

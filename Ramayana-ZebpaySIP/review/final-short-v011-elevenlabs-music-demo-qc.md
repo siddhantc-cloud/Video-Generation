@@ -6,7 +6,7 @@
 |---|---|---|---|---|
 | Source safety | Approved v005 final and prior reviews remain unchanged | New v011 review paths | Editor | Pass |
 | Surgical voice repair | Only G12 narration changes from v006 | Patch metadata | Editor | Pass |
-| SIP intelligibility | Encoded ASR recovers `SIP lets you invest` without a preceding article | Final Scribe v2 transcript | Audio QC | Pass; human cadence check required |
+| SIP intelligibility | Encoded ASR recovers `SIP lets you invest` without a preceding article | Final Scribe v2 transcript | Audio QC | Pass; human cadence accepted |
 | Mix preservation | Narration/SFX use v006 coefficients; no full-mix normalization or limiter | Mix metadata | Sound editor | Pass |
 | Demo music rights | Track and license are recorded and marked non-final | `audio/music/demo-v011/SOURCE.md` | Producer | Pass |
 | Music separation | Music is independently replaceable and ducked 6 dB under detected speech | Duck stem and mix metadata | Sound editor | Pass |
@@ -16,7 +16,7 @@
 | Decode | Full video and audio decode reports no error | FFmpeg exit 0 for both variants | QC | Pass |
 | Black-frame check | No black interval of 0.10 seconds or longer | Blackdetect returned zero intervals | QC | Pass |
 | Captions | Approved v005 caption geometry is reused and G15 remains subtitle-free | Final contact sheets | Editor/QC | Pass |
-| Human playback | Owner accepts narrator, both SIP uses, ZebPay, music, and SFX balance | Complete captioned v011 playback | Human | Pending |
+| Human playback | Owner accepts narrator, both SIP uses, ZebPay, demo music, and SFX balance | Owner conversation, 2026-07-24; reconfirmed 2026-07-25 | Human | Pass |
 
 ## Technical evidence
 
@@ -54,6 +54,7 @@ The final Scribe transcript is:
 
 ## Verdict
 
-`NEEDS HUMAN`. v011 is a technically verified demo review, not a promoted final. Human listening is
-the authority for accent, acronym cadence, brand pronunciation, music taste, and perceived SFX
-balance.
+`PASS — HUMAN CREATIVE APPROVED`. Technical QC and complete owner playback passed. v011 remains a
+review cut, not a promoted campaign final: the demo track must be replaced or explicitly cleared
+for final use, commercial voice entitlement must be confirmed, and brand, legal, regulatory, and
+explicit promotion approvals remain separate.

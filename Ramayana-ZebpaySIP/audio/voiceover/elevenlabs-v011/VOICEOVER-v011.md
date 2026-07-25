@@ -6,10 +6,10 @@
 |---|---|---|---|---|
 | Known voice | Reuse the previously acceptable account-owned narrator | Voice ID and v006 record | Voice producer | Pass |
 | No unnecessary upgrade | Current owned voice can synthesize through the API | Successful 51-character request | Producer | Pass for demo |
-| SIP repair | The middle phrase begins with a clearly articulated initialism and no fused article | Candidate and encoded Scribe transcripts | Audio QC | Pass; human listening required |
+| SIP repair | The middle phrase begins with a clearly articulated initialism and no fused article | Candidate and encoded Scribe transcripts | Audio QC | Pass; human cadence accepted |
 | Surgical scope | Only G12 narration changes; picture, all other narration, and native SFX remain locked | Patch metadata and timeline | Editor | Pass |
 | Music separation | Demo music is rights-recorded, independently replaceable, and ducked under speech | Music source and mix metadata | Sound editor | Pass |
-| Human approval | Owner accepts the voice, SIP cadence, ZebPay, music, and SFX balance | Complete captioned v011 playback | Human | Pending |
+| Human approval | Owner accepts the voice, SIP cadence, ZebPay, demo music, and SFX balance | Owner conversation, 2026-07-24; reconfirmed 2026-07-25 | Human | Pass |
 
 ## Voice identity and entitlement
 
@@ -75,6 +75,7 @@ claim about the inaccessible subscription balance.
 
 ## Verdict
 
-`NEEDS HUMAN`. The phrase, timing, encoded transcript, streams, captions, and mix architecture pass.
-Human playback must accept the exact S-I-P cadence, narrator tone, ZebPay pronunciation, music
-choice, and SFX balance before any promotion.
+`PASS — HUMAN CREATIVE APPROVED`. The phrase, timing, encoded transcript, streams, captions, mix
+architecture, and owner playback pass. This does not grant campaign release: final music rights,
+commercial voice entitlement, brand, legal, regulatory, and explicit promotion approvals remain
+separate.

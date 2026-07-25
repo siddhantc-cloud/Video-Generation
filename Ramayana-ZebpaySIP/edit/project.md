@@ -236,11 +236,11 @@ approved final. Brand/legal release remains separate.
 |---|---|---|---|---|
 | v009 disposition | Human accent, phrase, and mix feedback overrides automated checks | `review/final-short-v009-human-rejection.md` | Human/Reviewer | Rejected |
 | Familiar narrator | The previously acceptable owned ElevenLabs voice is reused | v011 voice record | Voice producer | Pass |
-| SIP repair | The middle sentence begins with `SIP`; no preceding article can fuse with it | Candidate and final Scribe transcripts | Audio QC | Pass; listening required |
+| SIP repair | The middle sentence begins with `SIP`; no preceding article can fuse with it | Candidate and final Scribe transcripts | Audio QC | Pass; human cadence accepted |
 | Mix preservation | v006 narration/SFX coefficients remain unchanged and unnormalized | v011 mix metadata | Sound editor | Pass |
 | Demo music | Rights-recorded music is separate, ducked, and replaceable | `audio/music/demo-v011/SOURCE.md` | Sound editor | Pass |
 | Encoded review | Both cuts decode, match 1,566 frames, share audio, and contain safe captions | v011 QC | Editor/QC | Pass |
-| Human approval | Owner accepts SIP cadence, voice, ZebPay, music, and SFX balance | Complete captioned v011 playback | Human | Pending |
+| Human approval | Owner accepts SIP cadence, voice, ZebPay, demo music, and SFX balance | Owner conversation, 2026-07-24; reconfirmed 2026-07-25 | Human | Pass |
 
 **Strategy:** Return to the account-owned `NarratorZebPay` performance that was already closer to the
 desired tone. Repair only G12, remove the optional article before the initialism, preserve the
@@ -253,10 +253,14 @@ provider phrase is `S. I. P. lets you invest the same amount regularly.` and dis
 The mix has no full-bus normalization and no limiter. Mixkit `Sun and His Daughter` is used only
 for this demo, at -15.42 dB with another 6 dB duck under speech.
 
+**Human verdict:** Complete creative playback passed on 2026-07-24 and was reconfirmed on
+2026-07-25. This accepts the narrator, SIP cadence, ZebPay pronunciation, demo-music taste, and
+perceived SFX balance for the review.
+
 **Evidence:** `audio/voiceover/elevenlabs-v011/VOICEOVER-v011.md`;
 `edit/timelines/final-short-v011-elevenlabs-music-demo.json`;
 `review/final-short-v011-elevenlabs-music-demo-qc.md`; review cuts under
 `deliverables/review-cuts/final-short-v011/`.
 
-**Outstanding:** Human playback. v011 is not a promoted final; music taste, commercial voice rights,
-brand/legal/regulatory release, and final campaign music remain separate approvals.
+**Outstanding:** v011 is not a promoted final. Commercial voice entitlement, final-campaign music
+rights, brand/legal/regulatory release, and explicit promotion remain separate approvals.

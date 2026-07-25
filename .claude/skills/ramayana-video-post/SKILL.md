@@ -121,5 +121,7 @@ Read:
   `1.144017857x`. Final Scribe recovers `SIP lets you invest...` and the complete narration.
 - The v006 narration/SFX coefficients remain fixed. No master normalization or limiter is applied.
 - Mixkit demo music is a separate stem at -15.42 dB and ducks another 6 dB during speech.
-- Encoded audio measures -16.5 LUFS, 4.2 LU LRA, and -3.2 dBTP. Promotion remains `NEEDS HUMAN` for
-  voice, acronym cadence, brand, music, and perceived SFX balance.
+- Encoded audio measures -16.5 LUFS, 4.2 LU LRA, and -3.2 dBTP. Human creative playback passed on
+  2026-07-24 and was reconfirmed on 2026-07-25. v011 remains a review cut until final-campaign
+  music, commercial voice entitlement, brand/legal/regulatory release, and explicit promotion are
+  approved.

@@ -79,6 +79,7 @@
   },
   "promotion": {
     "final_master_overwritten": false,
-    "requires": "Human playback plus separate music, brand, legal, and regulatory approval"
+    "human_creative_playback": "passed 2026-07-24; reconfirmed 2026-07-25",
+    "requires": "Separate final-music, commercial voice entitlement, brand, legal, regulatory, and explicit promotion approval"
   }
 }

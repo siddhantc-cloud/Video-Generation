@@ -119,11 +119,19 @@ spelling never leaks into captions.
 
 1. Inventory recurring characters, locations, props, wardrobe states, and brand sources.
 2. Define stable invariants separately from shot state.
-3. Create clean canonical references and multi-view sheets only for assets that recur.
-4. Approve one look-lock frame and one small contact sheet before producing every shot frame.
-5. Generate shot keyframes from the exact phrase map, not from a generic moodboard.
-6. Register provider Elements only after local approval.
-7. Use identical element names locally and in the provider workspace.
+3. Use ChatGPT ImageGen or another approved still engine to create clean canonical references and
+   multi-view sheets only for assets that recur.
+4. Treat every accepted still as an immutable production input: preserve its source prompt,
+   references, version, and approval evidence.
+5. Approve one look-lock frame and one small contact sheet before producing every shot frame.
+6. Generate shot keyframes from the exact phrase map and approved references, not from memory or a
+   generic moodboard.
+7. Register provider Elements only after local approval.
+8. Use identical element names locally and in the provider workspace.
+
+The Ramayana-ZebPay production used ChatGPT ImageGen for its approved visual-development
+references and story keyframes. Those stills were assembled into the complete image-only film
+before any paid motion generation.
 
 ### Keyframe prompt template
 
@@ -318,6 +326,83 @@ Render seek-safe motion as a pure function of frame number and provide boundary-
    where applicable.
 10. Promote one exact review cut to `deliverables/final/`; record SHA-256 and source verdict.
 11. Add a final to Git LFS only when the owner explicitly requests repository delivery.
+
+## Verified Ramayana-ZebPay case study — image-first to creative-approved v011
+
+Status recorded on **2026-07-25**: repository artifacts, encoded-media checks, commit history, and
+owner playback decisions reconstruct the complete path below. The latest v011 captioned review
+passed human creative playback. It remains a review cut because demo-music rights for the final
+campaign, commercial voice entitlement, brand, legal, regulatory, and explicit promotion are
+separate gates. The promoted repository master therefore remains v005.
+
+### The actual production path
+
+1. The original idea was compressed into one 52.2-second narration and 15 phrase-owned visual
+   beats at 30 fps.
+2. ChatGPT ImageGen produced and refined reusable character, location, bridge-state, and story
+   keyframe stills. Human-approved images became immutable visual sources.
+3. video-use and FFmpeg placed those stills on the narration-derived frame map. The complete v004
+   image-only animatic contained exactly 1,566 frames, including graph and logo placeholders, before
+   paid motion began.
+4. Approved character and location references were registered as Higgsfield Cinema Elements.
+   Pebbles, boulders, temporary poses, weather, and exact branding remained shot or post-production
+   state rather than contaminating reusable identity assets.
+5. Seedance generated one organic motion beat at a time from an explicit approved start image,
+   attached Elements, one action, one camera instruction, and native ambience/SFX. The learned
+   keeper path used 49 billed source seconds; failed endings were trimmed or covered instead of
+   triggering blind rerolls.
+6. HyperFrames rendered the exact 319-frame SIP graph and deterministic ZebPay brand close. Text,
+   graph values, contribution markers, logo geometry, and phrase boundaries were never delegated
+   to the generative video model.
+7. video-use plus FFmpeg/FFprobe conformed keeper ranges back to the same frame map, mixed separate
+   narration/SFX/music stems, added captions last, encoded clean and captioned reviews, and verified
+   streams, frames, boundaries, loudness, hashes, and full playback.
+8. The voice was selected by repeated human listening, not by ASR alone. After local Qwen and
+   hosted Sarvam alternatives were rejected, v011 returned to the familiar account-owned
+   ElevenLabs narrator and repaired only the G12 phrase.
+
+### Tool responsibility in this film
+
+| Tool or service | What it owned | What it did not own |
+|---|---|---|
+| ChatGPT ImageGen | Look lock, reusable references, clean locations, and phrase-specific keyframes | Final text, logos, graphs, or motion acceptance |
+| video-use + FFmpeg/FFprobe | Image animatic, frame-locked assembly, conform, audio mix, captions, probes, hashes, and delivery evidence | Creative approval or paid motion generation |
+| Higgsfield Cinema + Seedance | Reusable provider Elements, physical performance, camera motion, atmosphere, and native SFX | Exact copy, claims, graph data, logo geometry, or captions |
+| HyperFrames | Exact seek-safe SIP graph and brand motion at integer-frame boundaries | Organic character performance |
+| ElevenLabs, Qwen3-TTS, and Sarvam | Versioned narration candidates and pronunciation experiments | Human accent, tone, respectfulness, or music-taste approval |
+| ElevenLabs Scribe | Word-timing and encoded-transcript evidence | Proof that a voice sounds natural or approved |
+
+The generic system still supports Remotion as an alternate deterministic motion renderer.
+HyperFrames is the verified renderer used for the premium v005 graph in this case study.
+
+### How the voice was chosen
+
+| Review | Route | Measured result | Human decision |
+|---|---|---|---|
+| v006 | Account-owned ElevenLabs `NarratorZebPay` | All 105 words recovered; 1,566-frame phrase lock; accepted mix architecture | Became the familiar baseline later reused |
+| v008 | Local Qwen3-TTS 1.7B VoiceDesign | All words and required terms recovered; technical QC passed | Rejected: accent felt too foreign and SIP sounded controlled/robotic |
+| v009 | Sarvam Bulbul v3 `en-IN`, `mani` | Timing, ASR, loudness, and decode passed | Rejected: accent felt exaggerated, “A SIP” fused, and processing weakened the natural SFX balance |
+| v011 | ElevenLabs G12-only repair | `S. I. P. lets...` synthesized; display copy `SIP lets...`; v006 mix coefficients restored; demo music remained separate and ducked | Human creative playback passed on 2026-07-24 and was reconfirmed on 2026-07-25 |
+
+v011 changes only G12 narration over the unchanged approved picture. The 4.320-second repair is
+pitch-preserving conformed into frames 1116–1227 at `1.144017857x`; the encoded result measures
+-16.5 LUFS, 4.2 LU LRA, and -3.2 dBTP. The exact clean and captioned review hashes are recorded in
+`Ramayana-ZebpaySIP/review/final-short-v011-elevenlabs-music-demo-qc.md`.
+
+### Case-study evidence
+
+- Project status and version authority: `Ramayana-ZebpaySIP/WORKFLOW.md`.
+- Image-first animatic QC: `Ramayana-ZebpaySIP/review/animatic-short-v004-review.md`.
+- Character/ImageGen and Cinema evidence:
+  `Ramayana-ZebpaySIP/project/higgsfield-cinema-studio-navigation-runbook.md`.
+- HyperFrames render evidence:
+  `Ramayana-ZebpaySIP/edit/animations/slot_sip_graph_v005/render-report.md`.
+- Voice decisions: `Ramayana-ZebpaySIP/audio/voiceover/elevenlabs-v006/VOICEOVER-v006.md`,
+  `Ramayana-ZebpaySIP/review/final-short-v008-human-rejection.md`,
+  `Ramayana-ZebpaySIP/review/final-short-v009-human-rejection.md`, and
+  `Ramayana-ZebpaySIP/audio/voiceover/elevenlabs-v011/VOICEOVER-v011.md`.
+- v011 encoded QC and hashes:
+  `Ramayana-ZebpaySIP/review/final-short-v011-elevenlabs-music-demo-qc.md`.
 
 ## Dated Higgsfield credit model for a similar 52.2-second film
 
