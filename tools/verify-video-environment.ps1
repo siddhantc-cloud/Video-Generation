@@ -95,21 +95,16 @@ Add-Result 'command:yt-dlp' ($null -ne $ytDlp) $ytDlpEvidence
 $importCheck = & python -c 'import librosa, matplotlib, PIL, numpy, requests' 2>&1
 Add-Result 'video-use:python-dependencies' ($LASTEXITCODE -eq 0) $(if ($LASTEXITCODE -eq 0) { 'imports succeeded' } else { [string]$importCheck })
 
-$qwenPython = Join-Path $repoRoot 'Ramayana-ZebpaySIP\.venv-qwen3-tts\Scripts\python.exe'
-$qwenCheck = ''
-$qwenPassed = $false
-if (Test-Path -LiteralPath $qwenPython) {
-    $qwenCheck = (& $qwenPython -c "import importlib.metadata, torch; assert torch.cuda.is_available(); x=torch.ones(1, device='cuda'); print('qwen-tts=' + importlib.metadata.version('qwen-tts') + '; torch=' + torch.__version__ + '; gpu=' + torch.cuda.get_device_name(0) + '; tensor=' + str(x.item()))" 2>&1 | Out-String).Trim()
-    $qwenPassed = $LASTEXITCODE -eq 0
-} else {
-    $qwenCheck = 'project environment not found'
-}
-Add-Result 'local-tts:qwen3-cuda' $qwenPassed $qwenCheck
+$qwenEnvironment = Join-Path $repoRoot 'Ramayana-ZebpaySIP\.venv-qwen3-tts'
+$qwenModelCache = Join-Path $repoRoot '_cache\huggingface'
+$qwenPackageCache = Join-Path $repoRoot '_cache\uv'
+Add-Result 'local-tts:qwen3-runtime-removed' (-not (Test-Path -LiteralPath $qwenEnvironment)) 'Owner removed the project-local Qwen environment on 2026-07-25'
+Add-Result 'local-tts:qwen3-caches-removed' ((-not (Test-Path -LiteralPath $qwenModelCache)) -and (-not (Test-Path -LiteralPath $qwenPackageCache))) 'Dedicated Qwen Hugging Face and UV caches are absent'
 
 $qwenGenerator = Join-Path $repoRoot 'Ramayana-ZebpaySIP\tools\generate_qwen3_tts.py'
 $qwenRecipe = Join-Path $repoRoot '.agent-harness\recipes\local-qwen3-tts-narration.md'
-Add-Result 'local-tts:generator' (Test-Path -LiteralPath $qwenGenerator) $qwenGenerator
-Add-Result 'local-tts:recipe' (Test-Path -LiteralPath $qwenRecipe) $qwenRecipe
+Add-Result 'historical-qwen:generator' (Test-Path -LiteralPath $qwenGenerator) $qwenGenerator
+Add-Result 'historical-qwen:recipe' (Test-Path -LiteralPath $qwenRecipe) $qwenRecipe
 
 $sarvamGenerator = Join-Path $repoRoot 'Ramayana-ZebpaySIP\tools\generate_sarvam_tts.py'
 $sarvamRecipe = Join-Path $repoRoot '.agent-harness\recipes\sarvam-bulbul-v3-narration.md'

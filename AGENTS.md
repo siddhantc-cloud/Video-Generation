@@ -135,12 +135,12 @@ standing tariff.
 | Higgsfield CLI | Account inspection and authenticated generation |
 | FFmpeg / FFprobe | Canonical assembly, compositing, audio, probing, and delivery |
 | video-use dependencies | Timeline and editorial helpers |
-| Qwen3-TTS 1.7B VoiceDesign | Project-local, rights-clean narration design on the RTX 5060 Ti; use `Ramayana-ZebpaySIP/.venv-qwen3-tts`, PyTorch SDPA, and D-drive caches |
+| Qwen3-TTS 1.7B VoiceDesign | Historical v008 evidence only; the local runtime and model/package caches were removed on 2026-07-25 and must not be reinstalled without explicit owner approval |
 | Sarvam Bulbul v3 REST API | Hosted Indian-language and Indian-English narration with production voices, pace/temperature controls, and pronunciation dictionaries |
 | HyperFrames CLI | Deterministic HTML/CSS/SVG/GSAP motion design and rendering |
 | Node.js / npm | HyperFrames, Remotion, and provider CLI tooling |
 | Python | Validation and deterministic helpers |
-| `Ramayana-ZebpaySIP/tools/generate_qwen3_tts.py` | Generate reproducible Qwen3-TTS VoiceDesign WAVs with runtime, VRAM, and hash metadata |
+| `Ramayana-ZebpaySIP/tools/generate_qwen3_tts.py` | Historical/reinstall helper retained for reproducibility; not runnable on the current host without an explicitly approved Qwen environment restoration |
 | `Ramayana-ZebpaySIP/tools/generate_sarvam_tts.py` | Create Sarvam pronunciation dictionaries and reproducible Bulbul v3 WAVs without persisting credentials |
 | `Ramayana-ZebpaySIP/tools/transcribe_elevenlabs_scribe.py` | Create versioned Scribe timing evidence without persisting the API key |
 | `Ramayana-ZebpaySIP/tools/build_elevenlabs_phrase_locked_audio.py` | Conform timestamped ElevenLabs alignment or Scribe word timing to whole-frame phrase slots without pitch shift |
@@ -157,12 +157,11 @@ For an ElevenLabs narration replacement after picture lock, follow
 the verified implementation; its project path is intentionally Ramayana-specific while the recipe
 is reusable.
 
-For local narration experiments, Qwen3-TTS is isolated in a project virtual environment and its
-package/model caches belong under ignored `_cache/` on `D:`. Do not install FlashAttention on this
-Windows host; use PyTorch SDPA. Treat Indian-accent and project-term pronunciation as benchmark
-questions, not assumed model capabilities, and keep every local-TTS result behind human listening
-approval. Follow `.agent-harness/recipes/local-qwen3-tts-narration.md`; it records the verified v008
-workflow and the synthesis/display-copy separation required for phonetic spelling.
+Qwen3-TTS is not installed on the current host. On 2026-07-25 the owner removed the project virtual
+environment, dedicated Hugging Face/UV caches, rejected v008 WAVs, and encoded v008 reviews to save
+space after human rejection. Compact metadata, QC, source code, and the
+`.agent-harness/recipes/local-qwen3-tts-narration.md` recipe remain as historical evidence only.
+Do not recreate the environment or download the model without explicit owner approval.
 
 For Indian-English hosted narration, follow
 `.agent-harness/recipes/sarvam-bulbul-v3-narration.md`. The Sarvam helper reads

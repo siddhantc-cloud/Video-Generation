@@ -49,10 +49,11 @@ Read:
     pad shorter phrase tails, accelerate only overrunning phrases without pitch change, and rebuild
     captions from the conformed word timings. Never globally stretch when measured phrase drift
     exceeds the semantic tolerance.
-14. The local open-source narrator route follows
-    `.agent-harness/recipes/local-qwen3-tts-narration.md`. Keep `S. I. P.` / `Zeb Pay` synthesis
-    spelling separate from `SIP` / `ZebPay` display copy. Benchmark two seeds, require exact
-    normalized 105-word recovery, and retain the encoded review behind a human listening gate.
+14. Qwen3-TTS is historical v008 evidence only. Its environment and dedicated caches were removed
+    on 2026-07-25 after human rejection. Do not reinstall it without explicit owner approval. If
+    the owner deliberately restores that route, follow
+    `.agent-harness/recipes/local-qwen3-tts-narration.md` and keep synthesis spelling separate from
+    display copy.
 15. The Sarvam narrator route follows
     `.agent-harness/recipes/sarvam-bulbul-v3-narration.md`. Use Bulbul v3 with `en-IN`, select from
     actual difficult-term auditions, and pass dictionary `p_2811321e` for SIP and ZebPay. The v009
@@ -100,6 +101,8 @@ Read:
   required mythology, acronym, and brand terms.
 - Human status is `REJECTED`. Owner playback found the accent too foreign and the SIP delivery too
   controlled and robotic. This proves that exact ASR and long acronym timing are not approval.
+- The local environment, dedicated model/package caches, raw WAVs, and encoded v008 reviews were
+  removed on 2026-07-25. Compact tracked metadata and QC evidence remain.
 
 ## Verified v009 Sarvam review
 

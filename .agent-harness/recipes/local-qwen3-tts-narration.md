@@ -1,5 +1,10 @@
 # Recipe: local Qwen3-TTS narration and phrase-locked post-production
 
+> **Runtime status (2026-07-25):** Not installed. The owner removed the project environment,
+> dedicated Hugging Face/UV caches, rejected v008 WAVs, and encoded v008 reviews to save space.
+> This is historical/reinstallation guidance only. Do not download the model or recreate the
+> environment without explicit owner approval.
+
 ## Checklist
 
 | Requirement | Pass condition | Evidence | Owner | Status |
@@ -155,4 +160,6 @@ data; do not present the model headline weight as the complete disk requirement.
 - Pitch-safe overrun ratios: K10 1.030x; G12 1.120x
 - Encoded audio: -16.3 LUFS integrated, -2.0 dBTP
 - Encoded semantic check: 105 words; Vanaras, Ram Setu, Rama, both SIP occurrences, and ZebPay
-- Promotion: technical pass; human listening pending
+- Promotion: rejected by human; accent felt too foreign and SIP sounded controlled/robotic
+- Storage: runtime, caches, raw WAVs, and encoded reviews removed 2026-07-25; compact tracked
+  metadata and QC evidence retained

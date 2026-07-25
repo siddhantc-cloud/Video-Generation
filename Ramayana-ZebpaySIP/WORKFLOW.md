@@ -27,6 +27,17 @@ no review cut becomes a final merely because its technical QC passed.
 - **Promotion rule:** keep v005 unchanged until the owner explicitly selects a replacement whose
   final music, voice entitlement, brand, legal, and regulatory approvals are documented.
 
+## Local storage state
+
+- **Retained media:** the two creative-approved v011 review cuts and the promoted v005 captioned
+  final used by the presentation.
+- **Removed on 2026-07-25:** all pre-v011 encoded review media and work renders, rejected Qwen v008
+  WAV/review media, the `.venv-qwen3-tts` environment, and the dedicated repository Hugging Face/UV
+  caches.
+- **Retained evidence:** tracked timelines, metadata, QC/rejection records, contact sheets, source
+  code, original assets, approved generated selects, and Git history.
+- **Reinstallation rule:** do not recreate or download Qwen3-TTS without explicit owner approval.
+
 ## Project-specific operating evidence
 
 - Manual Higgsfield generation:
