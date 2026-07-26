@@ -1,0 +1,738 @@
+{
+  "bgm": {
+    "path": "assets/audio/music/music-v001-original.wav",
+    "volume": 0.24,
+    "query": "light playful technology underscore; optimistic and restrained",
+    "duration_s": 46.486
+  },
+  "voices": [
+    {
+      "frame": 1,
+      "path": "assets/audio/voice/01-narration-v001.wav",
+      "duration_s": 8.669,
+      "words": [
+        {
+          "id": "f1-w1",
+          "text": "Crypto",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "id": "f1-w2",
+          "text": "markets",
+          "start": 0.38,
+          "end": 0.78
+        },
+        {
+          "id": "f1-w3",
+          "text": "never",
+          "start": 0.78,
+          "end": 1.2
+        },
+        {
+          "id": "f1-w4",
+          "text": "stand",
+          "start": 1.2,
+          "end": 1.64
+        },
+        {
+          "id": "f1-w5",
+          "text": "still.",
+          "start": 1.64,
+          "end": 2.08
+        },
+        {
+          "id": "f1-w6",
+          "text": "As",
+          "start": 3.2,
+          "end": 3.36
+        },
+        {
+          "id": "f1-w7",
+          "text": "prices",
+          "start": 3.36,
+          "end": 3.66
+        },
+        {
+          "id": "f1-w8",
+          "text": "move,",
+          "start": 3.66,
+          "end": 4.08
+        },
+        {
+          "id": "f1-w9",
+          "text": "the",
+          "start": 4.36,
+          "end": 4.39
+        },
+        {
+          "id": "f1-w10",
+          "text": "coins",
+          "start": 4.39,
+          "end": 4.66
+        },
+        {
+          "id": "f1-w11",
+          "text": "inside",
+          "start": 4.66,
+          "end": 5.02
+        },
+        {
+          "id": "f1-w12",
+          "text": "your",
+          "start": 5.02,
+          "end": 5.24
+        },
+        {
+          "id": "f1-w13",
+          "text": "CryptoPack",
+          "start": 5.24,
+          "end": 5.78
+        },
+        {
+          "id": "f1-w14",
+          "text": "can",
+          "start": 5.78,
+          "end": 6.14
+        },
+        {
+          "id": "f1-w15",
+          "text": "drift",
+          "start": 6.14,
+          "end": 6.4
+        },
+        {
+          "id": "f1-w16",
+          "text": "away",
+          "start": 6.4,
+          "end": 6.66
+        },
+        {
+          "id": "f1-w17",
+          "text": "from",
+          "start": 6.66,
+          "end": 6.86
+        },
+        {
+          "id": "f1-w18",
+          "text": "their",
+          "start": 6.86,
+          "end": 7.02
+        },
+        {
+          "id": "f1-w19",
+          "text": "target",
+          "start": 7.02,
+          "end": 7.32
+        },
+        {
+          "id": "f1-w20",
+          "text": "allocation.",
+          "start": 7.32,
+          "end": 7.86
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "path": "assets/audio/voice/02-narration-v001.wav",
+      "duration_s": 8.45,
+      "words": [
+        {
+          "id": "f2-w1",
+          "text": "CryptoPack",
+          "start": 0.651,
+          "end": 0.96
+        },
+        {
+          "id": "f2-w2",
+          "text": "Rebalancing",
+          "start": 0.96,
+          "end": 1.66
+        },
+        {
+          "id": "f2-w3",
+          "text": "brings",
+          "start": 1.66,
+          "end": 2.0
+        },
+        {
+          "id": "f2-w4",
+          "text": "it",
+          "start": 2.0,
+          "end": 2.18
+        },
+        {
+          "id": "f2-w5",
+          "text": "back",
+          "start": 2.18,
+          "end": 2.4
+        },
+        {
+          "id": "f2-w6",
+          "text": "on",
+          "start": 2.4,
+          "end": 2.58
+        },
+        {
+          "id": "f2-w7",
+          "text": "track",
+          "start": 2.58,
+          "end": 2.8
+        },
+        {
+          "id": "f2-w8",
+          "text": "automatically\u2014trimming",
+          "start": 2.8,
+          "end": 4.54
+        },
+        {
+          "id": "f2-w9",
+          "text": "coins",
+          "start": 4.54,
+          "end": 4.92
+        },
+        {
+          "id": "f2-w10",
+          "text": "that",
+          "start": 4.92,
+          "end": 5.12
+        },
+        {
+          "id": "f2-w11",
+          "text": "have",
+          "start": 5.12,
+          "end": 5.22
+        },
+        {
+          "id": "f2-w12",
+          "text": "become",
+          "start": 5.22,
+          "end": 5.54
+        },
+        {
+          "id": "f2-w13",
+          "text": "overweight",
+          "start": 5.54,
+          "end": 6.1
+        },
+        {
+          "id": "f2-w14",
+          "text": "and",
+          "start": 6.1,
+          "end": 6.54
+        },
+        {
+          "id": "f2-w15",
+          "text": "buying",
+          "start": 6.54,
+          "end": 6.82
+        },
+        {
+          "id": "f2-w16",
+          "text": "those",
+          "start": 6.82,
+          "end": 7.12
+        },
+        {
+          "id": "f2-w17",
+          "text": "that",
+          "start": 7.12,
+          "end": 7.32
+        },
+        {
+          "id": "f2-w18",
+          "text": "are",
+          "start": 7.32,
+          "end": 7.42
+        },
+        {
+          "id": "f2-w19",
+          "text": "underweight.",
+          "start": 7.42,
+          "end": 7.9
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "path": "assets/audio/voice/03-narration-v001.wav",
+      "duration_s": 10.013,
+      "words": [
+        {
+          "id": "f3-w1",
+          "text": "ZebPay\u2019s",
+          "start": 0.701,
+          "end": 1.04
+        },
+        {
+          "id": "f3-w2",
+          "text": "research-backed",
+          "start": 1.04,
+          "end": 1.58
+        },
+        {
+          "id": "f3-w3",
+          "text": "process",
+          "start": 1.58,
+          "end": 2.12
+        },
+        {
+          "id": "f3-w4",
+          "text": "may",
+          "start": 2.12,
+          "end": 2.4
+        },
+        {
+          "id": "f3-w5",
+          "text": "also",
+          "start": 2.4,
+          "end": 2.76
+        },
+        {
+          "id": "f3-w6",
+          "text": "update",
+          "start": 2.76,
+          "end": 3.1
+        },
+        {
+          "id": "f3-w7",
+          "text": "allocations",
+          "start": 3.1,
+          "end": 3.74
+        },
+        {
+          "id": "f3-w8",
+          "text": "or",
+          "start": 3.74,
+          "end": 4.08
+        },
+        {
+          "id": "f3-w9",
+          "text": "tokens",
+          "start": 4.08,
+          "end": 4.48
+        },
+        {
+          "id": "f3-w10",
+          "text": "as",
+          "start": 4.48,
+          "end": 5.14
+        },
+        {
+          "id": "f3-w11",
+          "text": "market",
+          "start": 5.14,
+          "end": 5.4
+        },
+        {
+          "id": "f3-w12",
+          "text": "conditions",
+          "start": 5.4,
+          "end": 5.86
+        },
+        {
+          "id": "f3-w13",
+          "text": "change,",
+          "start": 5.86,
+          "end": 6.42
+        },
+        {
+          "id": "f3-w14",
+          "text": "helping",
+          "start": 6.7,
+          "end": 7.1
+        },
+        {
+          "id": "f3-w15",
+          "text": "your",
+          "start": 7.1,
+          "end": 7.32
+        },
+        {
+          "id": "f3-w16",
+          "text": "Pack",
+          "start": 7.32,
+          "end": 7.54
+        },
+        {
+          "id": "f3-w17",
+          "text": "stay",
+          "start": 7.54,
+          "end": 7.8
+        },
+        {
+          "id": "f3-w18",
+          "text": "aligned",
+          "start": 7.8,
+          "end": 8.1
+        },
+        {
+          "id": "f3-w19",
+          "text": "with",
+          "start": 8.1,
+          "end": 8.32
+        },
+        {
+          "id": "f3-w20",
+          "text": "its",
+          "start": 8.32,
+          "end": 8.48
+        },
+        {
+          "id": "f3-w21",
+          "text": "intended",
+          "start": 8.48,
+          "end": 8.82
+        },
+        {
+          "id": "f3-w22",
+          "text": "strategy.",
+          "start": 8.82,
+          "end": 9.36
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "path": "assets/audio/voice/04-narration-v001.wav",
+      "duration_s": 8.944,
+      "words": [
+        {
+          "id": "f4-w1",
+          "text": "And",
+          "start": 0.288,
+          "end": 0.6
+        },
+        {
+          "id": "f4-w2",
+          "text": "every",
+          "start": 0.6,
+          "end": 0.86
+        },
+        {
+          "id": "f4-w3",
+          "text": "adjustment",
+          "start": 0.86,
+          "end": 1.32
+        },
+        {
+          "id": "f4-w4",
+          "text": "stays",
+          "start": 1.32,
+          "end": 1.68
+        },
+        {
+          "id": "f4-w5",
+          "text": "transparent.",
+          "start": 1.68,
+          "end": 2.3
+        },
+        {
+          "id": "f4-w6",
+          "text": "Check",
+          "start": 3.16,
+          "end": 3.22
+        },
+        {
+          "id": "f4-w7",
+          "text": "Rebalancing",
+          "start": 3.22,
+          "end": 3.86
+        },
+        {
+          "id": "f4-w8",
+          "text": "History",
+          "start": 3.86,
+          "end": 4.08
+        },
+        {
+          "id": "f4-w9",
+          "text": "to",
+          "start": 4.08,
+          "end": 4.54
+        },
+        {
+          "id": "f4-w10",
+          "text": "see",
+          "start": 4.54,
+          "end": 4.7
+        },
+        {
+          "id": "f4-w11",
+          "text": "what",
+          "start": 4.7,
+          "end": 4.84
+        },
+        {
+          "id": "f4-w12",
+          "text": "changed",
+          "start": 4.84,
+          "end": 5.16
+        },
+        {
+          "id": "f4-w13",
+          "text": "and",
+          "start": 5.16,
+          "end": 5.42
+        },
+        {
+          "id": "f4-w14",
+          "text": "when,",
+          "start": 5.42,
+          "end": 5.7
+        },
+        {
+          "id": "f4-w15",
+          "text": "plus",
+          "start": 6.22,
+          "end": 6.42
+        },
+        {
+          "id": "f4-w16",
+          "text": "standard",
+          "start": 6.42,
+          "end": 6.88
+        },
+        {
+          "id": "f4-w17",
+          "text": "fees",
+          "start": 6.88,
+          "end": 7.22
+        },
+        {
+          "id": "f4-w18",
+          "text": "and",
+          "start": 7.22,
+          "end": 7.52
+        },
+        {
+          "id": "f4-w19",
+          "text": "applicable",
+          "start": 7.52,
+          "end": 7.8
+        },
+        {
+          "id": "f4-w20",
+          "text": "taxes.",
+          "start": 7.8,
+          "end": 8.32
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "path": "assets/audio/voice/05-narration-v001.wav",
+      "duration_s": 5.561,
+      "words": [
+        {
+          "id": "f5-w1",
+          "text": "You",
+          "start": 0.344,
+          "end": 0.4
+        },
+        {
+          "id": "f5-w2",
+          "text": "stay",
+          "start": 0.4,
+          "end": 0.62
+        },
+        {
+          "id": "f5-w3",
+          "text": "in",
+          "start": 0.62,
+          "end": 0.74
+        },
+        {
+          "id": "f5-w4",
+          "text": "control,",
+          "start": 0.74,
+          "end": 1.12
+        },
+        {
+          "id": "f5-w5",
+          "text": "with",
+          "start": 1.36,
+          "end": 1.46
+        },
+        {
+          "id": "f5-w6",
+          "text": "the",
+          "start": 1.46,
+          "end": 1.6
+        },
+        {
+          "id": "f5-w7",
+          "text": "option",
+          "start": 1.6,
+          "end": 1.86
+        },
+        {
+          "id": "f5-w8",
+          "text": "to",
+          "start": 1.86,
+          "end": 2.16
+        },
+        {
+          "id": "f5-w9",
+          "text": "enable",
+          "start": 2.16,
+          "end": 2.42
+        },
+        {
+          "id": "f5-w10",
+          "text": "or",
+          "start": 2.42,
+          "end": 2.72
+        },
+        {
+          "id": "f5-w11",
+          "text": "disable",
+          "start": 2.72,
+          "end": 3.1
+        },
+        {
+          "id": "f5-w12",
+          "text": "rebalancing",
+          "start": 3.1,
+          "end": 3.84
+        },
+        {
+          "id": "f5-w13",
+          "text": "from",
+          "start": 3.84,
+          "end": 4.14
+        },
+        {
+          "id": "f5-w14",
+          "text": "your",
+          "start": 4.14,
+          "end": 4.3
+        },
+        {
+          "id": "f5-w15",
+          "text": "Pack",
+          "start": 4.3,
+          "end": 4.5
+        },
+        {
+          "id": "f5-w16",
+          "text": "settings.",
+          "start": 4.5,
+          "end": 4.82
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "path": "assets/audio/voice/06-narration-v001.wav",
+      "duration_s": 4.849,
+      "words": [
+        {
+          "id": "f6-w1",
+          "text": "Keep",
+          "start": 0.463,
+          "end": 0.54
+        },
+        {
+          "id": "f6-w2",
+          "text": "your",
+          "start": 0.54,
+          "end": 0.68
+        },
+        {
+          "id": "f6-w3",
+          "text": "CryptoPack",
+          "start": 0.68,
+          "end": 1.26
+        },
+        {
+          "id": "f6-w4",
+          "text": "ready",
+          "start": 1.26,
+          "end": 1.54
+        },
+        {
+          "id": "f6-w5",
+          "text": "for",
+          "start": 1.54,
+          "end": 1.78
+        },
+        {
+          "id": "f6-w6",
+          "text": "changing",
+          "start": 1.78,
+          "end": 2.06
+        },
+        {
+          "id": "f6-w7",
+          "text": "markets.",
+          "start": 2.06,
+          "end": 2.64
+        },
+        {
+          "id": "f6-w8",
+          "text": "Enable",
+          "start": 3.32,
+          "end": 3.36
+        },
+        {
+          "id": "f6-w9",
+          "text": "Rebalancing",
+          "start": 3.36,
+          "end": 4.02
+        },
+        {
+          "id": "f6-w10",
+          "text": "today.",
+          "start": 4.02,
+          "end": 4.34
+        }
+      ]
+    }
+  ],
+  "sfx": [
+    {
+      "frame": 1,
+      "file": "assets/audio/sfx/01-reveal-whoosh.wav",
+      "offset_s": 2.35,
+      "duration_s": 0.72,
+      "volume": 0.34
+    },
+    {
+      "frame": 2,
+      "file": "assets/audio/sfx/02-rebalance-ticks.wav",
+      "offset_s": 4.65,
+      "duration_s": 0.52,
+      "volume": 0.36
+    },
+    {
+      "frame": 3,
+      "file": "assets/audio/sfx/03-research-ping.wav",
+      "offset_s": 4.8,
+      "duration_s": 0.52,
+      "volume": 0.31
+    },
+    {
+      "frame": 4,
+      "file": "assets/audio/sfx/04-history-scroll-ping.wav",
+      "offset_s": 5.25,
+      "duration_s": 0.62,
+      "volume": 0.28
+    },
+    {
+      "frame": 5,
+      "file": "assets/audio/sfx/05-control-settle.wav",
+      "offset_s": 2.3,
+      "duration_s": 0.48,
+      "volume": 0.32
+    },
+    {
+      "frame": 6,
+      "file": "assets/audio/sfx/06-enable-press.wav",
+      "offset_s": 3.0,
+      "duration_s": 0.5,
+      "volume": 0.38
+    }
+  ]
+}

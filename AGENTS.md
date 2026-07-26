@@ -32,7 +32,8 @@ pointer. Neither duplicates the process.
 
 | Path | Purpose |
 |---|---|
-| `Ramayana-ZebpaySIP/` | Current film: sources, assets, keyframes, footage, edit state, review, and delivery |
+| `Ramayana-ZebpaySIP/` | Approved prior film: sources, assets, keyframes, footage, edit state, review, and delivery |
+| `CryptoBalancing-Zebpay/` | Current film: supplied brief, canonical production workspace, deterministic HyperFrames edit, review evidence, and local review delivery |
 | `docs/` | Canonical human-readable production process |
 | `video-production-system/` | Canonical generic production contract, templates, shared agent definitions, and archive manifest |
 | `.codex/skills/script-video-*/` | Canonical reusable production skills |

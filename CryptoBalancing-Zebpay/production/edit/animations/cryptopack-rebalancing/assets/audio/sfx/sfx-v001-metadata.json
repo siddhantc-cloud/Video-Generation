@@ -1,0 +1,13 @@
+{
+  "provenance": "Original deterministic local synthesis",
+  "sample_rate": 48000,
+  "channels": 2,
+  "files": {
+    "01-reveal-whoosh.wav": "32e5c70d4aedbd7f67c20c4c35bfa0ded78b3a46b29941e8d06e21e507c910ab",
+    "02-rebalance-ticks.wav": "e75cadf7f7a1a8ddce4e3fbdbb704b80e276d7a5f41b6bf10d1c0b3f955e0f3e",
+    "03-research-ping.wav": "7c3c8aa7e9c0097739113fde3bc52a328ddc0b7e771e3d63f6c2497b13f427c5",
+    "04-history-scroll-ping.wav": "9b353cd512a726549a1ac1f45d8f809ab0fbb6e67637569ca21cf36d29481a10",
+    "05-control-settle.wav": "e5c940b18be566b158c45212d40382e767ec50d601170837f093c43756f5c724",
+    "06-enable-press.wav": "07af7eb26788311fd23272e26dda07164b864354839a2e7ce415d5434eda4331"
+  }
+}

@@ -1,0 +1,163 @@
+1
+00:00:00,000 --> 00:00:01,200
+Crypto markets never
+
+2
+00:00:01,200 --> 00:00:02,200
+stand still.
+
+3
+00:00:03,200 --> 00:00:04,200
+As prices move,
+
+4
+00:00:04,360 --> 00:00:04,660
+the coins
+
+5
+00:00:04,660 --> 00:00:05,780
+inside your CryptoPack
+
+6
+00:00:05,780 --> 00:00:06,400
+can drift
+
+7
+00:00:06,400 --> 00:00:06,860
+away from
+
+8
+00:00:06,860 --> 00:00:07,980
+their target allocation.
+
+9
+00:00:08,669 --> 00:00:10,849
+CryptoPack Rebalancing brings it
+
+10
+00:00:10,849 --> 00:00:11,249
+back on
+
+11
+00:00:11,249 --> 00:00:13,789
+track automatically—trimming coins that
+
+12
+00:00:13,789 --> 00:00:14,209
+have become
+
+13
+00:00:14,209 --> 00:00:15,789
+overweight and buying those
+
+14
+00:00:15,789 --> 00:00:16,689
+that are underweight.
+
+15
+00:00:17,119 --> 00:00:19,519
+ZebPay’s research-backed process may
+
+16
+00:00:19,519 --> 00:00:20,859
+also update allocations
+
+17
+00:00:20,859 --> 00:00:22,259
+or tokens as
+
+18
+00:00:22,259 --> 00:00:23,659
+market conditions change,
+
+19
+00:00:23,819 --> 00:00:24,439
+helping your
+
+20
+00:00:24,439 --> 00:00:24,919
+Pack stay
+
+21
+00:00:24,919 --> 00:00:25,439
+aligned with
+
+22
+00:00:25,439 --> 00:00:26,599
+its intended strategy.
+
+23
+00:00:27,132 --> 00:00:28,452
+And every adjustment
+
+24
+00:00:28,452 --> 00:00:29,552
+stays transparent.
+
+25
+00:00:30,292 --> 00:00:30,992
+Check Rebalancing
+
+26
+00:00:30,992 --> 00:00:31,672
+History to
+
+27
+00:00:31,672 --> 00:00:31,972
+see what
+
+28
+00:00:31,972 --> 00:00:32,952
+changed and when,
+
+29
+00:00:33,352 --> 00:00:34,352
+plus standard fees
+
+30
+00:00:34,352 --> 00:00:35,572
+and applicable taxes.
+
+31
+00:00:36,076 --> 00:00:36,696
+You stay
+
+32
+00:00:36,696 --> 00:00:37,316
+in control,
+
+33
+00:00:37,436 --> 00:00:37,676
+with the
+
+34
+00:00:37,676 --> 00:00:38,236
+option to
+
+35
+00:00:38,236 --> 00:00:38,796
+enable or
+
+36
+00:00:38,796 --> 00:00:40,376
+disable rebalancing from your
+
+37
+00:00:40,376 --> 00:00:41,016
+Pack settings.
+
+38
+00:00:41,637 --> 00:00:42,897
+Keep your CryptoPack
+
+39
+00:00:42,897 --> 00:00:43,417
+ready for
+
+40
+00:00:43,417 --> 00:00:44,397
+changing markets.
+
+41
+00:00:44,957 --> 00:00:46,097
+Enable Rebalancing today.

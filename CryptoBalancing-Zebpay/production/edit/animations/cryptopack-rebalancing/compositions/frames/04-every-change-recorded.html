@@ -1,0 +1,579 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-400.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-700.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      container-type: size;
+      color: #20234f;
+      font-family: "Inter";
+    }
+
+    [data-f04-role="background"] {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+    }
+
+    [data-f04-role="scene"] {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    [data-f04-role="top-chrome"] {
+      position: absolute;
+      inset: 0 0 auto;
+      height: 130px;
+      background: #ffffff;
+      border-bottom: 1.5px solid rgba(8, 125, 245, 0.2);
+      z-index: 8;
+    }
+
+    [data-f04-role="eyebrow"] {
+      position: absolute;
+      top: 28px;
+      left: 54px;
+      height: 74px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 30px 0 20px;
+      border: 1.5px solid rgba(8, 125, 245, 0.2);
+      border-radius: 100px;
+      background: rgba(8, 125, 245, 0.08);
+      color: #087df5;
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    [data-f04-role="eyebrow-dot"] {
+      width: 14px;
+      height: 14px;
+      flex: none;
+      border-radius: 50%;
+      background: #087df5;
+    }
+
+    [data-f04-role="eyebrow-rule"] {
+      position: absolute;
+      left: 26px;
+      bottom: 10px;
+      width: calc(100% - 52px);
+      height: 4px;
+      border-radius: 6px;
+      background: #087df5;
+      transform-origin: 0 50%;
+    }
+
+    [data-f04-role="transparency-badge"] {
+      position: absolute;
+      top: 36px;
+      right: 54px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 24px;
+      border-radius: 100px;
+      background: #087df5;
+      color: #ffffff;
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      white-space: nowrap;
+      z-index: 11;
+    }
+
+    [data-f04-role="badge-check"] {
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    [data-f04-role="surface-viewport"] {
+      position: absolute;
+      top: 130px;
+      left: 0;
+      width: 1080px;
+      height: 1320px;
+      overflow: hidden;
+      background: #ffffff;
+      z-index: 2;
+    }
+
+    [data-f04-role="surface-viewport"]::after {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 118px;
+      background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #ffffff 62%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      pointer-events: none;
+      z-index: 7;
+    }
+
+    [data-f04-role="world"] {
+      position: absolute;
+      inset: 0;
+      overflow: visible;
+      transform-origin: 50% 50%;
+      will-change: transform;
+    }
+
+    [data-f04-role="page-content"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 2179px;
+      overflow: visible;
+      will-change: transform;
+    }
+
+    [data-f04-role="surface-image"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 2179px;
+      display: block;
+      object-fit: fill;
+      user-select: none;
+    }
+
+    [data-f04-role="claim-safe-copy"] {
+      position: absolute;
+      z-index: 3;
+      top: 438px;
+      left: 68px;
+      width: 946px;
+      height: 258px;
+      box-sizing: border-box;
+      display: grid;
+      align-content: center;
+      gap: 26px;
+      padding: 28px 46px;
+      color: #252c4b;
+      font-size: 36px;
+      font-weight: 650;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      background: #ffffff;
+    }
+
+    [data-f04-role="claim-safe-row"] {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    [data-f04-role="claim-safe-dot"] {
+      flex: 0 0 auto;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #087df5;
+    }
+
+    [data-f04-role="date-highlight"],
+    [data-f04-role="coins-highlight"],
+    [data-f04-role="fees-highlight"] {
+      position: absolute;
+      left: 42px;
+      width: 994px;
+      border: 4px solid #087df5;
+      border-radius: 14px;
+      background: rgba(8, 125, 245, 0.04);
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    [data-f04-role="date-highlight"] {
+      top: 1148px;
+      height: 142px;
+    }
+
+    [data-f04-role="coins-highlight"] {
+      top: 1325px;
+      height: 572px;
+    }
+
+    [data-f04-role="fees-highlight"] {
+      top: 662px;
+      left: 66px;
+      width: 948px;
+      height: 175px;
+      border-left-width: 8px;
+      background: rgba(8, 125, 245, 0.08);
+      transform-origin: 0 50%;
+    }
+
+    [data-f04-role="marker-line"] {
+      position: absolute;
+      top: 1192px;
+      left: 31px;
+      width: 5px;
+      height: 632px;
+      border-radius: 6px;
+      background: #087df5;
+      transform-origin: 50% 0;
+      z-index: 4;
+    }
+
+    [data-f04-role="marker-dot"] {
+      position: absolute;
+      top: 1184px;
+      left: 18px;
+      width: 32px;
+      height: 32px;
+      border: 7px solid #ffffff;
+      border-radius: 50%;
+      background: #087df5;
+      box-sizing: border-box;
+      z-index: 6;
+    }
+
+    [data-f04-role="date-ping"],
+    [data-f04-role="coins-ping"],
+    [data-f04-role="fees-ping"] {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border: 4px solid #087df5;
+      border-radius: 50%;
+      box-sizing: border-box;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    [data-f04-role="date-ping"] {
+      top: 1172px;
+      left: 48px;
+    }
+
+    [data-f04-role="coins-ping"] {
+      top: 1730px;
+      left: 48px;
+    }
+
+    [data-f04-role="fees-ping"] {
+      top: 705px;
+      left: 72px;
+    }
+
+    [data-f04-role="spotlight"] {
+      position: absolute;
+      inset: 0;
+      z-index: 6;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.72) 0%,
+          rgba(255, 255, 255, 0.18) 37%,
+          rgba(255, 255, 255, 0.02) 43%,
+          rgba(255, 255, 255, 0.02) 60%,
+          rgba(255, 255, 255, 0.58) 78%,
+          rgba(255, 255, 255, 0.82) 100%
+        );
+    }
+
+    [data-f04-role="progress-track"] {
+      position: absolute;
+      left: 54px;
+      top: 1496px;
+      width: 972px;
+      height: 8px;
+      overflow: hidden;
+      border-radius: 6px;
+      background: rgba(8, 125, 245, 0.08);
+      z-index: 9;
+    }
+
+    [data-f04-role="progress-fill"] {
+      width: 56%;
+      height: 100%;
+      border-radius: 6px;
+      background: #087df5;
+    }
+  </style>
+
+  <div
+    id="root"
+      data-composition-id="04-every-change-recorded"
+      data-width="1080"
+      data-height="1920"
+      data-duration="9.344"
+    >
+    <div
+      class="clip"
+      data-f04-role="background"
+      data-start="0"
+      data-duration="9.344"
+      data-track-index="0"
+    ></div>
+
+    <div
+      class="clip"
+      data-f04-role="scene"
+      data-start="0"
+      data-duration="9.344"
+      data-track-index="1"
+    >
+      <div data-f04-role="top-chrome">
+        <div data-f04-role="eyebrow" id="04-every-change-recorded-eyebrow">
+          <span data-f04-role="eyebrow-dot"></span>
+          <span>WHAT CHANGED + WHEN</span>
+          <span data-f04-role="eyebrow-rule" id="04-every-change-recorded-eyebrow-rule"></span>
+        </div>
+
+        <div
+          data-f04-role="transparency-badge"
+          id="04-every-change-recorded-transparency-badge"
+        >
+          <span data-f04-role="badge-check">✓</span>
+          <span>TRANSPARENT</span>
+        </div>
+      </div>
+
+      <div data-f04-role="surface-viewport">
+        <div
+          data-f04-role="world"
+          data-layout-allow-overflow
+          id="04-every-change-recorded-world"
+        >
+          <div
+            data-f04-role="page-content"
+            data-layout-allow-overflow
+            id="04-every-change-recorded-page-content"
+          >
+            <img
+              data-f04-role="surface-image"
+              src="assets/app-rebalancing-history.jpg"
+              alt=""
+              draggable="false"
+            />
+
+            <div data-f04-role="claim-safe-copy" aria-hidden="true">
+              <div data-f04-role="claim-safe-row">
+                <span data-f04-role="claim-safe-dot"></span>
+                <span>Research-backed process</span>
+              </div>
+              <div data-f04-role="claim-safe-row">
+                <span data-f04-role="claim-safe-dot"></span>
+                <span>Allocations or tokens may update</span>
+              </div>
+            </div>
+
+            <div
+              data-f04-role="date-highlight"
+              id="04-every-change-recorded-date-highlight"
+            ></div>
+            <div
+              data-f04-role="coins-highlight"
+              id="04-every-change-recorded-coins-highlight"
+            ></div>
+            <div
+              data-f04-role="fees-highlight"
+              id="04-every-change-recorded-fees-highlight"
+            ></div>
+
+            <div
+              data-f04-role="marker-line"
+              id="04-every-change-recorded-marker-line"
+            ></div>
+            <div
+              data-f04-role="marker-dot"
+              id="04-every-change-recorded-marker-dot"
+            ></div>
+
+            <div
+              data-f04-role="date-ping"
+              id="04-every-change-recorded-date-ping"
+            ></div>
+            <div
+              data-f04-role="coins-ping"
+              id="04-every-change-recorded-coins-ping"
+            ></div>
+            <div
+              data-f04-role="fees-ping"
+              id="04-every-change-recorded-fees-ping"
+            ></div>
+          </div>
+        </div>
+
+        <div data-f04-role="spotlight" id="04-every-change-recorded-spotlight"></div>
+      </div>
+
+      <div data-f04-role="progress-track">
+        <div data-f04-role="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script>
+    (() => {
+      const page = document.getElementById("04-every-change-recorded-page-content");
+      const world = document.getElementById("04-every-change-recorded-world");
+      const dateHighlight = document.getElementById("04-every-change-recorded-date-highlight");
+      const coinsHighlight = document.getElementById("04-every-change-recorded-coins-highlight");
+      const feesHighlight = document.getElementById("04-every-change-recorded-fees-highlight");
+      const markerLine = document.getElementById("04-every-change-recorded-marker-line");
+      const markerDot = document.getElementById("04-every-change-recorded-marker-dot");
+      const datePing = document.getElementById("04-every-change-recorded-date-ping");
+      const coinsPing = document.getElementById("04-every-change-recorded-coins-ping");
+      const feesPing = document.getElementById("04-every-change-recorded-fees-ping");
+      const eyebrow = document.getElementById("04-every-change-recorded-eyebrow");
+      const eyebrowRule = document.getElementById("04-every-change-recorded-eyebrow-rule");
+      const badge = document.getElementById("04-every-change-recorded-transparency-badge");
+      const spotlight = document.getElementById("04-every-change-recorded-spotlight");
+
+      const cam = { scale: 1, x: 0, y: 0 };
+      const applyCamera = () => {
+        world.style.transform =
+          `translate(${cam.x}px, ${cam.y}px) scale(${cam.scale})`;
+      };
+      applyCamera();
+
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["04-every-change-recorded"] = tl;
+
+      gsap.set(page, { y: -760 });
+      gsap.set([feesHighlight, feesPing, spotlight, eyebrow, badge], { opacity: 0 });
+
+      tl.fromTo(
+        dateHighlight,
+        { opacity: 0, scaleX: 0.86 },
+        { opacity: 1, scaleX: 1, duration: 0.42, ease: "power3.out" },
+        0.08
+      );
+      tl.fromTo(
+        markerLine,
+        { scaleY: 0, opacity: 0 },
+        { scaleY: 1, opacity: 1, duration: 1.92, ease: "power3.out" },
+        0.24
+      );
+      tl.fromTo(
+        markerDot,
+        { x: 0, y: 0, scale: 0.72, opacity: 0.35 },
+        { x: 28, y: 185, scale: 1, opacity: 1, duration: 0.7, ease: "power3.out" },
+        0.18
+      );
+      tl.fromTo(
+        datePing,
+        { scale: 0.5, opacity: 0 },
+        { scale: 1.9, opacity: 0.9, duration: 0.72, ease: "power3.out" },
+        0.36
+      );
+      tl.fromTo(
+        coinsHighlight,
+        { opacity: 0, scaleX: 0.92 },
+        { opacity: 1, scaleX: 1, duration: 0.58, ease: "power3.out" },
+        0.9
+      );
+      tl.to(
+        markerDot,
+        { x: 28, y: 528, duration: 1.34, ease: "power3.out" },
+        0.92
+      );
+      tl.fromTo(
+        coinsPing,
+        { scale: 0.5, opacity: 0 },
+        { scale: 1.9, opacity: 0.9, duration: 0.82, ease: "power3.out" },
+        1.54
+      );
+
+      tl.fromTo(
+        eyebrow,
+        { y: -14, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.58, ease: "power3.out" },
+        2.68
+      );
+      tl.fromTo(
+        eyebrowRule,
+        { scaleX: 0 },
+        { scaleX: 1, duration: 1.18, ease: "power3.out" },
+        3.08
+      );
+
+      tl.fromTo(
+        page,
+        { y: -760 },
+        { y: -60, duration: 1.45, ease: "power3.out" },
+        5.4
+      );
+
+      tl.to(
+        cam,
+        {
+          scale: 1.055,
+          x: 0,
+          y: -31,
+          duration: 0.35,
+          ease: "power3.out",
+          onUpdate: applyCamera
+        },
+        6.85
+      );
+
+      tl.fromTo(
+        spotlight,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.46, ease: "power2.inOut" },
+        6.98
+      );
+      tl.fromTo(
+        feesHighlight,
+        { opacity: 0, scaleX: 0 },
+        { opacity: 1, scaleX: 1, duration: 0.62, ease: "power3.out" },
+        7.04
+      );
+      tl.fromTo(
+        badge,
+        { y: -12, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.52, ease: "power3.out" },
+        7.2
+      );
+      tl.fromTo(
+        feesPing,
+        { scale: 0.5, opacity: 0 },
+        { scale: 1.9, opacity: 0.9, duration: 0.82, ease: "power3.out" },
+        7.34
+      );
+    })();
+  </script>
+</template>

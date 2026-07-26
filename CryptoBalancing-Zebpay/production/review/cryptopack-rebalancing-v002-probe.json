@@ -1,0 +1,39 @@
+﻿{
+    "generated_at":  "2026-07-26T01:46:28.9427403Z",
+    "status":  "review-cut-not-promoted",
+    "source":  "D:\\startup_dev\\so_sorry\\CryptoBalancing-Zebpay\\production\\edit\\animations\\cryptopack-rebalancing\\renders\\video-v002.mp4",
+    "output":  "D:\\startup_dev\\so_sorry\\CryptoBalancing-Zebpay\\production\\deliverables\\review-cuts\\cryptopack-rebalancing-v002\\cryptopack-rebalancing-review-v002.mp4",
+    "sha256":  "3B90B00BC81BF90F0EEC6F19696E8FF7A3175C5F9591F3F66CCCE8389190FA76",
+    "probe":  {
+                  "programs":  [
+
+                               ],
+                  "stream_groups":  [
+
+                                    ],
+                  "streams":  [
+                                  {
+                                      "index":  0,
+                                      "codec_name":  "h264",
+                                      "codec_type":  "video",
+                                      "width":  1080,
+                                      "height":  1920,
+                                      "pix_fmt":  "yuv420p",
+                                      "r_frame_rate":  "30/1"
+                                  },
+                                  {
+                                      "index":  1,
+                                      "codec_name":  "aac",
+                                      "codec_type":  "audio",
+                                      "sample_rate":  "48000",
+                                      "channels":  2,
+                                      "r_frame_rate":  "0/0"
+                                  }
+                              ],
+                  "format":  {
+                                 "duration":  "46.600000",
+                                 "size":  "12263458",
+                                 "bit_rate":  "2105314"
+                             }
+              }
+}

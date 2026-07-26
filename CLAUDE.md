@@ -3,6 +3,10 @@
 Read and follow `AGENTS.md`; it is the shared project contract, current tool inventory, safety policy,
 and source of truth for Codex/Claude parity.
 
+The active film roots are `Ramayana-ZebpaySIP/` (approved prior film) and
+`CryptoBalancing-Zebpay/` (current film); their exact roles and delivery policies live in
+`AGENTS.md`.
+
 ## Checklist
 
 | Requirement | Pass condition | Evidence | Owner | Status |

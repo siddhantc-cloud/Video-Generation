@@ -1,0 +1,408 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-400.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-700.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      container-type: size;
+      font-family: "Inter";
+      color: #20234f;
+    }
+
+    [class~="05-you-stay-in-control-background"] {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    [class~="05-you-stay-in-control-background"]::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(8, 125, 245, 0.022) 0%, rgba(8, 125, 245, 0) 23%, rgba(8, 125, 245, 0) 77%, rgba(8, 125, 245, 0.022) 100%),
+        linear-gradient(180deg, rgba(8, 125, 245, 0.035) 0%, rgba(255, 255, 255, 0) 34%);
+    }
+
+    [class~="05-you-stay-in-control-scene"] {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      perspective: 1500px;
+    }
+
+    [class~="05-you-stay-in-control-title"] {
+      position: absolute;
+      z-index: 8;
+      top: 164px;
+      left: 90px;
+      width: 900px;
+      margin: 0;
+      color: #20234f;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      text-align: center;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+
+    [class~="05-you-stay-in-control-title-accent"] {
+      color: #087df5;
+    }
+
+    [class~="05-you-stay-in-control-spine"] {
+      position: absolute;
+      z-index: 1;
+      top: 355px;
+      left: 539px;
+      width: 2px;
+      height: 1015px;
+      border-radius: 100px;
+      background: linear-gradient(180deg, rgba(8, 125, 245, 0), rgba(8, 125, 245, 0.15) 18%, rgba(8, 125, 245, 0.15) 82%, rgba(8, 125, 245, 0));
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+
+    [class~="05-you-stay-in-control-glow"] {
+      position: absolute;
+      z-index: 1;
+      top: 460px;
+      width: 560px;
+      height: 760px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(8, 125, 245, 0.24) 0%, rgba(8, 125, 245, 0.09) 45%, rgba(8, 125, 245, 0) 74%);
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+
+    [class~="05-you-stay-in-control-glow-left"] {
+      left: -25px;
+    }
+
+    [class~="05-you-stay-in-control-glow-right"] {
+      right: -25px;
+    }
+
+    [class~="05-you-stay-in-control-stage"] {
+      position: absolute;
+      z-index: 3;
+      top: 400px;
+      left: 62px;
+      display: flex;
+      width: 956px;
+      height: 920px;
+      gap: 40px;
+      transform-style: preserve-3d;
+    }
+
+    [class~="05-you-stay-in-control-card"] {
+      position: relative;
+      width: 458px;
+      height: 920px;
+      flex: 0 0 458px;
+      border-radius: 14px;
+      transform-style: preserve-3d;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+
+    [class~="05-you-stay-in-control-card-float"] {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border: 1.5px solid rgba(8, 125, 245, 0.2);
+      border-radius: 14px;
+      background: rgba(8, 125, 245, 0.04);
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    [class~="05-you-stay-in-control-card-image"] {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      object-fit: contain;
+      background: #ffffff;
+      filter: blur(4px);
+      opacity: 0.74;
+    }
+
+    [class~="05-you-stay-in-control-enable-edge"] {
+      position: absolute;
+      z-index: 4;
+      inset: 0;
+      border: 2px solid #087df5;
+      border-radius: 14px;
+      pointer-events: none;
+      will-change: opacity, clip-path;
+    }
+
+    [class~="05-you-stay-in-control-badge"] {
+      position: absolute;
+      z-index: 7;
+      top: 1188px;
+      display: grid;
+      place-items: center;
+      width: 150px;
+      height: 64px;
+      border: 1.5px solid rgba(8, 125, 245, 0.2);
+      border-radius: 100px;
+      background: #ffffff;
+      color: #087df5;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+
+    [class~="05-you-stay-in-control-badge-enable"] {
+      left: 386px;
+    }
+
+    [class~="05-you-stay-in-control-badge-disable"] {
+      left: 544px;
+    }
+
+    [class~="05-you-stay-in-control-choice"] {
+      position: absolute;
+      z-index: 7;
+      top: 1372px;
+      left: 390px;
+      display: grid;
+      place-items: center;
+      width: 300px;
+      height: 76px;
+      border-radius: 100px;
+      background: #087df5;
+      color: #ffffff;
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.01em;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+
+    [class~="05-you-stay-in-control-choice"]::before,
+    [class~="05-you-stay-in-control-choice"]::after {
+      content: "";
+      position: absolute;
+      top: 37px;
+      width: 130px;
+      height: 2px;
+      background: rgba(8, 125, 245, 0.2);
+    }
+
+    [class~="05-you-stay-in-control-choice"]::before {
+      right: calc(100% + 22px);
+    }
+
+    [class~="05-you-stay-in-control-choice"]::after {
+      left: calc(100% + 22px);
+    }
+  </style>
+
+  <div id="root" data-composition-id="05-you-stay-in-control" data-width="1080" data-height="1920" data-duration="6.161">
+    <div
+      class="clip 05-you-stay-in-control-background"
+      data-start="0"
+      data-duration="6.161"
+      data-track-index="0"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      class="clip 05-you-stay-in-control-scene"
+      data-start="0"
+      data-duration="6.161"
+      data-track-index="1"
+    >
+      <h1 class="05-you-stay-in-control-title">
+        You stay in <span class="05-you-stay-in-control-title-accent">control</span>
+      </h1>
+
+      <div class="05-you-stay-in-control-spine" aria-hidden="true"></div>
+      <div class="05-you-stay-in-control-glow 05-you-stay-in-control-glow-left" aria-hidden="true"></div>
+      <div class="05-you-stay-in-control-glow 05-you-stay-in-control-glow-right" aria-hidden="true"></div>
+
+      <div class="05-you-stay-in-control-stage">
+        <div class="05-you-stay-in-control-card 05-you-stay-in-control-card-left">
+          <div class="05-you-stay-in-control-card-float 05-you-stay-in-control-card-float-left">
+            <img
+              class="05-you-stay-in-control-card-image"
+              src="assets/app-enable-rebalancing.png"
+              alt="Enable Rebalancing sheet"
+            />
+            <div class="05-you-stay-in-control-enable-edge" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="05-you-stay-in-control-card 05-you-stay-in-control-card-right">
+          <div class="05-you-stay-in-control-card-float 05-you-stay-in-control-card-float-right">
+            <img
+              class="05-you-stay-in-control-card-image"
+              src="assets/app-disable-rebalancing.png"
+              alt="Disable Rebalancing sheet"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="05-you-stay-in-control-badge 05-you-stay-in-control-badge-enable">Enable</div>
+      <div class="05-you-stay-in-control-badge 05-you-stay-in-control-badge-disable">Disable</div>
+      <div class="05-you-stay-in-control-choice">Your choice</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script>
+    (() => {
+      const root = document.querySelector('[data-composition-id="05-you-stay-in-control"]');
+      const title = root.querySelector('[class~="05-you-stay-in-control-title"]');
+      const spine = root.querySelector('[class~="05-you-stay-in-control-spine"]');
+      const glowLeft = root.querySelector('[class~="05-you-stay-in-control-glow-left"]');
+      const glowRight = root.querySelector('[class~="05-you-stay-in-control-glow-right"]');
+      const cardLeft = root.querySelector('[class~="05-you-stay-in-control-card-left"]');
+      const cardRight = root.querySelector('[class~="05-you-stay-in-control-card-right"]');
+      const floatLeft = root.querySelector('[class~="05-you-stay-in-control-card-float-left"]');
+      const floatRight = root.querySelector('[class~="05-you-stay-in-control-card-float-right"]');
+      const badgeEnable = root.querySelector('[class~="05-you-stay-in-control-badge-enable"]');
+      const badgeDisable = root.querySelector('[class~="05-you-stay-in-control-badge-disable"]');
+      const choice = root.querySelector('[class~="05-you-stay-in-control-choice"]');
+      const enableEdge = root.querySelector('[class~="05-you-stay-in-control-enable-edge"]');
+
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(
+        title,
+        { y: -58, opacity: 0, scale: 0.97 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.68, ease: "power3.out" },
+        0
+      );
+
+      tl.fromTo(
+        spine,
+        { scaleY: 0, opacity: 0 },
+        { scaleY: 1, opacity: 1, duration: 0.9, ease: "power2.out" },
+        0.35
+      );
+
+      tl.fromTo(
+        glowLeft,
+        { opacity: 0, scale: 0.84 },
+        { opacity: 0.12, scale: 1, duration: 1.05, ease: "power2.out" },
+        0.5
+      );
+
+      tl.fromTo(
+        glowRight,
+        { opacity: 0, scale: 0.84 },
+        { opacity: 0.12, scale: 1, duration: 1.05, ease: "power2.out" },
+        0.7
+      );
+
+      tl.fromTo(
+        cardLeft,
+        { x: -350, rotateY: 24, scale: 0.85, opacity: 0 },
+        { x: 0, rotateY: 12, scale: 1, opacity: 1, duration: 1.1, ease: "power3.out" },
+        0.5
+      );
+
+      tl.fromTo(
+        cardRight,
+        { x: 350, rotateY: -24, scale: 0.85, opacity: 0 },
+        { x: 0, rotateY: -12, scale: 1, opacity: 1, duration: 1.1, ease: "power3.out" },
+        0.7
+      );
+
+      const glowPhase = { p: 0 };
+      tl.to(
+        glowPhase,
+        {
+          p: Math.PI * 4,
+          duration: 3.76,
+          ease: "none",
+          onUpdate: () => {
+            const leftWave = Math.sin(glowPhase.p);
+            const rightWave = Math.sin(glowPhase.p * 0.91 + Math.PI / 2);
+            glowLeft.style.opacity = String(0.12 + leftWave * 0.012);
+            glowLeft.style.transform = `scale(${1 + leftWave * 0.008})`;
+            glowRight.style.opacity = String(0.12 + rightWave * 0.012);
+            glowRight.style.transform = `scale(${1 + rightWave * 0.008})`;
+          }
+        },
+        1.8
+      );
+
+      const cardPhase = { p: 0 };
+      tl.to(
+        cardPhase,
+        {
+          p: Math.PI * 4,
+          duration: 3.4,
+          ease: "none",
+          onUpdate: () => {
+            const wave = Math.sin(cardPhase.p);
+            floatLeft.style.transform = `translateY(${wave * -2}px)`;
+            floatRight.style.transform = `translateY(${wave * 2}px)`;
+          }
+        },
+        2.0
+      );
+
+      tl.fromTo(
+        badgeEnable,
+        { scale: 0, y: 12, opacity: 0 },
+        { scale: 1, y: 0, opacity: 1, duration: 0.58, ease: "power3.out" },
+        2.3
+      );
+
+      tl.fromTo(
+        badgeDisable,
+        { scale: 0, y: 12, opacity: 0 },
+        { scale: 1, y: 0, opacity: 1, duration: 0.58, ease: "power3.out" },
+        2.6
+      );
+
+      tl.fromTo(
+        choice,
+        { scale: 0, y: 14, opacity: 0 },
+        { scale: 1, y: 0, opacity: 1, duration: 0.64, ease: "power3.out" },
+        3.35
+      );
+
+      tl.fromTo(
+        enableEdge,
+        { clipPath: "inset(50% 0% 50% 0%)", opacity: 0 },
+        { clipPath: "inset(0% 0% 0% 0%)", opacity: 0.9, duration: 0.95, ease: "power2.out" },
+        4.4
+      );
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["05-you-stay-in-control"] = tl;
+    })();
+  </script>
+</template>

@@ -24,6 +24,8 @@ secrets*
 # Generated intermediates and logs
 *.err
 *.log
+**/snapshots/frame-*.png
+**/snapshots/v*-preflight*/
 **/edit/audio/**/segments-*/concat.txt
 __pycache__/
 *.pyc

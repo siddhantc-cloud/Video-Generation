@@ -1,0 +1,525 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-400.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 400;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-700.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 700;
+      font-display: block;
+    }
+
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      container-type: size;
+      color: #20234f;
+      font-family: "Inter";
+    }
+
+    [id="06-enable-rebalancing-ground"] {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    [id="06-enable-rebalancing-ring-a"],
+    [id="06-enable-rebalancing-ring-b"],
+    [id="06-enable-rebalancing-ring-c"] {
+      position: absolute;
+      border: 1.5px solid rgba(8, 125, 245, 0.09);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    [id="06-enable-rebalancing-ring-a"] {
+      left: 2.78cqw;
+      top: 13.54cqh;
+      width: 94.44cqw;
+      height: 53.13cqh;
+    }
+
+    [id="06-enable-rebalancing-ring-b"] {
+      left: 12.04cqw;
+      top: 18.75cqh;
+      width: 75.93cqw;
+      height: 42.71cqh;
+    }
+
+    [id="06-enable-rebalancing-ring-c"] {
+      left: 21.3cqw;
+      top: 23.96cqh;
+      width: 57.41cqw;
+      height: 32.29cqh;
+    }
+
+    [id="06-enable-rebalancing-dot-grid"] {
+      position: absolute;
+      top: 3.13cqh;
+      right: 5cqw;
+      display: grid;
+      grid-template-columns: repeat(3, 8px);
+      gap: 12px;
+      opacity: 0.42;
+    }
+
+    [id="06-enable-rebalancing-dot-grid"] i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #087df5;
+    }
+
+    [id="06-enable-rebalancing-scene"] {
+      position: absolute;
+      inset: 0;
+    }
+
+    [id="06-enable-rebalancing-swap-stage"] {
+      position: absolute;
+      left: 17.22cqw;
+      top: 2.5cqh;
+      width: 65.56cqw;
+      height: 75.36cqh;
+    }
+
+    [id="06-enable-rebalancing-ready-state"],
+    [id="06-enable-rebalancing-sheet-state"] {
+      position: absolute;
+      inset: 0;
+      transform-origin: 50% 50%;
+    }
+
+    [id="06-enable-rebalancing-ready-state"] {
+      z-index: 1;
+      display: grid;
+      place-items: center;
+    }
+
+    [id="06-enable-rebalancing-ready-card"] {
+      position: relative;
+      width: 31.48cqw;
+      min-height: 12.19cqh;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 20px;
+      border: 1.5px solid rgba(8, 125, 245, 0.2);
+      border-radius: 14px;
+      background: rgba(8, 125, 245, 0.04);
+    }
+
+    [id="06-enable-rebalancing-mark"] {
+      position: relative;
+      width: 106px;
+      height: 106px;
+    }
+
+    [id="06-enable-rebalancing-mark-orbit"] {
+      position: absolute;
+      inset: 0;
+      border: 2px solid rgba(8, 125, 245, 0.2);
+      border-radius: 50%;
+    }
+
+    [id="06-enable-rebalancing-mark-orbit"]::before,
+    [id="06-enable-rebalancing-mark-orbit"]::after {
+      content: "";
+      position: absolute;
+      top: 48px;
+      width: 26px;
+      height: 4px;
+      border-radius: 6px;
+      background: #087df5;
+    }
+
+    [id="06-enable-rebalancing-mark-orbit"]::before {
+      left: 17px;
+    }
+
+    [id="06-enable-rebalancing-mark-orbit"]::after {
+      right: 17px;
+    }
+
+    [id="06-enable-rebalancing-mark-core"] {
+      position: absolute;
+      left: 33px;
+      top: 33px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #087df5;
+    }
+
+    [id="06-enable-rebalancing-mark-core"]::before,
+    [id="06-enable-rebalancing-mark-core"]::after {
+      content: "";
+      position: absolute;
+      top: 18px;
+      width: 14px;
+      height: 4px;
+      border-radius: 6px;
+      background: #ffffff;
+    }
+
+    [id="06-enable-rebalancing-mark-core"]::before {
+      left: 7px;
+    }
+
+    [id="06-enable-rebalancing-mark-core"]::after {
+      right: 7px;
+    }
+
+    [id="06-enable-rebalancing-ready-label"] {
+      color: #20234f;
+      font-size: 5.37cqw;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    [id="06-enable-rebalancing-ready-rule"] {
+      width: 60px;
+      height: 4px;
+      border-radius: 2px;
+      background: #087df5;
+    }
+
+    [id="06-enable-rebalancing-sheet-state"] {
+      z-index: 2;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #ffffff;
+    }
+
+    [id="06-enable-rebalancing-sheet"] {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 65.56cqw;
+      height: auto;
+      display: block;
+      filter: blur(8px);
+      opacity: 0.66;
+    }
+
+    [id="06-enable-rebalancing-button-mask"] {
+      position: absolute;
+      z-index: 2;
+      left: 2.22cqw;
+      top: 68.18cqh;
+      width: 61.11cqw;
+      height: 4.38cqh;
+      border-radius: 24px;
+      background: #ffffff;
+    }
+
+    [id="06-enable-rebalancing-confirmation-bloom"] {
+      position: absolute;
+      z-index: 3;
+      left: -3.7cqw;
+      top: 64.58cqh;
+      width: 72.96cqw;
+      height: 10.42cqh;
+      border-radius: 50%;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(8, 125, 245, 0.42) 0%,
+        rgba(8, 125, 245, 0.17) 34%,
+        rgba(8, 125, 245, 0) 72%
+      );
+      pointer-events: none;
+      transform-origin: 50% 50%;
+    }
+
+    [id="06-enable-rebalancing-button-target"] {
+      position: absolute;
+      z-index: 4;
+      left: 2.69cqw;
+      top: 68.44cqh;
+      width: 60.19cqw;
+      height: 3.85cqh;
+      overflow: hidden;
+      border-radius: 22px;
+      transform-origin: 50% 50%;
+    }
+
+    [id="06-enable-rebalancing-button-image"] {
+      position: absolute;
+      left: -2.69cqw;
+      top: -68.44cqh;
+      width: 65.56cqw;
+      height: auto;
+      display: block;
+    }
+
+    [id="06-enable-rebalancing-touch"] {
+      position: absolute;
+      z-index: 12;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      border: 3px solid #087df5;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.74);
+      pointer-events: none;
+      transform-origin: 50% 50%;
+    }
+
+    [id="06-enable-rebalancing-touch"]::before {
+      content: "";
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #087df5;
+    }
+
+    [id="06-enable-rebalancing-click-ripple"] {
+      position: absolute;
+      z-index: 11;
+      left: 540px;
+      top: 1365px;
+      width: 64px;
+      height: 64px;
+      border: 2px solid #087df5;
+      border-radius: 50%;
+      pointer-events: none;
+      transform-origin: 50% 50%;
+    }
+  </style>
+
+  <div id="root" data-composition-id="06-enable-rebalancing" data-width="1080" data-height="1920" data-duration="4.849">
+    <div
+      id="06-enable-rebalancing-ground"
+      class="clip"
+      data-start="0"
+      data-duration="4.849"
+      data-track-index="0"
+    >
+      <div id="06-enable-rebalancing-ring-a"></div>
+      <div id="06-enable-rebalancing-ring-b"></div>
+      <div id="06-enable-rebalancing-ring-c"></div>
+      <div id="06-enable-rebalancing-dot-grid" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+    </div>
+
+    <div
+      id="06-enable-rebalancing-scene"
+      class="clip"
+      data-start="0"
+      data-duration="4.849"
+      data-track-index="1"
+    >
+      <div id="06-enable-rebalancing-swap-stage">
+        <div id="06-enable-rebalancing-ready-state">
+          <div id="06-enable-rebalancing-ready-card">
+            <div id="06-enable-rebalancing-mark">
+              <div id="06-enable-rebalancing-mark-orbit"></div>
+              <div id="06-enable-rebalancing-mark-core"></div>
+            </div>
+            <div id="06-enable-rebalancing-ready-label">READY</div>
+            <div id="06-enable-rebalancing-ready-rule"></div>
+          </div>
+        </div>
+
+        <div id="06-enable-rebalancing-sheet-state">
+          <img
+            id="06-enable-rebalancing-sheet"
+            src="assets/app-enable-rebalancing.png"
+            alt=""
+          />
+          <div id="06-enable-rebalancing-button-mask"></div>
+          <div id="06-enable-rebalancing-confirmation-bloom"></div>
+          <div id="06-enable-rebalancing-button-target">
+            <img
+              id="06-enable-rebalancing-button-image"
+              src="assets/app-enable-rebalancing.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div id="06-enable-rebalancing-click-ripple"></div>
+      <div id="06-enable-rebalancing-touch"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    (() => {
+      const root = document.querySelector(
+        '[data-composition-id="06-enable-rebalancing"]',
+      );
+      const readyState = root.querySelector(
+        '[id="06-enable-rebalancing-ready-state"]',
+      );
+      const mark = root.querySelector('[id="06-enable-rebalancing-mark"]');
+      const sheetState = root.querySelector(
+        '[id="06-enable-rebalancing-sheet-state"]',
+      );
+      const ctaButton = root.querySelector(
+        '[id="06-enable-rebalancing-button-target"]',
+      );
+      const touch = root.querySelector('[id="06-enable-rebalancing-touch"]');
+      const ripple = root.querySelector(
+        '[id="06-enable-rebalancing-click-ripple"]',
+      );
+      const bloom = root.querySelector(
+        '[id="06-enable-rebalancing-confirmation-bloom"]',
+      );
+
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["06-enable-rebalancing"] = tl;
+
+      tl.fromTo(
+        readyState,
+        { opacity: 0, scale: 0.92 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.42,
+          ease: "power3.out",
+          immediateRender: true,
+        },
+        0,
+      );
+
+      const markPhase = { p: 0 };
+      tl.to(
+        markPhase,
+        {
+          p: Math.PI,
+          duration: 0.7,
+          ease: "none",
+          onUpdate: () => {
+            mark.style.transform = `rotate(${Math.sin(markPhase.p) * 0.65}deg)`;
+          },
+        },
+        0.45,
+      );
+
+      tl.to(
+        readyState,
+        {
+          opacity: 0,
+          scale: 0.72,
+          duration: 0.42,
+          ease: "power2.in",
+        },
+        1.2,
+      );
+
+      tl.fromTo(
+        sheetState,
+        { opacity: 0, scale: 0.72, filter: "blur(18px)" },
+        {
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: 0.62,
+          ease: "back.out(1.6)",
+          immediateRender: true,
+        },
+        1.48,
+      );
+
+      tl.set(touch, { opacity: 0, x: 1100, y: 1080, scale: 1 }, 0);
+      tl.set(ripple, { opacity: 0, scale: 0 }, 0);
+      tl.set(bloom, { opacity: 0, scale: 0.82 }, 0);
+
+      tl.set(touch, { opacity: 1 }, 2.3);
+      tl.to(
+        touch,
+        {
+          x: 548,
+          y: 1372,
+          duration: 0.65,
+          ease: "power2.inOut",
+        },
+        2.3,
+      );
+
+      tl.to(
+        [ctaButton, touch],
+        {
+          scale: 0.9,
+          duration: 0.12,
+          ease: "power1.in",
+        },
+        3.0,
+      );
+      tl.to(
+        ctaButton,
+        {
+          boxShadow: "inset 0 0 0 999px rgba(255,255,255,0.14)",
+          duration: 0.12,
+          ease: "power1.in",
+        },
+        3.0,
+      );
+
+      tl.set(ripple, { opacity: 1 }, 3.04);
+      tl.to(
+        ripple,
+        {
+          scale: 3.4,
+          opacity: 0,
+          duration: 0.68,
+          ease: "power2.out",
+          immediateRender: false,
+        },
+        3.04,
+      );
+
+      tl.to(
+        [ctaButton, touch],
+        {
+          scale: 1,
+          duration: 0.5,
+          ease: "back.out(1.8)",
+        },
+        3.14,
+      );
+      tl.to(
+        ctaButton,
+        {
+          boxShadow: "inset 0 0 0 0 rgba(255,255,255,0)",
+          duration: 0.28,
+          ease: "power2.out",
+        },
+        3.14,
+      );
+
+      tl.fromTo(
+        bloom,
+        { opacity: 0, scale: 0.82 },
+        {
+          opacity: 0.25,
+          scale: 1,
+          duration: 0.54,
+          ease: "power2.out",
+          immediateRender: false,
+        },
+        3.1,
+      );
+    })();
+  </script>
+</template>

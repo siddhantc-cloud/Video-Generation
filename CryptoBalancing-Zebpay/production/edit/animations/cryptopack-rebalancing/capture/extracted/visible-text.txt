@@ -1,0 +1,17 @@
+ZebPay CryptoPack Rebalancing
+
+Crypto markets never stand still. As prices move, the coins inside your CryptoPack can drift away
+from their target allocation.
+
+CryptoPack Rebalancing brings it back on track automatically—trimming coins that have become
+overweight and buying those that are underweight.
+
+ZebPay’s research-backed process may also update allocations or tokens as market conditions change,
+helping your Pack stay aligned with its intended strategy.
+
+Every adjustment stays transparent. Users can check Rebalancing History to see what changed and
+when, plus standard fees and applicable taxes.
+
+Users remain in control and may enable or disable rebalancing from the Pack experience.
+
+Call to action: Enable Rebalancing.

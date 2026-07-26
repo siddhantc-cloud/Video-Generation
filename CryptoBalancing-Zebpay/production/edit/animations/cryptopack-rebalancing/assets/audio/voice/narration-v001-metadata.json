@@ -1,0 +1,92 @@
+{
+  "generated_at": "2026-07-26T01:08:31.527655+00:00",
+  "provider": "ElevenLabs",
+  "recovery_mode": "history audio download; no second synthesis",
+  "history_item_id": "dK4KJXBOLIah09TtGV3W",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "voice_name": "Jessica - Playful, Bright, Warm",
+  "model_id": "eleven_multilingual_v2",
+  "submitted_characters": 741,
+  "source_script": "SCRIPT.md",
+  "provider_master": "assets/audio/voice/narration-v001-provider-master.mp3",
+  "provider_master_sha256": "ca758c5674020545414d35b3494b7c9593fe16f1c67cf67e4dba93e75ebd1f84",
+  "frame_boundaries_s": [
+    0.0,
+    8.669,
+    17.119,
+    27.132,
+    36.076,
+    41.637,
+    46.486349
+  ],
+  "boundary_method": "midpoints of paragraph-level silences measured with ffmpeg silencedetect at -36 dB / 0.20 s",
+  "word_timing_method": "local faster-whisper small.en; approved copy retained exactly",
+  "segments": [
+    {
+      "frame": 1,
+      "approved_text": "Crypto markets never stand still. As prices move, the coins inside your CryptoPack can drift away from their target allocation.",
+      "local_transcript": "Crypto markets never stand still. As prices move, the coins inside your CryptoPack can drift away from their target allocation.",
+      "language_probability": 1.0,
+      "source_start_s": 0.0,
+      "source_end_s": 8.669,
+      "duration_s": 8.669,
+      "file": "assets/audio/voice/01-narration-v001.wav",
+      "sha256": "7128c159a20ffeedbfa5ea4069d5fd69f8c6b9e367efd4bca0f82114919e9204"
+    },
+    {
+      "frame": 2,
+      "approved_text": "CryptoPack Rebalancing brings it back on track automatically\u2014trimming coins that have become overweight and buying those that are underweight.",
+      "local_transcript": "CryptoPack Rebalancing brings it back on track automatically\u2014trimming coins that have become overweight and buying those that are underweight.",
+      "language_probability": 1.0,
+      "source_start_s": 8.669,
+      "source_end_s": 17.119,
+      "duration_s": 8.45,
+      "file": "assets/audio/voice/02-narration-v001.wav",
+      "sha256": "143e7fd53f8a047ff6da9351d0f51e865d4945374ff7c466438de6e01e30b1a3"
+    },
+    {
+      "frame": 3,
+      "approved_text": "ZebPay\u2019s research-backed process may also update allocations or tokens as market conditions change, helping your Pack stay aligned with its intended strategy.",
+      "local_transcript": "ZebPay\u2019s research-backed process may also update allocations or tokens as market conditions change, helping your Pack stay aligned with its intended strategy.",
+      "language_probability": 1.0,
+      "source_start_s": 17.119,
+      "source_end_s": 27.132,
+      "duration_s": 10.013,
+      "file": "assets/audio/voice/03-narration-v001.wav",
+      "sha256": "a110add1c6c6253ac7e10f934c57490624a0c324b0d8684bddb70529d4706566"
+    },
+    {
+      "frame": 4,
+      "approved_text": "And every adjustment stays transparent. Check Rebalancing History to see what changed and when, plus standard fees and applicable taxes.",
+      "local_transcript": "And every adjustment stays transparent. Check Rebalancing History to see what changed and when, plus standard fees and applicable taxes.",
+      "language_probability": 1.0,
+      "source_start_s": 27.132,
+      "source_end_s": 36.076,
+      "duration_s": 8.944,
+      "file": "assets/audio/voice/04-narration-v001.wav",
+      "sha256": "7b95d447630a2de69677be36c6bc6424a74490a83132039c4894bc893d57cee7"
+    },
+    {
+      "frame": 5,
+      "approved_text": "You stay in control, with the option to enable or disable rebalancing from your Pack settings.",
+      "local_transcript": "You stay in control, with the option to enable or disable rebalancing from your Pack settings.",
+      "language_probability": 1.0,
+      "source_start_s": 36.076,
+      "source_end_s": 41.637,
+      "duration_s": 5.561,
+      "file": "assets/audio/voice/05-narration-v001.wav",
+      "sha256": "049e5d3d3de91201b6e82aebe75f847f8244c4ffafb7ed30ad30da96f2ec3e2a"
+    },
+    {
+      "frame": 6,
+      "approved_text": "Keep your CryptoPack ready for changing markets. Enable Rebalancing today.",
+      "local_transcript": "Keep your CryptoPack ready for changing markets. Enable Rebalancing today.",
+      "language_probability": 1.0,
+      "source_start_s": 41.637,
+      "source_end_s": 46.486349,
+      "duration_s": 4.849,
+      "file": "assets/audio/voice/06-narration-v001.wav",
+      "sha256": "3c88ab16ba922cdfbc7184846e8ca7c3f0294c7922722077e36b6175659bcfbd"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-07-26T01:10:04.429234+00:00",
+  "title": "CryptoPack Rebalancing technology underscore v001",
+  "provenance": "Original deterministic local synthesis; no catalog or generative music provider",
+  "seed": 20260726,
+  "sample_rate": 48000,
+  "channels": 2,
+  "duration_s": 46.486,
+  "tempo_bpm": 112.0,
+  "file": "assets/audio/music/music-v001-original.wav",
+  "sha256": "49477a10c5186e2f69d0d4dae3d964f97187e6a13a9a996544f45448409d3d21"
+}

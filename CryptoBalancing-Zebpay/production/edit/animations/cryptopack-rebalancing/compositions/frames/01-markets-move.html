@@ -1,0 +1,614 @@
+<template>
+  <div
+    id="root"
+    data-composition-id="01-markets-move"
+    data-width="1080"
+    data-height="1920"
+    data-duration="9.069"
+  >
+    <div
+      class="clip 01-markets-move-ground"
+      data-start="0"
+      data-duration="9.069"
+      data-track-index="0"
+      aria-hidden="true"
+    >
+      <div class="01-markets-move-ground-field"></div>
+    </div>
+
+    <div
+      class="clip 01-markets-move-scene"
+      data-start="0"
+      data-duration="9.069"
+      data-track-index="1"
+    >
+      <div id="01-markets-move-world" class="01-markets-move-world">
+        <section
+          id="01-markets-move-module"
+          class="01-markets-move-module"
+          aria-label="Illustrative allocation module"
+        >
+          <header class="01-markets-move-module-header">
+            <div>
+              <div class="01-markets-move-eyebrow">ALLOCATION</div>
+              <div class="01-markets-move-module-title">Target bands</div>
+            </div>
+            <div class="01-markets-move-illustrative-pill">ILLUSTRATIVE</div>
+          </header>
+
+          <div class="01-markets-move-active-row">
+            <span class="01-markets-move-active-dot"></span>
+            <span id="01-markets-move-active-coin">COIN 01</span>
+          </div>
+
+          <div class="01-markets-move-bars" aria-hidden="true">
+            <div class="01-markets-move-bar-row">
+              <div class="01-markets-move-bar-label">COIN 01</div>
+              <div class="01-markets-move-bar-track">
+                <div
+                  id="01-markets-move-bar-1"
+                  class="01-markets-move-bar-fill"
+                  data-target-scale="0.72"
+                  data-drift-scale="0.48"
+                >
+                  <span class="01-markets-move-bar-shimmer"></span>
+                </div>
+                <span class="01-markets-move-target-marker" style="left: 72%"></span>
+              </div>
+            </div>
+
+            <div class="01-markets-move-bar-row">
+              <div class="01-markets-move-bar-label">COIN 02</div>
+              <div class="01-markets-move-bar-track">
+                <div
+                  id="01-markets-move-bar-2"
+                  class="01-markets-move-bar-fill"
+                  data-target-scale="0.46"
+                  data-drift-scale="0.69"
+                >
+                  <span class="01-markets-move-bar-shimmer"></span>
+                </div>
+                <span
+                  id="01-markets-move-pulse-marker"
+                  class="01-markets-move-target-marker"
+                  style="left: 46%"
+                ></span>
+              </div>
+            </div>
+
+            <div class="01-markets-move-bar-row">
+              <div class="01-markets-move-bar-label">COIN 03</div>
+              <div class="01-markets-move-bar-track">
+                <div
+                  id="01-markets-move-bar-3"
+                  class="01-markets-move-bar-fill"
+                  data-target-scale="0.63"
+                  data-drift-scale="0.37"
+                >
+                  <span class="01-markets-move-bar-shimmer"></span>
+                </div>
+                <span class="01-markets-move-target-marker" style="left: 63%"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="01-markets-move-sequence-track" aria-hidden="true">
+            <div
+              id="01-markets-move-sequence-fill"
+              class="01-markets-move-sequence-fill"
+            ></div>
+          </div>
+
+          <div class="01-markets-move-module-key" aria-hidden="true">
+            <span class="01-markets-move-key-line"></span>
+            <span>TARGET</span>
+          </div>
+        </section>
+
+        <figure class="01-markets-move-product-frame">
+          <img
+            src="assets/app-product-overview.jpg"
+            alt="Bitcoin Ecosystem Pack overview"
+            class="01-markets-move-product-image"
+          />
+        </figure>
+
+        <aside id="01-markets-move-drift-note" class="01-markets-move-drift-note">
+          <div class="01-markets-move-drift-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div>
+            <div class="01-markets-move-drift-kicker">PACK MOVEMENT</div>
+            <div class="01-markets-move-drift-label">Allocation drift</div>
+          </div>
+        </aside>
+        <div
+          id="01-markets-move-note-connector"
+          class="01-markets-move-note-connector"
+          aria-hidden="true"
+        ></div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      container-type: size;
+      color: #20234f;
+    }
+
+    .clip {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    [class~="01-markets-move-ground"] {
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    [class~="01-markets-move-ground-field"] {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+    }
+
+    [class~="01-markets-move-scene"] {
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    [class~="01-markets-move-world"] {
+      position: absolute;
+      inset: 0;
+      width: 1080px;
+      height: 1920px;
+      transform-origin: 50% 50%;
+      will-change: transform;
+    }
+
+    [class~="01-markets-move-module"] {
+      position: absolute;
+      left: 50px;
+      top: 350px;
+      width: 365px;
+      height: 630px;
+      box-sizing: border-box;
+      padding: 34px 30px 28px;
+      overflow: hidden;
+      border: 1.5px solid rgba(8, 125, 245, 0.2);
+      border-radius: 14px;
+      background: rgba(8, 125, 245, 0.04);
+    }
+
+    [class~="01-markets-move-module-header"] {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    [class~="01-markets-move-eyebrow"],
+    [class~="01-markets-move-drift-kicker"] {
+      color: #0771de;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 0.08em;
+    }
+
+    [class~="01-markets-move-module-title"] {
+      margin-top: 10px;
+      color: #20234f;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    [class~="01-markets-move-illustrative-pill"] {
+      flex: 0 0 auto;
+      padding: 8px 11px;
+      border-radius: 100px;
+      background: rgba(8, 125, 245, 0.08);
+      color: #076bd2;
+      font-size: 9px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 0.08em;
+    }
+
+    [class~="01-markets-move-active-row"] {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 30px;
+      color: #2575c3;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 0.05em;
+    }
+
+    [class~="01-markets-move-active-dot"] {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #087df5;
+    }
+
+    [class~="01-markets-move-bars"] {
+      display: grid;
+      gap: 34px;
+      margin-top: 40px;
+    }
+
+    [class~="01-markets-move-bar-row"] {
+      display: grid;
+      gap: 11px;
+    }
+
+    [class~="01-markets-move-bar-label"] {
+      color: #20234f;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 0.03em;
+    }
+
+    [class~="01-markets-move-bar-track"] {
+      position: relative;
+      width: 100%;
+      height: 28px;
+      overflow: visible;
+      border-radius: 6px;
+      background: rgba(8, 125, 245, 0.08);
+    }
+
+    [class~="01-markets-move-bar-fill"] {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #087df5;
+      transform-origin: left center;
+    }
+
+    [class~="01-markets-move-bar-shimmer"] {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 42%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0)
+      );
+    }
+
+    [class~="01-markets-move-target-marker"] {
+      position: absolute;
+      top: -7px;
+      width: 3px;
+      height: 42px;
+      border-radius: 3px;
+      background: #20234f;
+      opacity: 0.62;
+      transform-origin: center center;
+    }
+
+    [class~="01-markets-move-sequence-track"] {
+      width: 100%;
+      height: 5px;
+      margin-top: 42px;
+      overflow: hidden;
+      border-radius: 6px;
+      background: rgba(8, 125, 245, 0.08);
+    }
+
+    [class~="01-markets-move-sequence-fill"] {
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+      background: #087df5;
+      transform: scaleX(0);
+      transform-origin: left center;
+    }
+
+    [class~="01-markets-move-module-key"] {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 16px;
+      color: #737373;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 0.08em;
+    }
+
+    [class~="01-markets-move-key-line"] {
+      width: 2px;
+      height: 16px;
+      border-radius: 2px;
+      background: #20234f;
+      opacity: 0.62;
+    }
+
+    [class~="01-markets-move-product-frame"] {
+      position: absolute;
+      left: 430px;
+      top: 105px;
+      width: 600px;
+      height: 1229px;
+      box-sizing: border-box;
+      margin: 0;
+      overflow: hidden;
+      border: 1.5px solid rgba(8, 125, 245, 0.2);
+      border-radius: 14px;
+      background: rgba(8, 125, 245, 0.04);
+    }
+
+    [class~="01-markets-move-product-image"] {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center top;
+    }
+
+    [class~="01-markets-move-drift-note"] {
+      position: absolute;
+      left: 68px;
+      top: 1040px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 320px;
+      box-sizing: border-box;
+      padding: 22px;
+      border: 1.5px solid rgba(8, 125, 245, 0.2);
+      border-left: 4px solid #087df5;
+      border-radius: 12px;
+      background: rgba(8, 125, 245, 0.04);
+    }
+
+    [class~="01-markets-move-drift-icon"] {
+      display: flex;
+      align-items: flex-end;
+      gap: 5px;
+      width: 42px;
+      height: 42px;
+      box-sizing: border-box;
+      padding: 8px;
+      border-radius: 50%;
+      background: #087df5;
+    }
+
+    [class~="01-markets-move-drift-icon"] span {
+      display: block;
+      width: 5px;
+      border-radius: 4px;
+      background: #ffffff;
+    }
+
+    [class~="01-markets-move-drift-icon"] span:nth-child(1) {
+      height: 12px;
+    }
+
+    [class~="01-markets-move-drift-icon"] span:nth-child(2) {
+      height: 22px;
+    }
+
+    [class~="01-markets-move-drift-icon"] span:nth-child(3) {
+      height: 16px;
+    }
+
+    [class~="01-markets-move-drift-label"] {
+      margin-top: 8px;
+      color: #20234f;
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    [class~="01-markets-move-note-connector"] {
+      position: absolute;
+      left: 388px;
+      top: 1094px;
+      width: 74px;
+      height: 2px;
+      border-radius: 2px;
+      background: #087df5;
+      transform-origin: left center;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script>
+    (() => {
+      const frameRoot = document.querySelector('[data-composition-id="01-markets-move"]');
+      const world = frameRoot.querySelector('[id="01-markets-move-world"]');
+      const module = frameRoot.querySelector('[id="01-markets-move-module"]');
+      const activeCoin = frameRoot.querySelector('[id="01-markets-move-active-coin"]');
+      const sequenceFill = frameRoot.querySelector('[id="01-markets-move-sequence-fill"]');
+      const driftNote = frameRoot.querySelector('[id="01-markets-move-drift-note"]');
+      const noteConnector = frameRoot.querySelector('[id="01-markets-move-note-connector"]');
+      const pulseMarker = frameRoot.querySelector('[id="01-markets-move-pulse-marker"]');
+      const shimmerEls = Array.from(
+        frameRoot.querySelectorAll('[class~="01-markets-move-bar-shimmer"]'),
+      );
+
+      const CONTENT = [
+        {
+          key: "COIN 01",
+          body: "allocation",
+          bar: frameRoot.querySelector('[id="01-markets-move-bar-1"]'),
+        },
+        {
+          key: "COIN 02",
+          body: "allocation",
+          bar: frameRoot.querySelector('[id="01-markets-move-bar-2"]'),
+        },
+        {
+          key: "COIN 03",
+          body: "allocation",
+          bar: frameRoot.querySelector('[id="01-markets-move-bar-3"]'),
+        },
+      ];
+
+      const BASE_DURATION = 0.34;
+      const SEC_PER_CHAR = 0.012;
+      const HOLD_MID = 0.18;
+      const HOLD_FINAL = 0.42;
+      let cumulative = 0;
+      const TIMELINE = CONTENT.map((entry, index) => {
+        const hold = index === CONTENT.length - 1 ? HOLD_FINAL : HOLD_MID;
+        const duration = BASE_DURATION + entry.body.length * SEC_PER_CHAR + hold;
+        const start = cumulative;
+        cumulative += duration;
+        return { ...entry, start, end: cumulative };
+      });
+
+      function entryAt(time) {
+        for (let i = TIMELINE.length - 1; i >= 0; i -= 1) {
+          if (time >= TIMELINE[i].start) return TIMELINE[i];
+        }
+        return TIMELINE[0];
+      }
+
+      const rootRect = frameRoot.getBoundingClientRect();
+      const moduleRect = module.getBoundingClientRect();
+      const targetOffsetX =
+        moduleRect.left + moduleRect.width / 2 - (rootRect.left + rootRect.width / 2);
+      const targetOffsetY =
+        moduleRect.top + moduleRect.height / 2 - (rootRect.top + rootRect.height / 2);
+      const OPEN_SCALE = 3.05;
+      const cam = {
+        scale: OPEN_SCALE,
+        x: -targetOffsetX * OPEN_SCALE,
+        y: -targetOffsetY * OPEN_SCALE,
+      };
+
+      function applyCamera() {
+        world.style.transform = `translate(${cam.x}px, ${cam.y}px) scale(${cam.scale})`;
+      }
+
+      applyCamera();
+
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["01-markets-move"] = tl;
+
+      tl.fromTo(module, { opacity: 0.01 }, { opacity: 1, duration: 0.34, ease: "power2.out" }, 0);
+
+      TIMELINE.forEach((entry) => {
+        const targetScale = Number(entry.bar.dataset.targetScale);
+        const driftScale = Number(entry.bar.dataset.driftScale);
+        tl.fromTo(
+          entry.bar,
+          { scaleX: targetScale },
+          {
+            scaleX: driftScale,
+            duration: Math.min(0.74, entry.end - entry.start + 0.18),
+            ease: "power2.inOut",
+          },
+          0.2 + entry.start,
+        );
+      });
+
+      const sequenceDriver = { t: 0 };
+      let lastKey = "";
+      tl.to(
+        sequenceDriver,
+        {
+          t: cumulative,
+          duration: 2.1,
+          ease: "none",
+          onUpdate: () => {
+            const entry = entryAt(sequenceDriver.t);
+            if (entry.key !== lastKey) {
+              activeCoin.textContent = entry.key;
+              lastKey = entry.key;
+            }
+            sequenceFill.style.transform = `scaleX(${sequenceDriver.t / cumulative})`;
+          },
+        },
+        0.16,
+      );
+
+      tl.fromTo(
+        cam,
+        {
+          scale: OPEN_SCALE,
+          x: -targetOffsetX * OPEN_SCALE,
+          y: -targetOffsetY * OPEN_SCALE,
+        },
+        {
+          scale: 1,
+          x: 0,
+          y: 0,
+          duration: 1.9,
+          ease: "power4.out",
+          onUpdate: applyCamera,
+        },
+        2.4,
+      );
+
+      tl.fromTo(
+        noteConnector,
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.48, ease: "power3.out" },
+        4.58,
+      );
+      tl.fromTo(
+        driftNote,
+        { opacity: 0, y: 28 },
+        { opacity: 1, y: 0, duration: 0.72, ease: "power3.out" },
+        4.72,
+      );
+
+      shimmerEls.forEach((shimmer, index) => {
+        tl.fromTo(
+          shimmer,
+          { xPercent: -125 },
+          {
+            xPercent: 240,
+            duration: 0.86,
+            ease: "power2.inOut",
+          },
+          6.36 + index * 0.16,
+        );
+      });
+
+      tl.fromTo(
+        pulseMarker,
+        { scaleY: 1, opacity: 0.62 },
+        { scaleY: 1.62, opacity: 1, duration: 0.34, ease: "power2.out" },
+        7.02,
+      );
+      tl.to(
+        pulseMarker,
+        { scaleY: 1.1, opacity: 0.72, duration: 0.46, ease: "power2.out" },
+        7.36,
+      );
+
+      const holdState = { value: 0 };
+      tl.to(holdState, { value: 1, duration: 0.849, ease: "none" }, 7.82);
+    })();
+  </script>
+</template>
