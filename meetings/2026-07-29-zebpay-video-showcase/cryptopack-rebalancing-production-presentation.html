@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How the ZebPay CryptoPack Rebalancing in-app marketing video was made.">
+  <title>How we made CryptoPack Rebalancing · ZebPay</title>
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-400.woff2") format("woff2");
+      font-weight: 400 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-700.woff2") format("woff2");
+      font-weight: 700 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --ink: #f8f7f2;
+      --muted: #aeb9c7;
+      --quiet: #7c899a;
+      --navy: #07111d;
+      --panel: #0d1a29;
+      --panel-2: #122235;
+      --line: rgba(255,255,255,.11);
+      --blue: #5ab7ff;
+      --gold: #ffc95c;
+      --green: #75dfb5;
+      --red: #ff8d89;
+      --shadow: 0 28px 70px rgba(0,0,0,.35);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      overflow: hidden;
+      background: var(--navy);
+      color: var(--ink);
+      font-family: Inter, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    button, a { font: inherit; }
+    button { color: inherit; }
+    img, video { display: block; max-width: 100%; }
+    figure { margin: 0; }
+
+    .shell {
+      width: 100vw;
+      height: 100vh;
+      min-height: 520px;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(90,183,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(90,183,255,.045) 1px, transparent 1px),
+        var(--navy);
+      background-size: 54px 54px;
+    }
+    .shell::before {
+      content: "";
+      position: absolute;
+      width: 44vw;
+      height: 44vw;
+      right: -18vw;
+      top: -22vw;
+      border: 1px solid rgba(90,183,255,.16);
+      border-radius: 50%;
+      box-shadow: 0 0 0 8vw rgba(90,183,255,.02), 0 0 0 17vw rgba(255,201,92,.018);
+      z-index: -1;
+    }
+
+    .topbar, .footer {
+      position: fixed;
+      left: clamp(20px, 4vw, 64px);
+      right: clamp(20px, 4vw, 64px);
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+    .topbar { top: clamp(16px, 2.6vh, 28px); }
+    .footer { bottom: clamp(14px, 2.3vh, 24px); }
+    .brand, .meeting-tag, .counter, .controls { pointer-events: auto; }
+    .brand {
+      display: inline-flex;
+      gap: 11px;
+      align-items: center;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -.02em;
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .brand-mark {
+      width: 31px;
+      height: 31px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      color: var(--navy);
+      background: var(--gold);
+      font-size: 14px;
+    }
+    .meeting-tag, .counter {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+    }
+    .controls { display: flex; align-items: center; gap: 8px; }
+    .nav-button {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(13,26,41,.8);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: border-color .18s ease, background .18s ease, transform .18s ease;
+    }
+    .nav-button:hover { border-color: var(--blue); background: var(--panel-2); transform: translateY(-1px); }
+    .nav-button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .nav-button:disabled { opacity: .32; cursor: default; transform: none; }
+
+    .deck { width: 100%; height: 100%; }
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: clamp(76px, 10vh, 112px) clamp(24px, 6vw, 90px) clamp(62px, 8vh, 84px);
+      display: grid;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(22px);
+      transition: opacity .34s ease, transform .34s ease, visibility .34s;
+      overflow: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--line) transparent;
+    }
+    .slide.active { opacity: 1; visibility: visible; transform: none; z-index: 2; }
+    .content { width: min(1180px, 100%); margin: auto; }
+    .content.narrow { width: min(930px, 100%); }
+    .eyebrow {
+      margin: 0 0 15px;
+      color: var(--gold);
+      font-weight: 800;
+      font-size: clamp(10px, 1vw, 12px);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2 {
+      margin-bottom: 18px;
+      text-wrap: balance;
+      letter-spacing: -.055em;
+      line-height: .98;
+    }
+    h1 { max-width: 760px; font-size: clamp(44px, 6.8vw, 92px); }
+    h2 { max-width: 880px; font-size: clamp(36px, 5.2vw, 68px); }
+    h3 {
+      margin-bottom: 9px;
+      font-size: clamp(16px, 1.65vw, 21px);
+      letter-spacing: -.025em;
+    }
+    .lead {
+      max-width: 720px;
+      margin-bottom: 26px;
+      color: var(--muted);
+      font-size: clamp(16px, 1.7vw, 22px);
+      line-height: 1.48;
+    }
+    .micro {
+      color: var(--quiet);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    .accent { color: var(--blue); }
+    .gold { color: var(--gold); }
+    .green { color: var(--green); }
+    .bad { color: var(--red); }
+    .rule { height: 1px; background: var(--line); margin: 20px 0; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(300px, .7fr);
+      gap: clamp(28px, 5vw, 78px);
+      align-items: center;
+    }
+    .hero-frame, .screen-frame, .evidence-frame, .video-frame {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .hero-frame img { width: 100%; aspect-ratio: 1.46; object-fit: cover; }
+    .frame-label {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      padding: 7px 10px;
+      border-radius: 9px;
+      background: rgba(7,17,29,.88);
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .metric, .card {
+      border: 1px solid var(--line);
+      background: rgba(13,26,41,.8);
+      border-radius: 16px;
+    }
+    .metric { padding: 16px; }
+    .metric strong { display: block; color: var(--ink); font-size: clamp(20px, 2.5vw, 31px); letter-spacing: -.04em; }
+    .metric span { color: var(--quiet); font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 28px;
+      counter-reset: step;
+    }
+    .workflow-card {
+      counter-increment: step;
+      min-height: 145px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: rgba(13,26,41,.74);
+    }
+    .workflow-card::before {
+      content: "0" counter(step);
+      display: block;
+      margin-bottom: 22px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .14em;
+    }
+    .workflow-card p, .card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+    .screen-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .screen-frame { border-radius: 18px; box-shadow: 0 18px 45px rgba(0,0,0,.28); }
+    .screen-frame img { width: 100%; aspect-ratio: .56; object-fit: cover; object-position: top; }
+    .screen-frame figcaption {
+      min-height: 56px;
+      padding: 12px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .beat-map {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0,1fr));
+      gap: 0;
+      margin-top: 36px;
+    }
+    .beat {
+      position: relative;
+      min-height: 205px;
+      padding: 24px 15px 15px;
+      border-top: 1px solid var(--line);
+    }
+    .beat::before {
+      content: "";
+      position: absolute;
+      left: 14px;
+      top: -6px;
+      width: 11px;
+      height: 11px;
+      border: 2px solid var(--navy);
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 1px var(--blue);
+    }
+    .beat:nth-child(2n)::before { background: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+    .beat b { display: block; margin-bottom: 8px; font-size: 13px; }
+    .beat p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .beat .time { display: block; margin-top: 18px; color: var(--quiet); font-size: 10px; letter-spacing: .1em; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, .85fr);
+      gap: clamp(26px, 5vw, 70px);
+      align-items: center;
+    }
+    .lane-grid { display: grid; gap: 10px; margin-top: 24px; }
+    .lane {
+      display: grid;
+      grid-template-columns: 96px minmax(0,1fr);
+      gap: 16px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+    .lane:first-child { border-top: 0; }
+    .lane b { color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: .14em; }
+    .lane p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.48; }
+    .evidence-frame img { width: 100%; max-height: 53vh; object-fit: cover; object-position: top; }
+
+    .audio-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      padding: 20px;
+      align-items: center;
+    }
+    .wave {
+      width: 62px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      border-radius: 16px;
+      background: rgba(90,183,255,.1);
+    }
+    .wave i { width: 3px; border-radius: 3px; background: var(--blue); }
+    .wave i:nth-child(1), .wave i:nth-child(7) { height: 14px; }
+    .wave i:nth-child(2), .wave i:nth-child(6) { height: 27px; }
+    .wave i:nth-child(3), .wave i:nth-child(5) { height: 39px; }
+    .wave i:nth-child(4) { height: 50px; }
+    .stat-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-top: 18px; }
+    .stat-list .card { padding: 16px; }
+    .stat-list strong { display: block; margin-bottom: 4px; font-size: 20px; }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 26px;
+    }
+    .review-card { padding: 22px; border-left: 3px solid var(--red); }
+    .review-card.keeper { border-left-color: var(--green); }
+    .review-card ul { margin: 16px 0 0; padding-left: 18px; color: var(--muted); }
+    .review-card li { margin: 7px 0; font-size: 12px; line-height: 1.45; }
+
+    .qc-strip {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(4, minmax(0,.55fr));
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .qc-strip .card { height: 168px; padding: 16px; }
+    .qc-strip img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 12px; }
+    .qc-strip strong { display: block; color: var(--green); font-size: 20px; letter-spacing: -.04em; }
+    .qc-strip span { color: var(--quiet); font-size: 10px; text-transform: uppercase; letter-spacing: .09em; }
+
+    .film-layout {
+      display: grid;
+      grid-template-columns: minmax(0,.8fr) minmax(280px,.45fr);
+      gap: clamp(26px, 5vw, 66px);
+      align-items: center;
+    }
+    .video-frame {
+      width: min(340px, 100%);
+      justify-self: center;
+      border-radius: 28px;
+      background: #000;
+    }
+    .video-frame video { width: 100%; max-height: 70vh; aspect-ratio: 9/16; object-fit: contain; }
+    .play-note { margin-top: 16px; color: var(--quiet); font-size: 11px; line-height: 1.5; }
+
+    .takeaways { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 28px; }
+    .takeaway { min-height: 130px; padding: 20px; border-top: 2px solid var(--blue); }
+    .takeaway:nth-child(2n) { border-top-color: var(--gold); }
+    .takeaway .number { display: block; margin-bottom: 18px; color: var(--quiet); font-size: 10px; font-weight: 800; letter-spacing: .15em; }
+
+    @media (max-width: 900px) {
+      .slide { align-items: start; }
+      .hero-grid, .two-col, .film-layout { grid-template-columns: 1fr; }
+      .hero-frame { max-width: 610px; }
+      .workflow-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .screen-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .screen-frame img { aspect-ratio: .72; }
+      .beat-map { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .beat:nth-child(n+4) { margin-top: 18px; }
+      .qc-strip { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .qc-strip .card:first-child { grid-column: 1 / -1; }
+      .video-frame { width: min(300px, 82vw); }
+    }
+    @media (max-width: 560px) {
+      .shell { min-height: 480px; }
+      .meeting-tag { display: none; }
+      .slide { padding-left: 18px; padding-right: 18px; }
+      .metrics, .workflow-grid, .review-grid, .takeaways, .stat-list { grid-template-columns: 1fr; }
+      .screen-grid { gap: 8px; }
+      .screen-frame figcaption { min-height: 48px; padding: 9px; }
+      .beat-map { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .beat:nth-child(n+3) { margin-top: 14px; }
+      .lane { grid-template-columns: 76px 1fr; }
+      .qc-strip { grid-template-columns: 1fr 1fr; }
+      .qc-strip .card { padding: 12px; }
+      .footer { left: 18px; right: 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Back to meeting home">
+        <span class="brand-mark">Z</span>
+        <span>ZebPay · Video Production</span>
+      </a>
+      <span class="meeting-tag">CryptoPack Rebalancing · 29 Jul 2026</span>
+    </header>
+
+    <section class="deck" id="deck" aria-live="polite">
+      <article class="slide active" id="slide-1" aria-hidden="false">
+        <div class="content hero-grid">
+          <div>
+            <p class="eyebrow" data-pretext contenteditable="false">Case study · In-app marketing</p>
+            <h1 data-pretext contenteditable="false">How we made <span class="accent">CryptoPack Rebalancing</span></h1>
+            <p class="lead" data-pretext contenteditable="false">A screenshot-led, motion-designed product film that makes portfolio drift and rebalancing feel simple, transparent, and controllable.</p>
+            <div class="metrics">
+              <div class="metric"><strong>46.6s</strong><span>final runtime</span></div>
+              <div class="metric"><strong>6</strong><span>visual beats</span></div>
+              <div class="metric"><strong>9:16</strong><span>vertical master</span></div>
+            </div>
+          </div>
+          <figure class="hero-frame">
+            <img src="assets/rebalancing/encoded-midpoints.png" alt="Contact sheet of the encoded CryptoPack Rebalancing video">
+            <figcaption class="frame-label">Encoded v002 · keeper</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="slide" id="slide-2" aria-hidden="true">
+        <div class="content">
+          <p class="eyebrow" data-pretext contenteditable="false">The production path</p>
+          <h2 data-pretext contenteditable="false">From product brief to <span class="accent">encoded proof</span></h2>
+          <p class="lead" data-pretext contenteditable="false">The real app supplied product truth. A single narration performance became the clock. Everything exact was built deterministically and reviewed after encoding.</p>
+          <div class="workflow-grid">
+            <section class="workflow-card"><h3>Source truth</h3><p>Read the campaign PDF and inventory the supplied in-app screens.</p></section>
+            <section class="workflow-card"><h3>Script + beats</h3><p>Turn one product idea into six concise visual moments and 107 spoken words.</p></section>
+            <section class="workflow-card"><h3>UI direction</h3><p>Use real screenshots for product claims, with illustration only as context.</p></section>
+            <section class="workflow-card"><h3>Motion build</h3><p>Compose responsive HTML, CSS and SVG scenes in HyperFrames.</p></section>
+            <section class="workflow-card"><h3>Voice + sound</h3><p>Lock timing to one playful ElevenLabs performance, then mix music and SFX.</p></section>
+            <section class="workflow-card"><h3>Encoded QC</h3><p>Inspect captions, claims, transitions, frames, loudness and the actual MP4.</p></section>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide" id="slide-3" aria-hidden="true">
+        <div class="content">
+          <p class="eyebrow" data-pretext contenteditable="false">Product truth first</p>
+          <h2 data-pretext contenteditable="false">Screenshots carried the <span class="gold">authority</span></h2>
+          <p class="lead" data-pretext contenteditable="false">We used the product’s own surfaces for names, controls and history. This kept the film recognizably ZebPay and reduced the risk of invented UI.</p>
+          <div class="screen-grid">
+            <figure class="screen-frame"><img src="assets/rebalancing/app-product-overview.jpg" alt="CryptoPack product overview screen"><figcaption>Product overview establishes the real interface.</figcaption></figure>
+            <figure class="screen-frame"><img src="assets/rebalancing/app-rebalancing-history.jpg" alt="CryptoPack rebalancing history screen"><figcaption>History supports the transparency message.</figcaption></figure>
+            <figure class="screen-frame"><img src="assets/rebalancing/app-enable-rebalancing.png" alt="Enable rebalancing confirmation screen"><figcaption>Enable flow gives the user explicit control.</figcaption></figure>
+            <figure class="screen-frame"><img src="assets/rebalancing/app-disable-rebalancing.png" alt="Disable rebalancing confirmation screen"><figcaption>Disable flow proves the choice is reversible.</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide" id="slide-4" aria-hidden="true">
+        <div class="content">
+          <p class="eyebrow" data-pretext contenteditable="false">Narrative architecture</p>
+          <h2 data-pretext contenteditable="false">One idea, told in <span class="accent">six beats</span></h2>
+          <div class="beat-map">
+            <section class="beat"><b>Markets move</b><p>A lively opening turns market movement into an immediately readable problem.</p><span class="time">00:00</span></section>
+            <section class="beat"><b>Allocations drift</b><p>The portfolio’s intended mix can change as individual assets move.</p><span class="time">00:06</span></section>
+            <section class="beat"><b>Realign</b><p>Rebalancing brings the CryptoPack closer to its intended allocation.</p><span class="time">00:14</span></section>
+            <section class="beat"><b>Research</b><p>The logic is framed as rules and market research—not magic.</p><span class="time">00:23</span></section>
+            <section class="beat"><b>See the history</b><p>The interface makes updates visible and reviewable.</p><span class="time">00:32</span></section>
+            <section class="beat"><b>You control it</b><p>A clean CTA lands on the ability to enable or disable the feature.</p><span class="time">00:40</span></section>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide" id="slide-5" aria-hidden="true">
+        <div class="content two-col">
+          <div>
+            <p class="eyebrow" data-pretext contenteditable="false">Visual construction</p>
+            <h2 data-pretext contenteditable="false">Deterministic where it <span class="gold">mattered</span></h2>
+            <p class="lead" data-pretext contenteditable="false">Rather than generating a fictional product world, we designed around the supplied screens with crisp type, controlled transitions and exact timing.</p>
+            <div class="lane-grid">
+              <div class="lane"><b>Product</b><p>Real screenshots preserve names, controls and information architecture.</p></div>
+              <div class="lane"><b>Motion</b><p>HyperFrames animates layout, focus, charts, phones and camera moves repeatably.</p></div>
+              <div class="lane"><b>Post</b><p>FFmpeg assembles frames, captions, mix and the delivery encode.</p></div>
+              <div class="lane"><b>Spend</b><p><span class="green">Zero paid picture generations</span>; the source UI did the visual heavy lifting.</p></div>
+            </div>
+          </div>
+          <figure class="evidence-frame">
+            <img src="assets/rebalancing/app-product-overview.jpg" alt="ZebPay CryptoPack interface used as the visual source of truth">
+            <figcaption class="frame-label">Real product surface</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="slide" id="slide-6" aria-hidden="true">
+        <div class="content two-col">
+          <div>
+            <p class="eyebrow" data-pretext contenteditable="false">Voice + sound</p>
+            <h2 data-pretext contenteditable="false">The voice became the <span class="accent">master clock</span></h2>
+            <p class="lead" data-pretext contenteditable="false">A playful, enthusiastic English female voice kept the explanation light. The performance stayed continuous so image, captions and sound could lock to one human rhythm.</p>
+            <section class="card audio-card">
+              <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div><h3>ElevenLabs · Jessica</h3><p>One request, one performance, 741 characters—then conformed to the frame-locked timeline.</p></div>
+            </section>
+          </div>
+          <div>
+            <div class="stat-list">
+              <section class="card"><strong>107</strong><p>spoken words</p></section>
+              <section class="card"><strong>42</strong><p>caption groups</p></section>
+              <section class="card"><strong>1</strong><p>voice request</p></section>
+              <section class="card"><strong>48 kHz</strong><p>stereo delivery</p></section>
+            </div>
+            <p class="micro" style="margin-top:16px" data-pretext contenteditable="false">Original music and interface sound cues support the energy without competing with product explanation.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide" id="slide-7" aria-hidden="true">
+        <div class="content two-col">
+          <div>
+            <p class="eyebrow" data-pretext contenteditable="false">Why review the encode?</p>
+            <h2 data-pretext contenteditable="false">The first cut was <span class="bad">not</span> the final cut</h2>
+            <p class="lead" data-pretext contenteditable="false">Reviewing the actual encoded v001 found concrete blockers that source timelines alone could not certify.</p>
+            <div class="review-grid">
+              <section class="card review-card">
+                <h3 class="bad">v001 · blocked</h3>
+                <ul><li>Unsafe or misleading source-screen copy remained visible.</li><li>A focus label needed safer product wording.</li><li>Some caption groups entered after their spoken first word.</li></ul>
+              </section>
+              <section class="card review-card keeper">
+                <h3 class="green">v002 · keeper</h3>
+                <ul><li>Unsafe screenshot copy was deliberately masked.</li><li>Focus changed to “Allocations or tokens may update.”</li><li>First-word caption onsets were corrected.</li></ul>
+              </section>
+            </div>
+          </div>
+          <figure class="evidence-frame">
+            <img src="assets/rebalancing/claims-scan.png" alt="Claims and visual safety scan from the encoded CryptoPack video">
+            <figcaption class="frame-label">Encoded claims scan</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="slide" id="slide-8" aria-hidden="true">
+        <div class="content">
+          <p class="eyebrow" data-pretext contenteditable="false">Delivery evidence</p>
+          <h2 data-pretext contenteditable="false">A keeper is a <span class="green">measured verdict</span></h2>
+          <p class="lead" data-pretext contenteditable="false">Midpoints, boundaries, captions and audio were checked on the final 1080 × 1920 MP4—not inferred from a preview.</p>
+          <div class="qc-strip">
+            <figure class="card"><img src="assets/rebalancing/boundaries.png" alt="Boundary contact sheet from the encoded CryptoPack video"></figure>
+            <section class="card"><strong>1,395</strong><span>integer frames</span></section>
+            <section class="card"><strong>30</strong><span>frames / second</span></section>
+            <section class="card"><strong>−16.36</strong><span>LUFS integrated</span></section>
+            <section class="card"><strong>−1.46</strong><span>dB true peak</span></section>
+          </div>
+          <p class="micro" style="margin-top:16px" data-pretext contenteditable="false">Encoded-artifact verdict: KEEPER. Human brand, voice entitlement, product and legal approval remain the promotion gates.</p>
+        </div>
+      </article>
+
+      <article class="slide" id="slide-9" aria-hidden="true">
+        <div class="content film-layout">
+          <div>
+            <p class="eyebrow" data-pretext contenteditable="false">The meeting cut</p>
+            <h2 data-pretext contenteditable="false">CryptoPack Rebalancing <span class="accent">v002</span></h2>
+            <p class="lead" data-pretext contenteditable="false">A concise product explainer with a real-interface backbone, energetic narration and deterministic motion.</p>
+            <div class="metrics">
+              <div class="metric"><strong>v002</strong><span>encoded keeper</span></div>
+              <div class="metric"><strong>1080</strong><span>× 1920 pixels</span></div>
+              <div class="metric"><strong>H.264</strong><span>AAC stereo</span></div>
+            </div>
+            <p class="play-note" data-pretext contenteditable="false">The video is copied into this meeting folder and plays without the production repository.</p>
+          </div>
+          <figure class="video-frame">
+            <video controls preload="metadata" playsinline poster="assets/rebalancing/app-product-overview.jpg">
+              <source src="videos/cryptopack-rebalancing-review-v002.mp4" type="video/mp4">
+              Your browser cannot play the packaged MP4. Open it directly from the videos folder.
+            </video>
+          </figure>
+        </div>
+      </article>
+
+      <article class="slide" id="slide-10" aria-hidden="true">
+        <div class="content narrow">
+          <p class="eyebrow" data-pretext contenteditable="false">What we learned</p>
+          <h2 data-pretext contenteditable="false">A reusable system for <span class="gold">product films</span></h2>
+          <div class="takeaways">
+            <section class="card takeaway"><span class="number">01 · TRUTH</span><h3>Let the product be the hero.</h3><p>Use source screenshots wherever UI, controls or claims must be exact.</p></section>
+            <section class="card takeaway"><span class="number">02 · CLOCK</span><h3>Lock one voice performance first.</h3><p>It gives motion, captions and music one coherent human rhythm.</p></section>
+            <section class="card takeaway"><span class="number">03 · CONTROL</span><h3>Animate deterministic surfaces.</h3><p>Exact text and repeatable timing belong in code and post—not generated imagery.</p></section>
+            <section class="card takeaway"><span class="number">04 · PROOF</span><h3>Judge what the audience receives.</h3><p>Encoded frames and measured audio are the real approval evidence.</p></section>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <div class="counter" id="slide-counter">01 / 10</div>
+      <div class="controls">
+        <button class="nav-button" id="prev" type="button" aria-label="Previous slide">←</button>
+        <button class="nav-button" id="next" type="button" aria-label="Next slide">→</button>
+      </div>
+    </footer>
+  </main>
+
+  <script type="module">
+    const slides = [...document.querySelectorAll("#deck .slide")];
+    const counter = document.getElementById("slide-counter");
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
+    let current = 0;
+    let touchStart = null;
+
+    function render(index, writeHash = true) {
+      current = Math.max(0, Math.min(slides.length - 1, index));
+      slides.forEach((slide, i) => {
+        const active = i === current;
+        slide.classList.toggle("active", active);
+        slide.setAttribute("aria-hidden", String(!active));
+        if (active) slide.scrollTop = 0;
+      });
+      counter.textContent = `${String(current + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+      prev.disabled = current === 0;
+      next.disabled = current === slides.length - 1;
+      if (writeHash) history.replaceState(null, "", `#slide-${current + 1}`);
+    }
+
+    prev.addEventListener("click", () => render(current - 1));
+    next.addEventListener("click", () => render(current + 1));
+    document.addEventListener("keydown", (event) => {
+      if (["ArrowRight", "PageDown", " "].includes(event.key)) { event.preventDefault(); render(current + 1); }
+      if (["ArrowLeft", "PageUp"].includes(event.key)) { event.preventDefault(); render(current - 1); }
+      if (event.key === "Home") render(0);
+      if (event.key === "End") render(slides.length - 1);
+    });
+    document.addEventListener("touchstart", event => { touchStart = event.changedTouches[0].clientX; }, { passive: true });
+    document.addEventListener("touchend", event => {
+      if (touchStart === null) return;
+      const delta = event.changedTouches[0].clientX - touchStart;
+      if (Math.abs(delta) > 55) render(current + (delta < 0 ? 1 : -1));
+      touchStart = null;
+    }, { passive: true });
+
+    const hashIndex = Number.parseInt(location.hash.replace("#slide-", ""), 10) - 1;
+    render(Number.isFinite(hashIndex) ? hashIndex : 0, false);
+
+    try {
+      const { default: Pretext } = await import("https://esm.sh/pretext@0.3.1");
+      const pretext = new Pretext();
+      document.querySelectorAll("[data-pretext]").forEach(element => pretext.bind(element));
+      new ResizeObserver(() => pretext.update()).observe(document.body);
+    } catch {
+      // The deck is intentionally fully readable offline; Pretext only adds editor bindings.
+    }
+  </script>
+</body>
+</html>

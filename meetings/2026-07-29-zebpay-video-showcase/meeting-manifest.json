@@ -1,0 +1,26 @@
+{
+  "meeting": "ZebPay video production showcase",
+  "date": "2026-07-29",
+  "entrypoint": "index.html",
+  "offline_core_content": true,
+  "films": [
+    {
+      "name": "Ramayana × ZebPay SIP",
+      "presentation": "ramayana-video-production-presentation.html",
+      "video": "videos/ramayana-zebpay-sip-review-v011-captioned.mp4",
+      "source_version": "final-short-v011",
+      "duration_seconds": 52.2,
+      "video_sha256": "7CD0003E9318DBA1BAD640A4E8552B2D991D401097B1D8AEC69BE164F201705B",
+      "meeting_status": "creative-approved review"
+    },
+    {
+      "name": "CryptoPack Rebalancing",
+      "presentation": "cryptopack-rebalancing-production-presentation.html",
+      "video": "videos/cryptopack-rebalancing-review-v002.mp4",
+      "source_version": "cryptopack-rebalancing-v002",
+      "duration_seconds": 46.6,
+      "video_sha256": "3B90B00BC81BF90F0EEC6F19696E8FF7A3175C5F9591F3F66CCCE8389190FA76",
+      "meeting_status": "encoded-artifact keeper"
+    }
+  ]
+}

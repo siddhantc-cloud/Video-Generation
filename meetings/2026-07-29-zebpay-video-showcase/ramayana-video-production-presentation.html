@@ -1,0 +1,3305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How the Ramayana-ZebPay SIP film was made: story beats, reusable elements, keyframes, image-only animatic, Higgsfield motion, and post-production.">
+  <title>How we made Ramayana-ZebPay SIP</title>
+  <link rel="icon" href="data:,">
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-400.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-700.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 700 800;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: dark;
+      --ink: #f4f7fb;
+      --muted: #9dafc2;
+      --quiet: #66798c;
+      --paper: #07111d;
+      --paper-2: #0a1725;
+      --paper-3: #102237;
+      --line: rgba(173, 195, 218, 0.2);
+      --line-strong: rgba(173, 195, 218, 0.42);
+      --blue: #408cff;
+      --blue-soft: #83b4ff;
+      --gold: #e4b85c;
+      --gold-soft: #f4d89a;
+      --green: #43c99a;
+      --red: #ff796f;
+      --white: #ffffff;
+      --slide-pad-x: clamp(2.25rem, 5vw, 6.5rem);
+      --slide-pad-y: clamp(4.75rem, 8vh, 7rem);
+      --display: "Inter", "Aptos Display", "Segoe UI", sans-serif;
+      --body: "Inter", "Aptos", "Segoe UI", sans-serif;
+      --ease: cubic-bezier(0.2, 0.75, 0.25, 1);
+      --shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+    }
+
+    body {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    button {
+      color: inherit;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 1000;
+      top: 0.75rem;
+      left: 0.75rem;
+      padding: 0.75rem 1rem;
+      transform: translateY(-160%);
+      background: var(--white);
+      color: #07111d;
+      font-weight: 700;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .shell {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      isolation: isolate;
+      background:
+        linear-gradient(90deg, transparent 0 8%, rgba(64, 140, 255, 0.045) 8% 8.08%, transparent 8.08%),
+        var(--paper);
+    }
+
+    .shell::before {
+      position: fixed;
+      z-index: 0;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      opacity: 0.32;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent 76%);
+    }
+
+    .topbar {
+      position: fixed;
+      z-index: 60;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1rem;
+      padding: 0 var(--slide-pad-x);
+      border-bottom: 1px solid var(--line);
+      background: rgba(7, 17, 29, 0.92);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.72rem;
+      min-width: 0;
+      font-family: var(--display);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand__mark {
+      width: 1.65rem;
+      height: 1.65rem;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(64, 140, 255, 0.55);
+      background: var(--blue);
+    }
+
+    .brand__mark svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .brand__secondary {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .topbar__actions {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .icon-button,
+    .nav-button {
+      min-width: 2.65rem;
+      min-height: 2.65rem;
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: rgba(255, 255, 255, 0.025);
+      cursor: pointer;
+      transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .icon-button:hover,
+    .nav-button:hover {
+      border-color: var(--line-strong);
+      background: rgba(64, 140, 255, 0.12);
+    }
+
+    .icon-button[aria-pressed="true"] {
+      border-color: var(--gold);
+      color: var(--gold-soft);
+      background: rgba(228, 184, 92, 0.1);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .deck {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: none;
+      overflow: hidden;
+      padding: var(--slide-pad-y) var(--slide-pad-x) 5.6rem;
+      background: var(--paper);
+    }
+
+    .slide.is-active {
+      display: block;
+      animation: slide-in 540ms var(--ease) both;
+    }
+
+    .slide.is-leaving {
+      display: block;
+      pointer-events: none;
+      animation: slide-out 300ms ease both;
+    }
+
+    @keyframes slide-in {
+      from { opacity: 0; transform: translateY(1.25rem); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slide-out {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(-0.75rem); }
+    }
+
+    .slide__inner {
+      width: min(100%, 94rem);
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide__inner--top {
+      justify-content: flex-start;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: clamp(1.15rem, 2.5vh, 2rem);
+      color: var(--blue-soft);
+      font-family: var(--display);
+      font-size: clamp(0.72rem, 0.9vw, 0.9rem);
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .section-label::before {
+      width: 2.1rem;
+      height: 2px;
+      content: "";
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--display);
+      letter-spacing: -0.045em;
+    }
+
+    h1 {
+      max-width: 11.6ch;
+      margin-bottom: 1.35rem;
+      font-size: clamp(3.15rem, 7.4vw, 7.5rem);
+      line-height: 0.94;
+      font-weight: 800;
+    }
+
+    h2 {
+      max-width: 16ch;
+      margin-bottom: 1.25rem;
+      font-size: clamp(2.25rem, 4.4vw, 4.9rem);
+      line-height: 1.01;
+      font-weight: 750;
+    }
+
+    h3 {
+      margin-bottom: 0.7rem;
+      font-size: clamp(1.05rem, 1.6vw, 1.55rem);
+      line-height: 1.14;
+      font-weight: 750;
+    }
+
+    p {
+      line-height: 1.58;
+    }
+
+    .accent {
+      color: var(--gold-soft);
+    }
+
+    .accent-blue {
+      color: var(--blue-soft);
+    }
+
+    .lede {
+      max-width: 49rem;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.7vw, 1.55rem);
+      line-height: 1.55;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: clamp(0.78rem, 0.92vw, 0.95rem);
+      line-height: 1.55;
+    }
+
+    .micro {
+      color: var(--quiet);
+      font-size: 0.72rem;
+      line-height: 1.5;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.03fr) minmax(19rem, 0.82fr);
+      gap: clamp(2.2rem, 5vw, 6rem);
+      align-items: center;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.35rem;
+      margin-top: 2.1rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .hero-proof__item {
+      min-width: 8rem;
+    }
+
+    .hero-proof strong {
+      display: block;
+      margin-bottom: 0.22rem;
+      color: var(--ink);
+      font-family: var(--display);
+      font-size: clamp(1.35rem, 2.3vw, 2.25rem);
+    }
+
+    .hero-proof span {
+      color: var(--muted);
+      font-size: 0.76rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .film-window {
+      position: relative;
+      min-height: min(68vh, 42rem);
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      background: #02070d;
+      box-shadow: var(--shadow);
+    }
+
+    .film-window::after {
+      position: absolute;
+      inset: auto 0 0;
+      height: 46%;
+      pointer-events: none;
+      content: "";
+      background: linear-gradient(to top, rgba(2, 7, 13, 0.95), transparent);
+    }
+
+    .film-window img {
+      width: 100%;
+      height: 100%;
+      min-height: min(68vh, 42rem);
+      object-fit: cover;
+      object-position: 54% 24%;
+      filter: saturate(0.82) contrast(1.08);
+    }
+
+    .film-window__caption {
+      position: absolute;
+      z-index: 2;
+      left: 1.35rem;
+      right: 1.35rem;
+      bottom: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--white);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .statement {
+      max-width: 20ch;
+      margin: 0 0 2.5rem;
+      font-family: var(--display);
+      font-size: clamp(2.6rem, 5.3vw, 6.1rem);
+      line-height: 1.04;
+      letter-spacing: -0.05em;
+      font-weight: 750;
+    }
+
+    .outcome-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    .outcome {
+      min-height: 9.5rem;
+      padding: 1.35rem 1.4rem 1.2rem 0;
+    }
+
+    .outcome + .outcome {
+      padding-left: 1.4rem;
+      border-left: 1px solid var(--line);
+    }
+
+    .outcome__number {
+      display: block;
+      margin-bottom: 0.75rem;
+      color: var(--gold);
+      font-family: var(--display);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+    }
+
+    .outcome p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: clamp(0.88rem, 1.15vw, 1.08rem);
+    }
+
+    .map {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: clamp(1.5rem, 3vh, 2.4rem);
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .map-step {
+      position: relative;
+      min-height: clamp(8.2rem, 17vh, 11rem);
+      padding: 1.2rem;
+      background: var(--paper-2);
+    }
+
+    .map-step__id {
+      display: block;
+      margin-bottom: 1.35rem;
+      color: var(--blue-soft);
+      font-family: var(--display);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .map-step h3 {
+      max-width: 11ch;
+      margin-bottom: 0.55rem;
+    }
+
+    .map-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .map-step[data-phase="spend"]::after {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      padding: 0.38rem 0.6rem;
+      content: "SPEND STARTS";
+      background: var(--gold);
+      color: #171007;
+      font-size: 0.58rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .owner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1.2rem, 2.5vw, 2.2rem);
+      margin-top: 1.8rem;
+    }
+
+    .owner {
+      border-top: 4px solid var(--blue);
+      padding: 1.35rem 0 0;
+    }
+
+    .owner:nth-child(2) {
+      border-color: var(--gold);
+    }
+
+    .owner:nth-child(3) {
+      border-color: var(--green);
+    }
+
+    .owner__tag {
+      margin-bottom: 1rem;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .owner ul,
+    .clean-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .owner li,
+    .clean-list li {
+      position: relative;
+      padding: 0.72rem 0 0.72rem 1.3rem;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: clamp(0.84rem, 1.05vw, 1rem);
+      line-height: 1.42;
+    }
+
+    .owner li::before,
+    .clean-list li::before {
+      position: absolute;
+      left: 0;
+      top: 1.06rem;
+      width: 0.42rem;
+      height: 0.42rem;
+      content: "";
+      background: currentColor;
+    }
+
+    .animatic-grid {
+      display: grid;
+      grid-template-columns: minmax(18rem, 0.9fr) minmax(0, 1.05fr);
+      gap: clamp(2rem, 4.5vw, 5rem);
+      align-items: center;
+    }
+
+    .story-contact {
+      position: relative;
+      height: min(67vh, 43rem);
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      background: #02070d;
+    }
+
+    .story-contact img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 42%;
+    }
+
+    .story-contact__label {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 0.8rem 1rem;
+      background: rgba(7,17,29,0.92);
+      color: var(--gold-soft);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .sequence {
+      margin: 2rem 0 0;
+      counter-reset: sequence;
+    }
+
+    .sequence__item {
+      display: grid;
+      grid-template-columns: 2.2rem minmax(0, 1fr);
+      gap: 0.8rem;
+      align-items: start;
+      padding: 0.73rem 0;
+      border-bottom: 1px solid var(--line);
+      counter-increment: sequence;
+    }
+
+    .sequence__item::before {
+      content: counter(sequence, decimal-leading-zero);
+      color: var(--blue-soft);
+      font-family: var(--display);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .sequence__item strong {
+      font-size: clamp(0.9rem, 1.12vw, 1.08rem);
+    }
+
+    .sequence__item span {
+      display: block;
+      margin-top: 0.18rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    .callout {
+      margin-top: 1.45rem;
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--gold);
+      background: rgba(228, 184, 92, 0.08);
+      color: var(--gold-soft);
+      font-size: clamp(0.88rem, 1.1vw, 1.05rem);
+      line-height: 1.5;
+    }
+
+    .split-rule {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: min(57vh, 35rem);
+      margin-top: 1.8rem;
+      border: 1px solid var(--line-strong);
+    }
+
+    .split-rule__half {
+      position: relative;
+      padding: clamp(1.5rem, 3vw, 2.6rem);
+      background: var(--paper-2);
+    }
+
+    .split-rule__half + .split-rule__half {
+      border-left: 1px solid var(--line-strong);
+      background: #0c1928;
+    }
+
+    .split-rule__index {
+      color: var(--blue-soft);
+      font-family: var(--display);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+    }
+
+    .split-rule__half:nth-child(2) .split-rule__index {
+      color: var(--gold-soft);
+    }
+
+    .split-rule__half h3 {
+      max-width: 12ch;
+      margin: 1.2rem 0 1.45rem;
+      font-size: clamp(1.65rem, 3vw, 3.2rem);
+    }
+
+    .split-rule__half ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .split-rule__half li {
+      padding: 0.64rem 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: clamp(0.86rem, 1.05vw, 1rem);
+    }
+
+    .split-rule__footer {
+      position: absolute;
+      left: clamp(1.5rem, 3vw, 2.6rem);
+      right: clamp(1.5rem, 3vw, 2.6rem);
+      bottom: 1.4rem;
+      color: var(--quiet);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .cost-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(24rem, 1.15fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .cost-number {
+      margin: 0;
+      color: var(--gold-soft);
+      font-family: var(--display);
+      font-size: clamp(5rem, 12vw, 12rem);
+      font-weight: 800;
+      letter-spacing: -0.08em;
+      line-height: 0.82;
+    }
+
+    .cost-unit {
+      display: block;
+      margin-top: 1rem;
+      color: var(--muted);
+      font-family: var(--display);
+      font-size: clamp(1rem, 1.6vw, 1.4rem);
+      font-weight: 700;
+    }
+
+    .cost-bars {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .cost-bar {
+      display: grid;
+      grid-template-columns: 10rem minmax(0, 1fr) auto;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .cost-bar__label {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .cost-bar__track {
+      display: block;
+      height: 1rem;
+      overflow: hidden;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .cost-bar__fill {
+      display: block;
+      height: 100%;
+      width: var(--bar);
+      background: var(--blue);
+    }
+
+    .cost-bar:nth-child(2) .cost-bar__fill {
+      background: var(--gold);
+    }
+
+    .cost-bar:nth-child(3) .cost-bar__fill {
+      background: var(--red);
+    }
+
+    .cost-bar strong {
+      min-width: 3.4rem;
+      text-align: right;
+      font-family: var(--display);
+    }
+
+    .cost-rules {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 2.1rem;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .cost-rule {
+      padding: 1.15rem;
+      background: var(--paper-2);
+    }
+
+    .cost-rule strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-family: var(--display);
+      font-size: 0.95rem;
+    }
+
+    .cost-rule span {
+      color: var(--muted);
+      font-size: 0.75rem;
+      line-height: 1.45;
+    }
+
+    .lane-stack {
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 2rem;
+    }
+
+    .lane {
+      display: grid;
+      grid-template-columns: 12rem minmax(0, 1fr) 11rem;
+      gap: 1rem;
+      align-items: center;
+      min-height: 5.1rem;
+      padding: 0.8rem 1.1rem;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+
+    .lane__name {
+      font-family: var(--display);
+      font-size: clamp(0.95rem, 1.35vw, 1.2rem);
+      font-weight: 800;
+    }
+
+    .lane__description {
+      color: var(--muted);
+      font-size: clamp(0.78rem, 0.98vw, 0.93rem);
+      line-height: 1.45;
+    }
+
+    .lane__owner {
+      padding-left: 1rem;
+      border-left: 1px solid var(--line);
+      color: var(--blue-soft);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .lane:nth-child(2) .lane__owner { color: var(--gold-soft); }
+    .lane:nth-child(3) .lane__owner { color: #90d6ff; }
+    .lane:nth-child(4) .lane__owner { color: #83e0bd; }
+
+    .merge-line {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.1rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .merge-line::before,
+    .merge-line::after {
+      height: 1px;
+      flex: 1;
+      content: "";
+      background: var(--line-strong);
+    }
+
+    .review-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(24rem, 1.2fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .verdicts {
+      border: 1px solid var(--line-strong);
+    }
+
+    .verdict {
+      display: grid;
+      grid-template-columns: 8.5rem minmax(0, 1fr);
+      gap: 1rem;
+      align-items: center;
+      min-height: 6.3rem;
+      padding: 1rem 1.25rem;
+      background: var(--paper-2);
+    }
+
+    .verdict + .verdict {
+      border-top: 1px solid var(--line);
+    }
+
+    .verdict strong {
+      font-family: var(--display);
+      font-size: 1.08rem;
+      letter-spacing: 0.04em;
+    }
+
+    .verdict:nth-child(1) strong { color: var(--green); }
+    .verdict:nth-child(2) strong { color: var(--red); }
+    .verdict:nth-child(3) strong { color: var(--gold-soft); }
+
+    .verdict p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .salvage {
+      margin-top: 1.4rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .salvage strong {
+      display: block;
+      margin-bottom: 0.55rem;
+      color: var(--gold-soft);
+      font-family: var(--display);
+    }
+
+    .audio-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: clamp(2.2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .stems {
+      display: grid;
+      gap: 0.62rem;
+    }
+
+    .stem {
+      display: grid;
+      grid-template-columns: 7rem minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: center;
+      min-height: 4.65rem;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+
+    .stem__name {
+      font-family: var(--display);
+      font-size: 0.83rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .wave {
+      height: 1.45rem;
+      opacity: 0.75;
+      background:
+        linear-gradient(90deg,
+          transparent 0 2%, var(--blue) 2% 3%, transparent 3% 6%,
+          var(--blue) 6% 8%, transparent 8% 11%, var(--blue) 11% 12%,
+          transparent 12% 17%, var(--blue) 17% 20%, transparent 20% 24%,
+          var(--blue) 24% 25%, transparent 25% 29%, var(--blue) 29% 34%,
+          transparent 34% 38%, var(--blue) 38% 40%, transparent 40% 47%,
+          var(--blue) 47% 52%, transparent 52% 55%, var(--blue) 55% 57%,
+          transparent 57% 64%, var(--blue) 64% 68%, transparent 68% 73%,
+          var(--blue) 73% 74%, transparent 74% 80%, var(--blue) 80% 85%,
+          transparent 85% 92%, var(--blue) 92% 94%, transparent 94% 100%);
+    }
+
+    .stem:nth-child(2) .wave { filter: hue-rotate(70deg); }
+    .stem:nth-child(3) .wave { filter: hue-rotate(155deg); }
+    .stem:nth-child(4) .wave { filter: hue-rotate(215deg); }
+
+    .stem__status {
+      color: var(--muted);
+      font-size: 0.67rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.64fr) minmax(23rem, 1.15fr);
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: center;
+    }
+
+    .case-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      margin-top: 1.5rem;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .case-metric {
+      min-height: 6.8rem;
+      padding: 1rem;
+      background: var(--paper-2);
+    }
+
+    .case-metric strong {
+      display: block;
+      color: var(--gold-soft);
+      font-family: var(--display);
+      font-size: clamp(1.65rem, 3vw, 2.8rem);
+      line-height: 1;
+    }
+
+    .case-metric span {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--muted);
+      font-size: 0.7rem;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .video-frame {
+      position: relative;
+      height: min(68vh, 44rem);
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      background: #02070d;
+      box-shadow: var(--shadow);
+    }
+
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #02070d;
+    }
+
+    .reuse-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      margin-top: 1.8rem;
+    }
+
+    .reuse-column {
+      border-top: 4px solid var(--green);
+      padding-top: 1.25rem;
+    }
+
+    .reuse-column:last-child {
+      border-color: var(--gold);
+    }
+
+    .reuse-column__title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .reuse-column__title span {
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 2rem;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .decision-stage {
+      min-height: min(46vh, 26rem);
+      padding: clamp(1.2rem, 2.2vw, 2rem);
+      background: var(--paper-2);
+    }
+
+    .decision-stage__when {
+      color: var(--blue-soft);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .decision-stage h3 {
+      margin-top: 1.4rem;
+      font-size: clamp(1.45rem, 2.4vw, 2.35rem);
+    }
+
+    .decision-stage p {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .decision-stage strong {
+      display: block;
+      margin-top: 1.35rem;
+      color: var(--gold-soft);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .close-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.7fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .closing-line {
+      max-width: 15ch;
+      margin-bottom: 2rem;
+      font-family: var(--display);
+      font-size: clamp(3rem, 6.5vw, 7.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      font-weight: 800;
+    }
+
+    .closing-ask {
+      border: 1px solid var(--line-strong);
+      padding: clamp(1.5rem, 3vw, 2.6rem);
+      background: var(--paper-2);
+    }
+
+    .closing-ask__label {
+      color: var(--gold-soft);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .closing-ask h3 {
+      margin-top: 1rem;
+      font-size: clamp(1.5rem, 2.6vw, 2.6rem);
+    }
+
+    .closing-ask p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .speaker-notes {
+      display: none;
+      position: absolute;
+      z-index: 20;
+      left: var(--slide-pad-x);
+      right: var(--slide-pad-x);
+      bottom: 4.5rem;
+      max-height: 34vh;
+      overflow: auto;
+      padding: 1rem 1.2rem;
+      border: 1px solid var(--gold);
+      background: rgba(7, 17, 29, 0.97);
+      color: var(--gold-soft);
+      font-size: 0.84rem;
+      line-height: 1.55;
+      box-shadow: var(--shadow);
+    }
+
+    body.show-notes .slide.is-active .speaker-notes {
+      display: block;
+    }
+
+    [contenteditable="true"] {
+      cursor: text;
+      box-shadow: inset 0 -1px 0 rgba(228, 184, 92, 0.55);
+    }
+
+    .footer {
+      position: fixed;
+      z-index: 65;
+      left: var(--slide-pad-x);
+      right: var(--slide-pad-x);
+      bottom: 1rem;
+      display: grid;
+      grid-template-columns: minmax(8rem, 1fr) auto auto;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .progress {
+      height: 2px;
+      overflow: hidden;
+      background: var(--line);
+    }
+
+    .progress__bar {
+      width: 0;
+      height: 100%;
+      background: var(--gold);
+      transition: width 420ms var(--ease);
+    }
+
+    .counter {
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    .footer__nav {
+      display: inline-flex;
+      gap: 0.42rem;
+    }
+
+    .nav-button svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .help-panel {
+      position: fixed;
+      z-index: 120;
+      inset: 50% auto auto 50%;
+      width: min(92vw, 38rem);
+      max-height: 82vh;
+      overflow: auto;
+      padding: 1.6rem;
+      border: 1px solid var(--line-strong);
+      background: #091725;
+      box-shadow: 0 32px 90px rgba(0,0,0,0.65);
+      transform: translate(-50%, -50%);
+    }
+
+    .help-panel[hidden] {
+      display: none;
+    }
+
+    .help-panel h2 {
+      margin-bottom: 1.2rem;
+      font-size: 1.8rem;
+    }
+
+    .shortcut-grid {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.65rem 1rem;
+      align-items: center;
+    }
+
+    kbd {
+      min-width: 2rem;
+      padding: 0.3rem 0.45rem;
+      border: 1px solid var(--line-strong);
+      background: rgba(255,255,255,0.04);
+      color: var(--gold-soft);
+      font: 700 0.74rem var(--body);
+      text-align: center;
+    }
+
+    .overview {
+      overflow: auto;
+      background: var(--paper);
+    }
+
+    .overview .topbar,
+    .overview .footer {
+      position: sticky;
+    }
+
+    .overview .deck {
+      height: auto;
+      min-height: calc(100% - 4rem);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      padding: 5rem 1rem 6rem;
+    }
+
+    .overview .slide,
+    .overview .slide.is-active,
+    .overview .slide.is-leaving {
+      position: relative;
+      inset: auto;
+      display: block;
+      width: 100%;
+      min-height: 0;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      cursor: pointer;
+      animation: none;
+      transform: none;
+    }
+
+    .overview .slide:hover {
+      border-color: var(--gold);
+    }
+
+    .overview .slide__inner {
+      transform: scale(0.28);
+      transform-origin: top left;
+      width: 357%;
+      height: 357%;
+    }
+
+    .overview .speaker-notes {
+      display: none !important;
+    }
+
+    .overview .footer {
+      position: fixed;
+    }
+
+    .legacy-deck[hidden] {
+      display: none !important;
+    }
+
+    .step-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 1rem;
+      color: var(--gold-soft);
+      font-family: var(--display);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .step-kicker__number {
+      display: inline-grid;
+      width: 2.2rem;
+      height: 2.2rem;
+      place-items: center;
+      background: var(--gold);
+      color: #07111d;
+      font-size: 0.72rem;
+      letter-spacing: 0;
+    }
+
+    .workflow-map {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin-top: clamp(1.4rem, 3vh, 2.4rem);
+      border-top: 1px solid var(--line-strong);
+      border-left: 1px solid var(--line-strong);
+    }
+
+    .workflow-map__step {
+      position: relative;
+      min-height: clamp(9rem, 19vh, 12rem);
+      padding: 1.2rem;
+      border-right: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+      background: rgba(255, 255, 255, 0.018);
+    }
+
+    .workflow-map__step:nth-child(n+5) {
+      background: rgba(64, 140, 255, 0.045);
+    }
+
+    .workflow-map__step strong {
+      display: block;
+      margin-bottom: 0.8rem;
+      color: var(--blue-soft);
+      font-family: var(--display);
+      font-size: 0.78rem;
+      letter-spacing: 0.13em;
+    }
+
+    .workflow-map__step h3 {
+      margin-bottom: 0.45rem;
+      font-size: clamp(1rem, 1.4vw, 1.25rem);
+    }
+
+    .workflow-map__step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(0.8rem, 1vw, 0.98rem);
+      line-height: 1.45;
+    }
+
+    .beat-layout,
+    .element-layout,
+    .keyframe-layout,
+    .cinema-layout,
+    .packet-layout,
+    .post-layout,
+    .repeat-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .beat-strip {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .beat-row {
+      display: grid;
+      grid-template-columns: 3.2rem minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.95rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .beat-row__id {
+      color: var(--blue-soft);
+      font-family: var(--display);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    .beat-row p {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(0.88rem, 1.1vw, 1.05rem);
+      line-height: 1.45;
+    }
+
+    .beat-row time {
+      color: var(--gold-soft);
+      font-size: 0.74rem;
+      white-space: nowrap;
+    }
+
+    .fact-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 1.4rem;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .fact {
+      padding: 1rem;
+      background: var(--paper-2);
+    }
+
+    .fact strong {
+      display: block;
+      color: var(--gold-soft);
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 2.3vw, 2.15rem);
+    }
+
+    .fact span {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .asset-card {
+      position: relative;
+      min-height: 14rem;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+
+    .asset-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 14rem;
+      object-fit: cover;
+    }
+
+    .asset-card::after {
+      position: absolute;
+      inset: 46% 0 0;
+      content: "";
+      background: linear-gradient(to bottom, transparent, rgba(3, 10, 18, 0.95));
+      pointer-events: none;
+    }
+
+    .asset-card__label {
+      position: absolute;
+      z-index: 1;
+      left: 0.9rem;
+      right: 0.9rem;
+      bottom: 0.8rem;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 0.5rem;
+      color: white;
+    }
+
+    .asset-card__label strong {
+      font-family: var(--display);
+      font-size: 0.95rem;
+    }
+
+    .asset-card__label span {
+      color: #b9cce0;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .rule-list {
+      display: grid;
+      gap: 0;
+      margin-top: 1.35rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .rule-list__item {
+      display: grid;
+      grid-template-columns: 2.2rem minmax(0, 1fr);
+      gap: 0.9rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .rule-list__item > span {
+      color: var(--blue-soft);
+      font-family: var(--display);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .rule-list__item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.45;
+    }
+
+    .rule-list__item strong {
+      color: var(--ink);
+    }
+
+    .reference-board {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .reference-board figure {
+      position: relative;
+      min-height: 24rem;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+
+    .reference-board img {
+      width: 100%;
+      height: 100%;
+      min-height: 24rem;
+      object-fit: cover;
+    }
+
+    .reference-board figcaption {
+      position: absolute;
+      left: 0.7rem;
+      right: 0.7rem;
+      bottom: 0.7rem;
+      padding: 0.6rem 0.7rem;
+      background: rgba(7, 17, 29, 0.88);
+      color: white;
+      font-size: 0.72rem;
+      line-height: 1.35;
+      backdrop-filter: blur(10px);
+    }
+
+    .reference-formula {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-top: 1.4rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .reference-formula strong {
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--line-strong);
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .animatic-band {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+      gap: clamp(1.5rem, 4vw, 4rem);
+      align-items: center;
+    }
+
+    .animatic-band .story-contact {
+      height: clamp(27rem, 61vh, 42rem);
+    }
+
+    .cinema-card,
+    .packet-card,
+    .tool-card,
+    .repeat-card {
+      border: 1px solid var(--line-strong);
+      background: rgba(255, 255, 255, 0.022);
+    }
+
+    .cinema-card {
+      padding: 1.3rem;
+    }
+
+    .cinema-card + .cinema-card {
+      margin-top: 0.8rem;
+    }
+
+    .cinema-card__label,
+    .packet-card__label,
+    .tool-card__label {
+      display: block;
+      margin-bottom: 0.55rem;
+      color: var(--blue-soft);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .cinema-card h3,
+    .packet-card h3,
+    .tool-card h3 {
+      margin-bottom: 0.35rem;
+      font-size: 1rem;
+    }
+
+    .cinema-card p,
+    .packet-card p,
+    .tool-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .shot-packet {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .packet-card {
+      min-height: 8.1rem;
+      padding: 1.1rem;
+    }
+
+    .packet-card--result {
+      grid-column: 1 / -1;
+      min-height: auto;
+      border-color: rgba(67, 201, 154, 0.5);
+      background: rgba(67, 201, 154, 0.055);
+    }
+
+    .literal-prompt {
+      margin-top: 1.25rem;
+      padding: 1rem 1.1rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(228, 184, 92, 0.065);
+      color: var(--gold-soft);
+      font-size: clamp(0.82rem, 1.05vw, 0.98rem);
+      line-height: 1.55;
+    }
+
+    .cost-and-review {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.8fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .review-stack {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .review-row {
+      display: grid;
+      grid-template-columns: 7rem minmax(0, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+    }
+
+    .review-row strong {
+      color: var(--green);
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .review-row:nth-child(2) strong {
+      color: var(--gold-soft);
+    }
+
+    .review-row:nth-child(3) strong {
+      color: var(--red);
+    }
+
+    .review-row p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .tool-chain {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .tool-card {
+      min-height: 9rem;
+      padding: 1.15rem;
+    }
+
+    .tool-card strong {
+      display: block;
+      margin-bottom: 0.4rem;
+      color: var(--ink);
+      font-family: var(--display);
+      font-size: 1.05rem;
+    }
+
+    .tool-card--wide {
+      grid-column: 1 / -1;
+      min-height: auto;
+      border-color: rgba(64, 140, 255, 0.5);
+    }
+
+    .delivery-line {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      margin-top: 1.5rem;
+      border-top: 1px solid var(--line-strong);
+      border-left: 1px solid var(--line-strong);
+    }
+
+    .delivery-line div {
+      padding: 0.9rem;
+      border-right: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+      color: var(--muted);
+      font-size: 0.76rem;
+      text-align: center;
+    }
+
+    .delivery-line strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: var(--blue-soft);
+      font-family: var(--display);
+      font-size: 0.7rem;
+    }
+
+    .repeat-card {
+      min-height: 9.5rem;
+      padding: 1.2rem;
+    }
+
+    .repeat-card strong {
+      display: block;
+      margin-bottom: 0.55rem;
+      color: var(--gold-soft);
+      font-family: var(--display);
+      font-size: 1.8rem;
+    }
+
+    .repeat-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.48;
+    }
+
+    .slide--elements h2,
+    .slide--keyframes h2,
+    .slide--animatic h2,
+    .slide--final h2 {
+      font-size: clamp(2.45rem, 4vw, 4.05rem);
+    }
+
+    .slide--elements .lede,
+    .slide--animatic .lede,
+    .slide--final .lede {
+      font-size: clamp(1rem, 1.45vw, 1.3rem);
+      line-height: 1.48;
+    }
+
+    .slide--elements .rule-list {
+      margin-top: 1rem;
+    }
+
+    .slide--elements .rule-list__item {
+      padding: 0.62rem 0;
+    }
+
+    .slide--elements .asset-card {
+      height: clamp(10rem, 25vh, 13.5rem);
+      min-height: 0;
+    }
+
+    .slide--elements .asset-card img {
+      height: 100%;
+      min-height: 0;
+    }
+
+    .slide--keyframes .lede {
+      margin-bottom: 1rem;
+    }
+
+    .slide--keyframes .reference-board figure,
+    .slide--keyframes .reference-board img {
+      height: clamp(12rem, 29vh, 16rem);
+      min-height: 0;
+    }
+
+    .slide--keyframes .reference-formula {
+      margin-top: 0.8rem;
+    }
+
+    .slide--animatic .story-contact {
+      height: clamp(23rem, 54vh, 32rem);
+    }
+
+    .slide--animatic h2 {
+      margin-bottom: 0.8rem;
+      font-size: clamp(2.25rem, 3.55vw, 3.6rem);
+    }
+
+    .slide--animatic .lede {
+      margin-bottom: 0.55rem;
+    }
+
+    .slide--animatic .sequence__item {
+      padding-block: 0.38rem;
+    }
+
+    .slide--final .case-grid {
+      align-items: center;
+    }
+
+    .slide--final h2 {
+      max-width: 11ch;
+    }
+
+    @media (max-width: 1024px) {
+      .workflow-map {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .beat-layout,
+      .element-layout,
+      .keyframe-layout,
+      .cinema-layout,
+      .packet-layout,
+      .post-layout,
+      .repeat-layout,
+      .animatic-band,
+      .cost-and-review {
+        gap: 2rem;
+      }
+
+      .reference-board figure,
+      .reference-board img {
+        min-height: 20rem;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --slide-pad-x: clamp(1.4rem, 4vw, 3rem);
+        --slide-pad-y: 5.1rem;
+      }
+
+      .hero-grid,
+      .animatic-grid,
+      .cost-layout,
+      .review-layout,
+      .audio-grid,
+      .case-grid,
+      .close-grid {
+        gap: 2rem;
+      }
+
+      .map {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .map-step {
+        min-height: 8rem;
+        padding: 0.9rem;
+      }
+
+      .lane {
+        grid-template-columns: 9rem minmax(0, 1fr) 8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      html,
+      body {
+        overflow: hidden;
+      }
+
+      .topbar {
+        height: 3.55rem;
+        padding-inline: 1rem;
+      }
+
+      .brand__secondary,
+      #edit-copy {
+        display: none;
+      }
+
+      .slide {
+        overflow-y: auto;
+        padding: 4.6rem 1.15rem 5.2rem;
+      }
+
+      .slide__inner {
+        height: auto;
+        min-height: 100%;
+        justify-content: flex-start;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 15vw, 5.2rem);
+      }
+
+      h2 {
+        font-size: clamp(2.15rem, 10vw, 3.6rem);
+      }
+
+      .hero-grid,
+      .animatic-grid,
+      .cost-layout,
+      .review-layout,
+      .audio-grid,
+      .case-grid,
+      .close-grid,
+      .reuse-grid,
+      .beat-layout,
+      .element-layout,
+      .keyframe-layout,
+      .cinema-layout,
+      .packet-layout,
+      .post-layout,
+      .repeat-layout,
+      .animatic-band,
+      .cost-and-review {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow-map,
+      .reference-board,
+      .shot-packet,
+      .tool-chain {
+        grid-template-columns: 1fr;
+      }
+
+      .packet-card--result,
+      .tool-card--wide {
+        grid-column: auto;
+      }
+
+      .reference-board figure,
+      .reference-board img {
+        min-height: 28rem;
+      }
+
+      .delivery-line {
+        grid-template-columns: repeat(5, minmax(6rem, 1fr));
+        overflow-x: auto;
+      }
+
+      .film-window,
+      .story-contact,
+      .video-frame {
+        min-height: 30rem;
+        height: 56vh;
+      }
+
+      .outcome-row,
+      .owner-grid,
+      .decision-grid,
+      .cost-rules {
+        grid-template-columns: 1fr;
+      }
+
+      .outcome + .outcome {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .map {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .split-rule {
+        grid-template-columns: 1fr;
+      }
+
+      .split-rule__half {
+        min-height: 24rem;
+      }
+
+      .split-rule__half + .split-rule__half {
+        border-left: 0;
+        border-top: 1px solid var(--line-strong);
+      }
+
+      .cost-bar {
+        grid-template-columns: 7rem minmax(0, 1fr) auto;
+      }
+
+      .lane {
+        grid-template-columns: 1fr;
+        gap: 0.45rem;
+      }
+
+      .lane__owner {
+        padding: 0;
+        border: 0;
+      }
+
+      .verdict {
+        grid-template-columns: 1fr;
+      }
+
+      .stem {
+        grid-template-columns: 5.5rem minmax(0, 1fr);
+      }
+
+      .stem__status {
+        grid-column: 2;
+      }
+
+      .footer {
+        left: 1rem;
+        right: 1rem;
+        grid-template-columns: 1fr auto auto;
+      }
+
+      .overview .deck {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .topbar__actions .icon-button:not(#help-toggle) {
+        display: none;
+      }
+
+      .map {
+        grid-template-columns: 1fr;
+      }
+
+      .case-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .film-window,
+      .story-contact,
+      .video-frame {
+        min-height: 24rem;
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        color-scheme: light;
+        --ink: #0b1724;
+        --muted: #3c536a;
+        --quiet: #6f8193;
+        --paper: #edf3f8;
+        --paper-2: #ffffff;
+        --paper-3: #e0eaf2;
+        --line: rgba(20, 44, 68, 0.18);
+        --line-strong: rgba(20, 44, 68, 0.38);
+        --gold-soft: #8a5b00;
+      }
+
+      .topbar {
+        background: rgba(237, 243, 248, 0.92);
+      }
+
+      .film-window__caption {
+        color: white;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 1ms !important;
+      }
+    }
+
+    @media print {
+      @page {
+        size: 16in 9in;
+        margin: 0;
+      }
+
+      html,
+      body {
+        height: auto;
+        overflow: visible;
+        background: var(--paper);
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .topbar,
+      .footer,
+      .help-panel,
+      .speaker-notes {
+        display: none !important;
+      }
+
+      .deck {
+        height: auto;
+      }
+
+      .slide,
+      .slide.is-active,
+      .slide.is-leaving {
+        position: relative;
+        inset: auto;
+        display: block;
+        width: 16in;
+        height: 9in;
+        overflow: hidden;
+        page-break-after: always;
+        break-after: page;
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#process-1">Skip to presentation</a>
+
+  <div class="shell" id="presentation-shell">
+    <header class="topbar" aria-label="Presentation title">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M5 8.25h14M5 12h14M5 15.75h9" stroke="white" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+        </span>
+        <span>Ramayana-ZebPay SIP</span>
+        <span class="brand__secondary">How the film was made</span>
+      </div>
+    </header>
+
+    <main class="deck" id="deck" aria-live="polite">
+      <section class="slide is-active" id="process-1" data-title="How we made the film" aria-labelledby="process-title-1">
+        <div class="slide__inner">
+          <div class="hero-grid">
+            <div>
+              <div class="section-label">The actual production, step by step</div>
+              <h1 id="process-title-1" data-pretext contenteditable="false">How we made <span class="accent">Ramayana–ZebPay SIP.</span></h1>
+              <p class="lede" data-pretext contenteditable="false">We fixed the story first, built reusable characters and locations, created every key visual, proved the whole film with images, then generated motion and finished the exact parts in post.</p>
+              <div class="hero-proof" aria-label="Final film facts">
+                <div class="hero-proof__item">
+                  <strong>52.2s</strong>
+                  <span>finished story</span>
+                </div>
+                <div class="hero-proof__item">
+                  <strong>15 beats</strong>
+                  <span>timed to narration</span>
+                </div>
+                <div class="hero-proof__item">
+                  <strong>9:16</strong>
+                  <span>Shorts &amp; Reels</span>
+                </div>
+              </div>
+            </div>
+
+            <figure class="film-window">
+              <img src="assets/ramayana/overview-contact.png" alt="Frames from the finished Ramayana-ZebPay SIP film: Rama, the squirrel, the bridge, the SIP graph, and the ZebPay end card">
+              <figcaption class="film-window__caption">
+                <span>Finished reference cut</span>
+                  <span>v011 review · 1080 × 1920</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-2" data-title="The actual workflow" aria-labelledby="process-title-2">
+        <div class="slide__inner slide__inner--top">
+          <div class="section-label">The complete path</div>
+          <h2 id="process-title-2" data-pretext contenteditable="false">This is the process we <span class="accent-blue">actually followed.</span></h2>
+          <p class="lede" data-pretext contenteditable="false">The image-only film comes before paid motion. Every later step replaces or improves something that already works.</p>
+
+          <div class="workflow-map" aria-label="Eight-step film production workflow">
+            <article class="workflow-map__step">
+              <strong>STEP 01</strong>
+              <h3 data-pretext contenteditable="false">Fix the story</h3>
+              <p data-pretext contenteditable="false">Shorten the script and split it into timed visual beats.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 02</strong>
+              <h3 data-pretext contenteditable="false">Build the world</h3>
+              <p data-pretext contenteditable="false">Approve characters, locations, important objects, and visual rules.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 03</strong>
+              <h3 data-pretext contenteditable="false">Create keyframes</h3>
+              <p data-pretext contenteditable="false">Make one strong image for each story beat from the same references.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 04</strong>
+              <h3 data-pretext contenteditable="false">Make the image film</h3>
+              <p data-pretext contenteditable="false">Time those images to narration and watch the complete story.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 05</strong>
+              <h3 data-pretext contenteditable="false">Set up Cinema Studio</h3>
+              <p data-pretext contenteditable="false">Register approved Elements and attach the correct references.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 06</strong>
+              <h3 data-pretext contenteditable="false">Generate motion</h3>
+              <p data-pretext contenteditable="false">Animate one beat at a time with Seedance at low test resolution.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 07</strong>
+              <h3 data-pretext contenteditable="false">Review and edit</h3>
+              <p data-pretext contenteditable="false">Keep good ranges, reject broken motion, and retry only one variable.</p>
+            </article>
+            <article class="workflow-map__step">
+              <strong>STEP 08</strong>
+              <h3 data-pretext contenteditable="false">Finish in post</h3>
+              <p data-pretext contenteditable="false">Add exact graphics, voice, SFX, music, captions, and final QC.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-3" data-title="Step 1 — Story beats" aria-labelledby="process-title-3">
+        <div class="slide__inner">
+          <div class="beat-layout">
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">01</span> Fix the story and script</div>
+              <h2 id="process-title-3" data-pretext contenteditable="false">Turn narration into <span class="accent">timed visual beats.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">The voice becomes the master clock. Each phrase gets one clear visual idea, so we know exactly what image—and later what motion—the film needs.</p>
+              <div class="fact-row" aria-label="Animatic timing facts">
+                <div class="fact"><strong>52.2s</strong><span>locked runtime</span></div>
+                <div class="fact"><strong>15</strong><span>phrase slots</span></div>
+                <div class="fact"><strong>30 fps</strong><span>frame-locked edit</span></div>
+              </div>
+            </div>
+
+            <div class="beat-strip" aria-label="Examples of narration beats">
+              <div class="beat-row">
+                <span class="beat-row__id">K01</span>
+                <p data-pretext contenteditable="false">“An army of Vanaras was building Ram Setu…”</p>
+                <time>0.0–5.9s</time>
+              </div>
+              <div class="beat-row">
+                <span class="beat-row__id">K03</span>
+                <p data-pretext contenteditable="false">“A tiny squirrel carried one pebble at a time.”</p>
+                <time>7.8–11.8s</time>
+              </div>
+              <div class="beat-row">
+                <span class="beat-row__id">K06</span>
+                <p data-pretext contenteditable="false">“But Rama saw what they missed.”</p>
+                <time>17.5–20.3s</time>
+              </div>
+              <div class="beat-row">
+                <span class="beat-row__id">G12</span>
+                <p data-pretext contenteditable="false">“SIP lets you invest the same amount regularly…”</p>
+                <time>37.2–40.9s</time>
+              </div>
+              <div class="beat-row">
+                <span class="beat-row__id">G15</span>
+                <p data-pretext contenteditable="false">“Start your SIP with ZebPay.”</p>
+                <time>48.9–52.2s</time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--elements" id="process-4" data-title="Step 2 — Build the visual world" aria-labelledby="process-title-4">
+        <div class="slide__inner slide__inner--top">
+          <div class="element-layout">
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">02</span> Create reusable elements</div>
+              <h2 id="process-title-4" data-pretext contenteditable="false">Characters first. Then <span class="accent-blue">scenes and story objects.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">Using ChatGPT ImageGen, we created and approved clean reference images for Rama, the squirrel, the Vanaras, and each Ram Setu construction state before asking for any moving shot.</p>
+              <div class="rule-list">
+                <div class="rule-list__item"><span>01</span><p data-pretext contenteditable="false"><strong>Lock identity.</strong> Face, body, costume, fur, colours, and proportions remain stable.</p></div>
+                <div class="rule-list__item"><span>02</span><p data-pretext contenteditable="false"><strong>Clean the location.</strong> Remove baked-in characters so the same bridge plate can be reused.</p></div>
+                <div class="rule-list__item"><span>03</span><p data-pretext contenteditable="false"><strong>Separate temporary state.</strong> Pose, emotion, camera, pebble, and boulder belong to the shot—not the character identity.</p></div>
+                <div class="rule-list__item"><span>04</span><p data-pretext contenteditable="false"><strong>Keep exact branding out.</strong> The ZebPay logo and written text are added later in post.</p></div>
+              </div>
+            </div>
+
+            <div class="asset-grid" aria-label="Approved production elements">
+              <figure class="asset-card">
+              <img src="assets/ramayana/rama-front.png" alt="Approved full-body Rama reference">
+                <figcaption class="asset-card__label"><strong>Rama</strong><span>Character</span></figcaption>
+              </figure>
+              <figure class="asset-card">
+              <img src="assets/ramayana/squirrel-front.png" alt="Approved squirrel reference">
+                <figcaption class="asset-card__label"><strong>Squirrel</strong><span>Character</span></figcaption>
+              </figure>
+              <figure class="asset-card">
+              <img src="assets/ramayana/vanara-lead.png" alt="Approved lead Vanara reference">
+                <figcaption class="asset-card__label"><strong>Lead Vanara</strong><span>Character</span></figcaption>
+              </figure>
+              <figure class="asset-card">
+              <img src="assets/ramayana/bridge-location.png" alt="Clean half-built Ram Setu location plate without characters">
+                <figcaption class="asset-card__label"><strong>Half-built Ram Setu</strong><span>Location</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--keyframes" id="process-5" data-title="Step 3 — Keyframes" aria-labelledby="process-title-5">
+        <div class="slide__inner slide__inner--top">
+          <div class="step-kicker"><span class="step-kicker__number">03</span> Create one image for each beat</div>
+          <h2 id="process-title-5" data-pretext contenteditable="false">Use the approved elements to make <span class="accent">story keyframes.</span></h2>
+          <p class="lede" data-pretext contenteditable="false">ChatGPT ImageGen turned the approved character and location references into the exact moment each beat needed. Only action, composition, and bridge state changed.</p>
+
+          <div class="reference-board" aria-label="Three story keyframes created from the approved visual world">
+            <figure>
+              <img src="assets/ramayana/keyframe-army.png" alt="Vanaras building Ram Setu at the start of the film">
+              <figcaption><strong>K01 · Establish the world</strong><br>Vanaras, early bridge state, golden coastal light.</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/ramayana/keyframe-squirrel.png" alt="The squirrel carrying one pebble on the shore">
+              <figcaption><strong>K03 · Show the small action</strong><br>Same world, close scale, one readable pebble.</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/ramayana/keyframe-rama.png" alt="Rama recognizing the squirrel's contribution">
+              <figcaption><strong>K06 · Land the emotional turn</strong><br>Canonical Rama, quiet recognition, no dialogue.</figcaption>
+            </figure>
+          </div>
+
+          <div class="reference-formula" aria-label="Keyframe construction formula">
+            <strong>Character reference</strong><span>+</span><strong>Location reference</strong><span>+</span><strong>Beat action &amp; composition</strong><span>→</span><strong>Approved keyframe</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--animatic" id="process-6" data-title="Step 4 — Image-only animatic" aria-labelledby="process-title-6">
+        <div class="slide__inner slide__inner--top">
+          <div class="animatic-band">
+            <figure class="story-contact">
+            <img src="assets/ramayana/animatic-contact-sheet.png" alt="The complete image-only Ramayana-ZebPay SIP animatic sequence, from the Vanaras and squirrel through the SIP graph and ZebPay end card">
+              <figcaption class="story-contact__label">The whole 52.2-second film built from still images first</figcaption>
+            </figure>
+
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">04</span> Make the video with images</div>
+              <h2 id="process-title-6" data-pretext contenteditable="false">Before motion, watch the <span class="accent-blue">complete image film.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">We placed each keyframe on its narration beat, added simple holds and moves, then watched the entire story from beginning to end.</p>
+              <div class="sequence">
+                <div class="sequence__item"><div><strong data-pretext contenteditable="false">Images on exact timecodes</strong><span data-pretext contenteditable="false">No guessing how long a shot should last.</span></div></div>
+                <div class="sequence__item"><div><strong data-pretext contenteditable="false">Scratch narration as the clock</strong><span data-pretext contenteditable="false">Every picture change follows a spoken phrase.</span></div></div>
+                <div class="sequence__item"><div><strong data-pretext contenteditable="false">Graph and logo placeholders included</strong><span data-pretext contenteditable="false">The complete message is visible before animation.</span></div></div>
+                <div class="sequence__item"><div><strong data-pretext contenteditable="false">Pacing approved before credits</strong><span data-pretext contenteditable="false">Story changes happen here, while they are cheap.</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-7" data-title="Step 5 — Cinema Studio" aria-labelledby="process-title-7">
+        <div class="slide__inner">
+          <div class="cinema-layout">
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">05</span> Set up Higgsfield Cinema Studio</div>
+              <h2 id="process-title-7" data-pretext contenteditable="false">Register the approved assets as <span class="accent">reusable Elements.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">We created project Elements once, then attached the right character and location to each shot instead of describing the visual world again from memory.</p>
+              <div class="callout" data-pretext contenteditable="false">We did not create Prop Elements for this film. Pebbles and boulders stayed shot-level objects; the bow stayed with Rama; text and logo stayed in post.</div>
+            </div>
+
+            <div>
+              <article class="cinema-card">
+                <span class="cinema-card__label">Characters</span>
+                <h3 data-pretext contenteditable="false">@Rama-Canonical-Character</h3>
+                <p data-pretext contenteditable="false">@Squirrel-Canonical-Character · @Lead-Vanara-Canonical-Character · @Baby-Vanara-Canonical-Character</p>
+              </article>
+              <article class="cinema-card">
+                <span class="cinema-card__label">Locations</span>
+                <h3 data-pretext contenteditable="false">@Ram-Setu-Shoreline-Canonical-Location</h3>
+                <p data-pretext contenteditable="false">Early, half-built, and complete bridge states were registered as separate clean Location Elements.</p>
+              </article>
+              <article class="cinema-card">
+                <span class="cinema-card__label">Per shot</span>
+                <h3 data-pretext contenteditable="false">Keyframe + correct Elements + motion prompt</h3>
+                <p data-pretext contenteditable="false">Selecting an Element card is not enough—we attach it with “Use,” confirm its thumbnail, and keep the approved keyframe in the explicit start-image role.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-8" data-title="Step 6 — Generate one beat" aria-labelledby="process-title-8">
+        <div class="slide__inner">
+          <div class="packet-layout">
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">06</span> Generate motion one beat at a time</div>
+              <h2 id="process-title-8" data-pretext contenteditable="false">Tell Seedance only <span class="accent-blue">what should move.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">The start image already contains the art direction. The prompt adds one clear action, one camera move, stability rules, and native ambience or SFX.</p>
+              <div class="literal-prompt" data-pretext contenteditable="false">Example: subtle work motion across the bridge; cloth and fur move naturally; one slow dolly forward; stable faces, hands, boulders, and framing. Audio: ocean surf, coastal wind, stone impacts. No dialogue.</div>
+            </div>
+
+            <div class="shot-packet" aria-label="Contents of one Seedance generation packet">
+              <article class="packet-card">
+                <span class="packet-card__label">01 · Story anchor</span>
+                <h3 data-pretext contenteditable="false">Approved start image</h3>
+                <p data-pretext contenteditable="false">The exact keyframe is supplied as <code>start_image</code>, not a generic reference.</p>
+              </article>
+              <article class="packet-card">
+                <span class="packet-card__label">02 · Continuity</span>
+                <h3 data-pretext contenteditable="false">Character + location</h3>
+                <p data-pretext contenteditable="false">Attach only the Elements actually visible in this shot.</p>
+              </article>
+              <article class="packet-card">
+                <span class="packet-card__label">03 · Motion</span>
+                <h3 data-pretext contenteditable="false">One action, one camera move</h3>
+                <p data-pretext contenteditable="false">Avoid stacking multiple story changes into a four-second request.</p>
+              </article>
+              <article class="packet-card">
+                <span class="packet-card__label">04 · Test controls</span>
+                <h3 data-pretext contenteditable="false">Seedance 2.0 · 480p · 9:16</h3>
+                <p data-pretext contenteditable="false">4–6 seconds, High bitrate, Sound On, one candidate.</p>
+              </article>
+              <article class="packet-card packet-card--result">
+                <span class="packet-card__label">Important continuity rule</span>
+                <p data-pretext contenteditable="false">Use the previous generated clip only for a true continuous shot. For a new composition, return to the approved character, location, and keyframe sources.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-9" data-title="Step 7 — Review and cost" aria-labelledby="process-title-9">
+        <div class="slide__inner">
+          <div class="cost-and-review">
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">07</span> Review before retrying</div>
+              <h2 id="process-title-9" data-pretext contenteditable="false">Keep usable motion. <span class="accent">Do not reroll blindly.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">Every take is checked against the keyframe, character continuity, story direction, temporal stability, and audio. A broken ending does not erase a good opening.</p>
+              <div class="review-stack">
+                <div class="review-row"><strong>Keeper</strong><p data-pretext contenteditable="false">Use the clip as generated.</p></div>
+                <div class="review-row"><strong>Partial</strong><p data-pretext contenteditable="false">Use the valid range, then hold or cut before the failure.</p></div>
+                <div class="review-row"><strong>Reject</strong><p data-pretext contenteditable="false">Record the failure class and change one control only.</p></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="section-label">What this motion pass cost</div>
+              <div class="fact-row">
+                <div class="fact"><strong>49s</strong><span>billed motion</span></div>
+                <div class="fact"><strong>147</strong><span>learned-path credits</span></div>
+                <div class="fact"><strong>11</strong><span>source jobs</span></div>
+              </div>
+              <div class="rule-list">
+                <div class="rule-list__item"><span>01</span><p data-pretext contenteditable="false"><strong>Low-resolution learning.</strong> 480p preserved the model and direction while keeping experiments cheaper.</p></div>
+                <div class="rule-list__item"><span>02</span><p data-pretext contenteditable="false"><strong>One candidate.</strong> We reviewed evidence before buying another attempt.</p></div>
+                <div class="rule-list__item"><span>03</span><p data-pretext contenteditable="false"><strong>Real first-project ledger: 265 credits.</strong> That includes a 100-credit abandoned pilot and one 18-credit wrong-start-role attempt.</p></div>
+                <div class="rule-list__item"><span>04</span><p data-pretext contenteditable="false"><strong>Future reserve: 221–294 credits.</strong> This allows roughly 1.5–2 learned-path passes.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-10" data-title="Step 8 — Post-production" aria-labelledby="process-title-10">
+        <div class="slide__inner">
+          <div class="post-layout">
+            <div>
+              <div class="step-kicker"><span class="step-kicker__number">08</span> Finish the film in post</div>
+              <h2 id="process-title-10" data-pretext contenteditable="false">Good motion becomes a <span class="accent-blue">finished film.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">The generated clips are ingredients. Post-production restores the locked timing and adds every part that must be exact, editable, and reviewable.</p>
+              <div class="delivery-line" aria-label="Post-production sequence">
+                <div><strong>01</strong>Conform clips</div>
+                <div><strong>02</strong>Add graphics</div>
+                <div><strong>03</strong>Build audio</div>
+                <div><strong>04</strong>Add captions</div>
+                <div><strong>05</strong>Encode &amp; QC</div>
+              </div>
+            </div>
+
+            <div class="tool-chain" aria-label="Tools used in post-production">
+              <article class="tool-card">
+                <span class="tool-card__label">Edit and assembly</span>
+                <strong>video-use + FFmpeg</strong>
+                <p data-pretext contenteditable="false">Trim keeper ranges, fit clips to exact frames, crop 9:16, mix stems, render, and inspect.</p>
+              </article>
+              <article class="tool-card">
+                <span class="tool-card__label">Exact motion graphics</span>
+                <strong>HyperFrames</strong>
+                <p data-pretext contenteditable="false">Build the premium SIP graph and ZebPay logo animation with exact type, colour, data, and timing.</p>
+              </article>
+              <article class="tool-card">
+                <span class="tool-card__label">Narration</span>
+                <strong>ElevenLabs after voice auditions</strong>
+                <p data-pretext contenteditable="false">Qwen and Sarvam alternatives passed technical checks but failed human listening. The familiar ElevenLabs voice returned for the approved surgical SIP repair.</p>
+              </article>
+              <article class="tool-card">
+                <span class="tool-card__label">Sound</span>
+                <strong>Separate audio stems</strong>
+                <p data-pretext contenteditable="false">Keep narration, Seedance ambience/SFX, added SFX, and music independently adjustable.</p>
+              </article>
+              <article class="tool-card tool-card--wide">
+                <span class="tool-card__label">Why this separation matters</span>
+                <p data-pretext contenteditable="false">A logo, graph, pronunciation, caption, or music change can be fixed without regenerating a single video shot.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--final" id="process-11" data-title="The finished film" aria-labelledby="process-title-11">
+        <div class="slide__inner slide__inner--top">
+          <div class="case-grid">
+            <div>
+              <div class="section-label">Ramayana–ZebPay SIP</div>
+              <h2 id="process-title-11" data-pretext contenteditable="false">The <span class="accent">finished film.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">The mythological story, SIP explanation, motion graphics, brand close, narration, SFX, captions, and 9:16 delivery now play as one frame-locked film.</p>
+              <div class="case-metrics">
+                <article class="case-metric"><strong>52.2s</strong><span>final runtime</span></article>
+                <article class="case-metric"><strong>1080×1920</strong><span>delivery frame</span></article>
+                <article class="case-metric"><strong>14s</strong><span>graph + logo</span></article>
+            <article class="case-metric"><strong>v011</strong><span>meeting review</span></article>
+              </div>
+          <p class="micro" style="margin-top:1rem;" data-pretext contenteditable="false">This meeting package plays the latest creative-approved v011 voice-and-demo-music review. Final-campaign music, commercial voice entitlement, and release approvals remain separate promotion gates.</p>
+            </div>
+
+            <div class="video-frame">
+            <video controls preload="metadata" playsinline poster="assets/ramayana/overview-contact.png">
+              <source src="videos/ramayana-zebpay-sip-review-v011-captioned.mp4" type="video/mp4">
+              Your browser cannot play the reference film. Open the packaged v011 review from the videos folder.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="process-12" data-title="Repeat the recipe" aria-labelledby="process-title-12">
+        <div class="slide__inner">
+          <div class="repeat-layout">
+            <div>
+              <div class="section-label">What we can repeat next time</div>
+              <h2 id="process-title-12" data-pretext contenteditable="false">New story. New world. <span class="accent-blue">Same proven recipe.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">We do not copy this campaign’s characters or claims. We reuse the production order, review gates, timing system, low-cost testing pattern, and post-production toolchain.</p>
+              <div class="delivery-line" aria-label="Repeatable production recipe">
+                <div><strong>01</strong>Story beats</div>
+                <div><strong>02</strong>Elements</div>
+                <div><strong>03</strong>Keyframes</div>
+                <div><strong>04</strong>Image film</div>
+                <div><strong>05</strong>Motion + post</div>
+              </div>
+            </div>
+
+            <div class="tool-chain">
+              <article class="repeat-card">
+                <strong>Before Higgsfield</strong>
+                <p data-pretext contenteditable="false">Approve the script, visual world, keyframes, full image-only animatic, timing, and cost cap.</p>
+              </article>
+              <article class="repeat-card">
+                <strong>Inside Higgsfield</strong>
+                <p data-pretext contenteditable="false">Reuse canonical Elements, explicit start images, one-action prompts, native SFX, and low-resolution first passes.</p>
+              </article>
+              <article class="repeat-card tool-card--wide">
+                <strong>After Higgsfield</strong>
+                <p data-pretext contenteditable="false">Conform only reviewed motion, then add exact graphics, controlled narration, music, captions, and delivery QC with the same post system.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <main class="legacy-deck" id="legacy-deck" hidden>
+      <section class="slide is-active" id="slide-1" data-title="From idea to film" aria-labelledby="title-1">
+        <div class="slide__inner">
+          <div class="hero-grid">
+            <div>
+              <div class="section-label">A shared operating model</div>
+              <h1 id="title-1" data-pretext contenteditable="false">From idea to <span class="accent">cinematic film.</span></h1>
+              <p class="lede" data-pretext contenteditable="false">A cost-controlled way for Marketing, Product, and Creative to make one strong social film without gambling on random AI generations.</p>
+              <div class="hero-proof" aria-label="Reference film results">
+                <div class="hero-proof__item">
+                  <strong>52.2s</strong>
+                  <span>finished story</span>
+                </div>
+                <div class="hero-proof__item">
+                  <strong>9:16</strong>
+                  <span>Shorts &amp; Reels</span>
+                </div>
+                <div class="hero-proof__item">
+                  <strong>1 system</strong>
+                  <span>repeatable next time</span>
+                </div>
+              </div>
+            </div>
+
+            <figure class="film-window">
+              <img src="assets/ramayana/overview-contact.png" alt="Frames from the Ramayana-ZebPay SIP film, including the bridge, squirrel, SIP graph, and ZebPay close">
+              <figcaption class="film-window__caption">
+                <span>Reference production</span>
+                <span>Ramayana × ZebPay SIP</span>
+              </figcaption>
+            </figure>
+          </div>
+          <aside class="speaker-notes">Open with the outcome. This is not a presentation about AI tools. It is a shared decision process that protects the message, the budget, and the brand.</aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-2" data-title="The business idea" aria-labelledby="title-2">
+        <div class="slide__inner">
+          <div class="section-label">The whole method in one sentence</div>
+          <h2 id="title-2" class="statement" data-pretext contenteditable="false">Agree on the story. Prove the full film. Then buy <span class="accent">only the motion that matters.</span></h2>
+          <div class="outcome-row">
+            <article class="outcome">
+              <span class="outcome__number">01 / CLARITY</span>
+              <h3 data-pretext contenteditable="false">One message survives</h3>
+              <p data-pretext contenteditable="false">The film has one audience, one promise, one emotional turn, and one call to action.</p>
+            </article>
+            <article class="outcome">
+              <span class="outcome__number">02 / CONTROL</span>
+              <h3 data-pretext contenteditable="false">Spend follows proof</h3>
+              <p data-pretext contenteditable="false">Timing and story are approved before paid video generation begins.</p>
+            </article>
+            <article class="outcome">
+              <span class="outcome__number">03 / QUALITY</span>
+              <h3 data-pretext contenteditable="false">Every tool has one job</h3>
+              <p data-pretext contenteditable="false">AI creates performance and atmosphere. Exact systems create claims, graphs, captions, and logos.</p>
+            </article>
+          </div>
+          <aside class="speaker-notes">The key phrase is “spend follows proof.” We do not start by generating clips. We start by proving that the complete film works as a story.</aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-3" data-title="The production map" aria-labelledby="title-3">
+        <div class="slide__inner slide__inner--top">
+          <div class="section-label">The production map</div>
+          <h2 id="title-3" data-pretext contenteditable="false">Eight decisions. <span class="accent-blue">One film.</span></h2>
+          <p class="lede" data-pretext contenteditable="false">Each stage creates something visible and reviewable. Nothing expensive starts on trust alone.</p>
+
+          <div class="map" aria-label="Eight-stage production workflow">
+            <article class="map-step">
+              <span class="map-step__id">01</span>
+              <h3 data-pretext contenteditable="false">Brief</h3>
+              <p data-pretext contenteditable="false">Audience, message, CTA, claims, format.</p>
+            </article>
+            <article class="map-step">
+              <span class="map-step__id">02</span>
+              <h3 data-pretext contenteditable="false">Narration</h3>
+              <p data-pretext contenteditable="false">One approved spoken story becomes the clock.</p>
+            </article>
+            <article class="map-step">
+              <span class="map-step__id">03</span>
+              <h3 data-pretext contenteditable="false">Visual bible</h3>
+              <p data-pretext contenteditable="false">Characters, locations, props, brand, look.</p>
+            </article>
+            <article class="map-step">
+              <span class="map-step__id">04</span>
+              <h3 data-pretext contenteditable="false">Animatic</h3>
+              <p data-pretext contenteditable="false">The entire film, timed with still frames.</p>
+            </article>
+            <article class="map-step" data-phase="spend">
+              <span class="map-step__id">05</span>
+              <h3 data-pretext contenteditable="false">Pilot shot</h3>
+              <p data-pretext contenteditable="false">One hard shot tests direction and continuity.</p>
+            </article>
+            <article class="map-step">
+              <span class="map-step__id">06</span>
+              <h3 data-pretext contenteditable="false">Keeper shots</h3>
+              <p data-pretext contenteditable="false">Approved motion only; rejected takes stay evidence.</p>
+            </article>
+            <article class="map-step">
+              <span class="map-step__id">07</span>
+              <h3 data-pretext contenteditable="false">Finish</h3>
+              <p data-pretext contenteditable="false">Graphics, voice, SFX, music, captions.</p>
+            </article>
+            <article class="map-step">
+              <span class="map-step__id">08</span>
+              <h3 data-pretext contenteditable="false">Release</h3>
+              <p data-pretext contenteditable="false">Playback, brand, legal, rights, final hash.</p>
+            </article>
+          </div>
+          <aside class="speaker-notes">Point out the “spend starts” marker. Stages 1–4 are where the team can still make major story changes without paying for motion retries.</aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-4" data-title="Who owns what" aria-labelledby="title-4">
+        <div class="slide__inner">
+          <div class="section-label">Clear ownership prevents late surprises</div>
+          <h2 id="title-4" data-pretext contenteditable="false">Two business teams. <span class="accent">Three clean lanes.</span></h2>
+          <div class="owner-grid">
+            <article class="owner">
+              <div class="owner__tag">Marketing owns</div>
+              <h3 data-pretext contenteditable="false">Meaning and market fit</h3>
+              <ul>
+                <li data-pretext contenteditable="false">Audience and campaign objective</li>
+                <li data-pretext contenteditable="false">Single promise and emotional tone</li>
+                <li data-pretext contenteditable="false">Call to action and brand voice</li>
+                <li data-pretext contenteditable="false">Creative acceptance</li>
+              </ul>
+            </article>
+            <article class="owner">
+              <div class="owner__tag">Product owns</div>
+              <h3 data-pretext contenteditable="false">Truth and product behavior</h3>
+              <ul>
+                <li data-pretext contenteditable="false">What the product actually does</li>
+                <li data-pretext contenteditable="false">Terms, acronyms, numbers, and claims</li>
+                <li data-pretext contenteditable="false">Regulatory and factual questions</li>
+                <li data-pretext contenteditable="false">Final product-language approval</li>
+              </ul>
+            </article>
+            <article class="owner">
+              <div class="owner__tag">Creative production owns</div>
+              <h3 data-pretext contenteditable="false">Craft, evidence, and delivery</h3>
+              <ul>
+                <li data-pretext contenteditable="false">Script adaptation and shot design</li>
+                <li data-pretext contenteditable="false">Continuity, generation, and editing</li>
+                <li data-pretext contenteditable="false">Cost packets and technical QC</li>
+                <li data-pretext contenteditable="false">Versioned review cuts and masters</li>
+              </ul>
+            </article>
+          </div>
+          <aside class="speaker-notes">The production team does not approve the campaign claim, and Product does not need to direct camera motion. Each team has a narrow, high-value decision surface.</aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-5" data-title="The animatic" aria-labelledby="title-5">
+        <div class="slide__inner">
+          <div class="animatic-grid">
+            <figure class="story-contact">
+            <img src="assets/ramayana/animatic-contact-sheet.png" alt="Contact sheet showing the Ramayana story from storyboard frames through the SIP graph and end card">
+              <figcaption class="story-contact__label">The complete film before paid motion</figcaption>
+            </figure>
+            <div>
+              <div class="section-label">The highest-leverage gate</div>
+              <h2 id="title-5" data-pretext contenteditable="false">The animatic is the <span class="accent">first complete film.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">Still frames, timed to narration, reveal story problems before they become expensive video problems.</p>
+              <div class="sequence">
+                <div class="sequence__item">
+                  <div><strong data-pretext contenteditable="false">Lock the spoken story</strong><span data-pretext contenteditable="false">Every sentence receives an exact time slot.</span></div>
+                </div>
+                <div class="sequence__item">
+                  <div><strong data-pretext contenteditable="false">Design one frame per beat</strong><span data-pretext contenteditable="false">Composition and continuity become visible.</span></div>
+                </div>
+                <div class="sequence__item">
+                  <div><strong data-pretext contenteditable="false">Watch the whole film</strong><span data-pretext contenteditable="false">Pacing, crop, transitions, and comprehension are tested together.</span></div>
+                </div>
+                <div class="sequence__item">
+                  <div><strong data-pretext contenteditable="false">Approve before motion</strong><span data-pretext contenteditable="false">The team signs off on meaning, not isolated pretty images.</span></div>
+                </div>
+              </div>
+              <div class="callout" data-pretext contenteditable="false">Change words, timing, and shot order here. Do not discover those problems after paid generation.</div>
+            </div>
+          </div>
+          <aside class="speaker-notes">An animatic is not a rough mood board. It is the full story with the exact voice timing. Ask the audience to imagine approving this before seeing any moving shots.</aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-6" data-title="AI versus precision" aria-labelledby="title-6">
+        <div class="slide__inner slide__inner--top">
+          <div class="section-label">Choose the right engine</div>
+          <h2 id="title-6" data-pretext contenteditable="false">AI for performance. <span class="accent">Code for precision.</span></h2>
+          <p class="lede" data-pretext contenteditable="false">Quality improves when we stop asking one tool to do everything.</p>
+
+          <div class="split-rule">
+            <article class="split-rule__half">
+              <span class="split-rule__index">ORGANIC PICTURE</span>
+              <h3 data-pretext contenteditable="false">Use generative video where life must move</h3>
+              <ul>
+                <li data-pretext contenteditable="false">Character performance and expression</li>
+                <li data-pretext contenteditable="false">Water, cloth, weather, hair, atmosphere</li>
+                <li data-pretext contenteditable="false">Camera movement and physical action</li>
+                <li data-pretext contenteditable="false">Native sounds tied to visible events</li>
+              </ul>
+              <div class="split-rule__footer">Higgsfield / Seedance</div>
+            </article>
+            <article class="split-rule__half">
+              <span class="split-rule__index">EXACT PICTURE</span>
+              <h3 data-pretext contenteditable="false">Use deterministic systems where truth must stay exact</h3>
+              <ul>
+                <li data-pretext contenteditable="false">Product claims, numbers, and financial language</li>
+                <li data-pretext contenteditable="false">Graphs, labels, typography, and captions</li>
+                <li data-pretext contenteditable="false">Logo geometry and end-card layout</li>
+                <li data-pretext contenteditable="false">Frame-perfect timing and legal copy</li>
+              </ul>
+              <div class="split-rule__footer">HyperFrames / Remotion / FFmpeg</div>
+            </article>
+          </div>
+          <aside class="speaker-notes">This is the quality rule behind the whole process. Generative video is excellent at motion and poor at exact text or data. The graph and logo in the reference film were built separately for this reason.</aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-7" data-title="Cost control" aria-labelledby="title-7">
+        <div class="slide__inner">
+          <div class="cost-layout">
+            <div>
+              <div class="section-label">Reference economics</div>
+              <h2 id="title-7" data-pretext contenteditable="false">Pay for generated seconds, <span class="accent">not final runtime.</span></h2>
+              <p class="cost-number" aria-label="147 credits">147</p>
+              <span class="cost-unit">credits for one learned-path 480p keeper pass</span>
+              <p class="micro" style="margin-top:1.1rem;" data-pretext contenteditable="false">Dated 24 July 2026. Account-plan specific. Requote before every paid job.</p>
+            </div>
+
+            <div>
+              <div class="cost-bars" aria-label="Reference credit ranges">
+                <div class="cost-bar">
+                  <span class="cost-bar__label">Learned keeper path</span>
+                  <span class="cost-bar__track"><span class="cost-bar__fill" style="--bar:50%"></span></span>
+                  <strong>147</strong>
+                </div>
+                <div class="cost-bar">
+                  <span class="cost-bar__label">Practical repeat reserve</span>
+                  <span class="cost-bar__track"><span class="cost-bar__fill" style="--bar:75%"></span></span>
+                  <strong>221–294</strong>
+                </div>
+                <div class="cost-bar">
+                  <span class="cost-bar__label">First experiment total</span>
+                  <span class="cost-bar__track"><span class="cost-bar__fill" style="--bar:90%"></span></span>
+                  <strong>265</strong>
+                </div>
+              </div>
+
+              <div class="cost-rules">
+                <article class="cost-rule">
+                  <strong data-pretext contenteditable="false">Pilot once</strong>
+                  <span data-pretext contenteditable="false">Test the hardest shot class before buying the batch.</span>
+                </article>
+                <article class="cost-rule">
+                  <strong data-pretext contenteditable="false">Experiment at 480p</strong>
+                  <span data-pretext contenteditable="false">Prove direction and continuity on the chosen model.</span>
+                </article>
+                <article class="cost-rule">
+                  <strong data-pretext contenteditable="false">Keep exact sections outside AI</strong>
+                  <span data-pretext contenteditable="false">The graph and logo used zero video-generation credits.</span>
+                </article>
+              </div>
+              <p class="small" style="margin-top:1.2rem;" data-pretext contenteditable="false">The first experiment included a 100-credit abandoned Cinema Studio pilot. The next film should not repeat that mistake.</p>
+            </div>
+          </div>
+          <aside class="speaker-notes">Credits are shown rather than currency because cash value depends on the account plan. The important metric is generated source seconds multiplied by the expected number of attempts.</aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-8" data-title="Four production lanes" aria-labelledby="title-8">
+        <div class="slide__inner">
+          <div class="section-label">A film is four controllable lanes</div>
+          <h2 id="title-8" data-pretext contenteditable="false">One timeline. <span class="accent-blue">No tangled dependencies.</span></h2>
+          <div class="lane-stack">
+            <article class="lane">
+              <div class="lane__name">Story clock</div>
+              <div class="lane__description" data-pretext contenteditable="false">Approved narration, pauses, pronunciation, and phrase timing define what the audience hears when.</div>
+              <div class="lane__owner">Voice + timing</div>
+            </article>
+            <article class="lane">
+              <div class="lane__name">Organic picture</div>
+              <div class="lane__description" data-pretext contenteditable="false">Characters, worlds, atmosphere, camera movement, and native diegetic sound create cinematic life.</div>
+              <div class="lane__owner">Generative video</div>
+            </article>
+            <article class="lane">
+              <div class="lane__name">Exact picture</div>
+              <div class="lane__description" data-pretext contenteditable="false">Graphs, claims, captions, logo, typography, and brand geometry remain precise and reviewable.</div>
+              <div class="lane__owner">Motion design</div>
+            </article>
+            <article class="lane">
+              <div class="lane__name">Finish</div>
+              <div class="lane__description" data-pretext contenteditable="false">Approved picture ranges, audio stems, captions, loudness, technical checks, hashes, and delivery.</div>
+              <div class="lane__owner">Edit + QC</div>
+            </article>
+          </div>
+          <div class="merge-line">They meet only in the final edit</div>
+          <aside class="speaker-notes">Separate lanes let us fix one problem without damaging the rest. A voice change does not require new video. A logo change does not require a new narration mix.</aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-9" data-title="The review loop" aria-labelledby="title-9">
+        <div class="slide__inner">
+          <div class="review-layout">
+            <div>
+              <div class="section-label">Every take gets a verdict</div>
+              <h2 id="title-9" data-pretext contenteditable="false">Review before <span class="accent">reroll.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">A failed take is not automatically wasted. The useful part may still solve the shot.</p>
+              <div class="salvage">
+                <strong data-pretext contenteditable="false">Before another generation:</strong>
+                <p class="small" data-pretext contenteditable="false">Can we use a shorter range, hold one frame, crop, retime, add a cutaway, or repair the sound in post?</p>
+              </div>
+            </div>
+
+            <div class="verdicts" aria-label="Take review verdicts">
+              <article class="verdict">
+                <strong>PASS</strong>
+                <p data-pretext contenteditable="false">The planned action, continuity, sound, and usable duration meet the written criteria.</p>
+              </article>
+              <article class="verdict">
+                <strong>FAIL</strong>
+                <p data-pretext contenteditable="false">A specific visible problem blocks the shot. Change one diagnosed variable before retrying.</p>
+              </article>
+              <article class="verdict">
+                <strong>NEEDS HUMAN</strong>
+                <p data-pretext contenteditable="false">Taste, pronunciation, brand tone, music choice, or legal judgment cannot be certified by technical checks.</p>
+              </article>
+            </div>
+          </div>
+          <aside class="speaker-notes">The reference film salvaged a valid section from a take where a prop later disappeared. This saved a blind reroll and kept the final edit controlled.</aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-10" data-title="Audio design" aria-labelledby="title-10">
+        <div class="slide__inner">
+          <div class="audio-grid">
+            <div>
+              <div class="section-label">Sound is not one file</div>
+              <h2 id="title-10" data-pretext contenteditable="false">Keep every sound <span class="accent-blue">independently editable.</span></h2>
+              <p class="lede" data-pretext contenteditable="false">Names, acronyms, music taste, and SFX balance require different decisions. Mixing them too early makes every change expensive.</p>
+              <div class="callout" data-pretext contenteditable="false">Audition “SIP”, “ZebPay”, “Vanara”, and “Rama” before generating the full voiceover.</div>
+            </div>
+
+            <div class="stems" aria-label="Separate audio stems">
+              <article class="stem">
+                <div class="stem__name">Narration</div>
+                <div class="wave" aria-hidden="true"></div>
+                <div class="stem__status">Pronunciation gate</div>
+              </article>
+              <article class="stem">
+                <div class="stem__name">Native SFX</div>
+                <div class="wave" aria-hidden="true"></div>
+                <div class="stem__status">Generated with picture</div>
+              </article>
+              <article class="stem">
+                <div class="stem__name">Designed SFX</div>
+                <div class="wave" aria-hidden="true"></div>
+                <div class="stem__status">Post-production</div>
+              </article>
+              <article class="stem">
+                <div class="stem__name">Music</div>
+                <div class="wave" aria-hidden="true"></div>
+                <div class="stem__status">Rights + taste gate</div>
+              </article>
+            </div>
+          </div>
+          <aside class="speaker-notes">The v011 review improved SIP pronunciation and added demo music. Human creative playback passed; final-campaign music, commercial voice entitlement, and release approvals remain separate gates.</aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-11" data-title="Ramayana case study" aria-labelledby="title-11">
+        <div class="slide__inner">
+          <div class="case-grid">
+            <div>
+              <div class="section-label">Proof from this production</div>
+              <h2 id="title-11" data-pretext contenteditable="false">Ramayana–ZebPay SIP</h2>
+              <p class="lede" data-pretext contenteditable="false">A mythological story becomes a simple investing message: small, repeated contributions can build something larger.</p>
+              <div class="case-metrics">
+                <article class="case-metric"><strong>52.2s</strong><span>final runtime</span></article>
+                <article class="case-metric"><strong>49s</strong><span>billed source motion</span></article>
+                <article class="case-metric"><strong>14s</strong><span>deterministic graph + logo</span></article>
+            <article class="case-metric"><strong>v011</strong><span>meeting review</span></article>
+              </div>
+          <p class="micro" style="margin-top:1rem;" data-pretext contenteditable="false">This meeting package plays the latest creative-approved v011 voice-and-demo-music review. Final-campaign music, commercial voice entitlement, and release approvals remain separate promotion gates.</p>
+            </div>
+
+            <div class="video-frame">
+            <video controls preload="metadata" playsinline poster="assets/ramayana/overview-contact.png">
+              <source src="videos/ramayana-zebpay-sip-review-v011-captioned.mp4" type="video/mp4">
+              Your browser cannot play the reference film. Open the packaged v011 review from the videos folder.
+              </video>
+            </div>
+          </div>
+          <aside class="speaker-notes">If time permits, play 20–30 seconds. Otherwise use the metrics to show that the process produced a real promoted master, not just a workflow document.</aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-12" data-title="Why the next film is cheaper" aria-labelledby="title-12">
+        <div class="slide__inner">
+          <div class="section-label">Learning compounds</div>
+          <h2 id="title-12" data-pretext contenteditable="false">Reuse the system. <span class="accent">Refresh the campaign.</span></h2>
+          <p class="lede" data-pretext contenteditable="false">The next film should inherit the process, evidence formats, and proven shot patterns — never the old campaign’s characters or claims.</p>
+
+          <div class="reuse-grid">
+            <article class="reuse-column">
+              <div class="reuse-column__title">
+                <h3 data-pretext contenteditable="false">Reuse every time</h3>
+                <span>Lower risk</span>
+              </div>
+              <ul class="clean-list">
+                <li data-pretext contenteditable="false">Folder structure, brief, phrase map, and shot tracker</li>
+                <li data-pretext contenteditable="false">Animatic, review, cost, and delivery gates</li>
+                <li data-pretext contenteditable="false">Known-good prompt shapes and reference roles</li>
+                <li data-pretext contenteditable="false">Graph, caption, logo, and audio finishing system</li>
+              </ul>
+            </article>
+            <article class="reuse-column">
+              <div class="reuse-column__title">
+                <h3 data-pretext contenteditable="false">Create for each campaign</h3>
+                <span>Fresh value</span>
+              </div>
+              <ul class="clean-list">
+                <li data-pretext contenteditable="false">Audience, promise, story, CTA, and exact claims</li>
+                <li data-pretext contenteditable="false">Characters, locations, props, and visual world</li>
+                <li data-pretext contenteditable="false">Narration performance, music, and campaign tone</li>
+                <li data-pretext contenteditable="false">Human brand, legal, regulatory, and release decisions</li>
+              </ul>
+            </article>
+          </div>
+          <aside class="speaker-notes">Reusability is operational, not creative sameness. We reuse the rails and evidence, while the campaign story and visual world remain original.</aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-13" data-title="Team decision points" aria-labelledby="title-13">
+        <div class="slide__inner slide__inner--top">
+          <div class="section-label">What we need from the room</div>
+          <h2 id="title-13" data-pretext contenteditable="false">Three meetings. <span class="accent-blue">Three decisions.</span></h2>
+          <div class="decision-grid">
+            <article class="decision-stage">
+              <span class="decision-stage__when">At kickoff</span>
+              <h3 data-pretext contenteditable="false">Approve what the film must say</h3>
+              <p data-pretext contenteditable="false">Marketing and Product align on audience, promise, product truth, CTA, format, and non-negotiable claims.</p>
+              <strong>Output</strong>
+              <p data-pretext contenteditable="false">One brief and one approval owner.</p>
+            </article>
+            <article class="decision-stage">
+              <span class="decision-stage__when">At animatic review</span>
+              <h3 data-pretext contenteditable="false">Approve whether the story works</h3>
+              <p data-pretext contenteditable="false">Watch the complete timed film. Judge comprehension, pacing, emotion, and claim placement before motion spend.</p>
+              <strong>Output</strong>
+              <p data-pretext contenteditable="false">Story lock and an authorized generation cap.</p>
+            </article>
+            <article class="decision-stage">
+              <span class="decision-stage__when">At final review</span>
+              <h3 data-pretext contenteditable="false">Approve the actual encoded film</h3>
+              <p data-pretext contenteditable="false">Listen to names and acronyms. Check logo, captions, music, claims, product truth, and delivery format.</p>
+              <strong>Output</strong>
+              <p data-pretext contenteditable="false">Creative sign-off plus separate rights and release status.</p>
+            </article>
+          </div>
+          <aside class="speaker-notes">The team does not need to attend every production action. These three decision points concentrate business judgment where it changes the outcome.</aside>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-14" data-title="The decision" aria-labelledby="title-14">
+        <div class="slide__inner">
+          <div class="close-grid">
+            <div>
+              <div class="section-label">The operating promise</div>
+              <h2 id="title-14" class="closing-line" data-pretext contenteditable="false">One agreed story. Selective AI. Exact brand finish.</h2>
+              <p class="lede" data-pretext contenteditable="false">The result is a film the business can understand, approve, budget, revise, and repeat.</p>
+            </div>
+            <aside class="closing-ask">
+              <span class="closing-ask__label">Decision for today</span>
+              <h3 data-pretext contenteditable="false">Adopt this workflow for the next short-form campaign.</h3>
+              <p data-pretext contenteditable="false">Nominate one Marketing owner and one Product owner. We will return with the approved brief and a zero-video-credit animatic before requesting generation spend.</p>
+            </aside>
+          </div>
+          <aside class="speaker-notes">Close on the operating decision, not the technology. The next action is to name owners and test the workflow on one campaign.</aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="progress" aria-hidden="true"><div class="progress__bar" id="progress-bar"></div></div>
+      <div class="counter" id="slide-counter">01 / 12</div>
+      <nav class="footer__nav" aria-label="Slide navigation">
+        <button class="nav-button" id="previous-slide" type="button" aria-label="Previous slide">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12.5 4.5 7 10l5.5 5.5" stroke="currentColor" stroke-width="1.8"/></svg>
+        </button>
+        <button class="nav-button" id="next-slide" type="button" aria-label="Next slide">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m7.5 4.5 5.5 5.5-5.5 5.5" stroke="currentColor" stroke-width="1.8"/></svg>
+        </button>
+      </nav>
+    </footer>
+  </div>
+
+  <!-- FALLBACK: vendor/pretext.js missing, using CDN. The deck remains readable if the import is unavailable. -->
+  <script type="module">
+    const slides = Array.from(document.querySelectorAll("#deck .slide"));
+    const deck = document.getElementById("deck");
+    const counter = document.getElementById("slide-counter");
+    const progressBar = document.getElementById("progress-bar");
+    const previousButton = document.getElementById("previous-slide");
+    const nextButton = document.getElementById("next-slide");
+    const editableElements = Array.from(document.querySelectorAll("#deck [data-pretext]"));
+
+    const initialIndex = Math.max(0, Math.min(slides.length - 1, Number(location.hash.replace("#process-", "")) - 1 || 0));
+    let current = 0;
+    let touchStartX = null;
+    let prepared = new Map();
+    let pretextApi = null;
+    let leaveTimer = null;
+
+    function pad(value) {
+      return String(value).padStart(2, "0");
+    }
+
+    function updateSlide(nextIndex, { replaceHash = false } = {}) {
+      const bounded = Math.max(0, Math.min(slides.length - 1, nextIndex));
+      if (bounded === current && slides[bounded].classList.contains("is-active")) {
+        const hash = `#process-${current + 1}`;
+        if (replaceHash) history.replaceState(null, "", hash);
+        document.title = `${slides[current].dataset.title} · Ramayana-ZebPay SIP`;
+        updateChrome();
+        return;
+      }
+
+      clearTimeout(leaveTimer);
+      const previous = slides[current];
+      const moveFocus = previous?.contains(document.activeElement);
+      if (previous) {
+        previous.classList.remove("is-active");
+        previous.classList.add("is-leaving");
+      }
+
+      current = bounded;
+      const active = slides[current];
+      active.classList.remove("is-leaving");
+      active.classList.add("is-active");
+      active.setAttribute("aria-hidden", "false");
+      if (moveFocus) active.focus({ preventScroll: true });
+      previous?.setAttribute("aria-hidden", "true");
+
+      leaveTimer = window.setTimeout(() => {
+        slides.forEach((slide, index) => {
+          if (index !== current) slide.classList.remove("is-leaving");
+        });
+      }, 320);
+
+      const hash = `#process-${current + 1}`;
+      if (replaceHash) history.replaceState(null, "", hash);
+      else history.pushState(null, "", hash);
+
+      updateChrome();
+      document.title = `${active.dataset.title} · Ramayana-ZebPay SIP`;
+    }
+
+    function updateChrome() {
+      counter.textContent = `${pad(current + 1)} / ${pad(slides.length)}`;
+      progressBar.style.width = `${((current + 1) / slides.length) * 100}%`;
+      previousButton.disabled = current === 0;
+      nextButton.disabled = current === slides.length - 1;
+      slides.forEach((slide, index) => {
+        slide.setAttribute("aria-hidden", String(index !== current));
+        slide.tabIndex = index === current ? 0 : -1;
+      });
+    }
+
+    function next() {
+      updateSlide(current + 1);
+    }
+
+    function previous() {
+      updateSlide(current - 1);
+    }
+
+    function handleKeydown(event) {
+      const activeTag = document.activeElement?.tagName;
+      const isEditing = document.activeElement?.isContentEditable;
+      if (isEditing || activeTag === "INPUT" || activeTag === "TEXTAREA") return;
+
+      if (["ArrowRight", "PageDown", "Enter", " "].includes(event.key)) {
+        event.preventDefault();
+        next();
+      } else if (["ArrowLeft", "PageUp"].includes(event.key)) {
+        event.preventDefault();
+        previous();
+      } else if (event.key === "Home") {
+        event.preventDefault();
+        updateSlide(0);
+      } else if (event.key === "End") {
+        event.preventDefault();
+        updateSlide(slides.length - 1);
+      }
+    }
+
+    function handleHashChange() {
+      const requested = Number(location.hash.replace("#process-", "")) - 1;
+      if (Number.isFinite(requested)) updateSlide(requested, { replaceHash: true });
+    }
+
+    previousButton.addEventListener("click", previous);
+    nextButton.addEventListener("click", next);
+    document.addEventListener("keydown", handleKeydown);
+    window.addEventListener("hashchange", handleHashChange);
+
+    deck.addEventListener("touchstart", (event) => {
+      touchStartX = event.changedTouches[0]?.clientX ?? null;
+    }, { passive: true });
+
+    deck.addEventListener("touchend", (event) => {
+      if (touchStartX === null) return;
+      const delta = (event.changedTouches[0]?.clientX ?? touchStartX) - touchStartX;
+      touchStartX = null;
+      if (Math.abs(delta) < 55) return;
+      if (delta < 0) next();
+      else previous();
+    }, { passive: true });
+
+    function fallbackRelayout() {
+      editableElements.forEach((element) => {
+        element.style.removeProperty("height");
+      });
+    }
+
+    function prepareElement(element) {
+      if (!pretextApi) return;
+      const computed = getComputedStyle(element);
+      const font = computed.font;
+      prepared.set(element, pretextApi.prepare(element.textContent.trim(), font));
+    }
+
+    function relayout() {
+      if (!pretextApi) {
+        fallbackRelayout();
+        return;
+      }
+
+      for (const [element, handle] of prepared) {
+        const computed = getComputedStyle(element);
+        const lineHeight = Number.parseFloat(computed.lineHeight) || Number.parseFloat(computed.fontSize) * 1.25;
+        const width = Math.max(1, element.clientWidth);
+        const result = pretextApi.layout(handle, width, lineHeight);
+        if (result?.height && Number.isFinite(result.height)) {
+          element.dataset.pretextHeight = String(Math.ceil(result.height));
+        }
+      }
+    }
+
+    async function initializePretext() {
+      await document.fonts.ready;
+      try {
+        pretextApi = await import("https://esm.sh/@chenglou/pretext");
+        editableElements.forEach(prepareElement);
+        relayout();
+      } catch {
+        document.documentElement.dataset.pretext = "unavailable";
+        fallbackRelayout();
+      }
+
+      const resizeObserver = new ResizeObserver(() => relayout());
+      resizeObserver.observe(document.body);
+
+      editableElements.forEach((element) => {
+        const observer = new MutationObserver(() => {
+          prepareElement(element);
+          relayout();
+        });
+        observer.observe(element, { characterData: true, subtree: true, childList: true });
+      });
+    }
+
+    slides.forEach((slide, index) => {
+      slide.setAttribute("aria-hidden", String(index !== current));
+      slide.querySelector("h1, h2")?.setAttribute("tabindex", "-1");
+    });
+
+    updateSlide(initialIndex, { replaceHash: true });
+    initializePretext();
+  </script>
+</body>
+</html>
