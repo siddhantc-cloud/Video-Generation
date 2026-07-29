@@ -11,6 +11,20 @@ Open `index.html` to start the meeting.
 
 Both decks are self-contained relative to this folder. Their essential images, fonts, and MP4s are local. Use the on-screen arrows or the keyboard arrow keys to move through slides.
 
+## Using this package on another computer
+
+Install Git LFS before cloning, then download the LFS objects and open the launcher:
+
+```text
+git lfs install
+git clone https://github.com/binarycache/so-sorry-clear-gut.git
+cd so-sorry-clear-gut
+git switch codex/cryptopack-rebalancing-video
+git lfs pull
+```
+
+Then open `meetings/2026-07-29-zebpay-video-showcase/index.html`. If the repository was cloned before the videos were promoted, run `git pull` followed by `git lfs pull`.
+
 ## Meeting notes
 
 - The Ramayana video is the latest creative-approved v011 voice-and-demo-music review supplied for this meeting. Final-campaign music, voice entitlement, and release approvals remain separate promotion gates.

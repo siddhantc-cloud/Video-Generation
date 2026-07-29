@@ -21,6 +21,10 @@ secrets*
 # Explicitly promoted and owner-approved final
 !Ramayana-ZebpaySIP/deliverables/final/Ramayana-ZebPaySIP_FINAL_v005_1080x1920_captioned.mp4
 
+# Explicitly promoted meeting showcase cuts
+!meetings/2026-07-29-zebpay-video-showcase/videos/ramayana-zebpay-sip-review-v011-captioned.mp4
+!meetings/2026-07-29-zebpay-video-showcase/videos/cryptopack-rebalancing-review-v002.mp4
+
 # Generated intermediates and logs
 *.err
 *.log

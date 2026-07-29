@@ -11,6 +11,7 @@
       "source_version": "final-short-v011",
       "duration_seconds": 52.2,
       "video_sha256": "7CD0003E9318DBA1BAD640A4E8552B2D991D401097B1D8AEC69BE164F201705B",
+      "storage": "git-lfs",
       "meeting_status": "creative-approved review"
     },
     {
@@ -20,6 +21,7 @@
       "source_version": "cryptopack-rebalancing-v002",
       "duration_seconds": 46.6,
       "video_sha256": "3B90B00BC81BF90F0EEC6F19696E8FF7A3175C5F9591F3F66CCCE8389190FA76",
+      "storage": "git-lfs",
       "meeting_status": "encoded-artifact keeper"
     }
   ]
