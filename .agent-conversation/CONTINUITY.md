@@ -3,7 +3,7 @@
 Host-neutral project conversation state. Update this file whenever meaningful work lands.
 
 ## Now
-- Three SOPs are live: setup, story film (category A), product explainer (category B). 52 LFS files, including the paid inputs for both reference films, are on the remote.
+- The repository is public at MythyaVerse/marketing-video-generation-pipeline. `main` carries the root README, the three SOPs, the cross-host `/setup` command, and all 52 LFS objects. A fresh clone works.
 
 ## Goal
 - Deliver approved ZebPay video case studies, and make both video categories reproducible by any operator from a clone.
@@ -14,6 +14,10 @@ Host-neutral project conversation state. Update this file whenever meaningful wo
 - Added `docs/SOP-00-SETUP.md`, `tools/setup-video-repo.ps1`, and a cross-host `/setup` command
 - Reframed the film SOPs as category playbooks: `docs/SOP-01-STORY-FILM.md` and `docs/SOP-02-PRODUCT-EXPLAINER.md`
 - Pushed the owner-approved reproduction set through Git LFS, 187 MB across 49 new objects
+- Renamed the repository, transferred it to the MythyaVerse organization, and made it public on owner instruction
+- Added the root `README.md` as the operator front door: the human clones, then a copy-paste prompt hands the whole installation to the agent
+- Corrected the cost model in all three SOPs: free ElevenLabs credits and ChatGPT/Codex subscription quota covered the reference films; Higgsfield credits are Category A's only metered spend
+- Fast-forwarded `main` to the working branch so a fresh clone gets the pipeline
 
 ## Evidence
 - `tools/setup-video-repo.ps1` reports 29 pass, 0 fail, with 52 LFS files present as real media.
