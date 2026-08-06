@@ -29,7 +29,25 @@ graphics. Route each interval separately, never the whole film at once.
 
 ## What it costs
 
-Dated evidence from the reference film, verified 2026-07-24. Re-quote live before you spend.
+Separate subscriptions you already hold from metered spend that grows with output.
+
+### Subscriptions
+
+| Subscription | What it covered in the reference film |
+|---|---|
+| Claude Code, Codex, or Cursor | The agent |
+| ChatGPT or Codex | Every keyframe and reference still. The navigation runbook records this route as "ChatGPT/Codex subscription quota, not Higgsfield credits." |
+| ElevenLabs | The narration, on **free credits**, using an account-owned Voice Design voice |
+
+The free ElevenLabs tier stopped at two documented walls, both HTTP 402 `paid_plan_required`: Voice
+Library voices, including the mythology narrators the project wanted, and ElevenLabs music
+generation. **For a different voice, a cloned voice, a Voice Library voice, or real volume, budget a
+paid ElevenLabs plan or a Sarvam subscription.** The Sarvam route is
+`.agent-harness/recipes/sarvam-bulbul-v3-narration.md`.
+
+### Metered spend: Higgsfield credits only
+
+Dated evidence, verified 2026-07-24. Re-quote live before you spend.
 
 | Item | Reference film | Notes |
 |---|---|---|
@@ -38,12 +56,11 @@ Dated evidence from the reference film, verified 2026-07-24. Re-quote live befor
 | Practical repeat reserve | 221 to 294 credits at 480p | About 1.5 to 2 passes |
 | Same plan at 720p | 331 to 441 credits | Multiply the same 49 seconds by the live rate |
 | Same plan at 1080p | 662 to 882 credits | Same method |
-| Keyframe stills | ChatGPT ImageGen or another approved still engine | Outside Higgsfield billing |
-| Narration | ElevenLabs, about 700 characters for a 52 second film | Small |
-| Deterministic graphics | Free, rendered locally | 14 seconds of the reference film |
+| Deterministic graphics | **Free**, rendered locally | 14 seconds of the reference film |
 | Music | Licensing cost, or produce your own | Demo music is never a release |
 
-Budget by generated source seconds and expected attempts, not by final runtime.
+Higgsfield credits are the only true marginal cost of this category. Budget by generated source
+seconds and expected attempts, not by final runtime.
 
 ## Checklist
 
@@ -114,6 +131,9 @@ defect in v003 of the reference film.
 Do not change the narration after this point without remapping every boundary.
 
 ## Step 3. Build the visual bible and keyframes. HUMAN plus a still engine
+
+The reference film produced every still through ChatGPT and Codex subscription quota. That is not a
+metered image bill and it does not touch Higgsfield credits. Any approved still engine works.
 
 1. Inventory the recurring characters, locations, props, wardrobe states, and brand sources.
 2. Separate stable invariants from shot state.

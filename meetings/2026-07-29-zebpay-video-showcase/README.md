@@ -19,7 +19,6 @@ Install Git LFS before cloning, then download the LFS objects and open the launc
 git lfs install
 git clone https://github.com/MythyaVerse/marketing-video-generation-pipeline.git
 cd marketing-video-generation-pipeline
-git switch codex/cryptopack-rebalancing-video
 git lfs pull
 ```
 

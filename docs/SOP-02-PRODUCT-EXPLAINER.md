@@ -13,27 +13,54 @@ rule below has evidence in that workspace.
 Complete `docs/SOP-00-SETUP.md` first. Use `docs/SOP-01-STORY-FILM.md` instead when the value is
 emotion, character, or atmosphere.
 
-## Yes, this category is effectively free
+## This category had zero metered spend
 
-You asked whether this one only needs Claude, Codex, or Cursor. Almost. Here is the exact bill.
+You asked whether this one only needs Claude, Codex, or Cursor. At the reference scale, yes. The
+whole video ran on subscriptions already held. Here is the exact bill.
 
 | Item | Cost | Why |
 |---|---|---|
 | The agent (Claude Code, Codex, or Cursor) | Your existing subscription | It does the work |
 | Picture: HyperFrames compositions and local render | **Free** | Headless Chromium renders locally. No cloud render needed. |
-| Screenshots and brand assets | **Free** | Supplied by the product team |
+| Screenshots and brand assets | **Free** | Supplied by the product team. No image generation needed. |
 | Fonts | **Free** | The reference uses Inter under the SIL Open Font License |
 | Music bed | **Free** | Seeded deterministic local synthesis, `production/tools/build_music_bed.py` |
 | Sound effects | **Free** | Deterministic local synthesis, `production/tools/build_sfx.py` |
 | Captions and SRT | **Free** | Derived from the narration timing |
 | Encode, probe, hash, QC | **Free** | FFmpeg and FFprobe, local |
-| **Narration** | **The only paid item** | ElevenLabs, 741 characters for the 46.6 second reference film |
+| Narration | **Free ElevenLabs credits** | 741 characters, one account-owned voice |
+| Generative video | **None** | This category never uses it |
 
-So the marginal cost of a new video in this category is one small text-to-speech call. The reference
-narration fits inside a normal monthly ElevenLabs allowance.
+Nothing here was metered. That is the point of the category.
 
-**You can make it completely free.** Use the Edge TTS helper that the story-film animatic uses. It
-needs no API key.
+### When narration starts to cost money
+
+The free ElevenLabs tier covers a voice you create and own inside your own account. The reference
+project hit two walls and recorded both as HTTP 402 `paid_plan_required`:
+
+| Blocked on the free tier | Evidence |
+|---|---|
+| Voice Library voices | `Ramayana-ZebpaySIP/audio/voiceover/elevenlabs-v006/VOICEOVER-v006.md` |
+| ElevenLabs music generation | `Ramayana-ZebpaySIP/edit/project.md`, Session 3 |
+
+Budget a paid plan when any of these is true:
+
+- You want a specific Voice Library voice, or a cloned voice.
+- You want a voice the free tier will not synthesize.
+- You are producing at volume rather than one video.
+- You need commercial voice entitlement for a customer-facing release. That is a separate gate from
+  technical access, and it is still open on both reference films.
+
+The routes, in order of cost:
+
+| Route | Cost | When to use it |
+|---|---|---|
+| Edge TTS, `Ramayana-ZebpaySIP/tools/edge_tts_word_timed.py` | **Free, no account** | Internal review, first cuts, scratch narration |
+| ElevenLabs free tier, account-owned voice | **Free** | One video, with a voice you create yourself |
+| ElevenLabs paid plan | Subscription | A different or cloned voice, or volume |
+| Sarvam Bulbul v3 | Subscription | Indian-English at scale. See `.agent-harness/recipes/sarvam-bulbul-v3-narration.md`. |
+
+The Edge TTS route removes the last account dependency entirely:
 
 ```powershell
 python Ramayana-ZebpaySIP\tools\edge_tts_word_timed.py `
@@ -41,11 +68,9 @@ python Ramayana-ZebpaySIP\tools\edge_tts_word_timed.py `
   --voice en-IN-PrabhatNeural --rate=-4%
 ```
 
-The trade is voice quality. Edge TTS is good enough for internal review and for a first cut. For a
-customer-facing release, a person should listen to both and choose. That listening decision is a
-human gate either way.
-
-There is no generative video spend in this category at all. That is the point of it.
+The trade is voice quality. Edge TTS is good enough for internal review and a first cut. For a
+customer-facing release, a person should listen to the options and choose. That listening decision is
+a human gate on every route.
 
 ## Is this the right category?
 

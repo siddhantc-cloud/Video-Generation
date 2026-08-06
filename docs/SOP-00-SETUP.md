@@ -22,7 +22,7 @@ Pick the category before you pick a tool.
 | The value is | Emotion, character, atmosphere, performance | Clarity about a real product |
 | Picture comes from | A generative video model, plus deterministic sections | A deterministic renderer only |
 | Exactness | A metaphor is allowed | Every number and claim must be exact |
-| Marginal cost | Generation credits, per film | Effectively one small text-to-speech call |
+| Metered cost | Higgsfield credits, per film | **None.** Subscriptions only. |
 | Rebuild | Each take is a fresh performance | Byte-reproducible |
 | Reference case | `Ramayana-ZebpaySIP/` | `CryptoBalancing-Zebpay/` |
 
@@ -30,19 +30,53 @@ A mixed film is normal. Route each interval separately, never the whole film at 
 
 ## What each category costs
 
+Separate the two kinds of cost. **Subscriptions** you already hold and reuse across every film.
+**Metered spend** is billed per job and is the only thing that grows with output.
+
+### Subscriptions the reference films used
+
+| Subscription | Used for | Category A | Category B |
+|---|---|---|---|
+| Claude Code, Codex, or Cursor | The agent that does the work | Yes | Yes |
+| ChatGPT or Codex | Image generation for keyframes and references | Yes | No. Real screenshots instead. |
+| ElevenLabs | Narration | Free tier was enough | Free tier was enough |
+
+Both reference films were narrated on **free ElevenLabs credits** with an account-owned Voice Design
+voice. The keyframes came out of **ChatGPT and Codex subscription quota**, not a separate metered
+image bill. Evidence:
+`Ramayana-ZebpaySIP/project/higgsfield-cinema-studio-navigation-runbook.md` records the ImageGen
+route as "ChatGPT/Codex subscription quota, not Higgsfield credits."
+
+### Where the free ElevenLabs tier stops
+
+The reference project hit these limits and recorded them. Both returned HTTP 402
+`paid_plan_required`:
+
+| Blocked on the free tier | Evidence |
+|---|---|
+| Voice Library voices, including the mythology narrators | `audio/voiceover/elevenlabs-v006/VOICEOVER-v006.md` |
+| ElevenLabs music generation | `edit/project.md`, Session 3 |
+
+So the free tier covers a voice you create and own in your own account. **A different voice, a
+cloned voice, a Voice Library voice, or any real volume needs a paid ElevenLabs plan, or a Sarvam
+subscription** as the hosted Indian-English alternative. Follow
+`.agent-harness/recipes/sarvam-bulbul-v3-narration.md` for the Sarvam route.
+
+### Metered spend
+
 | Item | Category A | Category B |
 |---|---|---|
-| Agent (Claude Code, Codex, or Cursor) | Existing subscription | Existing subscription |
-| Generative motion | About 147 to 165 credits at 480p for a 52 second film | **None** |
-| Keyframe stills | An image engine, per shot | **None**. Real screenshots. |
-| Deterministic graphics | Free, local render | Free, local render. This is the whole picture. |
+| Generative motion | About 147 to 165 Higgsfield credits at 480p for a 52 second film | **None** |
+| Deterministic graphics | Free, rendered locally | Free, rendered locally. This is the whole picture. |
 | Music and SFX | Licensing, or produce your own | Free. Seeded local synthesis. |
-| Narration | ElevenLabs, small | ElevenLabs, small. The only paid item. |
+| Narration | Free tier at this scale. Paid plan or Sarvam for a new voice or at scale. | Same |
 | Encode, probe, QC | Free | Free |
 
-Category B is effectively free. Its only paid item is one narration call of a few hundred
-characters, and even that can be replaced with the free Edge TTS helper at a quality cost. See
-`docs/SOP-02-PRODUCT-EXPLAINER.md`.
+**Category B had no metered spend at all.** It ran entirely on subscriptions already held. Its
+narration can also drop to the free Edge TTS helper, which needs no account at all, at a quality
+cost. See `docs/SOP-02-PRODUCT-EXPLAINER.md`.
+
+**Category A's only metered cost is Higgsfield credits.** Everything else was subscription quota.
 
 Credit numbers are dated evidence from 2026-07-24. Re-quote live before you spend.
 
@@ -109,7 +143,6 @@ Then clone and fetch the media.
 ```powershell
 git clone https://github.com/MythyaVerse/marketing-video-generation-pipeline.git
 cd marketing-video-generation-pipeline
-git switch codex/cryptopack-rebalancing-video
 git lfs pull
 ```
 
@@ -182,6 +215,11 @@ Open a new terminal afterwards. The name matters. The project tools read `ELEVEN
 the process environment. The repository `.env` file also accepts `ELEVEN_LABS_API_KEY`, but only the
 Ramayana Python helper reads that older name. Use `ELEVENLABS_API_KEY` for new work.
 
+**A free account is enough to start.** Both reference films were narrated on free credits with an
+account-owned Voice Design voice. The free tier refuses Voice Library voices and music generation
+with HTTP 402 `paid_plan_required`. Move to a paid plan or to Sarvam when you need a different or
+cloned voice, or volume. See the cost section above.
+
 ### 3.2 Higgsfield. Required only for generative motion
 
 Run the login yourself in an interactive terminal. An agent must not do this.
@@ -194,13 +232,21 @@ higgsfield account status --json
 The account needs credits before any paid job. See the dated credit model in
 `docs/video-production-workflow.md`. Credits and prices change. Always re-quote live.
 
-### 3.3 Sarvam. Optional
+### 3.3 Sarvam. Optional, and the paid alternative at scale
 
-Only needed for Indian-English narration experiments. Put `SARVAM_API_KEY=<value>` in the ignored
-`.env` file at the repository root, or set it in the process environment. Follow
-`.agent-harness/recipes/sarvam-bulbul-v3-narration.md`.
+Sarvam Bulbul v3 is the hosted Indian-English route. Use it for narration experiments, or when the
+free ElevenLabs tier is no longer enough and you prefer Sarvam to an ElevenLabs plan. Put
+`SARVAM_API_KEY=<value>` in the ignored `.env` file at the repository root, or set it in the process
+environment. Follow `.agent-harness/recipes/sarvam-bulbul-v3-narration.md`.
 
-### 3.4 Rotate a leaked key
+### 3.4 ChatGPT or Codex. Required only for keyframes
+
+Category A generates its keyframes and reference stills through an image model. The reference film
+used ChatGPT and Codex subscription quota, not a separate metered image bill. No API key goes in this
+repository for that route. Category B needs no image generation at all, because real product
+screenshots are the source.
+
+### 3.5 Rotate a leaked key
 
 If a key ever appears in a file, a log, a screenshot, or a chat, rotate it at the provider
 immediately. Do not try to hide it in history.

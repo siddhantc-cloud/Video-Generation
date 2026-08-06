@@ -10,8 +10,8 @@ run a login. Never spend money.
 
 ## Workflow
 
-1. Read `docs/SOP-00-SETUP.md`. It is the human source of truth for setup. Do not repeat its content
-   into chat. Refer to it.
+1. Read `README.md`, then `docs/SOP-00-SETUP.md`. The README is the operator front door and the
+   SOP is the detail. Do not repeat their content into chat. Refer to them.
 2. Confirm the operator is inside a clone of this repository. If not, stop and give the clone
    commands from SOP step 1. Cloning is a human action.
 3. Run the checker:
