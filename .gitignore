@@ -25,6 +25,22 @@ secrets*
 !meetings/2026-07-29-zebpay-video-showcase/videos/ramayana-zebpay-sip-review-v011-captioned.mp4
 !meetings/2026-07-29-zebpay-video-showcase/videos/cryptopack-rebalancing-review-v002.mp4
 
+# Reproduction set, owner-approved on 2026-08-06.
+# These are the paid or otherwise irreplaceable inputs a new operator needs to rebuild each
+# reference film. Everything else, including rejected takes, superseded versions, working renders,
+# and third-party licensed music, stays local. See docs/SOP-00-SETUP.md.
+!Ramayana-ZebpaySIP/footage/selects/*.mp4
+!Ramayana-ZebpaySIP/audio/sfx/generated/*.wav
+!Ramayana-ZebpaySIP/audio/voiceover/elevenlabs-v006/Ramayana-ZebPaySIP_NARRATION_v006_raw_v001.mp3
+!Ramayana-ZebpaySIP/audio/voiceover/elevenlabs-v011/g12-sip-at-start-v001.mp3
+!Ramayana-ZebpaySIP/edit/audio/elevenlabs-v006/*.wav
+!Ramayana-ZebpaySIP/edit/audio/elevenlabs-v007/narration-phrase-locked-v004-sip-repaired.wav
+!Ramayana-ZebpaySIP/edit/audio/elevenlabs-v011-demo/narration-phrase-locked-v005-sip-at-start.wav
+!Ramayana-ZebpaySIP/edit/animations/slot_sip_graph_v005/renders/sip-graph-v005_r3_1080x1920_30fps_hq.mp4
+!Ramayana-ZebpaySIP/edit/animations/slot_zebpay_logo_v005/renders/zebpay-logo-v005_1080x1920_30fps_hq.mp4
+!CryptoBalancing-Zebpay/production/edit/animations/cryptopack-rebalancing/assets/audio/**/*.wav
+!CryptoBalancing-Zebpay/production/edit/animations/cryptopack-rebalancing/assets/audio/**/*.mp3
+
 # Generated intermediates and logs
 *.err
 *.log

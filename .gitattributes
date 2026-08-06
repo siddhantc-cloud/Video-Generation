@@ -1,3 +1,16 @@
 Ramayana-ZebpaySIP/deliverables/final/*.mp4 filter=lfs diff=lfs merge=lfs -text
 meetings/2026-07-29-zebpay-video-showcase/videos/ramayana-zebpay-sip-review-v011-captioned.mp4 filter=lfs diff=lfs merge=lfs -text
 meetings/2026-07-29-zebpay-video-showcase/videos/cryptopack-rebalancing-review-v002.mp4 filter=lfs diff=lfs merge=lfs -text
+
+# Reproduction set, owner-approved on 2026-08-06
+Ramayana-ZebpaySIP/footage/selects/*.mp4 filter=lfs diff=lfs merge=lfs -text
+Ramayana-ZebpaySIP/audio/sfx/generated/*.wav filter=lfs diff=lfs merge=lfs -text
+Ramayana-ZebpaySIP/audio/voiceover/elevenlabs-v006/*.mp3 filter=lfs diff=lfs merge=lfs -text
+Ramayana-ZebpaySIP/audio/voiceover/elevenlabs-v011/*.mp3 filter=lfs diff=lfs merge=lfs -text
+Ramayana-ZebpaySIP/edit/audio/elevenlabs-v006/*.wav filter=lfs diff=lfs merge=lfs -text
+Ramayana-ZebpaySIP/edit/audio/elevenlabs-v007/*.wav filter=lfs diff=lfs merge=lfs -text
+Ramayana-ZebpaySIP/edit/audio/elevenlabs-v011-demo/*.wav filter=lfs diff=lfs merge=lfs -text
+Ramayana-ZebpaySIP/edit/animations/slot_sip_graph_v005/renders/*.mp4 filter=lfs diff=lfs merge=lfs -text
+Ramayana-ZebpaySIP/edit/animations/slot_zebpay_logo_v005/renders/*.mp4 filter=lfs diff=lfs merge=lfs -text
+CryptoBalancing-Zebpay/production/edit/animations/cryptopack-rebalancing/assets/audio/**/*.wav filter=lfs diff=lfs merge=lfs -text
+CryptoBalancing-Zebpay/production/edit/animations/cryptopack-rebalancing/assets/audio/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
