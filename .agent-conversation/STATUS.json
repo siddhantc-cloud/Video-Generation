@@ -2,15 +2,16 @@
     "schema":  "mythyaverse.agent-conversation.status.v1",
     "initialized":  true,
     "activeHost":  "claude",
-    "lastUpdate":  "2026-08-06T10:15:15.6119602Z",
-    "goal":  "Deliver approved ZebPay video case studies: Ramayana SIP film and CryptoPack Rebalancing in-app video",
-    "now":  "CryptoPack Rebalancing v002 passed the encoded-artifact gate. The 29 July showcase package is committed and pushed with Git LFS. Only human approval gates remain.",
+    "lastUpdate":  "2026-08-06T10:35:39.2878587Z",
+    "goal":  "Deliver approved ZebPay video case studies and make the repository reproducible by any operator",
+    "now":  "Three SOP documents, tools/setup-video-repo.ps1, and the script-video-setup skill are committed and pushed. The setup checker passes 29 of 29 on this machine.",
     "next":  [
-                 "Human listening pass on the exact v002 encode",
+                 "Human listening pass on the exact CryptoPack v002 encode",
                  "Human confirmation that the registered screenshots are current product UI",
                  "Human product, brand, and legal approval for the v002 cut",
-                 "Owner instruction to promote the approved MP4 hash to deliverables/final"
+                 "Owner instruction to promote an approved MP4 hash to deliverables/final",
+                 "Optional: test /setup on a clean second machine and record what the SOP missed"
              ],
-    "lastSummary":  "Reconstructed real project state from live evidence and re-verified the packaged ZebPay showcase",
+    "lastSummary":  "Added operator SOPs (setup, Ramayana, CryptoPack) and a cross-host /setup command",
     "projectRoot":  "D:\\startup_dev\\so_sorry"
 }
