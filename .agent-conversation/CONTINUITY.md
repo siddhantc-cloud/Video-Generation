@@ -1,24 +1,26 @@
-﻿# Continuity
+# Continuity
 
 Host-neutral project conversation state. Update this file whenever meaningful work lands.
 
 ## Now
-- Three SOP documents, tools/setup-video-repo.ps1, and the script-video-setup skill are committed and pushed. The setup checker passes 29 of 29 on this machine.
+- Three SOPs are live: setup, story film (category A), product explainer (category B). 52 LFS files, including the paid inputs for both reference films, are on the remote.
 
 ## Goal
-- Deliver approved ZebPay video case studies and make the repository reproducible by any operator
+- Deliver approved ZebPay video case studies, and make both video categories reproducible by any operator from a clone.
 
 ## Done
 - Initialized .agent-conversation/
 - Reconstructed real project state from live evidence and re-verified the packaged ZebPay showcase
-- Added operator SOPs (setup, Ramayana, CryptoPack) and a cross-host /setup command
+- Added `docs/SOP-00-SETUP.md`, `tools/setup-video-repo.ps1`, and a cross-host `/setup` command
+- Reframed the film SOPs as category playbooks: `docs/SOP-01-STORY-FILM.md` and `docs/SOP-02-PRODUCT-EXPLAINER.md`
+- Pushed the owner-approved reproduction set through Git LFS, 187 MB across 49 new objects
 
 ## Evidence
-- `tools/setup-video-repo.ps1` reports 29 pass, 0 fail in check mode and in `-Install` mode on the reference machine.
-- Skill, agent, and Ramayana parity checks pass after adding `script-video-setup`.
-- CryptoPack v002 MP4 SHA-256 `3B90B00BC81BF90F0EEC6F19696E8FF7A3175C5F9591F3F66CCCE8389190FA76`. The review record, the production cut, and the packaged meeting copy are byte-identical.
-- All LFS objects are on the remote. `git lfs fsck` is OK.
-- Commits `a85243f` (SOPs and /setup) and `2732515` (bridge) are pushed.
+- `tools/setup-video-repo.ps1` reports 29 pass, 0 fail, with 52 LFS files present as real media.
+- `git lfs push --dry-run` sends nothing. Every object is on the remote.
+- Skill, agent, and Ramayana parity checks pass, including the new `script-video-setup`.
+- All quoted document paths in the three SOPs resolve.
+- Commits `2732515`, `a85243f`, `91f33ca`, `75f2d2b` are pushed to `codex/cryptopack-rebalancing-video`.
 
 ## Blockers
 - Every open production item needs a human decision. No machine work is pending.
@@ -28,11 +30,11 @@ Host-neutral project conversation state. Update this file whenever meaningful wo
 - Human confirmation that the registered screenshots are current product UI, and approval of the deterministic claim mask treatment.
 - Human product, brand, and legal approval for the v002 cut.
 - Owner instruction to promote an approved MP4 hash to `deliverables/final/`.
-- Optional: test `/setup` on a clean second machine and record what the SOP missed.
+- Optional: test `/setup` and a full rebuild on a clean second machine, then record what the SOPs missed.
 
 ## Active host
 - claude
 
 ## Last update
-- 2026-08-06T10:35:39.3013589Z
-- Added operator SOPs (setup, Ramayana, CryptoPack) and a cross-host /setup command
+- 2026-08-06T10:55:20Z
+- Reframed the SOPs as category playbooks and pushed the approved reproduction set via Git LFS

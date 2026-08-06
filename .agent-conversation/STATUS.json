@@ -1,17 +1,17 @@
-﻿{
+{
     "schema":  "mythyaverse.agent-conversation.status.v1",
     "initialized":  true,
     "activeHost":  "claude",
-    "lastUpdate":  "2026-08-06T10:35:39.2878587Z",
-    "goal":  "Deliver approved ZebPay video case studies and make the repository reproducible by any operator",
-    "now":  "Three SOP documents, tools/setup-video-repo.ps1, and the script-video-setup skill are committed and pushed. The setup checker passes 29 of 29 on this machine.",
+    "lastUpdate":  "2026-08-06T10:55:20.4030527Z",
+    "goal":  "Deliver approved ZebPay video case studies, and make both video categories reproducible by any operator from a clone",
+    "now":  "Three SOPs are live: setup, story film (category A), product explainer (category B). 52 LFS files including the paid inputs for both reference films are on the remote.",
     "next":  [
                  "Human listening pass on the exact CryptoPack v002 encode",
                  "Human confirmation that the registered screenshots are current product UI",
                  "Human product, brand, and legal approval for the v002 cut",
                  "Owner instruction to promote an approved MP4 hash to deliverables/final",
-                 "Optional: test /setup on a clean second machine and record what the SOP missed"
+                 "Optional: test /setup and a full rebuild on a clean second machine"
              ],
-    "lastSummary":  "Added operator SOPs (setup, Ramayana, CryptoPack) and a cross-host /setup command",
+    "lastSummary":  "Reframed the SOPs as category playbooks and pushed the approved reproduction set via Git LFS",
     "projectRoot":  "D:\\startup_dev\\so_sorry"
 }
