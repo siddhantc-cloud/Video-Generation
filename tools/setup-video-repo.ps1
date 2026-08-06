@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Check, and optionally repair, this machine so it can produce the repository films.
 
@@ -342,5 +342,5 @@ if ($Json) {
 
     if ($failed.Count -gt 0) { exit 1 }
     if ($human.Count -gt 0) { exit 2 }
-    Write-Output 'Environment is ready. Read docs/SOP-01-RAMAYANA-ZEBPAY-SIP.md or docs/SOP-02-CRYPTOPACK-REBALANCING.md next.'
+    Write-Output 'Environment is ready. Read docs/SOP-01-STORY-FILM.md or docs/SOP-02-PRODUCT-EXPLAINER.md next.'
 }

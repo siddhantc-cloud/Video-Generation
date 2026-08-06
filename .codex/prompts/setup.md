@@ -1,4 +1,4 @@
-Set up or repair this machine so it can produce the repository films.
+﻿Set up or repair this machine so it can produce the repository films.
 
 Read `docs/SOP-00-SETUP.md` first. It is the human source of truth. The canonical agent instructions
 are in `.codex/skills/script-video-setup/SKILL.md`. Follow that skill, or invoke it directly as
@@ -16,8 +16,8 @@ Requirements:
    paid job.
 6. Never install Qwen3-TTS. It needs explicit owner approval.
 7. End with: what changed, the current pass and fail counts, the numbered human actions that remain,
-   and the next document to read, which is `docs/SOP-01-RAMAYANA-ZEBPAY-SIP.md` or
-   `docs/SOP-02-CRYPTOPACK-REBALANCING.md`.
+   and the next document to read, which is `docs/SOP-01-STORY-FILM.md` or
+   `docs/SOP-02-PRODUCT-EXPLAINER.md`.
 
 To make this available as `/setup` in Codex, copy this file once:
 

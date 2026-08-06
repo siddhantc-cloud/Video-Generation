@@ -1,16 +1,50 @@
-# SOP 00: Set up the machine and the repository
+﻿# SOP 00: Set up the machine and the repository
 
 This is the first document a new operator reads. It takes a person from an empty machine to a
-verified workspace that can produce the two ZebPay films.
+verified workspace that can produce a video in either category this repository supports.
 
 | Document | Purpose |
 |---|---|
 | `docs/SOP-00-SETUP.md` | This file. Machine setup, credentials, MCP servers, skills, verification. |
-| `docs/SOP-01-RAMAYANA-ZEBPAY-SIP.md` | Produce the Ramayana SIP film. |
-| `docs/SOP-02-CRYPTOPACK-REBALANCING.md` | Produce the CryptoPack Rebalancing video. |
+| `docs/SOP-01-STORY-FILM.md` | Produce a NEW story-driven generative brand film. Reference case: Ramayana x ZebPay SIP. |
+| `docs/SOP-02-PRODUCT-EXPLAINER.md` | Produce a NEW deterministic product explainer. Reference case: CryptoPack Rebalancing. |
 
 The complete creative process stays in `docs/video-production-workflow.md`. This SOP does not repeat
 it. This SOP tells you how to make the tools work.
+
+## The two categories
+
+Pick the category before you pick a tool.
+
+| | Category A: story film | Category B: product explainer |
+|---|---|---|
+| SOP | `docs/SOP-01-STORY-FILM.md` | `docs/SOP-02-PRODUCT-EXPLAINER.md` |
+| The value is | Emotion, character, atmosphere, performance | Clarity about a real product |
+| Picture comes from | A generative video model, plus deterministic sections | A deterministic renderer only |
+| Exactness | A metaphor is allowed | Every number and claim must be exact |
+| Marginal cost | Generation credits, per film | Effectively one small text-to-speech call |
+| Rebuild | Each take is a fresh performance | Byte-reproducible |
+| Reference case | `Ramayana-ZebpaySIP/` | `CryptoBalancing-Zebpay/` |
+
+A mixed film is normal. Route each interval separately, never the whole film at once.
+
+## What each category costs
+
+| Item | Category A | Category B |
+|---|---|---|
+| Agent (Claude Code, Codex, or Cursor) | Existing subscription | Existing subscription |
+| Generative motion | About 147 to 165 credits at 480p for a 52 second film | **None** |
+| Keyframe stills | An image engine, per shot | **None**. Real screenshots. |
+| Deterministic graphics | Free, local render | Free, local render. This is the whole picture. |
+| Music and SFX | Licensing, or produce your own | Free. Seeded local synthesis. |
+| Narration | ElevenLabs, small | ElevenLabs, small. The only paid item. |
+| Encode, probe, QC | Free | Free |
+
+Category B is effectively free. Its only paid item is one narration call of a few hundred
+characters, and even that can be replaced with the free Edge TTS helper at a quality cost. See
+`docs/SOP-02-PRODUCT-EXPLAINER.md`.
+
+Credit numbers are dated evidence from 2026-07-24. Re-quote live before you spend.
 
 ## Checklist
 
@@ -31,17 +65,33 @@ it. This SOP tells you how to make the tools work.
 | **AGENT OK** | An agent can run this for you after you approve the command. |
 | **EITHER** | A person or an agent can do it. |
 
-## What a fresh clone can and cannot rebuild
+## What a fresh clone gives you
 
-Read this before you promise a result to anybody. Media stays outside Git on purpose.
+The owner approved a **reproduction set** on 2026-08-06. The paid and otherwise irreplaceable inputs
+for both reference films are now in Git LFS. Run `git lfs pull` and you can rebuild.
 
-| Film | What the clone gives you | What the clone does not give you |
-|---|---|---|
-| Ramayana SIP | Scripts, keyframes, storyboard, timelines, audio metadata, review records, cost ledger, the promoted v005 master through Git LFS | The generated Seedance footage, the narration WAVs, and the working mixes. You cannot rebuild the film from the clone alone. |
-| CryptoPack Rebalancing | The complete HyperFrames picture project, the app screenshots, the fonts, the caption groups, the audio metadata, the review records, the packaged v002 MP4 through Git LFS | The narration, music, and SFX audio files. You must regenerate them. Music and SFX regenerate exactly. Narration needs one paid ElevenLabs synthesis. |
+| Reference film | In the clone through Git LFS |
+|---|---|
+| Ramayana x ZebPay SIP | The 13 approved selects, their native SFX stems, the raw and repaired ElevenLabs narration, the phrase-locked narration and audio masters, the two selected deterministic renders, and the promoted v005 master |
+| CryptoPack Rebalancing | The six narration segments, the ElevenLabs provider master, the seeded music bed, the six SFX files, and the packaged v002 review cut |
 
-Both films are watchable straight after a clone, because the delivered MP4s are in Git LFS. Only a
-rebuild needs the missing media.
+Everything not paid for stays in ordinary Git: scripts, keyframes, storyboards, timelines, phrase
+maps, caption groups, audio metadata, review records, cost ledgers, and the complete HyperFrames
+project.
+
+Still excluded on purpose, and why:
+
+| Excluded | Reason |
+|---|---|
+| Rejected and superseded takes | Large, and the review records already describe why they failed |
+| Working renders and intermediate mixes | Regenerable from the timelines |
+| Superseded final versions v001 to v003 | v005 is the promoted master |
+| Third-party licensed demo music | Do not redistribute it. Its source is in `Ramayana-ZebpaySIP/audio/music/demo-v011/SOURCE.md`. |
+
+Ask the owner if you need any of it. It is one command to add.
+
+One honest limit: a generative take is never byte-identical. If you regenerate motion instead of
+reusing the selects, you get a new film that follows the same plan, not the same file.
 
 ## Step 1. Clone the repository. HUMAN ONLY
 
@@ -319,12 +369,14 @@ Codex can always use the project skill without that copy.
 | `higgsfield: command not found` | The npm global bin is not on PATH | Reopen the terminal. Check `npm bin -g`. |
 | The ElevenLabs MCP server fails to start | `.mcp.json` points at another machine's `uvx` | Set the `command` value to your own `(Get-Command uvx).Source` |
 | A skill parity check fails | Somebody edited a mirror | Edit the canonical copy, then rerun the sync script without `-Check` |
-| `npm run render` fails in the HyperFrames project | Chromium or the pinned CLI is missing | Run `npm run check` first and read the error. See `docs/SOP-02-CRYPTOPACK-REBALANCING.md`. |
+| `npm run render` fails in the HyperFrames project | Chromium or the pinned CLI is missing | Run `npm run check` first and read the error. See `docs/SOP-02-PRODUCT-EXPLAINER.md`. |
 | The agent cannot see a new skill | The session started before the install | Restart the agent host |
 
 ## Next
 
-- To work on the Ramayana film, read `docs/SOP-01-RAMAYANA-ZEBPAY-SIP.md`.
-- To work on the CryptoPack video, read `docs/SOP-02-CRYPTOPACK-REBALANCING.md`.
-- To start a new film from an idea, read `docs/video-production-workflow.md` and enter through the
-  `script-video-production` skill.
+- To make a story-driven brand film, read `docs/SOP-01-STORY-FILM.md`.
+- To make a product explainer, read `docs/SOP-02-PRODUCT-EXPLAINER.md`.
+- For the complete creative theory behind both, read `docs/video-production-workflow.md` and enter
+  through the `script-video-production` skill.
+- To work on the two reference films specifically, open `Ramayana-ZebpaySIP/WORKFLOW.md` or
+  `CryptoBalancing-Zebpay/production/WORKFLOW.md` for their live status and open gates.

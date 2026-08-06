@@ -1,4 +1,4 @@
-# CLAUDE.md
+﻿# CLAUDE.md
 
 Read and follow `AGENTS.md`; it is the shared project contract, current tool inventory, safety policy,
 and source of truth for Codex/Claude parity.
@@ -12,8 +12,8 @@ A new operator, or a new machine, starts at the standard operating procedures:
 | Document | Purpose |
 |---|---|
 | `docs/SOP-00-SETUP.md` | Clone, host tools, credentials, MCP servers, skills, verification |
-| `docs/SOP-01-RAMAYANA-ZEBPAY-SIP.md` | Produce the Ramayana SIP film |
-| `docs/SOP-02-CRYPTOPACK-REBALANCING.md` | Produce the CryptoPack Rebalancing video |
+| `docs/SOP-01-STORY-FILM.md` | Produce a NEW story-driven generative brand film. Reference case: Ramayana x ZebPay SIP. |
+| `docs/SOP-02-PRODUCT-EXPLAINER.md` | Produce a NEW deterministic product explainer. Reference case: CryptoPack Rebalancing. |
 
 Run `/setup` to check and repair the workspace. It uses the `script-video-setup` skill and
 `tools/setup-video-repo.ps1`. It never runs a provider login, never prints a credential, and never

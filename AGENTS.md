@@ -1,4 +1,4 @@
-# AGENTS.md
+﻿# AGENTS.md
 
 ## Checklist
 
@@ -24,12 +24,12 @@ A new operator starts at the standard operating procedures instead:
 | Document | Purpose |
 |---|---|
 | `docs/SOP-00-SETUP.md` | Clone, host tools, credentials, MCP servers, skills, verification |
-| `docs/SOP-01-RAMAYANA-ZEBPAY-SIP.md` | Produce the Ramayana SIP film |
-| `docs/SOP-02-CRYPTOPACK-REBALANCING.md` | Produce the CryptoPack Rebalancing video |
+| `docs/SOP-01-STORY-FILM.md` | Produce a NEW story-driven generative brand film. Reference case: Ramayana x ZebPay SIP. |
+| `docs/SOP-02-PRODUCT-EXPLAINER.md` | Produce a NEW deterministic product explainer. Reference case: CryptoPack Rebalancing. |
 
-The SOPs route back to `docs/video-production-workflow.md` for the creative process. They do not
-duplicate it. Each SOP states honestly what a fresh clone can and cannot rebuild, because media stays
-outside Git by design.
+SOP 01 and SOP 02 are category playbooks for producing a **new** video, not reproduction notes for
+the two existing films. Each names its reference case and cites its evidence. They route back to
+`docs/video-production-workflow.md` for the creative process rather than duplicating it.
 
 - Keep original scripts, raw provider results, narration sources, and approved renders immutable.
 - Use one continuous narration performance as the master clock unless the project records otherwise.
@@ -204,9 +204,15 @@ not expose pitch or loudness controls.
 
 ## Git and media policy
 
-- Raw footage, generated takes, review cuts, audio stems, caches, and local archives remain ignored.
+- Raw footage, generated takes, review cuts, audio stems, caches, and local archives remain ignored
+  by default.
 - Track a final video only when the owner explicitly asks, following
   `.agent-harness/recipes/git-lfs-video-delivery.md`.
+- **Approved exception, 2026-08-06.** The owner approved a reproduction set in Git LFS: the paid and
+  otherwise irreplaceable inputs for both reference films, so a new operator can rebuild from a
+  clone. The exact paths are listed in `.gitignore` and `.gitattributes`. This exception does not
+  make tracking media the default. Rejected takes, superseded versions, working renders, and
+  third-party licensed music stay local.
 - Use a narrow `.gitattributes` rule and verify the staged blob is an LFS pointer before committing.
 - Never commit `.env`, credential values, provider tokens, or raw customer data.
 - Never force-push for media delivery.

@@ -1,4 +1,4 @@
----
+﻿---
 description: Set up or repair this machine so it can produce the repository films
 argument-hint: [optional focus such as credentials, mcp, skills, lfs, or ramayana/cryptopack]
 ---
@@ -17,7 +17,7 @@ Requirements:
    paid job.
 6. Never install Qwen3-TTS. It needs explicit owner approval.
 7. End with: what changed, the current pass and fail counts, the numbered human actions that remain,
-   and the next document to read, which is `docs/SOP-01-RAMAYANA-ZEBPAY-SIP.md` or
-   `docs/SOP-02-CRYPTOPACK-REBALANCING.md`.
+   and the next document to read, which is `docs/SOP-01-STORY-FILM.md` or
+   `docs/SOP-02-PRODUCT-EXPLAINER.md`.
 
 If the user gave a focus argument, still run the full check, then explain that area in detail.

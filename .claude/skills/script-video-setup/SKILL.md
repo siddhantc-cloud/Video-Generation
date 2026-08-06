@@ -1,4 +1,4 @@
----
+﻿---
 name: script-video-setup
 description: Set up or repair this machine so it can produce the repository films. Use for /setup, a new operator, a new computer, a failed environment check, missing skills or MCP servers, or before the first paid job.
 ---
@@ -32,8 +32,8 @@ run a login. Never spend money.
 
 6. Re-run the read-only check and show the new result.
 7. Print the remaining human actions as a numbered list. State plainly that you cannot do them.
-8. Point at the next document: `docs/SOP-01-RAMAYANA-ZEBPAY-SIP.md` or
-   `docs/SOP-02-CRYPTOPACK-REBALANCING.md`.
+8. Point at the next document: `docs/SOP-01-STORY-FILM.md` or
+   `docs/SOP-02-PRODUCT-EXPLAINER.md`.
 
 ## What an agent must never do here
 
