@@ -8,6 +8,7 @@ $workspace = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $sourceRoot = Join-Path $workspace '.codex\skills'
 $targetRoot = Join-Path $workspace '.claude\skills'
 $skills = @(
+    'script-video-setup',
     'script-video-production',
     'script-video-bootstrap',
     'script-video-plan',

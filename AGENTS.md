@@ -19,6 +19,18 @@ starting from an idea. `.agent-harness/recipes/idea-to-cinematic-social-video.md
 machine-routing entry; `.agent-harness/recipes/script-to-video-production.md` is a compatibility
 pointer. Neither duplicates the process.
 
+A new operator starts at the standard operating procedures instead:
+
+| Document | Purpose |
+|---|---|
+| `docs/SOP-00-SETUP.md` | Clone, host tools, credentials, MCP servers, skills, verification |
+| `docs/SOP-01-RAMAYANA-ZEBPAY-SIP.md` | Produce the Ramayana SIP film |
+| `docs/SOP-02-CRYPTOPACK-REBALANCING.md` | Produce the CryptoPack Rebalancing video |
+
+The SOPs route back to `docs/video-production-workflow.md` for the creative process. They do not
+duplicate it. Each SOP states honestly what a fresh clone can and cannot rebuild, because media stays
+outside Git by design.
+
 - Keep original scripts, raw provider results, narration sources, and approved renders immutable.
 - Use one continuous narration performance as the master clock unless the project records otherwise.
 - Express all timeline boundaries as integer frames.
@@ -39,6 +51,8 @@ pointer. Neither duplicates the process.
 | `.codex/skills/script-video-*/` | Canonical reusable production skills |
 | `.claude/skills/script-video-*/` | Byte-equivalent Claude mirrors |
 | `.agent-harness/recipes/` | Shared repeatable production recipes |
+| `docs/SOP-0*.md` | Operator standard operating procedures for setup and for each film |
+| `.claude/commands/`, `.cursor/commands/`, `.codex/prompts/` | Cross-host `/setup` command surfaces |
 | `tools/` | Scaffold, sync, verification, and deterministic edit helpers |
 | `_archive/legacy-workspace-2026-07-24/` | Recoverable local archive; intentionally ignored by Git |
 
@@ -64,6 +78,7 @@ Canonical packages live under `.codex/skills/` and are mirrored under `.claude/s
 
 | Skill | Trigger | Purpose |
 |---|---|---|
+| `script-video-setup` | `/setup`, a new operator, a new machine, or a failed environment check | Verify and repair the workspace, then hand the human-only actions to a person |
 | `script-video-production` | Turn an idea into a complete cinematic social video | Route the full workflow through atomic skills, agents, gates, and evidence |
 | `script-video-bootstrap` | Start a film from a script | Create the clean canonical project workspace |
 | `script-video-plan` | Script breakdown, shots, timing, or cost | Build frame-locked production and iteration plans |
@@ -82,6 +97,21 @@ After any generic skill change:
 powershell -ExecutionPolicy Bypass -File tools/sync-script-video-skills.ps1
 powershell -ExecutionPolicy Bypass -File tools/sync-script-video-skills.ps1 -Check
 ```
+
+## Cross-host `/setup`
+
+The setup instructions exist once and are exposed in every host.
+
+| Surface | Path | Invocation |
+|---|---|---|
+| Canonical skill | `.codex/skills/script-video-setup/SKILL.md` | `$script-video-setup` |
+| Claude mirror | `.claude/skills/script-video-setup/SKILL.md` | discovered natively |
+| Claude command | `.claude/commands/setup.md` | `/setup` |
+| Cursor command | `.cursor/commands/setup.md` | `/setup` |
+| Codex prompt | `.codex/prompts/setup.md` | `/setup` after one copy into `~/.codex/prompts` |
+
+All five point at `docs/SOP-00-SETUP.md` and run `tools/setup-video-repo.ps1`. None of them may run a
+provider login, print a credential, or spend money.
 
 ## Shared production agents
 
@@ -148,6 +178,7 @@ standing tariff.
 | `yt-dlp` | Fetch only explicitly authorized online media |
 | Git LFS | Store explicitly promoted final videos |
 | DaVinci Resolve Free | Optional supervised finishing; not an MCP dependency |
+| `tools/setup-video-repo.ps1` | Check, and with `-Install` repair, the workspace; report human-only actions; never logs in or spends |
 
 The canonical editorial stack is video-use plus FFmpeg/FFprobe. Resolve is optional after picture
 lock; do not purchase Studio or introduce a different NLE without a verified limitation and human

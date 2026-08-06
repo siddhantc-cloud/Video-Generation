@@ -7,6 +7,18 @@ The active film roots are `Ramayana-ZebpaySIP/` (approved prior film) and
 `CryptoBalancing-Zebpay/` (current film); their exact roles and delivery policies live in
 `AGENTS.md`.
 
+A new operator, or a new machine, starts at the standard operating procedures:
+
+| Document | Purpose |
+|---|---|
+| `docs/SOP-00-SETUP.md` | Clone, host tools, credentials, MCP servers, skills, verification |
+| `docs/SOP-01-RAMAYANA-ZEBPAY-SIP.md` | Produce the Ramayana SIP film |
+| `docs/SOP-02-CRYPTOPACK-REBALANCING.md` | Produce the CryptoPack Rebalancing video |
+
+Run `/setup` to check and repair the workspace. It uses the `script-video-setup` skill and
+`tools/setup-video-repo.ps1`. It never runs a provider login, never prints a credential, and never
+spends money. The same command exists for Codex and Cursor.
+
 ## Checklist
 
 | Requirement | Pass condition | Evidence | Owner | Status |

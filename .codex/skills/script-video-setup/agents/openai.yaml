@@ -1,0 +1,4 @@
+interface:
+  display_name: "Script Video Setup"
+  short_description: "Verify and repair the machine so it can produce the repository films."
+  default_prompt: "Use $script-video-setup to check this machine and tell me what only a human can do."
