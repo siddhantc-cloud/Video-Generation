@@ -1,0 +1,4 @@
+# Ignore local scratch only; commit CONTINUITY.md + transcript for team continuity.
+tmp/
+*.secret
+.env

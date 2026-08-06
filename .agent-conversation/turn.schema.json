@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mythyaverse.local/agent-conversation/turn.schema.json",
+  "title": "Agent conversation turn",
+  "type": "object",
+  "required": ["schema", "id", "ts", "host", "kind", "summary"],
+  "properties": {
+    "schema": { "const": "mythyaverse.agent-conversation.turn.v1" },
+    "id": { "type": "string", "minLength": 1 },
+    "ts": { "type": "string", "minLength": 1 },
+    "host": { "enum": ["claude", "codex", "cursor", "human", "system"] },
+    "kind": { "enum": ["start", "progress", "handoff", "decision", "blocker", "done"] },
+    "summary": { "type": "string", "minLength": 1 },
+    "goal": { "type": "string" },
+    "now": { "type": "string" },
+    "next": { "type": "array", "items": { "type": "string" } },
+    "evidence": { "type": "array", "items": { "type": "string" } },
+    "blockers": { "type": "array", "items": { "type": "string" } },
+    "files": { "type": "array", "items": { "type": "string" } },
+    "toHost": { "enum": ["claude", "codex", "cursor", "human", "any"] }
+  },
+  "additionalProperties": true
+}
