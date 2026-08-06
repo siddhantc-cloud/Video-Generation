@@ -1,4 +1,4 @@
-# ZebPay video showcase — 29 July 2026
+﻿# ZebPay video showcase â€” 29 July 2026
 
 Open `index.html` to start the meeting.
 
@@ -6,7 +6,7 @@ Open `index.html` to start the meeting.
 
 | Case study | Presentation | Packaged video |
 |---|---|---|
-| Ramayana × ZebPay SIP | `ramayana-video-production-presentation.html` | `videos/ramayana-zebpay-sip-review-v011-captioned.mp4` |
+| Ramayana Ã— ZebPay SIP | `ramayana-video-production-presentation.html` | `videos/ramayana-zebpay-sip-review-v011-captioned.mp4` |
 | CryptoPack Rebalancing | `cryptopack-rebalancing-production-presentation.html` | `videos/cryptopack-rebalancing-review-v002.mp4` |
 
 Both decks are self-contained relative to this folder. Their essential images, fonts, and MP4s are local. Use the on-screen arrows or the keyboard arrow keys to move through slides.
@@ -17,8 +17,8 @@ Install Git LFS before cloning, then download the LFS objects and open the launc
 
 ```text
 git lfs install
-git clone https://github.com/binarycache/so-sorry-clear-gut.git
-cd so-sorry-clear-gut
+git clone https://github.com/MythyaVerse/marketing-video-generation-pipeline.git
+cd marketing-video-generation-pipeline
 git switch codex/cryptopack-rebalancing-video
 git lfs pull
 ```

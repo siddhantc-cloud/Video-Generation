@@ -107,8 +107,8 @@ git lfs install
 Then clone and fetch the media.
 
 ```powershell
-git clone https://github.com/binarycache/so-sorry-clear-gut.git
-cd so-sorry-clear-gut
+git clone https://github.com/MythyaVerse/marketing-video-generation-pipeline.git
+cd marketing-video-generation-pipeline
 git switch codex/cryptopack-rebalancing-video
 git lfs pull
 ```
