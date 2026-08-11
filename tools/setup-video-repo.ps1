@@ -124,8 +124,11 @@ if ($higgsfield) {
 
 # ---------------------------------------------------------------- 2. Python packages
 $pythonPackages = 'requests librosa matplotlib pillow numpy'
-$importCheck = & python -c 'import librosa, matplotlib, PIL, numpy, requests' 2>&1
+$prevEap = $ErrorActionPreference
+$ErrorActionPreference = 'Continue'
+$importCheck = & python -c 'import librosa, matplotlib, PIL, numpy, requests' 2>$null
 $pythonOk = $LASTEXITCODE -eq 0
+$ErrorActionPreference = $prevEap
 if ($pythonOk) {
     Add-Row 'tool' 'python-packages' 'PASS' 'librosa, matplotlib, pillow, numpy, requests import' ''
 } else {
