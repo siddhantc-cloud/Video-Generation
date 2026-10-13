@@ -65,3 +65,6 @@ tools/*.zip
 # OS junk
 .DS_Store
 Thumbs.db
+
+# Samudra Manthan (Bitcoin Mein Pro) final, owner-approved 2026-10-12
+!Samudra-Manthan-BitcoinMeinPro/deliverables/final/samudra-manthan-bitcoin-mein-pro-v011.mp4
