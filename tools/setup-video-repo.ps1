@@ -113,7 +113,11 @@ if ($ytDlp) {
 
 $higgsfield = Get-Command 'higgsfield' -ErrorAction SilentlyContinue
 if ($higgsfield) {
-    Add-Row 'tool' 'higgsfield' 'PASS' (& higgsfield --version 2>&1 | Select-Object -First 1) ''
+    $higgsfieldVersion = 'present'
+    try {
+        $higgsfieldVersion = (& higgsfield --version 2>&1 | Select-Object -First 1 | Out-String).Trim()
+    } catch { $higgsfieldVersion = $higgsfield.Source }
+    Add-Row 'tool' 'higgsfield' 'PASS' $higgsfieldVersion ''
 } else {
     Add-Row 'tool' 'higgsfield' 'WARN' 'not found' 'npm install --global @higgsfield/cli@latest'
     if ($Install) {
@@ -124,8 +128,11 @@ if ($higgsfield) {
 
 # ---------------------------------------------------------------- 2. Python packages
 $pythonPackages = 'requests librosa matplotlib pillow numpy'
-$importCheck = & python -c 'import librosa, matplotlib, PIL, numpy, requests' 2>&1
+$prevEap = $ErrorActionPreference
+$ErrorActionPreference = 'Continue'
+$importCheck = & python -c 'import librosa, matplotlib, PIL, numpy, requests' 2>$null
 $pythonOk = $LASTEXITCODE -eq 0
+$ErrorActionPreference = $prevEap
 if ($pythonOk) {
     Add-Row 'tool' 'python-packages' 'PASS' 'librosa, matplotlib, pillow, numpy, requests import' ''
 } else {
@@ -239,8 +246,12 @@ if ($sarvamPresent) {
 
 $higgsfieldAuthed = $false
 if ($higgsfield) {
-    $statusText = (& higgsfield account status --json 2>&1 | Out-String)
-    if ($LASTEXITCODE -eq 0) {
+    $prevEap = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    $statusText = (& higgsfield account status --json 2>$null | Out-String)
+    $statusExit = $LASTEXITCODE
+    $ErrorActionPreference = $prevEap
+    if ($statusExit -eq 0) {
         try { $null = $statusText | ConvertFrom-Json; $higgsfieldAuthed = $true } catch {}
     }
 }
@@ -273,8 +284,12 @@ foreach ($item in $syncChecks) {
         Add-Row 'parity' $item.Name 'FAIL' "missing $($item.Script)" 'Restore the file from Git.'
         continue
     }
-    $output = (& powershell -ExecutionPolicy Bypass -File $scriptPath -Check 2>&1 | Out-String).Trim()
-    if ($LASTEXITCODE -eq 0) {
+    $prevEap = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    $output = (& powershell -ExecutionPolicy Bypass -File $scriptPath -Check 2>$null | Out-String).Trim()
+    $syncExit = $LASTEXITCODE
+    $ErrorActionPreference = $prevEap
+    if ($syncExit -eq 0) {
         Add-Row 'parity' $item.Name 'PASS' 'Codex and Claude copies match' ''
     } else {
         Add-Row 'parity' $item.Name 'FAIL' 'mirror differs from the canonical copy' "powershell -ExecutionPolicy Bypass -File $($item.Script)"

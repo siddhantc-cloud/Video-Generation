@@ -14,3 +14,6 @@ Ramayana-ZebpaySIP/edit/animations/slot_sip_graph_v005/renders/*.mp4 filter=lfs 
 Ramayana-ZebpaySIP/edit/animations/slot_zebpay_logo_v005/renders/*.mp4 filter=lfs diff=lfs merge=lfs -text
 CryptoBalancing-Zebpay/production/edit/animations/cryptopack-rebalancing/assets/audio/**/*.wav filter=lfs diff=lfs merge=lfs -text
 CryptoBalancing-Zebpay/production/edit/animations/cryptopack-rebalancing/assets/audio/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
+
+# Samudra Manthan (Bitcoin Mein Pro) final, owner-approved 2026-10-12
+Samudra-Manthan-BitcoinMeinPro/deliverables/final/samudra-manthan-bitcoin-mein-pro-v011.mp4 filter=lfs diff=lfs merge=lfs -text
