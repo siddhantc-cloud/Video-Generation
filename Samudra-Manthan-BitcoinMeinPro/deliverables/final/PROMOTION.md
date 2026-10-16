@@ -18,11 +18,13 @@ owners approved it including the disclaimer; voice entitlement is documented; an
 These are the owner's confirmations. I did not verify them and no approver name or document is on file
 (`project/brief.md` still lists the approval owner as TODO). Fill in the approver and evidence below.
 
-- Approver name / role: _TODO_
-- Legal / brand sign-off reference: _TODO_
+- Approver name / role: Siddhant, Marketing Manager (stated by the owner in chat on 2026-10-16; this is the person who
+  gave the Step 12 confirmations above, not an independent legal or regulatory approver)
+- Legal / brand sign-off reference: _TODO_ (no document or reference supplied; the confirmation above is verbal, in chat)
 - Voice entitlement reference (ElevenLabs voice "Satyam"): _TODO_
 
 ## Not done
 
-Not added to Git, not pushed, not published. Git LFS only on request (`.agent-harness/recipes/git-lfs-video-delivery.md`);
-the LFS 404 on 52 files from setup is unresolved.
+Not published anywhere outside Git. Added to Git LFS on the owner's request (`.agent-harness/recipes/git-lfs-video-delivery.md`)
+and pushed on branch `deliver/samudra-manthan-v011` (PR 2 on `siddhantc-cloud/Video-Generation`). The LFS 404 on 52 files
+from setup is unresolved and not part of this delivery.
